@@ -186,3 +186,6 @@
 2021-07-21 09:38:23,865 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: actualizarUsingPUT_2
 2021-07-21 09:38:23,871 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: crearUsingPOST_2
 2021-07-21 09:38:23,877 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: eliminarUsingDELETE_2
+2021-07-21 09:38:23,899 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: listarUsingGET_1
+2021-07-21 09:38:23,911 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: listarUsingGET_2
+2021-07-21 09:38:23,978 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started Application in 12.329 seconds (JVM running for 13.92)
