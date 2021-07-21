@@ -1,0 +1,1 @@
+insert into scotter (marca,modelo,precio,ciudad,vendedor, estado, foto) values (:marca, :modelo, :precio, :ciudad, :vendedor, :estado, :foto)
