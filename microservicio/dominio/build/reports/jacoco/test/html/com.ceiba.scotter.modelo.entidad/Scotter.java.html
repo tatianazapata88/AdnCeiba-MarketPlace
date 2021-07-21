@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Scotter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.scotter.modelo.entidad</a> &gt; <span class="el_source">Scotter.java</span></div><h1>Scotter.java</h1><pre class="source lang-java linenums">package com.ceiba.scotter.modelo.entidad;
+
+import lombok.Getter;
+
+import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
+
+@Getter
+public class Scotter {
+    private static final String SE_DEBE_INGRESAR_LA_MARCA_DE_LA_SCOTTER = &quot;Se debe ingresar la marca de la scotter&quot;;
+    private static final String SE_DEBE_INGRESAR_EL_MODELO_DE_LA_SCOTTER = &quot;Se debe ingresar el modelo de la scotter&quot;;
+    private static final String SE_DEBE_INGRESAR_EL_PRECIO_DE_LA_SCOTTER = &quot;Se debe ingresar el precio de la scotter&quot;;
+    private static final String SE_DEBE_INGRESAR_LA_CIUDAD_DE_UBICACION = &quot;Se debe ingresar la ciudad de ubicacion de la scotter&quot;;
+    private static final String SE_DEBE_INGRESAR_LA_FOTO_DE_LA_SCOTTER = &quot;Se debe ingresar la foto de la scotter&quot;;
+
+
+<span class="fc" id="L16">    private Long id;</span>
+<span class="nc" id="L17">    private String marca;</span>
+<span class="nc" id="L18">    private String modelo;</span>
+<span class="nc" id="L19">    private Integer precio;</span>
+<span class="nc" id="L20">    private String ciudad;</span>
+<span class="nc" id="L21">    private Long vendedor;</span>
+<span class="nc" id="L22">    private String estado;</span>
+<span class="nc" id="L23">    private String foto;</span>
+
+
+<span class="fc" id="L26">    public Scotter(Long id, String marca, String modelo, Integer precio, String ciudad, Long vendedor, String estado, String foto) {</span>
+<span class="fc" id="L27">        validarObligatorio(marca,SE_DEBE_INGRESAR_LA_MARCA_DE_LA_SCOTTER );</span>
+<span class="fc" id="L28">        validarObligatorio(modelo, SE_DEBE_INGRESAR_EL_MODELO_DE_LA_SCOTTER);</span>
+<span class="fc" id="L29">        validarObligatorio(precio, SE_DEBE_INGRESAR_EL_PRECIO_DE_LA_SCOTTER);</span>
+<span class="fc" id="L30">        validarObligatorio(ciudad, SE_DEBE_INGRESAR_LA_CIUDAD_DE_UBICACION);</span>
+<span class="fc" id="L31">        validarObligatorio(foto, SE_DEBE_INGRESAR_LA_FOTO_DE_LA_SCOTTER);</span>
+
+<span class="fc" id="L33">        this.id = id;</span>
+<span class="fc" id="L34">        this.marca = marca;</span>
+<span class="fc" id="L35">        this.modelo = modelo;</span>
+<span class="fc" id="L36">        this.precio = precio;</span>
+<span class="fc" id="L37">        this.ciudad = ciudad;</span>
+<span class="fc" id="L38">        this.vendedor = vendedor;</span>
+<span class="fc" id="L39">        this.estado = &quot;disponible&quot;;</span>
+<span class="fc" id="L40">        this.foto = foto;</span>
+<span class="fc" id="L41">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
