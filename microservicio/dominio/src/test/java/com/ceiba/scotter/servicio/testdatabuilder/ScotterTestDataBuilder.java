@@ -1,8 +1,7 @@
 package com.ceiba.scotter.servicio.testdatabuilder;
 
 import com.ceiba.scotter.modelo.entidad.Scotter;
-import com.ceiba.usuario.modelo.entidad.Usuario;
-import com.ceiba.usuario.servicio.testdatabuilder.UsuarioTestDataBuilder;
+
 
 import java.time.LocalDateTime;
 
