@@ -5,10 +5,6 @@ import com.ceiba.pedido.comando.ComandoPedido;
 import com.ceiba.pedido.comando.fabrica.FabricaPedido;
 import com.ceiba.pedido.modelo.entidad.Pedido;
 import com.ceiba.pedido.servicio.ServicioActualizarPedido;
-import com.ceiba.usuario.comando.ComandoUsuario;
-import com.ceiba.usuario.comando.fabrica.FabricaUsuario;
-import com.ceiba.usuario.modelo.entidad.Usuario;
-import com.ceiba.usuario.servicio.ServicioActualizarUsuario;
 import org.springframework.stereotype.Component;
 
 @Component
