@@ -2,8 +2,6 @@ package com.ceiba.pedido.controlador;
 
 import com.ceiba.pedido.consulta.ManejadorListarPedidos;
 import com.ceiba.pedido.modelo.dto.DtoPedido;
-import com.ceiba.usuario.consulta.ManejadorListarUsuarios;
-import com.ceiba.usuario.modelo.dto.DtoUsuario;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
