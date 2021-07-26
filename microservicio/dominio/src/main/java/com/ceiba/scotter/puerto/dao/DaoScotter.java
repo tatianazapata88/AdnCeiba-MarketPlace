@@ -5,11 +5,12 @@ import com.ceiba.scotter.modelo.dto.DtoScotter;
 import java.util.List;
 
 public interface DaoScotter {
-    List<DtoScotter> listar();
+    List<DtoScotter> listar(String estado);
 
-   //DtoScotter buscar(Long id);
 
     DtoScotter buscarId(Long id);
 
-    DtoScotter buscarCiudad(String ciudad);
+    List<DtoScotter> buscarCiudad(String ciudad);
+
+    List<DtoScotter> buscarPrecio(Integer precio);
 }

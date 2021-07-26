@@ -15,6 +15,16 @@ public class ScotterTestDataBuilder {
     private String estado;
     private  String foto;
 
+    public ScotterTestDataBuilder(String marca, String modelo, Integer precio, String ciudad, Long vendedor, String estado, String foto) {
+         this.marca = marca;
+        this.modelo = modelo;
+        this.precio = precio;
+        this.ciudad = ciudad;
+        this.vendedor = vendedor;
+        this.estado = estado;
+        this.foto = foto;
+    }
+
     public ScotterTestDataBuilder() {
         id= 1L;
         marca = "toyota";
@@ -29,6 +39,16 @@ public class ScotterTestDataBuilder {
 
     public ScotterTestDataBuilder conId(Long id) {
         this.id = id;
+        return this;
+    }
+
+    public ScotterTestDataBuilder conCiudad(String ciudad) {
+        this.ciudad = ciudad;
+        return this;
+    }
+
+    public ScotterTestDataBuilder conPrecio(Integer precio) {
+        this.precio = precio;
         return this;
     }
 

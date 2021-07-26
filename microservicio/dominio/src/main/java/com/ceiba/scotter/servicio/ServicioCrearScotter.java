@@ -1,5 +1,6 @@
 package com.ceiba.scotter.servicio;
 
+import com.ceiba.dominio.excepcion.ExcepcionRelacionado;
 import com.ceiba.scotter.modelo.entidad.Scotter;
 import com.ceiba.scotter.puerto.repositorio.RepositorioScotter;
 
@@ -14,4 +15,6 @@ public class ServicioCrearScotter {
 
         return this.repositorioScotter.crear(scotter);
     }
+
+
 }

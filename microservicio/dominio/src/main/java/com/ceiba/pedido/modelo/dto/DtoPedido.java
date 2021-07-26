@@ -14,5 +14,8 @@ public class DtoPedido {
     private Long comprador;
     private String ciudad;
     private String destino;
-    private Integer flete;
+    private int flete;
+    private int precio;
+    private int descuento;
+    private int total;
 }

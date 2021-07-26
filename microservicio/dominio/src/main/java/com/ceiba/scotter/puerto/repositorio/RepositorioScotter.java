@@ -8,7 +8,7 @@ public interface RepositorioScotter {
 
    void actualizar(Scotter scotter);
 
-
-
     void eliminar(Long id);
+
+    boolean existePorPedido(Long id);
 }

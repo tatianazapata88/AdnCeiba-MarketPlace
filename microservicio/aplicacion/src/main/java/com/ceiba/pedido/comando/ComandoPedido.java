@@ -5,7 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 @Getter
 @Setter
@@ -13,10 +14,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class ComandoPedido {
     private Long id;
-    private LocalDateTime fecha;
+    private LocalDate fecha;
     private Long bici;
     private Long comprador;
     private String ciudad;
     private String destino;
-    private Integer flete;
+    private double flete;
+    private double precio;
+    private double descuento;
+    private double total;
 }
