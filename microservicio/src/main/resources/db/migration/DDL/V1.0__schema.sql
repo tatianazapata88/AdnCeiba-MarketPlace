@@ -1,9 +1,10 @@
-create table usuario (
- id int(4) not null auto_increment,
- nombre varchar(100) unique not null,
- clave varchar(45) not null,
- fecha_creacion datetime not null,
- primary key (id)
+create table persona(
+   id INT NOT NULL AUTO_INCREMENT,
+   username VARCHAR(10) NOT NULL UNIQUE,
+   nombre VARCHAR(100) NOT NULL,
+   celular VARCHAR(20) NOT NULL,
+   email VARCHAR(200) NOT NULL,
+   PRIMARY KEY ( id)
 );
 
 create table scotter (
@@ -16,7 +17,7 @@ create table scotter (
  estado varchar (10) not null,
  foto varchar (600) not null,
   primary key (id),
-  foreign key (vendedor) REFERENCES usuario(id)
+  foreign key (vendedor) REFERENCES persona(id)
 
 );
 

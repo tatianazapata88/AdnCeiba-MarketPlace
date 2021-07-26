@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DaoPersonaMysql.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.persona.adaptador.dao</a> &gt; <span class="el_source">DaoPersonaMysql.java</span></div><h1>DaoPersonaMysql.java</h1><pre class="source lang-java linenums">package com.ceiba.persona.adaptador.dao;
+
+import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
+import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import com.ceiba.persona.modelo.dto.DtoPersona;
+import com.ceiba.persona.puerto.dao.DaoPersona;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Component
+public class DaoPersonaMysql implements DaoPersona {
+
+    private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
+
+    @SqlStatement(namespace = &quot;persona&quot;, value = &quot;listar&quot;)
+    private static String sqlListar;
+
+    @SqlStatement(namespace = &quot;persona&quot;, value = &quot;listarId&quot;)
+    private static String sqlListarId;
+
+    @SqlStatement(namespace = &quot;persona&quot;, value = &quot;listarUsername&quot;)
+    private static String sqlListarUsername;
+
+<span class="fc" id="L26">    public DaoPersonaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="fc" id="L27">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L28">    }</span>
+
+    @Override
+    public List&lt;DtoPersona&gt; listar() {
+<span class="fc" id="L32">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoPersona());</span>
+    }
+
+    @Override
+    public DtoPersona listarId(Long id) {
+<span class="fc" id="L37">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L38">        parameterSource.addValue(&quot;id&quot;, id);</span>
+
+<span class="fc" id="L40">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarId, parameterSource, new MapeoPersona());</span>
+    }
+
+    @Override
+    public DtoPersona listarUsername(String username) {
+<span class="nc" id="L45">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L46">        parameterSource.addValue(&quot;username&quot;, username);</span>
+<span class="nc" id="L47">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarUsername, parameterSource, new MapeoPersona());</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

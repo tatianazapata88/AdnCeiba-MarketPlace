@@ -4,14 +4,15 @@ import com.ceiba.pedido.puerto.repositorio.RepositorioPedido;
 import com.ceiba.pedido.servicio.ServicioActualizarPedido;
 import com.ceiba.pedido.servicio.ServicioCrearPedido;
 import com.ceiba.pedido.servicio.ServicioEliminarPedido;
+import com.ceiba.persona.puerto.repositorio.RepositorioPersona;
+import com.ceiba.persona.servicio.ServicioActualizarPersona;
+import com.ceiba.persona.servicio.ServicioCrearPersona;
+import com.ceiba.persona.servicio.ServicioEliminarPersona;
 import com.ceiba.scotter.puerto.repositorio.RepositorioScotter;
 import com.ceiba.scotter.servicio.ServicioActualizarScotter;
 import com.ceiba.scotter.servicio.ServicioCrearScotter;
 import com.ceiba.scotter.servicio.ServicioEliminarScotter;
-import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
-import com.ceiba.usuario.servicio.ServicioActualizarUsuario;
-import com.ceiba.usuario.servicio.ServicioCrearUsuario;
-import com.ceiba.usuario.servicio.ServicioEliminarUsuario;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -19,18 +20,19 @@ import org.springframework.context.annotation.Configuration;
 public class BeanServicio {
 
     @Bean
-    public ServicioCrearUsuario servicioCrearUsuario(RepositorioUsuario repositorioUsuario) {
-        return new ServicioCrearUsuario(repositorioUsuario);
+    public ServicioCrearPersona servicioCrearPersona(RepositorioPersona repositorioPersona) {
+        return new ServicioCrearPersona(repositorioPersona);
     }
 
     @Bean
-    public ServicioEliminarUsuario servicioEliminarUsuario(RepositorioUsuario repositorioUsuario) {
-        return new ServicioEliminarUsuario(repositorioUsuario);
+    public ServicioEliminarPersona servicioEliminarPersona(RepositorioPersona repositorioPersona) {
+        return new ServicioEliminarPersona(repositorioPersona);
     }
 
     @Bean
-    public ServicioActualizarUsuario servicioActualizarUsuario(RepositorioUsuario repositorioUsuario) {
-        return new ServicioActualizarUsuario(repositorioUsuario);
+    public ServicioActualizarPersona servicioActualizarPersona(RepositorioPersona repositorioPersona) {
+        return new ServicioActualizarPersona(repositorioPersona);
+
     }
 
     @Bean

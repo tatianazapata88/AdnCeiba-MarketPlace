@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ComandoControladorPedido.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.pedido.controlador</a> &gt; <span class="el_source">ComandoControladorPedido.java</span></div><h1>ComandoControladorPedido.java</h1><pre class="source lang-java linenums">package com.ceiba.pedido.controlador;
+
+import com.ceiba.ComandoRespuesta;
+import com.ceiba.pedido.comando.ComandoPedido;
+import com.ceiba.pedido.comando.manejador.ManejadorActualizarPedido;
+import com.ceiba.pedido.comando.manejador.ManejadorCrearPedido;
+import com.ceiba.pedido.comando.manejador.ManejadorEliminarPedido;
+import com.ceiba.usuario.comando.ComandoUsuario;
+import com.ceiba.usuario.comando.manejador.ManejadorActualizarUsuario;
+import com.ceiba.usuario.comando.manejador.ManejadorCrearUsuario;
+import com.ceiba.usuario.comando.manejador.ManejadorEliminarUsuario;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(&quot;/pedidos&quot;)
+@Api(tags = { &quot;Controlador comando pedido&quot;})
+public class ComandoControladorPedido {
+
+    private final ManejadorCrearPedido manejadorCrearPedido;
+    private final ManejadorEliminarPedido manejadorEliminarPedido;
+    private final ManejadorActualizarPedido manejadorActualizarPedido;
+
+    @Autowired
+    public ComandoControladorPedido(ManejadorCrearPedido manejadorCrearPedido,
+                                     ManejadorEliminarPedido manejadorEliminarPedido,
+<span class="fc" id="L29">                                     ManejadorActualizarPedido manejadorActualizarPedido) {</span>
+<span class="fc" id="L30">        this.manejadorCrearPedido = manejadorCrearPedido;</span>
+<span class="fc" id="L31">        this.manejadorEliminarPedido = manejadorEliminarPedido;</span>
+<span class="fc" id="L32">        this.manejadorActualizarPedido = manejadorActualizarPedido;</span>
+<span class="fc" id="L33">    }</span>
+
+    @PostMapping
+    @ApiOperation(&quot;Crear Pedido&quot;)
+    public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoPedido comandoPedido) {
+<span class="nc" id="L38">        return manejadorCrearPedido.ejecutar(comandoPedido);</span>
+    }
+
+    @DeleteMapping(value=&quot;/{id}&quot;)
+    @ApiOperation(&quot;Eliminar Pedido&quot;)
+    public void eliminar(@PathVariable Long id) {
+<span class="nc" id="L44">        manejadorEliminarPedido.ejecutar(id);</span>
+<span class="nc" id="L45">    }</span>
+
+    @PutMapping(value=&quot;/{id}&quot;)
+    @ApiOperation(&quot;Actualizar Pedido&quot;)
+    public void actualizar(@RequestBody ComandoPedido comandoPedido, @PathVariable Long id) {
+<span class="nc" id="L50">        comandoPedido.setId(id);</span>
+<span class="nc" id="L51">        manejadorActualizarPedido.ejecutar(comandoPedido);</span>
+<span class="nc" id="L52">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

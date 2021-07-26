@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ComandoControladorScotter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.scotter.controlador</a> &gt; <span class="el_source">ComandoControladorScotter.java</span></div><h1>ComandoControladorScotter.java</h1><pre class="source lang-java linenums">package com.ceiba.scotter.controlador;
+
+import com.ceiba.ComandoRespuesta;
+import com.ceiba.scotter.comando.ComandoScotter;
+import com.ceiba.scotter.comando.manejador.ManejadorActualizarScotter;
+import com.ceiba.scotter.comando.manejador.ManejadorCrearScotter;
+import com.ceiba.scotter.comando.manejador.ManejadorEliminarScotter;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(&quot;/scotters&quot;)
+@Api(tags = { &quot;Controlador comando scotter&quot;})
+public class ComandoControladorScotter {
+    private final ManejadorCrearScotter manejadorCrearScotter;
+    private final ManejadorEliminarScotter manejadorEliminarScotter;
+    private final ManejadorActualizarScotter manejadorActualizarScotter;
+
+    public ComandoControladorScotter(ManejadorCrearScotter manejadorCrearScotter,
+                                     ManejadorEliminarScotter manejadorEliminarScotter,
+<span class="fc" id="L22">                                     ManejadorActualizarScotter manejadorActualizarScotter) {</span>
+<span class="fc" id="L23">        this.manejadorCrearScotter = manejadorCrearScotter;</span>
+<span class="fc" id="L24">        this.manejadorEliminarScotter = manejadorEliminarScotter;</span>
+<span class="fc" id="L25">        this.manejadorActualizarScotter = manejadorActualizarScotter;</span>
+<span class="fc" id="L26">    }</span>
+
+    @PostMapping
+    @ApiOperation(&quot;Crear Scotter&quot;)
+    public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoScotter comandoScotter) {
+<span class="nc" id="L31">        return manejadorCrearScotter.ejecutar(comandoScotter);</span>
+    }
+
+    @DeleteMapping(value=&quot;/{id}&quot;)
+    @ApiOperation(&quot;Eliminar Scotter&quot;)
+    public void eliminar(@PathVariable Long id) {
+<span class="nc" id="L37">        manejadorEliminarScotter.ejecutar(id);</span>
+<span class="nc" id="L38">    }</span>
+
+    @PutMapping(value=&quot;/{id}&quot;)
+    @ApiOperation(&quot;Actualizar Scotter&quot;)
+    public void actualizar(@RequestBody ComandoScotter comandoScotter,@PathVariable Long id) {
+<span class="nc" id="L43">        comandoScotter.setId(id);</span>
+<span class="nc" id="L44">        manejadorActualizarScotter.ejecutar(comandoScotter);</span>
+<span class="nc" id="L45">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

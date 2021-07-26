@@ -1,1 +1,5 @@
-insert into usuario(nombre,clave,fecha_creacion) values('test','1234',now())
+  
+insert into persona(username,
+	nombre,
+    celular,
+    email) values( 'taty','Luz Tatiana Zapata','3135151617', 'tatianazz3@hotmail.com');

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ComandoControladorPersona.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.persona.controlador</a> &gt; <span class="el_source">ComandoControladorPersona.java</span></div><h1>ComandoControladorPersona.java</h1><pre class="source lang-java linenums">package com.ceiba.persona.controlador;
+
+import com.ceiba.ComandoRespuesta;
+import com.ceiba.persona.ComandoPersona;
+import com.ceiba.persona.comando.manejador.ManejadorActualizarPersona;
+import com.ceiba.persona.comando.manejador.ManejadorCrearPersona;
+import com.ceiba.persona.comando.manejador.ManejadorEliminarPersona;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(&quot;/personas&quot;)
+@Api(tags = { &quot;Controlador comando persona&quot;})
+public class ComandoControladorPersona {
+    private final ManejadorCrearPersona manejadorCrearPersona;
+    private final ManejadorEliminarPersona manejadorEliminarPersona;
+    private final ManejadorActualizarPersona manejadorActualizarPersona;
+
+    public ComandoControladorPersona(ManejadorCrearPersona manejadorCrearPersona,
+<span class="fc" id="L21">                                     ManejadorEliminarPersona manejadorEliminarPersona, ManejadorActualizarPersona manejadorActualizarPersona) {</span>
+<span class="fc" id="L22">        this.manejadorCrearPersona = manejadorCrearPersona;</span>
+<span class="fc" id="L23">        this.manejadorEliminarPersona = manejadorEliminarPersona;</span>
+<span class="fc" id="L24">        this.manejadorActualizarPersona = manejadorActualizarPersona;</span>
+<span class="fc" id="L25">    }</span>
+
+    @PostMapping
+    @ApiOperation(&quot;Crear Persona&quot;)
+    public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoPersona comandoPersona) {
+<span class="nc" id="L30">        return manejadorCrearPersona.ejecutar(comandoPersona);</span>
+    }
+
+    @DeleteMapping(value = &quot;/{id}&quot;)
+    @ApiOperation(&quot;Eliminar Persona&quot;)
+    public void eliminar(@PathVariable Long id) {
+<span class="nc" id="L36">        manejadorEliminarPersona.ejecutar(id);</span>
+<span class="nc" id="L37">    }</span>
+
+    @PutMapping(value = &quot;/{id}&quot;)
+    @ApiOperation(&quot;Actualizar Persona&quot;)
+    public void actualizar(@RequestBody ComandoPersona comandoPersona, @PathVariable Long id) {
+<span class="nc" id="L42">        comandoPersona.setId(id);</span>
+<span class="nc" id="L43">        manejadorActualizarPersona.ejecutar(comandoPersona);</span>
+<span class="nc" id="L44">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
