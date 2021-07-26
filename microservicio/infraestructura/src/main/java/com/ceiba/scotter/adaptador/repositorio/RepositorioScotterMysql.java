@@ -21,6 +21,9 @@ public class RepositorioScotterMysql implements RepositorioScotter {
     @SqlStatement(namespace="scotter", value="eliminar")
     private static String sqlEliminar;
 
+    @SqlStatement(namespace = "persona", value = "existePorPedido")
+    private static String sqlExistePorPedido;
+
 
 
     public RepositorioScotterMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
@@ -48,6 +51,14 @@ public class RepositorioScotterMysql implements RepositorioScotter {
 
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
 
+    }
+
+    @Override
+    public boolean existePorPedido(Long id) {
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue("id", id);
+
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorPedido, parameterSource, Boolean.class);
     }
 
 

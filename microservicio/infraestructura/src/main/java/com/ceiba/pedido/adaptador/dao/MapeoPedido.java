@@ -20,9 +20,13 @@ public class MapeoPedido implements RowMapper<DtoPedido>, MapperResult {
         String ciudad = resultSet.getString("ciudad");
         String destino = resultSet.getString("destino");
         Integer flete = resultSet.getInt("flete");
+        Integer precio = resultSet.getInt("precio");
+        Integer descuento = resultSet.getInt("descuento");
+        Integer total = resultSet.getInt("total");
 
 
-        return new DtoPedido(id,fecha,bici,comprador,ciudad,destino,flete);
+
+        return new DtoPedido(id,fecha,bici,comprador,ciudad,destino,flete,precio,descuento,total);
     }
 
 }

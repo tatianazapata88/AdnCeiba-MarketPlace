@@ -21,9 +21,9 @@ public class ConsultaControladorScotter {
         this.manejadorListarScotter = manejadorListarScotter;
     }
 
-    @GetMapping
-    @ApiOperation("Listar Scotter")
-    public List<DtoScotter> listar(){
-        return this.manejadorListarScotter.ejecutar();
-    }
+   // @GetMapping
+    //@ApiOperation("Listar Scotter")
+   // public List<DtoScotter> listar(String estado){
+     //   return this.manejadorListarScotter.ejecutar();
+    //}
 }

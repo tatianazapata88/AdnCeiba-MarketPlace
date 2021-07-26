@@ -29,6 +29,9 @@ create table pedido (
  ciudad varchar (45) not null,
  destino varchar (45)  not null,
  flete int (10) not null,
+ precio int (10) not null,
+ descuento int (10) not null,
+ total int (10) not null,
    primary key (id),
   foreign key (bici) REFERENCES scotter(id)
 
