@@ -2,8 +2,6 @@
 
 import com.ceiba.pedido.consulta.ManejadorListarPedidos;
 import com.ceiba.pedido.modelo.dto.DtoPedido;
-import com.ceiba.usuario.consulta.ManejadorListarUsuarios;
-import com.ceiba.usuario.modelo.dto.DtoUsuario;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,14 +17,14 @@ public class ConsultaControladorPedido {
 
     private final ManejadorListarPedidos manejadorListarPedidos;
 
-<span class="fc" id="L22">    public ConsultaControladorPedido(ManejadorListarPedidos manejadorListarPedidos) {</span>
-<span class="fc" id="L23">        this.manejadorListarPedidos = manejadorListarPedidos;</span>
-<span class="fc" id="L24">    }</span>
+<span class="fc" id="L20">    public ConsultaControladorPedido(ManejadorListarPedidos manejadorListarPedidos) {</span>
+<span class="fc" id="L21">        this.manejadorListarPedidos = manejadorListarPedidos;</span>
+<span class="fc" id="L22">    }</span>
 
     @GetMapping
     @ApiOperation(&quot;Listar Pedidos&quot;)
     public List&lt;DtoPedido&gt; listar() {
-<span class="nc" id="L29">        return this.manejadorListarPedidos.ejecutar();</span>
+<span class="nc" id="L27">        return this.manejadorListarPedidos.ejecutar();</span>
     }
 
 }

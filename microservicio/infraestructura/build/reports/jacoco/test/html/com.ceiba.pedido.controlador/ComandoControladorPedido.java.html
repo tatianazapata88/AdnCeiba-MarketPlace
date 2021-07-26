@@ -5,10 +5,6 @@ import com.ceiba.pedido.comando.ComandoPedido;
 import com.ceiba.pedido.comando.manejador.ManejadorActualizarPedido;
 import com.ceiba.pedido.comando.manejador.ManejadorCrearPedido;
 import com.ceiba.pedido.comando.manejador.ManejadorEliminarPedido;
-import com.ceiba.usuario.comando.ComandoUsuario;
-import com.ceiba.usuario.comando.manejador.ManejadorActualizarUsuario;
-import com.ceiba.usuario.comando.manejador.ManejadorCrearUsuario;
-import com.ceiba.usuario.comando.manejador.ManejadorEliminarUsuario;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,29 +22,29 @@ public class ComandoControladorPedido {
     @Autowired
     public ComandoControladorPedido(ManejadorCrearPedido manejadorCrearPedido,
                                      ManejadorEliminarPedido manejadorEliminarPedido,
-<span class="fc" id="L29">                                     ManejadorActualizarPedido manejadorActualizarPedido) {</span>
-<span class="fc" id="L30">        this.manejadorCrearPedido = manejadorCrearPedido;</span>
-<span class="fc" id="L31">        this.manejadorEliminarPedido = manejadorEliminarPedido;</span>
-<span class="fc" id="L32">        this.manejadorActualizarPedido = manejadorActualizarPedido;</span>
-<span class="fc" id="L33">    }</span>
+<span class="fc" id="L25">                                     ManejadorActualizarPedido manejadorActualizarPedido) {</span>
+<span class="fc" id="L26">        this.manejadorCrearPedido = manejadorCrearPedido;</span>
+<span class="fc" id="L27">        this.manejadorEliminarPedido = manejadorEliminarPedido;</span>
+<span class="fc" id="L28">        this.manejadorActualizarPedido = manejadorActualizarPedido;</span>
+<span class="fc" id="L29">    }</span>
 
     @PostMapping
     @ApiOperation(&quot;Crear Pedido&quot;)
     public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoPedido comandoPedido) {
-<span class="nc" id="L38">        return manejadorCrearPedido.ejecutar(comandoPedido);</span>
+<span class="nc" id="L34">        return manejadorCrearPedido.ejecutar(comandoPedido);</span>
     }
 
     @DeleteMapping(value=&quot;/{id}&quot;)
     @ApiOperation(&quot;Eliminar Pedido&quot;)
     public void eliminar(@PathVariable Long id) {
-<span class="nc" id="L44">        manejadorEliminarPedido.ejecutar(id);</span>
-<span class="nc" id="L45">    }</span>
+<span class="nc" id="L40">        manejadorEliminarPedido.ejecutar(id);</span>
+<span class="nc" id="L41">    }</span>
 
     @PutMapping(value=&quot;/{id}&quot;)
     @ApiOperation(&quot;Actualizar Pedido&quot;)
     public void actualizar(@RequestBody ComandoPedido comandoPedido, @PathVariable Long id) {
-<span class="nc" id="L50">        comandoPedido.setId(id);</span>
-<span class="nc" id="L51">        manejadorActualizarPedido.ejecutar(comandoPedido);</span>
-<span class="nc" id="L52">    }</span>
+<span class="nc" id="L46">        comandoPedido.setId(id);</span>
+<span class="nc" id="L47">        manejadorActualizarPedido.ejecutar(comandoPedido);</span>
+<span class="nc" id="L48">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

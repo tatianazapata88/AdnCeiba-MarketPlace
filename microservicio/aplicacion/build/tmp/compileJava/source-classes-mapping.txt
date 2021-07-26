@@ -8,8 +8,8 @@ com/ceiba/pedido/comando/fabrica/FabricaPedido.java
  com.ceiba.pedido.comando.fabrica.FabricaPedido
 com/ceiba/persona/consulta/ManejadorListarIdPersona.java
  com.ceiba.persona.consulta.ManejadorListarIdPersona
-com/ceiba/pedido/comando/manejador/ManejadorEliminarPedido.java
- com.ceiba.pedido.comando.manejador.ManejadorEliminarPedido
+com/ceiba/pedido/comando/manejador/ManejadorCrearPedido.java
+ com.ceiba.pedido.comando.manejador.ManejadorCrearPedido
 com/ceiba/scotter/comando/manejador/ManejadorCrearScotter.java
  com.ceiba.scotter.comando.manejador.ManejadorCrearScotter
 com/ceiba/persona/consulta/ManejadorListarPersona.java
@@ -22,21 +22,21 @@ com/ceiba/scotter/consulta/ManejadorBuscarIdScotter.java
  com.ceiba.scotter.consulta.ManejadorBuscarIdScotter
 com/ceiba/scotter/comando/fabrica/FabricaScotter.java
  com.ceiba.scotter.comando.fabrica.FabricaScotter
-com/ceiba/persona/comando/manejador/ManejadorEliminarPersona.java
- com.ceiba.persona.comando.manejador.ManejadorEliminarPersona
-com/ceiba/persona/comando/fabrica/FabricaPersona.java
- com.ceiba.persona.comando.fabrica.FabricaPersona
-com/ceiba/pedido/comando/manejador/ManejadorActualizarPedido.java
- com.ceiba.pedido.comando.manejador.ManejadorActualizarPedido
-com/ceiba/scotter/consulta/ManejadorListarScotter.java
- com.ceiba.scotter.consulta.ManejadorListarScotter
 com/ceiba/scotter/comando/ComandoScotter.java
  com.ceiba.scotter.comando.ComandoScotter
-com/ceiba/pedido/comando/manejador/ManejadorCrearPedido.java
- com.ceiba.pedido.comando.manejador.ManejadorCrearPedido
+com/ceiba/scotter/consulta/ManejadorListarScotter.java
+ com.ceiba.scotter.consulta.ManejadorListarScotter
 com/ceiba/scotter/comando/manejador/ManejadorActualizarScotter.java
  com.ceiba.scotter.comando.manejador.ManejadorActualizarScotter
 com/ceiba/persona/comando/manejador/ManejadorCrearPersona.java
  com.ceiba.persona.comando.manejador.ManejadorCrearPersona
 com/ceiba/persona/comando/manejador/ManejadorActualizarPersona.java
  com.ceiba.persona.comando.manejador.ManejadorActualizarPersona
+com/ceiba/pedido/comando/manejador/ManejadorActualizarPedido.java
+ com.ceiba.pedido.comando.manejador.ManejadorActualizarPedido
+com/ceiba/pedido/comando/manejador/ManejadorEliminarPedido.java
+ com.ceiba.pedido.comando.manejador.ManejadorEliminarPedido
+com/ceiba/persona/comando/manejador/ManejadorEliminarPersona.java
+ com.ceiba.persona.comando.manejador.ManejadorEliminarPersona
+com/ceiba/persona/comando/fabrica/FabricaPersona.java
+ com.ceiba.persona.comando.fabrica.FabricaPersona

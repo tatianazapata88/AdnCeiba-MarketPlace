@@ -41,7 +41,7 @@ public class ConsultaControladorPersona {
 
     @GetMapping("/username/{username}")
     @ApiOperation("Listar Personas por username")
-    public DtoPersona listar(@PathVariable String documento){
-        return this.manejadorListarUsernamePersona.ejecutar(documento);
+    public DtoPersona listar(@PathVariable String username){
+        return this.manejadorListarUsernamePersona.ejecutar(username);
     }
 }

@@ -33,8 +33,8 @@ public class ConsultaControladorPersonaTest {
         mocMvc.perform(get("/personas")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[0].nombre", is("taty")));
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].username", is("taty")));
     }
 
     @Test
@@ -46,7 +46,7 @@ public class ConsultaControladorPersonaTest {
         mocMvc.perform(get("/personas/id/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("nombre", is("Luz Tatiana Zapata")));
+                .andExpect(jsonPath("username", is("taty")));
     }
 
     @Test
@@ -56,10 +56,9 @@ public class ConsultaControladorPersonaTest {
 
         // act - assert
         mocMvc.perform(get("/personas/username/{username}",username)
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].username", is("taty")));
+                        .contentType(MediaType.APPLICATION_JSON))
+                        .andExpect(status().isOk())
+                        .andExpect(jsonPath("username", is("taty")));
     }
 
 

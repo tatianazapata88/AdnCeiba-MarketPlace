@@ -41,8 +41,8 @@ public class ConsultaControladorPersona {
 
     @GetMapping(&quot;/username/{username}&quot;)
     @ApiOperation(&quot;Listar Personas por username&quot;)
-    public DtoPersona listar(@PathVariable String documento){
-<span class="nc" id="L45">        return this.manejadorListarUsernamePersona.ejecutar(documento);</span>
+    public DtoPersona listar(@PathVariable String username){
+<span class="fc" id="L45">        return this.manejadorListarUsernamePersona.ejecutar(username);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

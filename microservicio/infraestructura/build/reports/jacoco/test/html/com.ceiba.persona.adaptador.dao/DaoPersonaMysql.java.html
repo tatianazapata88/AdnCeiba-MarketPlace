@@ -42,9 +42,9 @@ public class DaoPersonaMysql implements DaoPersona {
 
     @Override
     public DtoPersona listarUsername(String username) {
-<span class="nc" id="L45">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L46">        parameterSource.addValue(&quot;username&quot;, username);</span>
-<span class="nc" id="L47">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarUsername, parameterSource, new MapeoPersona());</span>
+<span class="fc" id="L45">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L46">        parameterSource.addValue(&quot;username&quot;, username);</span>
+<span class="fc" id="L47">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarUsername, parameterSource, new MapeoPersona());</span>
     }
 
 }

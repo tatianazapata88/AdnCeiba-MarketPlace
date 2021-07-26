@@ -5,10 +5,6 @@ import com.ceiba.pedido.comando.ComandoPedido;
 import com.ceiba.pedido.comando.fabrica.FabricaPedido;
 import com.ceiba.pedido.modelo.entidad.Pedido;
 import com.ceiba.pedido.servicio.ServicioActualizarPedido;
-import com.ceiba.usuario.comando.ComandoUsuario;
-import com.ceiba.usuario.comando.fabrica.FabricaUsuario;
-import com.ceiba.usuario.modelo.entidad.Usuario;
-import com.ceiba.usuario.servicio.ServicioActualizarUsuario;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,14 +13,14 @@ public class ManejadorActualizarPedido implements ManejadorComando&lt;ComandoPed
     private final FabricaPedido fabricaPedido;
     private final ServicioActualizarPedido servicioActualizarPedido;
 
-<span class="fc" id="L20">    public ManejadorActualizarPedido(FabricaPedido fabricaPedido, ServicioActualizarPedido servicioActualizarPedido) {</span>
-<span class="fc" id="L21">        this.fabricaPedido = fabricaPedido;</span>
-<span class="fc" id="L22">        this.servicioActualizarPedido = servicioActualizarPedido;</span>
-<span class="fc" id="L23">    }</span>
+<span class="fc" id="L16">    public ManejadorActualizarPedido(FabricaPedido fabricaPedido, ServicioActualizarPedido servicioActualizarPedido) {</span>
+<span class="fc" id="L17">        this.fabricaPedido = fabricaPedido;</span>
+<span class="fc" id="L18">        this.servicioActualizarPedido = servicioActualizarPedido;</span>
+<span class="fc" id="L19">    }</span>
 
     public void ejecutar(ComandoPedido comandoPedido) {
-<span class="nc" id="L26">        Pedido pedido = this.fabricaPedido.crear(comandoPedido);</span>
-<span class="nc" id="L27">        this.servicioActualizarPedido.ejecutar(pedido);</span>
-<span class="nc" id="L28">    }</span>
+<span class="nc" id="L22">        Pedido pedido = this.fabricaPedido.crear(comandoPedido);</span>
+<span class="nc" id="L23">        this.servicioActualizarPedido.ejecutar(pedido);</span>
+<span class="nc" id="L24">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
