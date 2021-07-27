@@ -34,8 +34,8 @@ public class ComandoControladorScotter {
     @DeleteMapping(value=&quot;/{id}&quot;)
     @ApiOperation(&quot;Eliminar Scotter&quot;)
     public void eliminar(@PathVariable Long id) {
-<span class="nc" id="L37">        manejadorEliminarScotter.ejecutar(id);</span>
-<span class="nc" id="L38">    }</span>
+<span class="fc" id="L37">        manejadorEliminarScotter.ejecutar(id);</span>
+<span class="fc" id="L38">    }</span>
 
     @PutMapping(value=&quot;/{id}&quot;)
     @ApiOperation(&quot;Actualizar Scotter&quot;)

@@ -45,7 +45,7 @@ public class ComandoControladorPersonaTest {
         }
 
         @Test
-        public void actualizar() throws Exception{
+        public void actualizarPersonaTest() throws Exception{
             // arrange
             Long id = 2L;
             ComandoPersona persona = new ComandoPersonaTestDataBuilder().build();
@@ -58,7 +58,7 @@ public class ComandoControladorPersonaTest {
         }
 
         @Test
-        public void eliminar() throws Exception {
+        public void eliminarPersonaTest() throws Exception {
             // arrange
             Long id = 2L;
 
