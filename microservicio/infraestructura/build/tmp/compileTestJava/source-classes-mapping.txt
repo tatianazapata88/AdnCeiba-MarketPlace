@@ -8,7 +8,7 @@ com/ceiba/persona/controlador/ConsultaControladorPersonaTest.java
  com.ceiba.persona.controlador.ConsultaControladorPersonaTest
 com/ceiba/scotter/controlador/ConsultaControladorScotterTest.java
  com.ceiba.scotter.controlador.ConsultaControladorScotterTest
-com/ceiba/scotter/controlador/ComandoControladorScotterTest.java
- com.ceiba.scotter.controlador.ComandoControladorScotterTest
 com/ceiba/persona/controlador/ComandoControladorPersonaTest.java
  com.ceiba.persona.controlador.ComandoControladorPersonaTest
+com/ceiba/scotter/controlador/ComandoControladorScotterTest.java
+ com.ceiba.scotter.controlador.ComandoControladorScotterTest

@@ -17,6 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -42,5 +43,18 @@ public class ComandoControladorScotterTest {
                 .content(objectMapper.writeValueAsString(scotter)))
                 .andExpect(status().isOk())
                 .andExpect(content().json("{'valor': 2}"));
+    }
+
+    @Test
+    public void actualizarScotterTest() throws Exception{
+        // arrange
+        Long id = 2L;
+        ComandoScotter scotter = new ComandoScotterTestDataBuilder().build();
+
+        // act - assert
+        mocMvc.perform(put("/scotters/{id}",id)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(scotter)))
+                .andExpect(status().isOk());
     }
 }

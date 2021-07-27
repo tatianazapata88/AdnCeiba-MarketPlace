@@ -40,8 +40,8 @@ public class ComandoControladorScotter {
     @PutMapping(value=&quot;/{id}&quot;)
     @ApiOperation(&quot;Actualizar Scotter&quot;)
     public void actualizar(@RequestBody ComandoScotter comandoScotter,@PathVariable Long id) {
-<span class="nc" id="L43">        comandoScotter.setId(id);</span>
-<span class="nc" id="L44">        manejadorActualizarScotter.ejecutar(comandoScotter);</span>
-<span class="nc" id="L45">    }</span>
+<span class="fc" id="L43">        comandoScotter.setId(id);</span>
+<span class="fc" id="L44">        manejadorActualizarScotter.ejecutar(comandoScotter);</span>
+<span class="fc" id="L45">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
