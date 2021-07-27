@@ -3,7 +3,6 @@ package com.ceiba.scotter.servicio.testdatabuilder;
 import com.ceiba.scotter.modelo.entidad.Scotter;
 
 
-import java.time.LocalDateTime;
 
 public class ScotterTestDataBuilder {
     private Long id;
@@ -15,7 +14,8 @@ public class ScotterTestDataBuilder {
     private String estado;
     private  String foto;
 
-    public ScotterTestDataBuilder(String marca, String modelo, Integer precio, String ciudad, Long vendedor, String estado, String foto) {
+    public ScotterTestDataBuilder(String marca, String modelo, Integer precio, String ciudad,
+                                  Long vendedor, String estado, String foto) {
          this.marca = marca;
         this.modelo = modelo;
         this.precio = precio;

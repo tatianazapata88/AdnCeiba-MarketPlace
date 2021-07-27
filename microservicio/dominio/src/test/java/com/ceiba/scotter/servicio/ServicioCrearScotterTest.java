@@ -34,6 +34,17 @@ public class ServicioCrearScotterTest {
     private static final String CAMPO_ESTADO_ES_OBLIGATORIO = "El campo estado es obligatorio no puede ir vacio";
     private static final String CAMPO_FOTO_ES_OBLIGATORIO = "El campo foto es obligatorio no puede ir vacio";
 
+    @Mock
+    private RepositorioScotter repositorioScotter;
+
+    @InjectMocks
+    private ServicioCrearScotter servicioCrearScotter;
+
+    @Before
+    public void init() {
+        MockitoAnnotations.initMocks(this);
+    }
+
     @Test
     public void validarCampoMarcaVacioTest(){
         // arrange
@@ -88,16 +99,6 @@ public class ServicioCrearScotterTest {
         // act - assert
         BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_FOTO_ES_OBLIGATORIO); }
 
-    @Mock
-    private RepositorioScotter repositorioScotter;
-
-    @InjectMocks
-    private ServicioCrearScotter servicioCrearScotter;
-
-    @Before
-    public void init() {
-        MockitoAnnotations.initMocks(this);
-    }
 
     @Test
     public void agregarScotterTest1() {

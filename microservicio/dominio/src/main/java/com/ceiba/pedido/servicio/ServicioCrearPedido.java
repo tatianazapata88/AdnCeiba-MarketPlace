@@ -11,19 +11,20 @@ public class ServicioCrearPedido {
 
     private final RepositorioPedido repositorioPedido;
 
-    private  DaoScotter daoScotter;
+
 
 
 
     public ServicioCrearPedido(RepositorioPedido repositorioPedido) {
         this.repositorioPedido = repositorioPedido;
-        this.daoScotter = daoScotter;
+
     }
 
     public Long ejecutar(Pedido pedido) {
 
        return this.repositorioPedido.crear(pedido);
     }
+
 
 
 }

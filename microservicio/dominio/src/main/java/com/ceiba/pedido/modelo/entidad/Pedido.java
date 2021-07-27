@@ -4,7 +4,7 @@ import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import lombok.Getter;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 
 
 @Getter
@@ -25,12 +25,12 @@ public class Pedido {
     private Long comprador;
     private String ciudad;
     private String destino;
-    private double flete;
-    private double precio;
+    private Integer flete;
+    private Integer precio;
     private double descuento;
     private double total;
 
-    public Pedido(Long id, LocalDate fecha, Long bici, Long comprador, String ciudad, String destino, double flete, double precio, double descuento, double total) {
+    public Pedido(Long id, LocalDate fecha, Long bici, Long comprador, String ciudad, String destino, Integer flete, Integer precio, double descuento, double total) {
         validarCampoBici(bici);
         validarCampoComprador(comprador);
         validarCampoCiudad(ciudad);
@@ -79,18 +79,14 @@ public class Pedido {
         }
     }
 
-    private void validarCampoFlete(double flete){
-        int fleteInt = (int) flete;
-        Integer flete1 = Integer.valueOf(fleteInt);
-           if (flete1 == null) {
+    private void validarCampoFlete(Integer flete){
+         if (flete == null) {
             throw new ExcepcionValorObligatorio(CAMPO_FLETE_ES_OBLIGATORIO);
         }
     }
 
-    private void validarCampoPrecio(double precio){
-        int precioInt = (int) precio;
-        Integer precio1 = Integer.valueOf(precioInt);
-        if (precio1 == null) {
+    private void validarCampoPrecio(Integer precio){
+        if (precio == null) {
             throw new ExcepcionValorObligatorio(CAMPO_PRECIO_ES_OBLIGATORIO);
         }
     }
@@ -111,11 +107,11 @@ public class Pedido {
         }
     }
 
-    private double valorTotal(double precio, double flete, double descuento) {
+    private double valorTotal(Integer precio, Integer flete, double descuento) {
         return Math.round(precio + flete - descuento);
     }
 
-    private double valorDescuento(LocalDate fecha, double precio) {
+    private double valorDescuento(LocalDate fecha, Integer precio) {
         if (fecha == LocalDate.now())
         { return Math.round(precio*0.05);}
         else{
@@ -124,7 +120,7 @@ public class Pedido {
 
     }
 
-    private double valorFlete(String ciudad, String destino) {
+    private Integer valorFlete(String ciudad, String destino) {
         if (ciudad.equals(destino) ){
         return 0;}
         else{
