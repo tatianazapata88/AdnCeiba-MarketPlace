@@ -2,20 +2,22 @@
 
 import com.ceiba.scotter.modelo.dto.DtoScotter;
 import com.ceiba.scotter.puerto.dao.DaoScotter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-<span class="fc" id="L9">public class ManejadorBuscarIdScotter {</span>
+public class ManejadorBuscarIdScotter {
 
 
-        @Autowired
-        private DaoScotter daoScotter;
+       private final DaoScotter daoScotter;
 
-        public DtoScotter buscarId(Long id) {
-<span class="nc" id="L16">            return daoScotter.buscarId(id);</span>
-        }
+<span class="fc" id="L13">    public ManejadorBuscarIdScotter(DaoScotter daoScotter) {</span>
+<span class="fc" id="L14">        this.daoScotter = daoScotter;</span>
+<span class="fc" id="L15">    }</span>
 
+    public DtoScotter ejecutar(Long id){
+<span class="fc" id="L18">        return this.daoScotter.buscarId(id);</span>
     }
+
+}
 
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

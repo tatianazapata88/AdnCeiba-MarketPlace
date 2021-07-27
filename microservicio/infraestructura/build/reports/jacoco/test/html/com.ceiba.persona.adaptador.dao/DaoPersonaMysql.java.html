@@ -29,22 +29,22 @@ public class DaoPersonaMysql implements DaoPersona {
 
     @Override
     public List&lt;DtoPersona&gt; listar() {
-<span class="fc" id="L32">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoPersona());</span>
+<span class="nc" id="L32">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoPersona());</span>
     }
 
     @Override
     public DtoPersona listarId(Long id) {
-<span class="fc" id="L37">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L38">        parameterSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L37">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L38">        parameterSource.addValue(&quot;id&quot;, id);</span>
 
-<span class="fc" id="L40">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarId, parameterSource, new MapeoPersona());</span>
+<span class="nc" id="L40">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarId, parameterSource, new MapeoPersona());</span>
     }
 
     @Override
     public DtoPersona listarUsername(String username) {
-<span class="fc" id="L45">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L46">        parameterSource.addValue(&quot;username&quot;, username);</span>
-<span class="fc" id="L47">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarUsername, parameterSource, new MapeoPersona());</span>
+<span class="nc" id="L45">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L46">        parameterSource.addValue(&quot;username&quot;, username);</span>
+<span class="nc" id="L47">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarUsername, parameterSource, new MapeoPersona());</span>
     }
 
 }

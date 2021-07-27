@@ -7,22 +7,22 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-<span class="nc" id="L10">public class MapeoScotter implements RowMapper&lt;DtoScotter&gt;, MapperResult {</span>
+<span class="fc" id="L10">public class MapeoScotter implements RowMapper&lt;DtoScotter&gt;, MapperResult {</span>
 
     @Override
     public DtoScotter mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-<span class="nc" id="L15">        Long id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="nc" id="L16">        String marca = resultSet.getString(&quot;marca&quot;);</span>
-<span class="nc" id="L17">        String modelo = resultSet.getString(&quot;modelo&quot;);</span>
-<span class="nc" id="L18">        Integer precio = resultSet.getInt(&quot;precio&quot;);</span>
-<span class="nc" id="L19">        String ciudad = resultSet.getString(&quot;ciudad&quot;);</span>
-<span class="nc" id="L20">        Long vendedor = resultSet.getLong(&quot;vendedor&quot;);</span>
-<span class="nc" id="L21">        String estado =resultSet.getString(&quot;estado&quot;);</span>
-<span class="nc" id="L22">        String foto =  resultSet.getString(&quot;foto&quot;);</span>
+<span class="fc" id="L15">        Long id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="fc" id="L16">        String marca = resultSet.getString(&quot;marca&quot;);</span>
+<span class="fc" id="L17">        String modelo = resultSet.getString(&quot;modelo&quot;);</span>
+<span class="fc" id="L18">        Integer precio = resultSet.getInt(&quot;precio&quot;);</span>
+<span class="fc" id="L19">        String ciudad = resultSet.getString(&quot;ciudad&quot;);</span>
+<span class="fc" id="L20">        Long vendedor = resultSet.getLong(&quot;vendedor&quot;);</span>
+<span class="fc" id="L21">        String estado =resultSet.getString(&quot;estado&quot;);</span>
+<span class="fc" id="L22">        String foto =  resultSet.getString(&quot;foto&quot;);</span>
 
 
-<span class="nc" id="L25">        return new DtoScotter(id, marca, modelo, precio, ciudad, vendedor, estado, foto);</span>
+<span class="fc" id="L25">        return new DtoScotter(id, marca, modelo, precio, ciudad, vendedor, estado, foto);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

@@ -5,13 +5,15 @@ com/ceiba/persona/servicio/ServicioActualizarPersonaTest.java
  com.ceiba.persona.servicio.ServicioActualizarPersonaTest
 com/ceiba/persona/servicio/ServicioEliminarPersonaTest.java
  com.ceiba.persona.servicio.ServicioEliminarPersonaTest
-com/ceiba/scotter/servicio/ServicioActualizarScotterTest.java
- com.ceiba.scotter.servicio.ServicioActualizarScotterTest
+com/ceiba/scotter/servicio/testdatabuilder/ScotterTestDataBuilder.java
+ com.ceiba.scotter.servicio.testdatabuilder.ScotterTestDataBuilder
 com/ceiba/persona/servicio/testdatabuilder/PersonaTestDataBuilder.java
  com.ceiba.persona.servicio.testdatabuilder.PersonaTestDataBuilder
 com/ceiba/persona/servicio/ServicioCreaPersonaTest.java
  com.ceiba.persona.servicio.ServicioCreaPersonaTest
 com/ceiba/scotter/servicio/ServicioCrearScotterTest.java
  com.ceiba.scotter.servicio.ServicioCrearScotterTest
-com/ceiba/scotter/servicio/testdatabuilder/ScotterTestDataBuilder.java
- com.ceiba.scotter.servicio.testdatabuilder.ScotterTestDataBuilder
+com/ceiba/scotter/servicio/ServicioActualizarScotterTest.java
+ com.ceiba.scotter.servicio.ServicioActualizarScotterTest
+com/ceiba/scotter/servicio/ServicioEliminarScotterTest.java
+ com.ceiba.scotter.servicio.ServicioEliminarScotterTest

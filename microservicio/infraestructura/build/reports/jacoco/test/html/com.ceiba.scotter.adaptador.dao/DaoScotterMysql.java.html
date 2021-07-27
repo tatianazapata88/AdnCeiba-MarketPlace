@@ -14,36 +14,44 @@ public class DaoScotterMysql implements DaoScotter {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
-    @SqlStatement(namespace=&quot;scotter&quot;, value=&quot;listar&quot;)
-    private static String sqlListar;
+   // @SqlStatement(namespace=&quot;scotter&quot;, value=&quot;listar&quot;)
+    //private static String sqlListar;
 
     @SqlStatement(namespace=&quot;scotter&quot;, value=&quot;buscarId&quot;)
     private static String sqlBuscar;
 
-    @SqlStatement(namespace=&quot;scotter&quot;, value=&quot;buscarCiudad&quot;)
-    private static String sqlBuscarCiudad;
+    //@SqlStatement(namespace=&quot;scotter&quot;, value=&quot;buscarCiudad&quot;)
+    //private static String sqlBuscarCiudad;
 
-<span class="fc" id="L26">    public DaoScotterMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
-<span class="fc" id="L27">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L28">    }</span>
+    //@SqlStatement(namespace=&quot;scotter&quot;, value=&quot;buscarPrecio&quot;)
+    //private static String sqlBuscarPrecio;
 
-    @Override
-    public List&lt;DtoScotter&gt; listar() {
-<span class="nc" id="L32">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoScotter());</span>
-    }
+<span class="fc" id="L29">    public DaoScotterMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="fc" id="L30">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L31">    }</span>
+
+    //@Override
+    //public List&lt;DtoScotter&gt; listar(String estado) {
+      //  return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoScotter());
+    //}
 
     @Override
     public DtoScotter buscarId(Long id) {
-<span class="nc" id="L37">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L38">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L39">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlBuscar, paramSource, new MapeoScotter());</span>
+<span class="fc" id="L40">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L41">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L42">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlBuscar, paramSource, new MapeoScotter());</span>
     }
 
-    @Override
-    public DtoScotter buscarCiudad(String ciudad) {
-<span class="nc" id="L44">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L45">        paramSource.addValue(&quot;ciudad&quot;, ciudad);</span>
-<span class="nc" id="L46">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlBuscarCiudad, paramSource, new MapeoScotter());</span>
-    }
+    //@Override
+   // public List&lt;DtoScotter&gt; buscarCiudad(String ciudad) {
+
+     //   return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlBuscarCiudad, new MapeoScotter());
+    //}
+
+    //@Override
+    //public List&lt;DtoScotter&gt; buscarPrecio(Integer precio) {
+
+      //  return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlBuscarPrecio, new MapeoScotter());
+    //}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
