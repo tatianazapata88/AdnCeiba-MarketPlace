@@ -28,7 +28,7 @@ public class ComandoControladorScotter {
     @PostMapping
     @ApiOperation(&quot;Crear Scotter&quot;)
     public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoScotter comandoScotter) {
-<span class="nc" id="L31">        return manejadorCrearScotter.ejecutar(comandoScotter);</span>
+<span class="fc" id="L31">        return manejadorCrearScotter.ejecutar(comandoScotter);</span>
     }
 
     @DeleteMapping(value=&quot;/{id}&quot;)

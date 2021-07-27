@@ -32,7 +32,7 @@ public class ComandoControladorPersonaTest {
         private MockMvc mocMvc;
 
         @Test
-        public void crear() throws Exception{
+        public void crearPersonaTest() throws Exception{
             // arrange
             ComandoPersona persona = new ComandoPersonaTestDataBuilder().build();
 

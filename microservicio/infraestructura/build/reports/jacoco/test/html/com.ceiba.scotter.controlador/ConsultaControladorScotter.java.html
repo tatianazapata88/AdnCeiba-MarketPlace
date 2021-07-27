@@ -37,25 +37,25 @@ public class ConsultaControladorScotter {
     @GetMapping
     @ApiOperation(&quot;Listar scotters&quot;)
     public List&lt;DtoScotter&gt; listar(){
-<span class="fc" id="L40">        return this.manejadorListarScotter.ejecutar();</span>
+<span class="nc" id="L40">        return this.manejadorListarScotter.ejecutar();</span>
     }
 
     @GetMapping(&quot;/id/{id}&quot;)
     @ApiOperation(&quot;Listar scotters por id&quot;)
     public DtoScotter listar(@PathVariable Long id){
-<span class="fc" id="L46">        return this.manejadorBuscarIdScotter.ejecutar(id);</span>
+<span class="nc" id="L46">        return this.manejadorBuscarIdScotter.ejecutar(id);</span>
     }
 
     @GetMapping(&quot;/ciudad/{ciudad}&quot;)
     @ApiOperation(&quot;Listar scotters por ciudad&quot;)
     public List&lt;DtoScotter&gt; listar(@PathVariable String ciudad){
-<span class="fc" id="L52">        return this.manejadorBuscarCiudadScotter.ejecutar(ciudad);</span>
+<span class="nc" id="L52">        return this.manejadorBuscarCiudadScotter.ejecutar(ciudad);</span>
     }
 
     @GetMapping(&quot;/precio/{precio}&quot;)
     @ApiOperation(&quot;Listar scotters por precio&quot;)
     public List&lt;DtoScotter&gt; listar(@PathVariable Integer precio){
-<span class="fc" id="L58">        return this.manejadorBuscarPrecioScotter.ejecutar(precio);</span>
+<span class="nc" id="L58">        return this.manejadorBuscarPrecioScotter.ejecutar(precio);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

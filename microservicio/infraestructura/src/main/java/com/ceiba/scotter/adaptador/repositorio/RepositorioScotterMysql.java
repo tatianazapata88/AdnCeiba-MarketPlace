@@ -34,6 +34,7 @@ public class RepositorioScotterMysql implements RepositorioScotter {
 
     @Override
     public Long crear(Scotter scotter) {
+
         return this.customNamedParameterJdbcTemplate.crear(scotter, sqlCrear);
     }
 
