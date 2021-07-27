@@ -2,6 +2,7 @@
 
 import com.ceiba.scotter.consulta.ManejadorBuscarCiudadScotter;
 import com.ceiba.scotter.consulta.ManejadorBuscarIdScotter;
+import com.ceiba.scotter.consulta.ManejadorBuscarPrecioScotter;
 import com.ceiba.scotter.consulta.ManejadorListarScotter;
 import com.ceiba.scotter.modelo.dto.DtoScotter;
 import io.swagger.annotations.Api;
@@ -21,31 +22,40 @@ public class ConsultaControladorScotter {
     private final ManejadorBuscarIdScotter manejadorBuscarIdScotter;
     private final ManejadorListarScotter manejadorListarScotter;
     private final ManejadorBuscarCiudadScotter manejadorBuscarCiudadScotter;
+    private final ManejadorBuscarPrecioScotter manejadorBuscarPrecioScotter;
 
     public ConsultaControladorScotter(ManejadorBuscarIdScotter manejadorBuscarIdScotter,
                                       ManejadorListarScotter manejadorListarScotter,
-<span class="fc" id="L27">                                      ManejadorBuscarCiudadScotter manejadorBuscarCiudadScotter) {</span>
-<span class="fc" id="L28">        this.manejadorBuscarIdScotter = manejadorBuscarIdScotter;</span>
-<span class="fc" id="L29">        this.manejadorListarScotter = manejadorListarScotter;</span>
-<span class="fc" id="L30">        this.manejadorBuscarCiudadScotter = manejadorBuscarCiudadScotter;</span>
-<span class="fc" id="L31">    }</span>
+                                      ManejadorBuscarCiudadScotter manejadorBuscarCiudadScotter,
+<span class="fc" id="L30">                                      ManejadorBuscarPrecioScotter manejadorBuscarPrecioScotter) {</span>
+<span class="fc" id="L31">        this.manejadorBuscarIdScotter = manejadorBuscarIdScotter;</span>
+<span class="fc" id="L32">        this.manejadorListarScotter = manejadorListarScotter;</span>
+<span class="fc" id="L33">        this.manejadorBuscarCiudadScotter = manejadorBuscarCiudadScotter;</span>
+<span class="fc" id="L34">        this.manejadorBuscarPrecioScotter = manejadorBuscarPrecioScotter;</span>
+<span class="fc" id="L35">    }</span>
 
     @GetMapping
     @ApiOperation(&quot;Listar scotters&quot;)
     public List&lt;DtoScotter&gt; listar(){
-<span class="fc" id="L36">        return this.manejadorListarScotter.ejecutar();</span>
+<span class="fc" id="L40">        return this.manejadorListarScotter.ejecutar();</span>
     }
 
     @GetMapping(&quot;/id/{id}&quot;)
     @ApiOperation(&quot;Listar scotters por id&quot;)
     public DtoScotter listar(@PathVariable Long id){
-<span class="fc" id="L42">        return this.manejadorBuscarIdScotter.ejecutar(id);</span>
+<span class="fc" id="L46">        return this.manejadorBuscarIdScotter.ejecutar(id);</span>
     }
 
     @GetMapping(&quot;/ciudad/{ciudad}&quot;)
     @ApiOperation(&quot;Listar scotters por ciudad&quot;)
     public List&lt;DtoScotter&gt; listar(@PathVariable String ciudad){
-<span class="fc" id="L48">        return this.manejadorBuscarCiudadScotter.ejecutar(ciudad);</span>
+<span class="fc" id="L52">        return this.manejadorBuscarCiudadScotter.ejecutar(ciudad);</span>
+    }
+
+    @GetMapping(&quot;/precio/{precio}&quot;)
+    @ApiOperation(&quot;Listar scotters por precio&quot;)
+    public List&lt;DtoScotter&gt; listar(@PathVariable Integer precio){
+<span class="fc" id="L58">        return this.manejadorBuscarPrecioScotter.ejecutar(precio);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

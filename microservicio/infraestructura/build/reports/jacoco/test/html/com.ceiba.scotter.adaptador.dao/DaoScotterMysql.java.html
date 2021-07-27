@@ -23,8 +23,8 @@ public class DaoScotterMysql implements DaoScotter {
     @SqlStatement(namespace=&quot;scotter&quot;, value=&quot;buscarCiudad&quot;)
     private static String sqlBuscarCiudad;
 
-    //@SqlStatement(namespace=&quot;scotter&quot;, value=&quot;buscarPrecio&quot;)
-    //private static String sqlBuscarPrecio;
+    @SqlStatement(namespace=&quot;scotter&quot;, value=&quot;buscarPrecio&quot;)
+    private static String sqlBuscarPrecio;
 
 <span class="fc" id="L29">    public DaoScotterMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
 <span class="fc" id="L30">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
@@ -50,10 +50,12 @@ public class DaoScotterMysql implements DaoScotter {
 <span class="fc" id="L50">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlBuscarCiudad, parameterSource, new MapeoScotter());</span>
     }
 
-    //@Override
-    //public List&lt;DtoScotter&gt; buscarPrecio(Integer precio) {
+    @Override
+    public List&lt;DtoScotter&gt; buscarPrecio(Integer precio) {
+<span class="fc" id="L55">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L56">        parameterSource.addValue(&quot;precio&quot;, precio);</span>
 
-      //  return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlBuscarPrecio, new MapeoScotter());
-    //}
+<span class="fc" id="L58">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlBuscarPrecio, parameterSource, new MapeoScotter());</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

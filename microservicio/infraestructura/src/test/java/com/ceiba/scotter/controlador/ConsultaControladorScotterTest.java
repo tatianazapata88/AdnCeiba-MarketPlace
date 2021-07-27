@@ -59,4 +59,17 @@ public class ConsultaControladorScotterTest {
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].id", is(1)));
     }
+
+    @Test
+    public void buscarPrecioTest() throws Exception {
+        // arrange
+        Integer precio = 4000000;
+
+        // act - assert
+        mocMvc.perform(get("/scotters/precio/{precio}",precio)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].id", is(1)));
+    }
 }
