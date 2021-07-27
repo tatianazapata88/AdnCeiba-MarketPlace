@@ -6,7 +6,8 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 public class MapeoPedido implements RowMapper<DtoPedido>, MapperResult {
 
@@ -14,7 +15,7 @@ public class MapeoPedido implements RowMapper<DtoPedido>, MapperResult {
     public DtoPedido mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
         Long id = resultSet.getLong("id");
-        LocalDateTime fecha = extraerLocalDateTime(resultSet, "fecha");
+        LocalDate fecha = extraerLocalDate(resultSet, "fecha");
         Long bici = resultSet.getLong("bici");
         Long comprador = resultSet.getLong("comprador");
         String ciudad = resultSet.getString("ciudad");
