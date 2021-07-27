@@ -46,4 +46,17 @@ public class ConsultaControladorScotterTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("marca", is("toyota")));
     }
+
+    @Test
+    public void buscarCiudadTest() throws Exception {
+        // arrange
+        String ciudad = "Medellin";
+
+        // act - assert
+        mocMvc.perform(get("/scotters/ciudad/{ciudad}",ciudad)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].id", is(1)));
+    }
 }

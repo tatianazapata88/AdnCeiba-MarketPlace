@@ -10,7 +10,7 @@ public interface DaoScotter {
 
     DtoScotter buscarId(Long id);
 
-    //  List<DtoScotter> buscarCiudad(String ciudad);
+    List<DtoScotter> buscarCiudad(String ciudad);
 
     //List<DtoScotter> buscarPrecio(Integer precio);
 

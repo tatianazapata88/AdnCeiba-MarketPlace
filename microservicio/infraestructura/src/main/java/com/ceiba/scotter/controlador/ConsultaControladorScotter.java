@@ -1,5 +1,6 @@
 package com.ceiba.scotter.controlador;
 
+import com.ceiba.scotter.consulta.ManejadorBuscarCiudadScotter;
 import com.ceiba.scotter.consulta.ManejadorBuscarIdScotter;
 import com.ceiba.scotter.consulta.ManejadorListarScotter;
 import com.ceiba.scotter.modelo.dto.DtoScotter;
@@ -19,10 +20,14 @@ public class ConsultaControladorScotter {
 
     private final ManejadorBuscarIdScotter manejadorBuscarIdScotter;
     private final ManejadorListarScotter manejadorListarScotter;
+    private final ManejadorBuscarCiudadScotter manejadorBuscarCiudadScotter;
 
-    public ConsultaControladorScotter(ManejadorBuscarIdScotter manejadorBuscarIdScotter, ManejadorListarScotter manejadorListarScotter) {
+    public ConsultaControladorScotter(ManejadorBuscarIdScotter manejadorBuscarIdScotter,
+                                      ManejadorListarScotter manejadorListarScotter,
+                                      ManejadorBuscarCiudadScotter manejadorBuscarCiudadScotter) {
         this.manejadorBuscarIdScotter = manejadorBuscarIdScotter;
         this.manejadorListarScotter = manejadorListarScotter;
+        this.manejadorBuscarCiudadScotter = manejadorBuscarCiudadScotter;
     }
 
     @GetMapping
@@ -35,5 +40,11 @@ public class ConsultaControladorScotter {
     @ApiOperation("Listar scotters por id")
     public DtoScotter listar(@PathVariable Long id){
         return this.manejadorBuscarIdScotter.ejecutar(id);
+    }
+
+    @GetMapping("/ciudad/{ciudad}")
+    @ApiOperation("Listar scotters por ciudad")
+    public List<DtoScotter> listar(@PathVariable String ciudad){
+        return this.manejadorBuscarCiudadScotter.ejecutar(ciudad);
     }
 }

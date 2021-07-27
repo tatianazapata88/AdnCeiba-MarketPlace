@@ -36,6 +36,8 @@ com/ceiba/persona/ComandoPersona.java
  com.ceiba.persona.ComandoPersona
 com/ceiba/scotter/consulta/ManejadorBuscarIdScotter.java
  com.ceiba.scotter.consulta.ManejadorBuscarIdScotter
+com/ceiba/scotter/consulta/ManejadorBuscarCiudadScotter.java
+ com.ceiba.scotter.consulta.ManejadorBuscarCiudadScotter
 com/ceiba/scotter/consulta/ManejadorListarScotter.java
  com.ceiba.scotter.consulta.ManejadorListarScotter
 com/ceiba/pedido/comando/manejador/ManejadorCrearPedido.java

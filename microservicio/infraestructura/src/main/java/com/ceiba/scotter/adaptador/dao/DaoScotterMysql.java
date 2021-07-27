@@ -20,8 +20,8 @@ public class DaoScotterMysql implements DaoScotter {
     @SqlStatement(namespace="scotter", value="buscarId")
     private static String sqlBuscar;
 
-    //@SqlStatement(namespace="scotter", value="buscarCiudad")
-    //private static String sqlBuscarCiudad;
+    @SqlStatement(namespace="scotter", value="buscarCiudad")
+    private static String sqlBuscarCiudad;
 
     //@SqlStatement(namespace="scotter", value="buscarPrecio")
     //private static String sqlBuscarPrecio;
@@ -42,11 +42,13 @@ public class DaoScotterMysql implements DaoScotter {
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlBuscar, paramSource, new MapeoScotter());
     }
 
-    //@Override
-   // public List<DtoScotter> buscarCiudad(String ciudad) {
+    @Override
+    public List<DtoScotter> buscarCiudad(String ciudad) {
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue("ciudad", ciudad);
 
-     //   return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlBuscarCiudad, new MapeoScotter());
-    //}
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlBuscarCiudad, parameterSource, new MapeoScotter());
+    }
 
     //@Override
     //public List<DtoScotter> buscarPrecio(Integer precio) {
