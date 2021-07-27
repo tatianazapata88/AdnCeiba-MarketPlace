@@ -24,6 +24,18 @@ public class ConsultaControladorScotterTest {
     private MockMvc mocMvc;
 
     @Test
+    public void listarTest() throws Exception {
+        // arrange
+
+        // act - assert
+        mocMvc.perform(get("/scotters")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].marca", is("toyota")));
+    }
+
+    @Test
     public void buscarIdTest() throws Exception {
         // arrange
         Long id = 1L;

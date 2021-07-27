@@ -16,10 +16,19 @@ import java.util.List;
 @RequestMapping("/scotters")
 @Api(tags={"Controlador consulta scotter"})
 public class ConsultaControladorScotter {
-    private final ManejadorBuscarIdScotter manejadorBuscarIdScotter;
 
-    public ConsultaControladorScotter(ManejadorBuscarIdScotter manejadorBuscarIdScotter) {
+    private final ManejadorBuscarIdScotter manejadorBuscarIdScotter;
+    private final ManejadorListarScotter manejadorListarScotter;
+
+    public ConsultaControladorScotter(ManejadorBuscarIdScotter manejadorBuscarIdScotter, ManejadorListarScotter manejadorListarScotter) {
         this.manejadorBuscarIdScotter = manejadorBuscarIdScotter;
+        this.manejadorListarScotter = manejadorListarScotter;
+    }
+
+    @GetMapping
+    @ApiOperation("Listar scotters")
+    public List<DtoScotter> listar(){
+        return this.manejadorListarScotter.ejecutar();
     }
 
     @GetMapping("/id/{id}")

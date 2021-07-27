@@ -14,8 +14,8 @@ public class DaoScotterMysql implements DaoScotter {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
-   // @SqlStatement(namespace="scotter", value="listar")
-    //private static String sqlListar;
+    @SqlStatement(namespace="scotter", value="listar")
+    private static String sqlListar;
 
     @SqlStatement(namespace="scotter", value="buscarId")
     private static String sqlBuscar;
@@ -30,10 +30,10 @@ public class DaoScotterMysql implements DaoScotter {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
 
-    //@Override
-    //public List<DtoScotter> listar(String estado) {
-      //  return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoScotter());
-    //}
+    @Override
+        public List<DtoScotter> listar() {
+       return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoScotter());
+    }
 
     @Override
     public DtoScotter buscarId(Long id) {

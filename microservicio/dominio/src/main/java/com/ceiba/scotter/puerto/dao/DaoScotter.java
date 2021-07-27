@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface DaoScotter {
 
-    //List<DtoScotter> listar(String estado);
+    List<DtoScotter> listar();
 
     DtoScotter buscarId(Long id);
 

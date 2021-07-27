@@ -16,16 +16,25 @@ import java.util.List;
 @RequestMapping(&quot;/scotters&quot;)
 @Api(tags={&quot;Controlador consulta scotter&quot;})
 public class ConsultaControladorScotter {
-    private final ManejadorBuscarIdScotter manejadorBuscarIdScotter;
 
-<span class="fc" id="L21">    public ConsultaControladorScotter(ManejadorBuscarIdScotter manejadorBuscarIdScotter) {</span>
-<span class="fc" id="L22">        this.manejadorBuscarIdScotter = manejadorBuscarIdScotter;</span>
-<span class="fc" id="L23">    }</span>
+    private final ManejadorBuscarIdScotter manejadorBuscarIdScotter;
+    private final ManejadorListarScotter manejadorListarScotter;
+
+<span class="fc" id="L23">    public ConsultaControladorScotter(ManejadorBuscarIdScotter manejadorBuscarIdScotter, ManejadorListarScotter manejadorListarScotter) {</span>
+<span class="fc" id="L24">        this.manejadorBuscarIdScotter = manejadorBuscarIdScotter;</span>
+<span class="fc" id="L25">        this.manejadorListarScotter = manejadorListarScotter;</span>
+<span class="fc" id="L26">    }</span>
+
+    @GetMapping
+    @ApiOperation(&quot;Listar scotters&quot;)
+    public List&lt;DtoScotter&gt; listar(){
+<span class="fc" id="L31">        return this.manejadorListarScotter.ejecutar();</span>
+    }
 
     @GetMapping(&quot;/id/{id}&quot;)
     @ApiOperation(&quot;Listar scotters por id&quot;)
     public DtoScotter listar(@PathVariable Long id){
-<span class="fc" id="L28">        return this.manejadorBuscarIdScotter.ejecutar(id);</span>
+<span class="fc" id="L37">        return this.manejadorBuscarIdScotter.ejecutar(id);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
