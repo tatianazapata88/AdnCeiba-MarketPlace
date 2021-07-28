@@ -19,8 +19,6 @@ public class ComandoPedido {
     private Long comprador;
     private String ciudad;
     private String destino;
-    private Integer flete;
-    private Integer precio;
-    private Integer descuento;
-    private double total;
+    private int precio;
+
 }
