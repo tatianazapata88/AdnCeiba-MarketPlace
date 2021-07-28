@@ -12,7 +12,12 @@ public class PedidoTestDataBuilder {
     private Long comprador;
     private String ciudad;
     private String destino;
+    private int flete;
     private int precio;
+    private int descuento;
+    private int total;
+
+
 
 
     public PedidoTestDataBuilder(){
@@ -23,6 +28,10 @@ public class PedidoTestDataBuilder {
         ciudad = "medellin";
         destino = "bogota";
         precio = 4000000;
+
+
+
+
 
     }
     public PedidoTestDataBuilder(LocalDate fecha, Long bici, Long comprador, String ciudad,

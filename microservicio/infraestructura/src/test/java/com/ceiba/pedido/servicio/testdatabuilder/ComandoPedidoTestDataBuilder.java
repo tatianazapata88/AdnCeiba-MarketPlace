@@ -1,5 +1,6 @@
 package com.ceiba.pedido.servicio.testdatabuilder;
 
+import com.ceiba.pedido.comando.ComandoPedido;
 import com.ceiba.pedido.modelo.entidad.Pedido;
 
 import java.time.LocalDate;
@@ -11,17 +12,23 @@ public class ComandoPedidoTestDataBuilder {
     private Long comprador;
     private String ciudad;
     private String destino;
+    private int flete;
     private int precio;
+    private int descuento;
+    private int total;
 
 
     public ComandoPedidoTestDataBuilder(){
 
-
+        fecha = LocalDate.now();
         bici = 1L;
         comprador = 2L;
         ciudad = "medellin";
         destino = "bogota";
+        flete=30000;
         precio = 4000000;
+        descuento = 0;
+        total= 4030000;
 
     }
     public ComandoPedidoTestDataBuilder(LocalDate fecha, Long bici, Long comprador, String ciudad,
@@ -54,8 +61,8 @@ public class ComandoPedidoTestDataBuilder {
     }
 
 
-    public Pedido build() {
+    public ComandoPedido build() {
 
-        return new Pedido(id,fecha,bici,comprador,ciudad,destino,precio);
+        return new ComandoPedido(id,fecha,bici,comprador,ciudad,destino,flete,precio,descuento,total);
     }
 }

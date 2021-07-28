@@ -26,9 +26,9 @@ public class Pedido {
     private int flete;
     private int precio;
     private int descuento;
-    private double total;
+    private int total;
 
-    public Pedido(Long id, LocalDate fecha, Long bici, Long comprador, String ciudad, String destino, Integer precio) {
+    public Pedido(Long id, LocalDate fecha, Long bici, Long comprador, String ciudad, String destino, int precio) {
         validarCampoBici(bici);
         validarCampoComprador(comprador);
         validarCampoCiudad(ciudad);
@@ -81,7 +81,7 @@ public class Pedido {
     }
 
 
-    private double valorTotal(int precio, int flete, int descuento) {
+    private int valorTotal(int precio, int flete, int descuento) {
       return this.total=Math.round(precio+flete-descuento);
     }
 

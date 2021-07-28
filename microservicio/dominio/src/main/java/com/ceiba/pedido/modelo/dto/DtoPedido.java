@@ -17,6 +17,6 @@ public class DtoPedido {
     private String destino;
     private int flete;
     private int precio;
-    private double descuento;
-    private double total;
+    private int descuento;
+    private int total;
 }
