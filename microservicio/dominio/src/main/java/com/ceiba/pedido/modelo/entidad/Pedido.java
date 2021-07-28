@@ -4,7 +4,7 @@ import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import lombok.Getter;
 
 import java.time.LocalDate;
-
+import java.util.Date;
 
 
 @Getter
@@ -25,7 +25,7 @@ public class Pedido {
     private String destino;
     private int flete;
     private int precio;
-    private double descuento;
+    private int descuento;
     private double total;
 
     public Pedido(Long id, LocalDate fecha, Long bici, Long comprador, String ciudad, String destino, Integer precio) {
@@ -39,7 +39,7 @@ public class Pedido {
         this.valorTotal(precio,flete,descuento);
 
         this.id = id;
-        this.fecha = fecha;
+        this.fecha = LocalDate.now();
         this.bici = bici;
         this.comprador = comprador;
         this.ciudad = ciudad;
@@ -81,16 +81,20 @@ public class Pedido {
     }
 
 
-    private double valorTotal(int precio, int flete, double descuento) {
+    private double valorTotal(int precio, int flete, int descuento) {
       return this.total=Math.round(precio+flete-descuento);
     }
 
-    private double valorDescuento(LocalDate fecha, int precio) {
-        if (fecha == LocalDate.now()){
-            return this.descuento=Math.round(precio*0.05);}
+    private int valorDescuento(LocalDate fecha, int precio) {
+
+        if (fecha==LocalDate.now()){
+            return this.descuento= (int) (precio*0.05);
+            }
         else{
-            return this.descuento=Math.round(0);
-        }
+
+
+            return this.descuento=0;}
+
 
     }
 

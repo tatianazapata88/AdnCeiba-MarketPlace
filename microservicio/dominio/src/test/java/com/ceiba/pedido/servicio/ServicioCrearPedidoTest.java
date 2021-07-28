@@ -84,6 +84,33 @@ public class ServicioCrearPedidoTest {
         BasePrueba.assertThrows(() -> pedidoTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_PRECIO_ES_OBLIGATORIO);
     }
 
+    @Test
+    public void validarCalcularValorFleteCiudadIgualTest() {
+        // arrange
+        Pedido pedido = new PedidoTestDataBuilder().conCiudadYDestino("medellin","medellin").build();
+        int flete = 0;
+        //assert
+        Assert.assertEquals(pedido.getFlete(),flete);
+    }
+
+    @Test
+    public void validarCalcularValorFleteCiudadDiferenteTest() {
+        // arrange
+        Pedido pedido = new PedidoTestDataBuilder().conCiudadYDestino("cali","medellin").build();
+        int flete = 30000;
+        //assert
+        Assert.assertEquals(pedido.getFlete(),flete);
+    }
+
+   /* @Test
+    public void validarDescuentoPagoTest() {
+        // arrange
+        Pedido pedido = new PedidoTestDataBuilder().conFecha(LocalDate.now()).build();
+        double descuento = 200000.0;
+        //assert
+        Assert.assertEquals(pedido.getDescuento(),descuento,0);
+    }*/
+
       @Test
     public void agregarPedidoTest() {
         //arrange

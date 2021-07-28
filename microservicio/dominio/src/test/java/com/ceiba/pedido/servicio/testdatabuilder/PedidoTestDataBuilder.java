@@ -41,6 +41,18 @@ public class PedidoTestDataBuilder {
         return this;
     }
 
+    public PedidoTestDataBuilder conFecha(LocalDate fecha1) {
+        this.fecha = fecha1;
+
+        return this;
+    }
+
+    public PedidoTestDataBuilder conCiudadYDestino(String ciudad, String destino) {
+        this.ciudad = ciudad;
+        this.destino =destino;
+
+        return this;
+    }
 
 
     public Pedido build() {
