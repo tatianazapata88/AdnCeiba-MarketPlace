@@ -6,27 +6,28 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
-<span class="nc" id="L11">public class MapeoPedido implements RowMapper&lt;DtoPedido&gt;, MapperResult {</span>
+
+<span class="fc" id="L12">public class MapeoPedido implements RowMapper&lt;DtoPedido&gt;, MapperResult {</span>
 
     @Override
     public DtoPedido mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-<span class="nc" id="L16">        Long id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="nc" id="L17">        LocalDateTime fecha = extraerLocalDateTime(resultSet, &quot;fecha&quot;);</span>
-<span class="nc" id="L18">        Long bici = resultSet.getLong(&quot;bici&quot;);</span>
-<span class="nc" id="L19">        Long comprador = resultSet.getLong(&quot;comprador&quot;);</span>
-<span class="nc" id="L20">        String ciudad = resultSet.getString(&quot;ciudad&quot;);</span>
-<span class="nc" id="L21">        String destino = resultSet.getString(&quot;destino&quot;);</span>
-<span class="nc" id="L22">        Integer flete = resultSet.getInt(&quot;flete&quot;);</span>
-<span class="nc" id="L23">        Integer precio = resultSet.getInt(&quot;precio&quot;);</span>
-<span class="nc" id="L24">        Integer descuento = resultSet.getInt(&quot;descuento&quot;);</span>
-<span class="nc" id="L25">        Integer total = resultSet.getInt(&quot;total&quot;);</span>
+<span class="fc" id="L17">        Long id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="fc" id="L18">        LocalDate fecha = extraerLocalDate(resultSet, &quot;fecha&quot;);</span>
+<span class="fc" id="L19">        Long bici = resultSet.getLong(&quot;bici&quot;);</span>
+<span class="fc" id="L20">        Long comprador = resultSet.getLong(&quot;comprador&quot;);</span>
+<span class="fc" id="L21">        String ciudad = resultSet.getString(&quot;ciudad&quot;);</span>
+<span class="fc" id="L22">        String destino = resultSet.getString(&quot;destino&quot;);</span>
+<span class="fc" id="L23">        Integer flete = resultSet.getInt(&quot;flete&quot;);</span>
+<span class="fc" id="L24">        Integer precio = resultSet.getInt(&quot;precio&quot;);</span>
+<span class="fc" id="L25">        Integer descuento = resultSet.getInt(&quot;descuento&quot;);</span>
+<span class="fc" id="L26">        Integer total = resultSet.getInt(&quot;total&quot;);</span>
 
 
 
-<span class="nc" id="L29">        return new DtoPedido(id,fecha,bici,comprador,ciudad,destino,flete,precio,descuento,total);</span>
+<span class="fc" id="L30">        return new DtoPedido(id,fecha,bici,comprador,ciudad,destino,flete,precio,descuento,total);</span>
     }
 
 }

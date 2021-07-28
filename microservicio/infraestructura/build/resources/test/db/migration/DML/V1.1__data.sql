@@ -11,3 +11,5 @@ insert into scotter(marca,
     vendedor,
     estado,
     foto) values( 'toyota','2022',4000000, 'Medellin',1,'disponible','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTxO8c_NQBofFx4kxZ2qTd6CKrCbkRtnqbLA&usqp=CAU');
+
+insert into pedido (fecha,bici,comprador,ciudad,destino,flete,precio,descuento,total) values ('2021-07-28',1,1,'medellin','medellin',0,1000000,0,1000000)
