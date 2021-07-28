@@ -1,9 +1,12 @@
 update pedido
-set id = :id,
+set
 	fecha = :fecha,
 	bici = :bici,
 	comprador = :comprador,
 	ciudad = :ciudad,
 	destino = :destino,
-	flete = :flete
+	flete = :flete,
+	precio = :precio,
+	descuento = :descuento,
+	total = :total
 where id = :id

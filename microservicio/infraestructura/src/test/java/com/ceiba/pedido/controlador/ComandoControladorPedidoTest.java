@@ -42,4 +42,29 @@ public class ComandoControladorPedidoTest {
                 .andExpect(content().json("{'valor': 2}"));
     }
 
+    @Test
+    public void actualizarPedidoTest() throws Exception{
+        // arrange
+        Long id = 1L;
+        ComandoPedido pedido = new ComandoPedidoTestDataBuilder().build();
+
+        // act - assert
+        mocMvc.perform(put("/pedidos/{id}",id)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(pedido)))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void eliminarPedidoTest() throws Exception {
+        // arrange
+        Long id = 2L;
+
+        // act - assert
+        mocMvc.perform(delete("/pedidos/{id}",id)
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
 }
