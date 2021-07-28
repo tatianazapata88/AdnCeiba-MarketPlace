@@ -21,6 +21,6 @@ public class ComandoPedido {
     private String destino;
     private Integer flete;
     private Integer precio;
-    private double descuento;
+    private Integer descuento;
     private double total;
 }

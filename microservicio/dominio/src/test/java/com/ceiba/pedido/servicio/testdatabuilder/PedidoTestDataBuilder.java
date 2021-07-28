@@ -14,7 +14,7 @@ public class PedidoTestDataBuilder {
     private String destino;
     private Integer flete;
     private Integer precio;
-    private double descuento;
+    private Integer descuento;
     private double total;
 
     public PedidoTestDataBuilder(){
@@ -30,7 +30,7 @@ public class PedidoTestDataBuilder {
         total = 4030000;
     }
     public PedidoTestDataBuilder(LocalDate fecha, Long bici, Long comprador, String ciudad,
-                                 String destino, Integer flete, Integer precio, double descuento, double total) {
+                                 String destino, Integer flete, Integer precio, Integer descuento, double total) {
         this.fecha = fecha;
         this.bici = bici;
         this.comprador = comprador;
@@ -47,7 +47,7 @@ public class PedidoTestDataBuilder {
         return this;
     }
 
-    public PedidoTestDataBuilder conDescuento(LocalDate fecha, double descuento) {
+    public PedidoTestDataBuilder conDescuento(LocalDate fecha, Integer descuento) {
         this.fecha = fecha;
         this.descuento=descuento;
         return this;

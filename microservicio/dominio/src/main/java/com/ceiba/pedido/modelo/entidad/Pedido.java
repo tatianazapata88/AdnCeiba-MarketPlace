@@ -27,10 +27,10 @@ public class Pedido {
     private String destino;
     private Integer flete;
     private Integer precio;
-    private double descuento;
+    private Integer descuento;
     private double total;
 
-    public Pedido(Long id, LocalDate fecha, Long bici, Long comprador, String ciudad, String destino, Integer flete, Integer precio, double descuento, double total) {
+    public Pedido(Long id, LocalDate fecha, Long bici, Long comprador, String ciudad, String destino, Integer flete, Integer precio, Integer descuento, double total) {
         validarCampoBici(bici);
         validarCampoComprador(comprador);
         validarCampoCiudad(ciudad);
@@ -91,10 +91,9 @@ public class Pedido {
         }
     }
 
-    private void validarCampoDescuento(double descuento){
-        int descuentoInt = (int) descuento;
-        Integer descuento1 = Integer.valueOf(descuentoInt);
-        if (descuento1 == null) {
+    private void validarCampoDescuento(Integer descuento){
+
+        if (descuento==null) {
             throw new ExcepcionValorObligatorio(CAMPO_DESCUENTO_ES_OBLIGATORIO);
         }
     }
@@ -111,9 +110,12 @@ public class Pedido {
         return Math.round(precio + flete - descuento);
     }
 
-    private double valorDescuento(LocalDate fecha, Integer precio) {
-        if (fecha == LocalDate.now())
-        { return Math.round(precio*0.05);}
+    private Integer valorDescuento(LocalDate fecha, Integer precio) {
+        if (fecha == LocalDate.now()){
+        double preciod = Double.valueOf(precio);
+        double descuentod=Math.round(preciod*0.05);
+        int descuentoInt =(int)descuentod;
+         return descuentoInt;}
         else{
             return 0;
         }
