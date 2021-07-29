@@ -17,7 +17,10 @@ public class FabricaPedido {
                 comandoPedido.getComprador(),
                 comandoPedido.getCiudad(),
                 comandoPedido.getDestino(),
-                comandoPedido.getPrecio()
+                comandoPedido.getFlete(),
+                comandoPedido.getPrecio(),
+                comandoPedido.getDescuento(),
+                comandoPedido.getTotal()
 
 
 

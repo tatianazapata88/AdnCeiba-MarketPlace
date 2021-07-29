@@ -28,15 +28,15 @@ public class Pedido {
     private int descuento;
     private int total;
 
-    public Pedido(Long id, LocalDate fecha, Long bici, Long comprador, String ciudad, String destino, int precio) {
+    public Pedido(Long id, LocalDate fecha, Long bici, Long comprador, String ciudad, String destino, int flete, int precio, int descuento, int total) {
         validarCampoBici(bici);
         validarCampoComprador(comprador);
         validarCampoCiudad(ciudad);
         validarCampoDestino(destino);
         validarCampoPrecio(precio);
-        this.valorFlete(ciudad,destino);
-        this.valorDescuento(fecha, precio);
-        this.valorTotal(precio,flete,descuento);
+
+
+
 
         this.id = id;
         this.fecha = LocalDate.now();
@@ -44,7 +44,10 @@ public class Pedido {
         this.comprador = comprador;
         this.ciudad = ciudad;
         this.destino = destino;
+        this.flete = this.valorFlete(ciudad,destino);
         this.precio= precio;
+        this.descuento= this.valorDescuento(fecha, precio);
+        this.total=this.valorTotal(precio,flete,descuento);
 
 
 
@@ -82,7 +85,7 @@ public class Pedido {
 
 
     private int valorTotal(int precio, int flete, int descuento) {
-      return this.total=Math.round(precio+flete-descuento);
+      return this.total=precio+flete-descuento;
     }
 
     private int valorDescuento(LocalDate fecha, int precio) {

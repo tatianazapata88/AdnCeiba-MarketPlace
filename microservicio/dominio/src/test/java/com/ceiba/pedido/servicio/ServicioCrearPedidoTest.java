@@ -102,6 +102,18 @@ public class ServicioCrearPedidoTest {
         Assert.assertEquals(pedido.getFlete(),flete);
     }
 
+    @Test
+    public void validarCalcularValorTotalTest() {
+        // arrange
+        int flete = 30000;
+        int precio = 1000000;
+        int descuento = 0;
+        Pedido pedido = new PedidoTestDataBuilder().conFletePrecioYDescuento(precio,flete,descuento).build();
+        int total = 1030000;
+        //assert
+        Assert.assertEquals(pedido.getTotal(),total);
+    }
+
    /* @Test
     public void validarDescuentoPagoTest() {
         // arrange

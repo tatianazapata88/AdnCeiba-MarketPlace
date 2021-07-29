@@ -23,7 +23,7 @@ create table scotter (
 
 create table pedido (
  id int (4) not null auto_increment,
- fecha datetime not null,
+ fecha date not null,
  bici int(4) not null,
  comprador int (4) not null,
  ciudad varchar (45) not null,

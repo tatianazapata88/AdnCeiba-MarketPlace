@@ -1,5 +1,5 @@
 SELECT id,
-    username
+    username,
     nombre,
     celular,
     email

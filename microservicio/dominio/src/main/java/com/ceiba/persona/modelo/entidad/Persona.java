@@ -32,25 +32,25 @@ public class Persona {
 
 
     private void validarCampoUsernameVacio(String username){
-        if (username == null) {
+        if (username == null || username.trim().length()<=0) {
             throw new ExcepcionValorObligatorio(CAMPO_USERNAME_ES_OBLIGATORIO);
         }
     }
 
     private void validarCampoNombreVacio(String nombre) {
-        if (nombre == null) {
+        if (nombre == null || nombre.trim().length()<=0) {
             throw new ExcepcionValorObligatorio(CAMPO_NOMBRE_ES_OBLIGATORIO);
         }
     }
 
    private void validarCampoCelularVacio(String celular) {
-        if (celular == null) {
+        if (celular == null|| celular.trim().length()<=0) {
             throw new ExcepcionValorObligatorio(CAMPO_CELULAR_ES_OBLIGATORIO);
         }
     }
 
     private void validarCampoEmailVacio(String email) {
-        if (email == null) {
+        if (email == null || email.trim().length()<=0) {
             throw new ExcepcionValorObligatorio(CAMPO_EMAIL_ES_OBLIGATORIO);
         }
     }

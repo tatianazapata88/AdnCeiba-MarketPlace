@@ -63,10 +63,17 @@ public class PedidoTestDataBuilder {
         return this;
     }
 
+    public PedidoTestDataBuilder conFletePrecioYDescuento( int precio,int flete, int descuento){
+        this.flete = flete;
+        this.precio =precio;
+        this.descuento=descuento;
+
+        return  this;
+    }
 
     public Pedido build() {
 
-        return new Pedido(id,fecha,bici,comprador,ciudad,destino,precio);
+        return new Pedido(id,fecha,bici,comprador,ciudad,destino,flete,precio,descuento,total);
     }
 }
 

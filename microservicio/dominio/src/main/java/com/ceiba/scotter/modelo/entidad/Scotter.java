@@ -12,7 +12,6 @@ public class Scotter {
     private static final String CAMPO_PRECIO_ES_OBLIGATORIO = "El campo precio es obligatorio no puede ir vacio";
     private static final String CAMPO_CIUDAD_ES_OBLIGATORIO = "El campo ciudad es obligatorio no puede ir vacio";
     private static final String CAMPO_VENDEDOR_ES_OBLIGATORIO = "El campo vendedor es obligatorio no puede ir vacio";
-    private static final String CAMPO_ESTADO_ES_OBLIGATORIO = "El campo estado es obligatorio no puede ir vacio";
     private static final String CAMPO_FOTO_ES_OBLIGATORIO = "El campo foto es obligatorio no puede ir vacio";
 
 
@@ -32,7 +31,6 @@ public class Scotter {
         validarCampoPrecioVacio(precio);
         validarCampoCiudadVacio(ciudad);
         validarCampoVendedorVacio(vendedor);
-        validarCampoEstadoVacio(estado);
         validarCampoFotoVacio(foto);
 
         this.id = id;
@@ -73,12 +71,6 @@ public class Scotter {
     private void validarCampoVendedorVacio(Long vendedor) {
         if (vendedor == null) {
             throw new ExcepcionValorObligatorio(CAMPO_VENDEDOR_ES_OBLIGATORIO);
-        }
-    }
-
-    private void validarCampoEstadoVacio(String estado) {
-        if (estado == null){
-            throw new ExcepcionValorObligatorio(CAMPO_ESTADO_ES_OBLIGATORIO);
         }
     }
 
