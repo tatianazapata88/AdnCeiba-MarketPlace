@@ -15,11 +15,11 @@ public class ServicioEliminarPersonaTest {
     @Test
     public void validarPersonaEliminarTest() {
         // arrange
-        String username = "taty";
-        Persona persona = new PersonaTestDataBuilder().conId(1L).conUsername(username).build();
+
+        Persona persona = new PersonaTestDataBuilder().conId(3L).build();
         RepositorioPersona repositorioPersona = Mockito.mock(RepositorioPersona.class);
         ServicioEliminarPersona servicioEliminarPersona = new ServicioEliminarPersona(repositorioPersona);
-        Long id = 1L;
+        Long id = 3L;
         servicioEliminarPersona.ejecutar(id);
         // act - assert
         Assert.assertEquals(persona.getId(), id);

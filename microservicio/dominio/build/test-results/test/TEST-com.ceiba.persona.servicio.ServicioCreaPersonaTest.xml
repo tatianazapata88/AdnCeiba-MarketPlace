@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.persona.servicio.ServicioCreaPersonaTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-07-29T21:15:21" hostname="LUZP-ZAPATA" time="0.026">
+  <properties/>
+  <testcase name="validarPersonaTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.008"/>
+  <testcase name="validarCampoUsernameVacioTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.003"/>
+  <testcase name="validarCampoNombreVacioTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.002"/>
+  <testcase name="validarPersonaExistenciaPreviaTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.002"/>
+  <testcase name="validarCampoEmailVacioTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.003"/>
+  <testcase name="validarCampoCelularVacioTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -60,7 +60,7 @@ public class ComandoControladorPersonaTest {
         @Test
         public void eliminarPersonaTest() throws Exception {
             // arrange
-            Long id = 2L;
+            Long id = 4L;
 
             // act - assert
             mocMvc.perform(delete("/personas/{id}",id)

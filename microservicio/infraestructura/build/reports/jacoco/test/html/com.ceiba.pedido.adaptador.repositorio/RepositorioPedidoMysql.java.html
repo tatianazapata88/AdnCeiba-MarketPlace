@@ -28,22 +28,22 @@ public class RepositorioPedidoMysql implements RepositorioPedido {
 
     @Override
     public Long crear(Pedido pedido) {
-<span class="nc" id="L31">          return this.customNamedParameterJdbcTemplate.crear(pedido, sqlCrear);</span>
+<span class="fc" id="L31">          return this.customNamedParameterJdbcTemplate.crear(pedido, sqlCrear);</span>
     }
 
     @Override
     public void eliminar(Long id) {
-<span class="nc" id="L36">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L37">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L36">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L37">        paramSource.addValue(&quot;id&quot;, id);</span>
 
-<span class="nc" id="L39">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
-<span class="nc" id="L40">    }</span>
+<span class="fc" id="L39">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
+<span class="fc" id="L40">    }</span>
 
      @Override
     public void actualizar(Pedido pedido) {
-<span class="nc" id="L44">        this.customNamedParameterJdbcTemplate.actualizar(pedido, sqlActualizar);</span>
-<span class="nc" id="L45">    }</span>
+<span class="fc" id="L44">        this.customNamedParameterJdbcTemplate.actualizar(pedido, sqlActualizar);</span>
+<span class="fc" id="L45">    }</span>
 
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

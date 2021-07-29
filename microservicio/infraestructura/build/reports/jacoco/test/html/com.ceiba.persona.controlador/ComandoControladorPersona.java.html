@@ -27,21 +27,21 @@ public class ComandoControladorPersona {
     @PostMapping
     @ApiOperation(&quot;Crear Persona&quot;)
     public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoPersona comandoPersona) {
-<span class="nc" id="L30">        return manejadorCrearPersona.ejecutar(comandoPersona);</span>
+<span class="fc" id="L30">        return manejadorCrearPersona.ejecutar(comandoPersona);</span>
     }
 
     @DeleteMapping(value = &quot;/{id}&quot;)
     @ApiOperation(&quot;Eliminar Persona&quot;)
     public void eliminar(@PathVariable Long id) {
-<span class="nc" id="L36">        manejadorEliminarPersona.ejecutar(id);</span>
-<span class="nc" id="L37">    }</span>
+<span class="fc" id="L36">        manejadorEliminarPersona.ejecutar(id);</span>
+<span class="fc" id="L37">    }</span>
 
     @PutMapping(value = &quot;/{id}&quot;)
     @ApiOperation(&quot;Actualizar Persona&quot;)
     public void actualizar(@RequestBody ComandoPersona comandoPersona, @PathVariable Long id) {
-<span class="nc" id="L42">        comandoPersona.setId(id);</span>
-<span class="nc" id="L43">        manejadorActualizarPersona.ejecutar(comandoPersona);</span>
-<span class="nc" id="L44">    }</span>
+<span class="fc" id="L42">        comandoPersona.setId(id);</span>
+<span class="fc" id="L43">        manejadorActualizarPersona.ejecutar(comandoPersona);</span>
+<span class="fc" id="L44">    }</span>
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
