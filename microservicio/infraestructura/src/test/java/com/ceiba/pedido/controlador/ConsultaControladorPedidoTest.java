@@ -23,7 +23,7 @@ public class ConsultaControladorPedidoTest {
     @Autowired
     private MockMvc mocMvc;
 
-    @Test
+   /* @Test
     public void listarPedidoTest() throws Exception {
         // arrange
 
@@ -33,5 +33,5 @@ public class ConsultaControladorPedidoTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].id", is(1)));
-    }
+    }*
 }
