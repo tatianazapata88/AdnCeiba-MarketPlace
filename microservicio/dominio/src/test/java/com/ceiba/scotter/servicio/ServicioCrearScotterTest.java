@@ -31,8 +31,7 @@ public class ServicioCrearScotterTest {
     private static final String CAMPO_PRECIO_ES_OBLIGATORIO = "El campo precio es obligatorio no puede ir vacio";
     private static final String CAMPO_CIUDAD_ES_OBLIGATORIO = "El campo ciudad es obligatorio no puede ir vacio";
     private static final String CAMPO_VENDEDOR_ES_OBLIGATORIO = "El campo vendedor es obligatorio no puede ir vacio";
-    private static final String CAMPO_ESTADO_ES_OBLIGATORIO = "El campo estado es obligatorio no puede ir vacio";
-    private static final String CAMPO_FOTO_ES_OBLIGATORIO = "El campo foto es obligatorio no puede ir vacio";
+   private static final String CAMPO_FOTO_ES_OBLIGATORIO = "El campo foto es obligatorio no puede ir vacio";
 
     @Mock
     private RepositorioScotter repositorioScotter;
@@ -85,13 +84,7 @@ public class ServicioCrearScotterTest {
         BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_VENDEDOR_ES_OBLIGATORIO);
     }
 
-    @Test
-    public void validarCampoEstadoVacioTest() {
-        // arrange
-        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA,MODELO,PRECIO,CIUDAD,VENDEDOR,null,FOTO);
-        // act - assert
-        BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_ESTADO_ES_OBLIGATORIO); }
-
+    
     @Test
     public void validarCampoFotoVacioTest() {
         // arrange
