@@ -6,8 +6,8 @@ com/ceiba/ApplicationMock.java
  com.ceiba.ApplicationMock
 com/ceiba/persona/servicio/testdatabuilder/ComandoPersonaTestDataBuilder.java
  com.ceiba.persona.servicio.testdatabuilder.ComandoPersonaTestDataBuilder
-com/ceiba/pedido/controlador/ConsultaControladorPedidoTest.java
- com.ceiba.pedido.controlador.ConsultaControladorPedidoTest
+com/ceiba/persona/controlador/ComandoControladorPersonaTest.java
+ com.ceiba.persona.controlador.ComandoControladorPersonaTest
 com/ceiba/persona/controlador/ConsultaControladorPersonaTest.java
  com.ceiba.persona.controlador.ConsultaControladorPersonaTest
 com/ceiba/pedido/servicio/testdatabuilder/ComandoPedidoTestDataBuilder.java
@@ -16,5 +16,5 @@ com/ceiba/scotter/controlador/ComandoControladorScotterTest.java
  com.ceiba.scotter.controlador.ComandoControladorScotterTest
 com/ceiba/pedido/controlador/ComandoControladorPedidoTest.java
  com.ceiba.pedido.controlador.ComandoControladorPedidoTest
-com/ceiba/persona/controlador/ComandoControladorPersonaTest.java
- com.ceiba.persona.controlador.ComandoControladorPersonaTest
+com/ceiba/pedido/controlador/ConsultaControladorPedidoTest.java
+ com.ceiba.pedido.controlador.ConsultaControladorPedidoTest
