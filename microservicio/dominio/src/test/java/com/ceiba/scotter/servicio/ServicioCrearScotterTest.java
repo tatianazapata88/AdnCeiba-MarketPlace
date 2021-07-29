@@ -84,7 +84,7 @@ public class ServicioCrearScotterTest {
         BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_VENDEDOR_ES_OBLIGATORIO);
     }
 
-    
+
     @Test
     public void validarCampoFotoVacioTest() {
         // arrange

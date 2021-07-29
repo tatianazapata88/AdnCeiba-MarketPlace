@@ -31,20 +31,20 @@ public class ComandoControladorPedido {
     @PostMapping
     @ApiOperation(&quot;Crear Pedido&quot;)
     public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoPedido comandoPedido) {
-<span class="fc" id="L34">        return manejadorCrearPedido.ejecutar(comandoPedido);</span>
+<span class="nc" id="L34">        return manejadorCrearPedido.ejecutar(comandoPedido);</span>
     }
 
     @DeleteMapping(value=&quot;/{id}&quot;)
     @ApiOperation(&quot;Eliminar Pedido&quot;)
     public void eliminar(@PathVariable Long id) {
-<span class="fc" id="L40">        manejadorEliminarPedido.ejecutar(id);</span>
-<span class="fc" id="L41">    }</span>
+<span class="nc" id="L40">        manejadorEliminarPedido.ejecutar(id);</span>
+<span class="nc" id="L41">    }</span>
 
     @PutMapping(value=&quot;/{id}&quot;)
     @ApiOperation(&quot;Actualizar Pedido&quot;)
     public void actualizar(@RequestBody ComandoPedido comandoPedido, @PathVariable Long id) {
-<span class="fc" id="L46">        comandoPedido.setId(id);</span>
-<span class="fc" id="L47">        manejadorActualizarPedido.ejecutar(comandoPedido);</span>
-<span class="fc" id="L48">    }</span>
+<span class="nc" id="L46">        comandoPedido.setId(id);</span>
+<span class="nc" id="L47">        manejadorActualizarPedido.ejecutar(comandoPedido);</span>
+<span class="nc" id="L48">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
