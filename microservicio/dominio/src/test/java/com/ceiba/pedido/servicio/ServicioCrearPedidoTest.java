@@ -18,7 +18,7 @@ import java.time.LocalDate;
 
 public class ServicioCrearPedidoTest {
 
-    private static final LocalDate FECHA =LocalDate.now();
+
     private static final Long BICI =1L;
     private static final Long COMPRADOR = 2L;
     private static final String CIUDAD = "Medellin";
@@ -46,7 +46,7 @@ public class ServicioCrearPedidoTest {
     @Test
     public void validarCampoBiciVacioTest(){
         // arrange
-        PedidoTestDataBuilder pedidoTestDataBuilder = new PedidoTestDataBuilder(FECHA,null,COMPRADOR,CIUDAD,DESTINO,PRECIO);
+        PedidoTestDataBuilder pedidoTestDataBuilder = new PedidoTestDataBuilder(null,COMPRADOR,CIUDAD,DESTINO,PRECIO);
         // act - assert
         BasePrueba.assertThrows(() -> pedidoTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_BICI_ES_OBLIGATORIO);
     }
@@ -54,7 +54,7 @@ public class ServicioCrearPedidoTest {
      @Test
     public void validarCampoCompradorVacioTest() {
         // arrange
-         PedidoTestDataBuilder pedidoTestDataBuilder = new PedidoTestDataBuilder(FECHA,BICI,null,CIUDAD,DESTINO,PRECIO);
+         PedidoTestDataBuilder pedidoTestDataBuilder = new PedidoTestDataBuilder(BICI,null,CIUDAD,DESTINO,PRECIO);
          // act - assert
          BasePrueba.assertThrows(() -> pedidoTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_COMPRADOR_ES_OBLIGATORIO);
      }
@@ -62,7 +62,7 @@ public class ServicioCrearPedidoTest {
     @Test
     public void validarCampoCiudadVacioTest() {
         // arrange
-        PedidoTestDataBuilder pedidoTestDataBuilder = new PedidoTestDataBuilder(FECHA,BICI,COMPRADOR,null,DESTINO,PRECIO);
+        PedidoTestDataBuilder pedidoTestDataBuilder = new PedidoTestDataBuilder(BICI,COMPRADOR,null,DESTINO,PRECIO);
         // act - assert
         BasePrueba.assertThrows(() -> pedidoTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_CIUDAD_ES_OBLIGATORIO);
     }
@@ -71,7 +71,7 @@ public class ServicioCrearPedidoTest {
     @Test
     public void validarCampoDestinoVacioTest() {
         // arrange
-        PedidoTestDataBuilder pedidoTestDataBuilder = new PedidoTestDataBuilder(FECHA,BICI,COMPRADOR,CIUDAD,null,PRECIO);
+        PedidoTestDataBuilder pedidoTestDataBuilder = new PedidoTestDataBuilder(BICI,COMPRADOR,CIUDAD,null,PRECIO);
         // act - assert
         BasePrueba.assertThrows(() -> pedidoTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_DESTINO_ES_OBLIGATORIO);
     }
@@ -79,7 +79,7 @@ public class ServicioCrearPedidoTest {
        @Test
     public void validarCampoPrecioVacioTest() {
         // arrange
-        PedidoTestDataBuilder pedidoTestDataBuilder = new PedidoTestDataBuilder(FECHA,BICI,COMPRADOR,CIUDAD,DESTINO,0);
+        PedidoTestDataBuilder pedidoTestDataBuilder = new PedidoTestDataBuilder(BICI,COMPRADOR,CIUDAD,DESTINO,0);
         // act - assert
         BasePrueba.assertThrows(() -> pedidoTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_PRECIO_ES_OBLIGATORIO);
     }
@@ -105,23 +105,20 @@ public class ServicioCrearPedidoTest {
     @Test
     public void validarCalcularValorTotalTest() {
         // arrange
-        int flete = 30000;
-        int precio = 1000000;
-        int descuento = 0;
-        Pedido pedido = new PedidoTestDataBuilder().conFletePrecioYDescuento(precio,flete,descuento).build();
-        int total = 1030000;
+       Pedido pedido = new PedidoTestDataBuilder().build();
+        int total = 3830000;
         //assert
         Assert.assertEquals(pedido.getTotal(),total);
     }
 
-   /* @Test
+    @Test
     public void validarDescuentoPagoTest() {
         // arrange
-        Pedido pedido = new PedidoTestDataBuilder().conFecha(LocalDate.now()).build();
-        double descuento = 200000.0;
+        Pedido pedido = new PedidoTestDataBuilder().build();
+        int descuento = 200000;
         //assert
-        Assert.assertEquals(pedido.getDescuento(),descuento,0);
-    }*/
+        Assert.assertEquals(pedido.getDescuento(),descuento);
+    }
 
       @Test
     public void agregarPedidoTest() {

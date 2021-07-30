@@ -3,7 +3,9 @@ package com.ceiba.pedido.modelo.entidad;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import lombok.Getter;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
 import java.util.Date;
 
 
@@ -28,7 +30,7 @@ public class Pedido {
     private int descuento;
     private int total;
 
-    public Pedido(Long id, LocalDate fecha, Long bici, Long comprador, String ciudad, String destino, int flete, int precio, int descuento, int total) {
+    public Pedido(Long id,Long bici, Long comprador, String ciudad, String destino, int precio) {
         validarCampoBici(bici);
         validarCampoComprador(comprador);
         validarCampoCiudad(ciudad);
@@ -46,8 +48,8 @@ public class Pedido {
         this.destino = destino;
         this.flete = this.valorFlete(ciudad,destino);
         this.precio= precio;
-        this.descuento= this.valorDescuento(fecha, precio);
-        this.total=this.valorTotal(precio,flete,descuento);
+        this.descuento= this.valorDescuento(this.fecha, precio);
+        this.total=this.valorTotal(precio,this.flete,this.descuento);
 
 
 
@@ -88,16 +90,20 @@ public class Pedido {
       return this.total=precio+flete-descuento;
     }
 
-    private int valorDescuento(LocalDate fecha, int precio) {
 
-        if (fecha==LocalDate.now()){
+
+        private int valorDescuento(LocalDate fecha, int precio) {
+          int diferenciaFechas =fecha.compareTo(LocalDate.now());
+            if(diferenciaFechas==0){
             return this.descuento= (int) (precio*0.05);
             }
         else{
 
 
             return this.descuento=0;}
-
+         //   System.out.println(fecha);
+           // return 100;
+     //       return this.descuento= (int) (precio*0.05);
 
     }
 

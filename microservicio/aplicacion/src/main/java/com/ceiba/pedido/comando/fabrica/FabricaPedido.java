@@ -12,15 +12,13 @@ public class FabricaPedido {
         public Pedido crear(ComandoPedido comandoPedido) {
         return new Pedido(
                 comandoPedido.getId(),
-                comandoPedido.getFecha(),
                 comandoPedido.getBici(),
                 comandoPedido.getComprador(),
                 comandoPedido.getCiudad(),
                 comandoPedido.getDestino(),
-                comandoPedido.getFlete(),
-                comandoPedido.getPrecio(),
-                comandoPedido.getDescuento(),
-                comandoPedido.getTotal()
+                comandoPedido.getPrecio()
+
+
 
 
 

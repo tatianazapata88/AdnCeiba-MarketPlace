@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.scotter.servicio.ServicioCrearScotterTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-07-29T21:15:22" hostname="LUZP-ZAPATA" time="0.025">
+<testsuite name="com.ceiba.scotter.servicio.ServicioCrearScotterTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-07-30T20:06:41" hostname="LUZP-ZAPATA" time="0.012">
   <properties/>
-  <testcase name="validarCampoCiudadVacioTest" classname="com.ceiba.scotter.servicio.ServicioCrearScotterTest" time="0.007"/>
-  <testcase name="validarCampoMarcaVacioTest" classname="com.ceiba.scotter.servicio.ServicioCrearScotterTest" time="0.008"/>
-  <testcase name="validarCampoFotoVacioTest" classname="com.ceiba.scotter.servicio.ServicioCrearScotterTest" time="0.001"/>
+  <testcase name="validarCampoCiudadVacioTest" classname="com.ceiba.scotter.servicio.ServicioCrearScotterTest" time="0.001"/>
+  <testcase name="validarCampoMarcaVacioTest" classname="com.ceiba.scotter.servicio.ServicioCrearScotterTest" time="0.002"/>
+  <testcase name="validarCampoFotoVacioTest" classname="com.ceiba.scotter.servicio.ServicioCrearScotterTest" time="0.002"/>
   <testcase name="agregarScotterTest1" classname="com.ceiba.scotter.servicio.ServicioCrearScotterTest" time="0.002"/>
-  <testcase name="validarCampoVendedorVacioTest" classname="com.ceiba.scotter.servicio.ServicioCrearScotterTest" time="0.001"/>
+  <testcase name="validarCampoVendedorVacioTest" classname="com.ceiba.scotter.servicio.ServicioCrearScotterTest" time="0.002"/>
   <testcase name="validarCampoPrecioVacioTest" classname="com.ceiba.scotter.servicio.ServicioCrearScotterTest" time="0.001"/>
-  <testcase name="validarCampoModeloVacioTest" classname="com.ceiba.scotter.servicio.ServicioCrearScotterTest" time="0.001"/>
+  <testcase name="validarCampoModeloVacioTest" classname="com.ceiba.scotter.servicio.ServicioCrearScotterTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

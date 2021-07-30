@@ -11,10 +11,10 @@ public class ServicioEliminarPedidoTest {
     @Test
     public void validarEliminarPedidoTest() {
         // arrange
-        Pedido pedido = new PedidoTestDataBuilder().conId(1L).build();
+        Pedido pedido = new PedidoTestDataBuilder().conId(2L).build();
         RepositorioPedido repositorioPedido = Mockito.mock(RepositorioPedido.class);
         ServicioEliminarPedido servicioEliminarPedido = new ServicioEliminarPedido(repositorioPedido);
-        Long id = 1L;
+        Long id = 2L;
         servicioEliminarPedido.ejecutar(id);
         // act - assert
         Assert.assertEquals(pedido.getId(), id);
