@@ -41,11 +41,23 @@ public class ComandoControladorPedidoTest {
                 .andExpect(status().isOk())
                 .andExpect(content().json("{'valor': 2}"));
     }
+    @Test
+    public void crearPedidoScotterReservadaTest() throws Exception{
+        // arrange
+        Long bici = 1L;
+        ComandoPedido pedido = new ComandoPedidoTestDataBuilder().conBici(bici).build();
 
+        // act - assert
+        mocMvc.perform(post("/pedidos")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(pedido)))
+                .andExpect(status().isBadRequest());
+
+    }
     @Test
     public void actualizarPedidoTest() throws Exception{
         // arrange
-        Long id = 1L;
+        Long id = 2L;
         ComandoPedido pedido = new ComandoPedidoTestDataBuilder().build();
 
         // act - assert

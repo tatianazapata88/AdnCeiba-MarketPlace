@@ -14,6 +14,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class ComandoPedido {
     private Long id;
+    private LocalDate fecha;
     private Long bici;
     private Long comprador;
     private String ciudad;

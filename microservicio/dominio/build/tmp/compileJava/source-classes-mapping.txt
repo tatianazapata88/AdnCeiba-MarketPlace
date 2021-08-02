@@ -6,8 +6,8 @@ com/ceiba/persona/modelo/dto/DtoPersona.java
  com.ceiba.persona.modelo.dto.DtoPersona
 com/ceiba/persona/puerto/repositorio/RepositorioPersona.java
  com.ceiba.persona.puerto.repositorio.RepositorioPersona
-com/ceiba/pedido/servicio/ServicioCrearPedido.java
- com.ceiba.pedido.servicio.ServicioCrearPedido
+com/ceiba/pedido/modelo/entidad/Pedido.java
+ com.ceiba.pedido.modelo.entidad.Pedido
 com/ceiba/scotter/modelo/dto/DtoScotter.java
  com.ceiba.scotter.modelo.dto.DtoScotter
 com/ceiba/pedido/puerto/dao/DaoPedido.java
@@ -16,8 +16,8 @@ com/ceiba/scotter/puerto/repositorio/RepositorioScotter.java
  com.ceiba.scotter.puerto.repositorio.RepositorioScotter
 com/ceiba/scotter/puerto/dao/DaoScotter.java
  com.ceiba.scotter.puerto.dao.DaoScotter
-com/ceiba/pedido/servicio/ServicioEliminarPedido.java
- com.ceiba.pedido.servicio.ServicioEliminarPedido
+com/ceiba/persona/servicio/ServicioActualizarPersona.java
+ com.ceiba.persona.servicio.ServicioActualizarPersona
 com/ceiba/pedido/modelo/dto/DtoPedido.java
  com.ceiba.pedido.modelo.dto.DtoPedido
 com/ceiba/scotter/servicio/ServicioCrearScotter.java
@@ -30,13 +30,13 @@ com/ceiba/scotter/modelo/entidad/Scotter.java
  com.ceiba.scotter.modelo.entidad.Scotter
 com/ceiba/scotter/servicio/ServicioActualizarScotter.java
  com.ceiba.scotter.servicio.ServicioActualizarScotter
-com/ceiba/pedido/servicio/ServicioActualizarPedido.java
- com.ceiba.pedido.servicio.ServicioActualizarPedido
-com/ceiba/pedido/puerto/repositorio/RepositorioPedido.java
- com.ceiba.pedido.puerto.repositorio.RepositorioPedido
 com/ceiba/persona/servicio/ServicioEliminarPersona.java
  com.ceiba.persona.servicio.ServicioEliminarPersona
-com/ceiba/persona/servicio/ServicioActualizarPersona.java
- com.ceiba.persona.servicio.ServicioActualizarPersona
-com/ceiba/pedido/modelo/entidad/Pedido.java
- com.ceiba.pedido.modelo.entidad.Pedido
+com/ceiba/pedido/puerto/repositorio/RepositorioPedido.java
+ com.ceiba.pedido.puerto.repositorio.RepositorioPedido
+com/ceiba/pedido/servicio/ServicioEliminarPedido.java
+ com.ceiba.pedido.servicio.ServicioEliminarPedido
+com/ceiba/pedido/servicio/ServicioActualizarPedido.java
+ com.ceiba.pedido.servicio.ServicioActualizarPedido
+com/ceiba/pedido/servicio/ServicioCrearPedido.java
+ com.ceiba.pedido.servicio.ServicioCrearPedido

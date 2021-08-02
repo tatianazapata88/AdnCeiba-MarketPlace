@@ -9,7 +9,7 @@ public class DtoScotter {
     private Long id;
     private String marca;
     private String modelo;
-    private Integer precio;
+    private int precio;
     private String ciudad;
     private Long vendedor;
     private String estado;

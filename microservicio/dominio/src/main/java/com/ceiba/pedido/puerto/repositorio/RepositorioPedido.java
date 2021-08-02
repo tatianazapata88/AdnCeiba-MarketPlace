@@ -13,5 +13,9 @@ public interface RepositorioPedido {
 
     void eliminar(Long id);
 
+    boolean existe(Long bici);
+
+    void cambiarEstado(Long bici);
+
 
 }

@@ -30,9 +30,25 @@ public class ServicioCreaPersonaTest {
     }
 
     @Test
+    public void validarCampoUsernameBlancoTest(){
+        // arrange
+        PersonaTestDataBuilder PersonaTestDataBuilder = new PersonaTestDataBuilder(" ", NOMBRE, CELULAR, EMAIL);
+        // act - assert
+        BasePrueba.assertThrows(() -> PersonaTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_USERNAME_ES_OBLIGATORIO);
+    }
+
+    @Test
     public void validarCampoNombreVacioTest() {
         // arrange
         PersonaTestDataBuilder PersonaTestDataBuilder = new PersonaTestDataBuilder(USERNAME,null,CELULAR,EMAIL);
+        // act - assert
+        BasePrueba.assertThrows(() -> PersonaTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_NOMBRE_ES_OBLIGATORIO);
+    }
+
+    @Test
+    public void validarCampoNombreBlancoTest() {
+        // arrange
+        PersonaTestDataBuilder PersonaTestDataBuilder = new PersonaTestDataBuilder(USERNAME," ",CELULAR,EMAIL);
         // act - assert
         BasePrueba.assertThrows(() -> PersonaTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_NOMBRE_ES_OBLIGATORIO);
     }
@@ -46,6 +62,14 @@ public class ServicioCreaPersonaTest {
     }
 
     @Test
+    public void validarCampoCelularBlancoTest() {
+        // arrange
+        PersonaTestDataBuilder PersonaTestDataBuilder = new PersonaTestDataBuilder(USERNAME,NOMBRE," ",EMAIL);
+        // act - assert
+        BasePrueba.assertThrows(() -> PersonaTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_CELULAR_ES_OBLIGATORIO);
+    }
+
+    @Test
     public void validarCampoEmailVacioTest() {
         // arrange
         PersonaTestDataBuilder PersonaTestDataBuilder = new PersonaTestDataBuilder(USERNAME,NOMBRE,CELULAR,null);
@@ -53,6 +77,13 @@ public class ServicioCreaPersonaTest {
         BasePrueba.assertThrows(() -> PersonaTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_EMAIL_ES_OBLIGATORIO);
     }
 
+    @Test
+    public void validarCampoEmailBlancoTest() {
+        // arrange
+        PersonaTestDataBuilder PersonaTestDataBuilder = new PersonaTestDataBuilder(USERNAME,NOMBRE,CELULAR," ");
+        // act - assert
+        BasePrueba.assertThrows(() -> PersonaTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_EMAIL_ES_OBLIGATORIO);
+    }
     @Test
     public void validarPersonaExistenciaPreviaTest() {
         // arrange
@@ -68,21 +99,22 @@ public class ServicioCreaPersonaTest {
     @Test
     public void validarPersonaTest() {
         // arrange
-        String username = "taty";
-        Persona persona = new PersonaTestDataBuilder().conId(1L).conUsername(username).build();
+
+        Persona persona = new PersonaTestDataBuilder().build();
         RepositorioPersona repositorioPersona = Mockito.mock(RepositorioPersona.class);
         Mockito.when(repositorioPersona.existe(Mockito.any())).thenReturn(false);
         ServicioCrearPersona servicioCrearPersona = new ServicioCrearPersona(repositorioPersona);
+        String username = "taty";
         String nombre = "Luz Tatiana Zapata";
         String celular = "3135151617";
         String email = "tatianazz3@hotmail.com";
-        Long id = 1L;
         servicioCrearPersona.ejecutar(persona);
         // act - assert
+        Assert.assertEquals(persona.getUsername(), username);
         Assert.assertEquals(persona.getNombre(), nombre);
         Assert.assertEquals(persona.getCelular(), celular);
         Assert.assertEquals(persona.getEmail(), email);
-        Assert.assertEquals(persona.getId(), id);
+
     }
 
 }

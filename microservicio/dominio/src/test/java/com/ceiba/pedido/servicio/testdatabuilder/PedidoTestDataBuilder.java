@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 public class PedidoTestDataBuilder {
     private Long id;
+    private LocalDate fecha;
     private Long bici;
     private Long comprador;
     private String ciudad;
@@ -19,7 +20,7 @@ public class PedidoTestDataBuilder {
 
     public PedidoTestDataBuilder(){
 
-
+        fecha = LocalDate.of(2021,8,2);
         bici = 1L;
         comprador = 2L;
         ciudad = "medellin";
@@ -31,9 +32,9 @@ public class PedidoTestDataBuilder {
 
 
     }
-    public PedidoTestDataBuilder(Long bici, Long comprador, String ciudad,
+    public PedidoTestDataBuilder(LocalDate fecha,Long bici, Long comprador, String ciudad,
                                  String destino, int precio) {
-
+        this.fecha = fecha;
         this.bici = bici;
         this.comprador = comprador;
         this.ciudad = ciudad;
@@ -47,11 +48,16 @@ public class PedidoTestDataBuilder {
         return this;
     }
 
-    /*public PedidoTestDataBuilder conFecha(LocalDate fecha) {
+    public PedidoTestDataBuilder conBici(Long bici) {
+        this.bici = bici;
+        return this;
+    }
+
+    public PedidoTestDataBuilder conFecha(LocalDate fecha) {
         this.fecha = fecha;
 
         return this;
-    }*/
+    }
 
     public PedidoTestDataBuilder conCiudadYDestino(String ciudad, String destino) {
         this.ciudad = ciudad;
@@ -63,7 +69,7 @@ public class PedidoTestDataBuilder {
 
     public Pedido build() {
 
-        return new Pedido(id,bici,comprador,ciudad,destino,precio);
+        return new Pedido(id,fecha,bici,comprador,ciudad,destino,precio);
     }
 }
 

@@ -12,6 +12,7 @@ import java.util.Date;
 @Getter
 public class Pedido {
 
+    private static final String CAMPO_FECHA_ES_OBLIGATORIO = "El campo fecha obligatorio no puede ir vacio";
     private static final String CAMPO_BICI_ES_OBLIGATORIO = "El campo scotter obligatorio no puede ir vacio";
     private static final String CAMPO_COMPRADOR_ES_OBLIGATORIO = "El campo id Comprador es obligatorio no puede ir vacio";
     private static final String CAMPO_CIUDAD_ES_OBLIGATORIO = "El campo ciudad scotter  es obligatorio no puede ir vacio";
@@ -30,7 +31,8 @@ public class Pedido {
     private int descuento;
     private int total;
 
-    public Pedido(Long id,Long bici, Long comprador, String ciudad, String destino, int precio) {
+    public Pedido(Long id,LocalDate fecha, Long bici, Long comprador, String ciudad, String destino, int precio) {
+        validarCampoFecha(fecha);
         validarCampoBici(bici);
         validarCampoComprador(comprador);
         validarCampoCiudad(ciudad);
@@ -41,7 +43,7 @@ public class Pedido {
 
 
         this.id = id;
-        this.fecha = LocalDate.now();
+        this.fecha = fecha;
         this.bici = bici;
         this.comprador = comprador;
         this.ciudad = ciudad;
@@ -55,6 +57,12 @@ public class Pedido {
 
     }
 
+    private void validarCampoFecha(LocalDate fecha){
+        if (fecha == null) {
+            throw new ExcepcionValorObligatorio(CAMPO_FECHA_ES_OBLIGATORIO);
+        }
+    }
+
     private void validarCampoBici(Long bici){
         if (bici == null) {
             throw new ExcepcionValorObligatorio(CAMPO_BICI_ES_OBLIGATORIO);
@@ -62,19 +70,19 @@ public class Pedido {
     }
 
     private void validarCampoComprador(Long comprador){
-        if (comprador == null) {
+        if (comprador == null ) {
             throw new ExcepcionValorObligatorio(CAMPO_COMPRADOR_ES_OBLIGATORIO);
         }
     }
 
     private void validarCampoCiudad(String ciudad){
-        if (ciudad == null) {
+        if (ciudad == null|| ciudad.trim().length()<=0) {
             throw new ExcepcionValorObligatorio(CAMPO_CIUDAD_ES_OBLIGATORIO);
         }
     }
 
     private void validarCampoDestino(String destino){
-        if (destino == null) {
+        if (destino == null || destino.trim().length()<=0) {
             throw new ExcepcionValorObligatorio(CAMPO_DESTINO_ES_OBLIGATORIO);
         }
     }
@@ -101,9 +109,6 @@ public class Pedido {
 
 
             return this.descuento=0;}
-         //   System.out.println(fecha);
-           // return 100;
-     //       return this.descuento= (int) (precio*0.05);
 
     }
 

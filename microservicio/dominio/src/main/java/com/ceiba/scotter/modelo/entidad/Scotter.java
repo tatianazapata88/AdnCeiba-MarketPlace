@@ -18,14 +18,14 @@ public class Scotter {
     private Long id;
     private String marca;
     private String modelo;
-    private Integer precio;
+    private int precio;
     private String ciudad;
     private Long vendedor;
     private String estado;
     private String foto;
 
 
-    public Scotter(Long id, String marca, String modelo, Integer precio, String ciudad, Long vendedor, String estado, String foto) {
+    public Scotter(Long id, String marca, String modelo, int precio, String ciudad, Long vendedor, String estado, String foto) {
         validarCampoMarcaVacio(marca);
         validarCampoModeloVacio(modelo);
         validarCampoPrecioVacio(precio);
@@ -44,26 +44,25 @@ public class Scotter {
     }
 
     private void validarCampoMarcaVacio(String marca){
-        if (marca == null) {
+        if (marca == null || marca.trim().length()<=0) {
             throw new ExcepcionValorObligatorio(CAMPO_MARCA_ES_OBLIGATORIO);
         }
     }
 
     private void validarCampoModeloVacio(String modelo) {
-        if (modelo == null) {
+        if (modelo == null || modelo.trim().length()<=0) {
             throw new ExcepcionValorObligatorio(CAMPO_MODELO_ES_OBLIGATORIO);
         }
     }
 
-    private void validarCampoPrecioVacio(Integer precio) {
-
-        if (precio == null){
+    private void validarCampoPrecioVacio(int precio) {
+         if (precio == 0 ){
             throw new ExcepcionValorObligatorio(CAMPO_PRECIO_ES_OBLIGATORIO);
         }
     }
 
     private void validarCampoCiudadVacio(String ciudad) {
-        if (ciudad == null) {
+        if (ciudad == null || ciudad.trim().length()<=0) {
             throw new ExcepcionValorObligatorio(CAMPO_CIUDAD_ES_OBLIGATORIO);
         }
     }
@@ -75,7 +74,7 @@ public class Scotter {
     }
 
     private void validarCampoFotoVacio(String foto) {
-        if (foto == null) {
+        if (foto == null || foto.trim().length()<=0) {
             throw new ExcepcionValorObligatorio(CAMPO_FOTO_ES_OBLIGATORIO);
         }
     }

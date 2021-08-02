@@ -12,6 +12,7 @@ import java.util.Date;
 @Getter
 public class Pedido {
 
+    private static final String CAMPO_FECHA_ES_OBLIGATORIO = &quot;El campo fecha obligatorio no puede ir vacio&quot;;
     private static final String CAMPO_BICI_ES_OBLIGATORIO = &quot;El campo scotter obligatorio no puede ir vacio&quot;;
     private static final String CAMPO_COMPRADOR_ES_OBLIGATORIO = &quot;El campo id Comprador es obligatorio no puede ir vacio&quot;;
     private static final String CAMPO_CIUDAD_ES_OBLIGATORIO = &quot;El campo ciudad scotter  es obligatorio no puede ir vacio&quot;;
@@ -19,99 +20,103 @@ public class Pedido {
     private static final String CAMPO_PRECIO_ES_OBLIGATORIO = &quot;El campo precio  es obligatorio no puede ir vacio&quot;;
 
 
-<span class="fc" id="L22">    private Long id;</span>
-<span class="nc" id="L23">    private LocalDate fecha;</span>
-<span class="nc" id="L24">    private Long bici;</span>
-<span class="nc" id="L25">    private Long comprador;</span>
-<span class="fc" id="L26">    private String ciudad;</span>
-<span class="nc" id="L27">    private String destino;</span>
-<span class="fc" id="L28">    private int flete;</span>
-<span class="nc" id="L29">    private int precio;</span>
-<span class="fc" id="L30">    private int descuento;</span>
-<span class="fc" id="L31">    private int total;</span>
+<span class="fc" id="L23">    private Long id;</span>
+<span class="nc" id="L24">    private LocalDate fecha;</span>
+<span class="fc" id="L25">    private Long bici;</span>
+<span class="nc" id="L26">    private Long comprador;</span>
+<span class="fc" id="L27">    private String ciudad;</span>
+<span class="nc" id="L28">    private String destino;</span>
+<span class="fc" id="L29">    private int flete;</span>
+<span class="nc" id="L30">    private int precio;</span>
+<span class="fc" id="L31">    private int descuento;</span>
+<span class="fc" id="L32">    private int total;</span>
 
-<span class="fc" id="L33">    public Pedido(Long id,Long bici, Long comprador, String ciudad, String destino, int precio) {</span>
-<span class="fc" id="L34">        validarCampoBici(bici);</span>
-<span class="fc" id="L35">        validarCampoComprador(comprador);</span>
-<span class="fc" id="L36">        validarCampoCiudad(ciudad);</span>
-<span class="fc" id="L37">        validarCampoDestino(destino);</span>
-<span class="fc" id="L38">        validarCampoPrecio(precio);</span>
-
-
-
-
-<span class="fc" id="L43">        this.id = id;</span>
-<span class="fc" id="L44">        this.fecha = LocalDate.now();</span>
-<span class="fc" id="L45">        this.bici = bici;</span>
-<span class="fc" id="L46">        this.comprador = comprador;</span>
-<span class="fc" id="L47">        this.ciudad = ciudad;</span>
-<span class="fc" id="L48">        this.destino = destino;</span>
-<span class="fc" id="L49">        this.flete = this.valorFlete(ciudad,destino);</span>
-<span class="fc" id="L50">        this.precio= precio;</span>
-<span class="fc" id="L51">        this.descuento= this.valorDescuento(this.fecha, precio);</span>
-<span class="fc" id="L52">        this.total=this.valorTotal(precio,this.flete,this.descuento);</span>
+<span class="fc" id="L34">    public Pedido(Long id,LocalDate fecha, Long bici, Long comprador, String ciudad, String destino, int precio) {</span>
+<span class="fc" id="L35">        validarCampoFecha(fecha);</span>
+<span class="fc" id="L36">        validarCampoBici(bici);</span>
+<span class="fc" id="L37">        validarCampoComprador(comprador);</span>
+<span class="fc" id="L38">        validarCampoCiudad(ciudad);</span>
+<span class="fc" id="L39">        validarCampoDestino(destino);</span>
+<span class="fc" id="L40">        validarCampoPrecio(precio);</span>
 
 
 
-<span class="fc" id="L56">    }</span>
+
+<span class="fc" id="L45">        this.id = id;</span>
+<span class="fc" id="L46">        this.fecha = fecha;</span>
+<span class="fc" id="L47">        this.bici = bici;</span>
+<span class="fc" id="L48">        this.comprador = comprador;</span>
+<span class="fc" id="L49">        this.ciudad = ciudad;</span>
+<span class="fc" id="L50">        this.destino = destino;</span>
+<span class="fc" id="L51">        this.flete = this.valorFlete(ciudad,destino);</span>
+<span class="fc" id="L52">        this.precio= precio;</span>
+<span class="fc" id="L53">        this.descuento= this.valorDescuento(this.fecha, precio);</span>
+<span class="fc" id="L54">        this.total=this.valorTotal(precio,this.flete,this.descuento);</span>
+
+
+
+<span class="fc" id="L58">    }</span>
+
+    private void validarCampoFecha(LocalDate fecha){
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        if (fecha == null) {</span>
+<span class="fc" id="L62">            throw new ExcepcionValorObligatorio(CAMPO_FECHA_ES_OBLIGATORIO);</span>
+        }
+<span class="fc" id="L64">    }</span>
 
     private void validarCampoBici(Long bici){
-<span class="fc bfc" id="L59" title="All 2 branches covered.">        if (bici == null) {</span>
-<span class="fc" id="L60">            throw new ExcepcionValorObligatorio(CAMPO_BICI_ES_OBLIGATORIO);</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        if (bici == null) {</span>
+<span class="fc" id="L68">            throw new ExcepcionValorObligatorio(CAMPO_BICI_ES_OBLIGATORIO);</span>
         }
-<span class="fc" id="L62">    }</span>
+<span class="fc" id="L70">    }</span>
 
     private void validarCampoComprador(Long comprador){
-<span class="fc bfc" id="L65" title="All 2 branches covered.">        if (comprador == null) {</span>
-<span class="fc" id="L66">            throw new ExcepcionValorObligatorio(CAMPO_COMPRADOR_ES_OBLIGATORIO);</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        if (comprador == null ) {</span>
+<span class="fc" id="L74">            throw new ExcepcionValorObligatorio(CAMPO_COMPRADOR_ES_OBLIGATORIO);</span>
         }
-<span class="fc" id="L68">    }</span>
+<span class="fc" id="L76">    }</span>
 
     private void validarCampoCiudad(String ciudad){
-<span class="fc bfc" id="L71" title="All 2 branches covered.">        if (ciudad == null) {</span>
-<span class="fc" id="L72">            throw new ExcepcionValorObligatorio(CAMPO_CIUDAD_ES_OBLIGATORIO);</span>
+<span class="fc bfc" id="L79" title="All 4 branches covered.">        if (ciudad == null|| ciudad.trim().length()&lt;=0) {</span>
+<span class="fc" id="L80">            throw new ExcepcionValorObligatorio(CAMPO_CIUDAD_ES_OBLIGATORIO);</span>
         }
-<span class="fc" id="L74">    }</span>
+<span class="fc" id="L82">    }</span>
 
     private void validarCampoDestino(String destino){
-<span class="fc bfc" id="L77" title="All 2 branches covered.">        if (destino == null) {</span>
-<span class="fc" id="L78">            throw new ExcepcionValorObligatorio(CAMPO_DESTINO_ES_OBLIGATORIO);</span>
+<span class="fc bfc" id="L85" title="All 4 branches covered.">        if (destino == null || destino.trim().length()&lt;=0) {</span>
+<span class="fc" id="L86">            throw new ExcepcionValorObligatorio(CAMPO_DESTINO_ES_OBLIGATORIO);</span>
         }
-<span class="fc" id="L80">    }</span>
+<span class="fc" id="L88">    }</span>
 
         private void validarCampoPrecio(int precio){
-<span class="fc bfc" id="L83" title="All 2 branches covered.">        if (precio == 0) {</span>
-<span class="fc" id="L84">            throw new ExcepcionValorObligatorio(CAMPO_PRECIO_ES_OBLIGATORIO);</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        if (precio == 0) {</span>
+<span class="fc" id="L92">            throw new ExcepcionValorObligatorio(CAMPO_PRECIO_ES_OBLIGATORIO);</span>
         }
-<span class="fc" id="L86">    }</span>
+<span class="fc" id="L94">    }</span>
 
 
     private int valorTotal(int precio, int flete, int descuento) {
-<span class="fc" id="L90">      return this.total=precio+flete-descuento;</span>
+<span class="fc" id="L98">      return this.total=precio+flete-descuento;</span>
     }
 
 
 
         private int valorDescuento(LocalDate fecha, int precio) {
-<span class="fc" id="L96">          int diferenciaFechas =fecha.compareTo(LocalDate.now());</span>
-<span class="pc bpc" id="L97" title="1 of 2 branches missed.">            if(diferenciaFechas==0){</span>
-<span class="fc" id="L98">            return this.descuento= (int) (precio*0.05);</span>
+<span class="fc" id="L104">          int diferenciaFechas =fecha.compareTo(LocalDate.now());</span>
+<span class="fc bfc" id="L105" title="All 2 branches covered.">            if(diferenciaFechas==0){</span>
+<span class="fc" id="L106">            return this.descuento= (int) (precio*0.05);</span>
             }
         else{
 
 
-<span class="nc" id="L103">            return this.descuento=0;}</span>
-         //   System.out.println(fecha);
-           // return 100;
-     //       return this.descuento= (int) (precio*0.05);
+<span class="fc" id="L111">            return this.descuento=0;}</span>
 
     }
 
     private int valorFlete(String ciudad, String destino) {
-<span class="fc bfc" id="L111" title="All 2 branches covered.">        if (ciudad.equals(destino) ){</span>
-<span class="fc" id="L112">        return this.flete=0;}</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        if (ciudad.equals(destino) ){</span>
+<span class="fc" id="L117">        return this.flete=0;}</span>
         else{
-<span class="fc" id="L114">            return this.flete=30000;</span>
+<span class="fc" id="L119">            return this.flete=30000;</span>
         }
     }
 }

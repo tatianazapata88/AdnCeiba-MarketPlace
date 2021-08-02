@@ -60,7 +60,7 @@ public class ComandoControladorScotterTest {
     @Test
     public void eliminarScotterTest() throws Exception {
         // arrange
-        Long id = 2L;
+        Long id = 3L;
 
         // act - assert
         mocMvc.perform(delete("/scotters/{id}",id)

@@ -8,13 +8,13 @@ public class ScotterTestDataBuilder {
     private Long id;
     private String marca;
     private String modelo;
-    private Integer precio;
+    private int precio;
     private String ciudad;
     private Long vendedor;
     private String estado;
     private  String foto;
 
-    public ScotterTestDataBuilder(String marca, String modelo, Integer precio, String ciudad,
+    public ScotterTestDataBuilder(String marca, String modelo, int precio, String ciudad,
                                   Long vendedor, String estado, String foto) {
          this.marca = marca;
         this.modelo = modelo;
@@ -47,7 +47,7 @@ public class ScotterTestDataBuilder {
         return this;
     }
 
-    public ScotterTestDataBuilder conPrecio(Integer precio) {
+    public ScotterTestDataBuilder conPrecio(int precio) {
         this.precio = precio;
         return this;
     }
