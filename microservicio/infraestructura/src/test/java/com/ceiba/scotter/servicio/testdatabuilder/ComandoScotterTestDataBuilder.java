@@ -20,7 +20,6 @@ public class ComandoScotterTestDataBuilder {
         precio = 3500000;
         ciudad = "Santa Marta";
         vendedor = 1L;
-        estado = "disponible";
         foto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1qy1IibO2Euuk15nA50EQhfTUg5JuUUSUag&usqp=CAU";
     }
 
@@ -38,7 +37,7 @@ public class ComandoScotterTestDataBuilder {
     }
 
     public ComandoScotter build() {
-        return new ComandoScotter(id,marca,modelo,precio,ciudad,vendedor,estado,foto);
+        return new ComandoScotter(id,marca,modelo,precio,ciudad,vendedor,foto);
     }
 
 }

@@ -124,7 +124,7 @@ public class ServicioCrearPedidoTest {
         Pedido pedido = new PedidoTestDataBuilder().conCiudadYDestino("medellin","medellin").build();
 
         //assert
-        Assert.assertEquals(pedido.getFlete(),VALOR_FLETE_MISMA_CIUDAD,1);
+        Assert.assertEquals(VALOR_FLETE_MISMA_CIUDAD,pedido.getFlete(),1);
     }
 
     @Test
@@ -133,7 +133,7 @@ public class ServicioCrearPedidoTest {
         Pedido pedido = new PedidoTestDataBuilder().conCiudadYDestino("cali","medellin").build();
 
         //assert
-        Assert.assertEquals(pedido.getFlete(),VALOR_FLETE_DIFERENTE_CIUDAD,1);
+        Assert.assertEquals(VALOR_FLETE_DIFERENTE_CIUDAD,pedido.getFlete(),0);
     }
 
     @Test
@@ -142,7 +142,7 @@ public class ServicioCrearPedidoTest {
        Pedido pedido = new PedidoTestDataBuilder().build();
         double total = 3830000.0;
         //assert
-        Assert.assertEquals(pedido.getTotal(),total,1);
+        Assert.assertEquals(total,pedido.getTotal(),0);
     }
 
     @Test
@@ -151,7 +151,7 @@ public class ServicioCrearPedidoTest {
         Pedido pedido = new PedidoTestDataBuilder().conFecha(LocalDate.now()).build();
         double descuento = 200000.0;
         //assert
-        Assert.assertEquals(pedido.getDescuento(),descuento,1);
+        Assert.assertEquals(descuento ,pedido.getDescuento(),0);
     }
 
     @Test
@@ -160,7 +160,7 @@ public class ServicioCrearPedidoTest {
         Pedido pedido = new PedidoTestDataBuilder().conFecha(LocalDate.of(2021,8,2)).build();
 
         //assert
-        Assert.assertEquals(pedido.getDescuento(),SIN_DESCUENTO,1);
+        Assert.assertEquals(SIN_DESCUENTO,pedido.getDescuento(),0);
     }
 
     @Test

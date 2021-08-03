@@ -16,6 +16,5 @@ public class ComandoScotter {
     private double precio;
     private String ciudad;
     private Long vendedor;
-    private String estado;
     private String foto;
 }

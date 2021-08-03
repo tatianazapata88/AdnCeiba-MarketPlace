@@ -15,13 +15,12 @@ public class ScotterTestDataBuilder {
     private  String foto;
 
     public ScotterTestDataBuilder(String marca, String modelo, double precio, String ciudad,
-                                  Long vendedor, String estado, String foto) {
+                                  Long vendedor, String foto) {
          this.marca = marca;
         this.modelo = modelo;
         this.precio = precio;
         this.ciudad = ciudad;
         this.vendedor = vendedor;
-        this.estado = estado;
         this.foto = foto;
     }
 
@@ -53,6 +52,6 @@ public class ScotterTestDataBuilder {
     }
 
     public Scotter build() {
-        return new Scotter(id,marca, modelo,precio,ciudad,vendedor,estado,foto);
+        return new Scotter(id,marca, modelo,precio,ciudad,vendedor,foto);
     }
 }

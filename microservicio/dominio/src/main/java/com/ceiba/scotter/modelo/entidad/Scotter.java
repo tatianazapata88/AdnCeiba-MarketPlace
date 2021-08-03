@@ -25,7 +25,7 @@ public class Scotter {
     private String foto;
 
 
-    public Scotter(Long id, String marca, String modelo, double precio, String ciudad, Long vendedor, String estado, String foto) {
+    public Scotter(Long id, String marca, String modelo, double precio, String ciudad, Long vendedor, String foto) {
         validarCampoMarcaVacio(marca);
         validarCampoModeloVacio(modelo);
         validarCampoPrecioVacio(precio);

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Pedido.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.pedido.modelo.entidad</a> &gt; <span class="el_source">Pedido.java</span></div><h1>Pedido.java</h1><pre class="source lang-java linenums">package com.ceiba.pedido.modelo.entidad;
 
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
+
 import lombok.Getter;
 
 
@@ -9,7 +10,7 @@ import java.time.LocalDate;
 
 @Getter
 public class Pedido {
-    private static final double DESCUENTO = 0.05;
+    private static final double PORCENTAJE_DE_DESCUENTO = 0.05;
     private static final double SIN_DESCUENTO = 0.0;
     private static final double VALOR_FLETE_MISMA_CIUDAD = 0.0;
     private static final double VALOR_FLETE_DIFERENTE_CIUDAD = 30000.0;
@@ -21,8 +22,7 @@ public class Pedido {
     private static final String CAMPO_DESTINO_ES_OBLIGATORIO = &quot;El campo ciudad destino  es obligatorio no puede ir vacio&quot;;
     private static final String CAMPO_PRECIO_ES_OBLIGATORIO = &quot;El campo precio  es obligatorio no puede ir vacio&quot;;
 
-
-<span class="fc" id="L25">    private Long id;</span>
+<span class="fc" id="L25"> private Long id;</span>
 <span class="nc" id="L26">    private LocalDate fecha;</span>
 <span class="fc" id="L27">    private Long bici;</span>
 <span class="nc" id="L28">    private Long comprador;</span>
@@ -94,8 +94,8 @@ public class Pedido {
 
 
     private double valorTotal(double precio, double flete, double descuento) {
-<span class="fc" id="L97">        double total = precio + flete - descuento;</span>
-<span class="fc" id="L98">        return this.total = total;</span>
+<span class="fc" id="L97">        double valor_total = precio + flete - descuento;</span>
+<span class="fc" id="L98">        return this.total = valor_total;</span>
     }
 
 
@@ -103,7 +103,7 @@ public class Pedido {
     private double valorDescuento(LocalDate fecha,double precio) {
 <span class="fc" id="L104">        int diferenciaFechas = fecha.compareTo(LocalDate.now());</span>
 <span class="fc bfc" id="L105" title="All 2 branches covered.">        if (diferenciaFechas == 0) {</span>
-<span class="fc" id="L106">            double calcularDescuento = Math.round(precio * DESCUENTO);</span>
+<span class="fc" id="L106">            double calcularDescuento = Math.round(precio * PORCENTAJE_DE_DESCUENTO);</span>
 <span class="fc" id="L107">            return this.descuento = calcularDescuento;</span>
         } else {
 <span class="fc" id="L109">            return this.descuento = SIN_DESCUENTO;</span>

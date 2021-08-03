@@ -5,9 +5,6 @@ import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.pedido.modelo.entidad.Pedido;
 import com.ceiba.pedido.puerto.repositorio.RepositorioPedido;
 
-import com.ceiba.persona.modelo.entidad.Persona;
-import com.ceiba.scotter.puerto.dao.DaoScotter;
-
 
 public class ServicioCrearPedido {
 

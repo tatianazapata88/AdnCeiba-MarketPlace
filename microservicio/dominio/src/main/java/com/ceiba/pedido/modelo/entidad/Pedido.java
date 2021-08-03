@@ -1,6 +1,7 @@
 package com.ceiba.pedido.modelo.entidad;
 
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
+
 import lombok.Getter;
 
 
@@ -9,7 +10,7 @@ import java.time.LocalDate;
 
 @Getter
 public class Pedido {
-    private static final double DESCUENTO = 0.05;
+    private static final double PORCENTAJE_DE_DESCUENTO = 0.05;
     private static final double SIN_DESCUENTO = 0.0;
     private static final double VALOR_FLETE_MISMA_CIUDAD = 0.0;
     private static final double VALOR_FLETE_DIFERENTE_CIUDAD = 30000.0;
@@ -21,8 +22,7 @@ public class Pedido {
     private static final String CAMPO_DESTINO_ES_OBLIGATORIO = "El campo ciudad destino  es obligatorio no puede ir vacio";
     private static final String CAMPO_PRECIO_ES_OBLIGATORIO = "El campo precio  es obligatorio no puede ir vacio";
 
-
-    private Long id;
+ private Long id;
     private LocalDate fecha;
     private Long bici;
     private Long comprador;
@@ -94,8 +94,8 @@ public class Pedido {
 
 
     private double valorTotal(double precio, double flete, double descuento) {
-        double total = precio + flete - descuento;
-        return this.total = total;
+        double valor_total = precio + flete - descuento;
+        return this.total = valor_total;
     }
 
 
@@ -103,7 +103,7 @@ public class Pedido {
     private double valorDescuento(LocalDate fecha,double precio) {
         int diferenciaFechas = fecha.compareTo(LocalDate.now());
         if (diferenciaFechas == 0) {
-            double calcularDescuento = Math.round(precio * DESCUENTO);
+            double calcularDescuento = Math.round(precio * PORCENTAJE_DE_DESCUENTO);
             return this.descuento = calcularDescuento;
         } else {
             return this.descuento = SIN_DESCUENTO;

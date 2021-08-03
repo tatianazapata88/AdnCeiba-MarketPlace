@@ -5,9 +5,6 @@ import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.pedido.modelo.entidad.Pedido;
 import com.ceiba.pedido.puerto.repositorio.RepositorioPedido;
 
-import com.ceiba.persona.modelo.entidad.Persona;
-import com.ceiba.scotter.puerto.dao.DaoScotter;
-
 
 public class ServicioCrearPedido {
 
@@ -15,22 +12,22 @@ public class ServicioCrearPedido {
 
     private static final String NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA = &quot;No se puede registrar el pedido, la scotter ya se encuentra reservada&quot;;
 
-<span class="fc" id="L18">    public ServicioCrearPedido(RepositorioPedido repositorioPedido) {</span>
-<span class="fc" id="L19">        this.repositorioPedido = repositorioPedido;</span>
-<span class="fc" id="L20">    }</span>
+<span class="fc" id="L15">    public ServicioCrearPedido(RepositorioPedido repositorioPedido) {</span>
+<span class="fc" id="L16">        this.repositorioPedido = repositorioPedido;</span>
+<span class="fc" id="L17">    }</span>
 
     public Long ejecutar(Pedido pedido) {
-<span class="fc" id="L23">        validarExistenciaPedido(pedido);</span>
+<span class="fc" id="L20">        validarExistenciaPedido(pedido);</span>
        //this.repositorioPedido.cambiarEstado(pedido.getBici());
-<span class="fc" id="L25">       return this.repositorioPedido.crear(pedido);</span>
+<span class="fc" id="L22">       return this.repositorioPedido.crear(pedido);</span>
     }
 
     private void validarExistenciaPedido(Pedido pedido) {
-<span class="fc" id="L29">        boolean existePedido = this.repositorioPedido.existe(pedido.getBici());</span>
-<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (existePedido) {</span>
-<span class="fc" id="L31">            throw new ExcepcionDuplicidad(NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA);</span>
+<span class="fc" id="L26">        boolean existePedido = this.repositorioPedido.existe(pedido.getBici());</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (existePedido) {</span>
+<span class="fc" id="L28">            throw new ExcepcionDuplicidad(NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA);</span>
         }
-<span class="fc" id="L33">    }</span>
+<span class="fc" id="L30">    }</span>
 
 
 }
