@@ -29,6 +29,9 @@ public class ServicioCrearPedidoTest {
     private static final String CIUDAD = "Medellin";
     private static final String DESTINO = "Cartagena";
     private static final Integer PRECIO = 1000000;
+    private static final double SIN_DESCUENTO = 0.0;
+    private static final double VALOR_FLETE_MISMA_CIUDAD = 0.0;
+    private static final double VALOR_FLETE_DIFERENTE_CIUDAD = 30000.0;
 
     private static final String CAMPO_FECHA_ES_OBLIGATORIO = "El campo fecha obligatorio no puede ir vacio";
     private static final String CAMPO_BICI_ES_OBLIGATORIO = "El campo scotter obligatorio no puede ir vacio";
@@ -119,45 +122,45 @@ public class ServicioCrearPedidoTest {
     public void validarCalcularValorFleteCiudadIgualTest() {
         // arrange
         Pedido pedido = new PedidoTestDataBuilder().conCiudadYDestino("medellin","medellin").build();
-        int flete = 0;
+
         //assert
-        Assert.assertEquals(pedido.getFlete(),flete);
+        Assert.assertEquals(pedido.getFlete(),VALOR_FLETE_MISMA_CIUDAD,1);
     }
 
     @Test
     public void validarCalcularValorFleteCiudadDiferenteTest() {
         // arrange
         Pedido pedido = new PedidoTestDataBuilder().conCiudadYDestino("cali","medellin").build();
-        int flete = 30000;
+
         //assert
-        Assert.assertEquals(pedido.getFlete(),flete);
+        Assert.assertEquals(pedido.getFlete(),VALOR_FLETE_DIFERENTE_CIUDAD,1);
     }
 
     @Test
     public void validarCalcularValorTotalTest() {
         // arrange
        Pedido pedido = new PedidoTestDataBuilder().build();
-        int total = 3830000;
+        double total = 3830000.0;
         //assert
-        Assert.assertEquals(pedido.getTotal(),total);
+        Assert.assertEquals(pedido.getTotal(),total,1);
     }
 
     @Test
     public void validarDescuentoPagoTestMismaFecha() {
         // arrange
-        Pedido pedido = new PedidoTestDataBuilder().conFecha(LocalDate.of(2021,8,2)).build();
-        int descuento = 200000;
+        Pedido pedido = new PedidoTestDataBuilder().conFecha(LocalDate.now()).build();
+        double descuento = 200000.0;
         //assert
-        Assert.assertEquals(pedido.getDescuento(),descuento);
+        Assert.assertEquals(pedido.getDescuento(),descuento,1);
     }
 
     @Test
     public void validarDescuentoPagoTestDiferenteFecha() {
         // arrange
-        Pedido pedido = new PedidoTestDataBuilder().conFecha(LocalDate.of(2021,8,3)).build();
-        int descuento = 0;
+        Pedido pedido = new PedidoTestDataBuilder().conFecha(LocalDate.of(2021,8,2)).build();
+
         //assert
-        Assert.assertEquals(pedido.getDescuento(),descuento);
+        Assert.assertEquals(pedido.getDescuento(),SIN_DESCUENTO,1);
     }
 
     @Test

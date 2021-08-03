@@ -15,19 +15,13 @@ public class ServicioCrearPedido {
 
     private static final String NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA = "No se puede registrar el pedido, la scotter ya se encuentra reservada";
 
-
-
-
-
-
     public ServicioCrearPedido(RepositorioPedido repositorioPedido) {
         this.repositorioPedido = repositorioPedido;
-
     }
 
     public Long ejecutar(Pedido pedido) {
         validarExistenciaPedido(pedido);
-       // this.repositorioPedido.cambiarEstado(pedido.getBici());
+       //this.repositorioPedido.cambiarEstado(pedido.getBici());
        return this.repositorioPedido.crear(pedido);
     }
 

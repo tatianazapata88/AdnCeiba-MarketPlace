@@ -18,14 +18,14 @@ public class Scotter {
     private Long id;
     private String marca;
     private String modelo;
-    private int precio;
+    private double precio;
     private String ciudad;
     private Long vendedor;
     private String estado;
     private String foto;
 
 
-    public Scotter(Long id, String marca, String modelo, int precio, String ciudad, Long vendedor, String estado, String foto) {
+    public Scotter(Long id, String marca, String modelo, double precio, String ciudad, Long vendedor, String estado, String foto) {
         validarCampoMarcaVacio(marca);
         validarCampoModeloVacio(modelo);
         validarCampoPrecioVacio(precio);
@@ -55,7 +55,7 @@ public class Scotter {
         }
     }
 
-    private void validarCampoPrecioVacio(int precio) {
+    private void validarCampoPrecioVacio(double precio) {
          if (precio == 0 ){
             throw new ExcepcionValorObligatorio(CAMPO_PRECIO_ES_OBLIGATORIO);
         }

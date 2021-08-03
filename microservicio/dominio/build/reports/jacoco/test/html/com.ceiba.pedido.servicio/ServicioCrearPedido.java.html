@@ -15,28 +15,22 @@ public class ServicioCrearPedido {
 
     private static final String NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA = &quot;No se puede registrar el pedido, la scotter ya se encuentra reservada&quot;;
 
-
-
-
-
-
-<span class="fc" id="L23">    public ServicioCrearPedido(RepositorioPedido repositorioPedido) {</span>
-<span class="fc" id="L24">        this.repositorioPedido = repositorioPedido;</span>
-
-<span class="fc" id="L26">    }</span>
+<span class="fc" id="L18">    public ServicioCrearPedido(RepositorioPedido repositorioPedido) {</span>
+<span class="fc" id="L19">        this.repositorioPedido = repositorioPedido;</span>
+<span class="fc" id="L20">    }</span>
 
     public Long ejecutar(Pedido pedido) {
-<span class="fc" id="L29">        validarExistenciaPedido(pedido);</span>
-       // this.repositorioPedido.cambiarEstado(pedido.getBici());
-<span class="fc" id="L31">       return this.repositorioPedido.crear(pedido);</span>
+<span class="fc" id="L23">        validarExistenciaPedido(pedido);</span>
+       //this.repositorioPedido.cambiarEstado(pedido.getBici());
+<span class="fc" id="L25">       return this.repositorioPedido.crear(pedido);</span>
     }
 
     private void validarExistenciaPedido(Pedido pedido) {
-<span class="fc" id="L35">        boolean existePedido = this.repositorioPedido.existe(pedido.getBici());</span>
-<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (existePedido) {</span>
-<span class="fc" id="L37">            throw new ExcepcionDuplicidad(NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA);</span>
+<span class="fc" id="L29">        boolean existePedido = this.repositorioPedido.existe(pedido.getBici());</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (existePedido) {</span>
+<span class="fc" id="L31">            throw new ExcepcionDuplicidad(NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA);</span>
         }
-<span class="fc" id="L39">    }</span>
+<span class="fc" id="L33">    }</span>
 
 
 }

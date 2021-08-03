@@ -25,8 +25,8 @@ public class RepositorioPedidoMysql implements RepositorioPedido {
     @SqlStatement(namespace = &quot;pedido&quot;, value = &quot;existe&quot;)
     private static String sqlExiste;
 
-    @SqlStatement(namespace = &quot;pedido&quot;, value = &quot;reservarScotter&quot;)
-    private static String sqlEstadoScotter;
+    /*@SqlStatement(namespace = &quot;pedido&quot;, value = &quot;reservarScotter&quot;)
+    private static String sqlEstadoScotter;*/
 
 <span class="fc" id="L31">      public RepositorioPedidoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
 <span class="fc" id="L32">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
@@ -60,13 +60,13 @@ public class RepositorioPedidoMysql implements RepositorioPedido {
 <span class="fc" id="L60">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, parameterSource, Boolean.class);</span>
     }
 
-    @Override
+   /* @Override
     public void cambiarEstado(Long bici) {
-<span class="nc" id="L65">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L66">        paramSource.addValue(&quot;id&quot;, bici);</span>
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue(&quot;id&quot;, bici);
 
-<span class="nc" id="L68">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEstadoScotter, paramSource);</span>
-<span class="nc" id="L69">    }</span>
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEstadoScotter, paramSource);
+    }*/
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

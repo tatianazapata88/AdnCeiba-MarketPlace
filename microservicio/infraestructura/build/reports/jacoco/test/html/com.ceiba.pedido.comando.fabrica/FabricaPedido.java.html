@@ -2,22 +2,20 @@
 
 import com.ceiba.pedido.comando.ComandoPedido;
 import com.ceiba.pedido.modelo.entidad.Pedido;
-import com.ceiba.scotter.comando.ComandoScotter;
-import com.ceiba.scotter.modelo.entidad.Scotter;
 import org.springframework.stereotype.Component;
 
 @Component
-<span class="fc" id="L10">public class FabricaPedido {</span>
+<span class="fc" id="L8">public class FabricaPedido {</span>
 
         public Pedido crear(ComandoPedido comandoPedido) {
-<span class="fc" id="L13">        return new Pedido(</span>
-<span class="fc" id="L14">                comandoPedido.getId(),</span>
-<span class="fc" id="L15">                comandoPedido.getFecha(),</span>
-<span class="fc" id="L16">                comandoPedido.getBici(),</span>
-<span class="fc" id="L17">                comandoPedido.getComprador(),</span>
-<span class="fc" id="L18">                comandoPedido.getCiudad(),</span>
-<span class="fc" id="L19">                comandoPedido.getDestino(),</span>
-<span class="fc" id="L20">                comandoPedido.getPrecio()</span>
+<span class="fc" id="L11">        return new Pedido(</span>
+<span class="fc" id="L12">                comandoPedido.getId(),</span>
+<span class="fc" id="L13">                comandoPedido.getFecha(),</span>
+<span class="fc" id="L14">                comandoPedido.getBici(),</span>
+<span class="fc" id="L15">                comandoPedido.getComprador(),</span>
+<span class="fc" id="L16">                comandoPedido.getCiudad(),</span>
+<span class="fc" id="L17">                comandoPedido.getDestino(),</span>
+<span class="fc" id="L18">                comandoPedido.getPrecio()</span>
 
 
 

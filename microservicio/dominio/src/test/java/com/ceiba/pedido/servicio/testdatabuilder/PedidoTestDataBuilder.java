@@ -12,7 +12,7 @@ public class PedidoTestDataBuilder {
     private Long comprador;
     private String ciudad;
     private String destino;
-    private int precio;
+    private double precio;
 
 
 
@@ -20,12 +20,12 @@ public class PedidoTestDataBuilder {
 
     public PedidoTestDataBuilder(){
 
-        fecha = LocalDate.of(2021,8,2);
+        fecha = LocalDate.now();
         bici = 1L;
         comprador = 2L;
         ciudad = "medellin";
         destino = "bogota";
-        precio = 4000000;
+        precio = 4000000.0;
 
 
 
@@ -33,7 +33,7 @@ public class PedidoTestDataBuilder {
 
     }
     public PedidoTestDataBuilder(LocalDate fecha,Long bici, Long comprador, String ciudad,
-                                 String destino, int precio) {
+                                 String destino, double precio) {
         this.fecha = fecha;
         this.bici = bici;
         this.comprador = comprador;

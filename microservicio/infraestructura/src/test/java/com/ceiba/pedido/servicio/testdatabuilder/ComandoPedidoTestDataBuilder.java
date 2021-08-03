@@ -12,7 +12,7 @@ public class ComandoPedidoTestDataBuilder {
     private Long comprador;
     private String ciudad;
     private String destino;
-    private int precio;
+    private double precio;
 
 
 
@@ -23,13 +23,13 @@ public class ComandoPedidoTestDataBuilder {
         comprador = 2L;
         ciudad = "medellin";
         destino = "bogota";
-        precio = 4000000;
+        precio = 4000000.0;
 
        // total= 4030000;
 
     }
     public ComandoPedidoTestDataBuilder(LocalDate fecha, Long bici, Long comprador, String ciudad,
-                                 String destino, int precio) {
+                                 String destino, double precio) {
         this.fecha = fecha;
         this.bici = bici;
         this.comprador = comprador;

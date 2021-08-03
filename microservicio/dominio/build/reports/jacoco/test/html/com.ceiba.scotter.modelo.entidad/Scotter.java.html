@@ -18,14 +18,14 @@ public class Scotter {
 <span class="fc" id="L18">    private Long id;</span>
 <span class="nc" id="L19">    private String marca;</span>
 <span class="nc" id="L20">    private String modelo;</span>
-<span class="nc" id="L21">    private int precio;</span>
+<span class="nc" id="L21">    private double precio;</span>
 <span class="fc" id="L22">    private String ciudad;</span>
 <span class="nc" id="L23">    private Long vendedor;</span>
 <span class="nc" id="L24">    private String estado;</span>
 <span class="nc" id="L25">    private String foto;</span>
 
 
-<span class="fc" id="L28">    public Scotter(Long id, String marca, String modelo, int precio, String ciudad, Long vendedor, String estado, String foto) {</span>
+<span class="fc" id="L28">    public Scotter(Long id, String marca, String modelo, double precio, String ciudad, Long vendedor, String estado, String foto) {</span>
 <span class="fc" id="L29">        validarCampoMarcaVacio(marca);</span>
 <span class="fc" id="L30">        validarCampoModeloVacio(modelo);</span>
 <span class="fc" id="L31">        validarCampoPrecioVacio(precio);</span>
@@ -55,7 +55,7 @@ public class Scotter {
         }
 <span class="fc" id="L56">    }</span>
 
-    private void validarCampoPrecioVacio(int precio) {
+    private void validarCampoPrecioVacio(double precio) {
 <span class="fc bfc" id="L59" title="All 2 branches covered.">         if (precio == 0 ){</span>
 <span class="fc" id="L60">            throw new ExcepcionValorObligatorio(CAMPO_PRECIO_ES_OBLIGATORIO);</span>
         }

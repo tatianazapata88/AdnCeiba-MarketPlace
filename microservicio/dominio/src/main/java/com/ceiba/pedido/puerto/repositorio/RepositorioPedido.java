@@ -15,7 +15,7 @@ public interface RepositorioPedido {
 
     boolean existe(Long bici);
 
-    void cambiarEstado(Long bici);
+  //  void cambiarEstado(Long bici);
 
 
 }

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2021-08-02T16:59:31" hostname="LUZP-ZAPATA" time="0.103">
+<testsuite name="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2021-08-03T14:26:48" hostname="LUZP-ZAPATA" time="0.357">
   <properties/>
-  <testcase name="validarCampoCiudadVacioTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.058"/>
+  <testcase name="validarCampoCiudadVacioTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.29"/>
   <testcase name="validarCampoDestinoBlancTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.001"/>
   <testcase name="validarCampoFechaVacioTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.001"/>
-  <testcase name="validarCampoCompradorVacioTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.001"/>
-  <testcase name="validarCalcularValorFleteCiudadIgualTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.001"/>
+  <testcase name="validarCampoCompradorVacioTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.002"/>
+  <testcase name="validarCalcularValorFleteCiudadIgualTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.014"/>
   <testcase name="validarDescuentoPagoTestDiferenteFecha" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.001"/>
-  <testcase name="validarCampoDestinoVacioTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.001"/>
+  <testcase name="validarCampoDestinoVacioTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.003"/>
   <testcase name="validarCalcularValorTotalTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.001"/>
-  <testcase name="validarCampoPrecioVacioTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.001"/>
+  <testcase name="validarCampoPrecioVacioTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.003"/>
   <testcase name="validarCampoBiciVacioTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.001"/>
   <testcase name="validarCalcularValorFleteCiudadDiferenteTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.001"/>
-  <testcase name="validarScotterReservadaPreviaTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.021"/>
-  <testcase name="validarDescuentoPagoTestMismaFecha" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.003"/>
-  <testcase name="agregarPedidoTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.003"/>
-  <testcase name="validarCampoCiudadBlancoTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.002"/>
+  <testcase name="validarScotterReservadaPreviaTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.034"/>
+  <testcase name="validarDescuentoPagoTestMismaFecha" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.001"/>
+  <testcase name="agregarPedidoTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.001"/>
+  <testcase name="validarCampoCiudadBlancoTest" classname="com.ceiba.pedido.servicio.ServicioCrearPedidoTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

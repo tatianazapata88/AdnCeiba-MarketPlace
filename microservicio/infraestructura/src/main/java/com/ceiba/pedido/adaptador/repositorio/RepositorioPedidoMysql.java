@@ -25,8 +25,8 @@ public class RepositorioPedidoMysql implements RepositorioPedido {
     @SqlStatement(namespace = "pedido", value = "existe")
     private static String sqlExiste;
 
-    @SqlStatement(namespace = "pedido", value = "reservarScotter")
-    private static String sqlEstadoScotter;
+    /*@SqlStatement(namespace = "pedido", value = "reservarScotter")
+    private static String sqlEstadoScotter;*/
 
       public RepositorioPedidoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -60,12 +60,12 @@ public class RepositorioPedidoMysql implements RepositorioPedido {
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, parameterSource, Boolean.class);
     }
 
-    @Override
+   /* @Override
     public void cambiarEstado(Long bici) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", bici);
 
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEstadoScotter, paramSource);
-    }
+    }*/
 
 }
