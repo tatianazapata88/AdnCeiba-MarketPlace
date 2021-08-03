@@ -15,7 +15,7 @@ public class ManejadorBuscarPrecioScotter {
         this.daoScotter = daoScotter;
     }
 
-    public List<DtoScotter> ejecutar(Integer precio) {
+    public List<DtoScotter> ejecutar(double precio) {
         return this.daoScotter.buscarPrecio(precio);
     }
 }

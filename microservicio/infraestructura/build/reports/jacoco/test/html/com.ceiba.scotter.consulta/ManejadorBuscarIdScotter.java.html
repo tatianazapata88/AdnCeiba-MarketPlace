@@ -7,17 +7,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class ManejadorBuscarIdScotter {
 
+    private final DaoScotter daoScotter;
 
-       private final DaoScotter daoScotter;
+<span class="fc" id="L12">    public ManejadorBuscarIdScotter(DaoScotter daoScotter) {</span>
+<span class="fc" id="L13">        this.daoScotter = daoScotter;</span>
+<span class="fc" id="L14">    }</span>
 
-<span class="fc" id="L13">    public ManejadorBuscarIdScotter(DaoScotter daoScotter) {</span>
-<span class="fc" id="L14">        this.daoScotter = daoScotter;</span>
-<span class="fc" id="L15">    }</span>
-
-    public DtoScotter ejecutar(Long id){
-<span class="fc" id="L18">        return this.daoScotter.buscarId(id);</span>
+    public DtoScotter ejecutar(Long id) {
+<span class="fc" id="L17">        return this.daoScotter.buscarId(id);</span>
     }
-
 }
 
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

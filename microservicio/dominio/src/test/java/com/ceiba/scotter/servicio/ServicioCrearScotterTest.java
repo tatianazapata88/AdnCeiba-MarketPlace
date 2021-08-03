@@ -5,7 +5,6 @@ import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.scotter.servicio.testdatabuilder.ScotterTestDataBuilder;
 import com.ceiba.scotter.modelo.entidad.Scotter;
 import com.ceiba.scotter.puerto.repositorio.RepositorioScotter;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,11 +13,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 public class ServicioCrearScotterTest {
 
-    private static final  String MARCA = "ducati";
+    private static final String MARCA = "ducati";
     private static final String MODELO = "2022";
     private static final int PRECIO = 10000000;
     private static final String CIUDAD = "Cartagena";
@@ -30,7 +27,7 @@ public class ServicioCrearScotterTest {
     private static final String CAMPO_PRECIO_ES_OBLIGATORIO = "El campo precio es obligatorio no puede ir vacio";
     private static final String CAMPO_CIUDAD_ES_OBLIGATORIO = "El campo ciudad es obligatorio no puede ir vacio";
     private static final String CAMPO_VENDEDOR_ES_OBLIGATORIO = "El campo vendedor es obligatorio no puede ir vacio";
-   private static final String CAMPO_FOTO_ES_OBLIGATORIO = "El campo foto es obligatorio no puede ir vacio";
+    private static final String CAMPO_FOTO_ES_OBLIGATORIO = "El campo foto es obligatorio no puede ir vacio";
 
     @Mock
     private RepositorioScotter repositorioScotter;
@@ -44,17 +41,17 @@ public class ServicioCrearScotterTest {
     }
 
     @Test
-    public void validarCampoMarcaVacioTest(){
+    public void validarCampoMarcaVacioTest() {
         // arrange
-        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(null,MODELO,PRECIO,CIUDAD,VENDEDOR,FOTO);
+        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(null, MODELO, PRECIO, CIUDAD, VENDEDOR, FOTO);
         // act - assert
         BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_MARCA_ES_OBLIGATORIO);
     }
 
     @Test
-    public void validarCampoMarcaBlancoTest(){
+    public void validarCampoMarcaBlancoTest() {
         // arrange
-        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(" ",MODELO,PRECIO,CIUDAD,VENDEDOR,FOTO);
+        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(" ", MODELO, PRECIO, CIUDAD, VENDEDOR, FOTO);
         // act - assert
         BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_MARCA_ES_OBLIGATORIO);
     }
@@ -62,43 +59,47 @@ public class ServicioCrearScotterTest {
     @Test
     public void validarCampoModeloVacioTest() {
         // arrange
+        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA, null, PRECIO, CIUDAD, VENDEDOR, FOTO);
+        // act - assert
+        BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_MODELO_ES_OBLIGATORIO);
+    }
 
-        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA,null,PRECIO,CIUDAD,VENDEDOR,FOTO);
-        // act - assert
-        BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_MODELO_ES_OBLIGATORIO);
-    }
     @Test
-    public void validarCampoModeloBlancoTest(){
+    public void validarCampoModeloBlancoTest() {
         // arrange
-        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA," ",PRECIO,CIUDAD,VENDEDOR,FOTO);
+        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA, " ", PRECIO, CIUDAD, VENDEDOR, FOTO);
         // act - assert
         BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_MODELO_ES_OBLIGATORIO);
     }
+
     @Test
     public void validarCampoPrecioCeroTest() {
         // arrange
-        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA,MODELO,0,CIUDAD,VENDEDOR,FOTO);
+        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA, MODELO, 0, CIUDAD, VENDEDOR, FOTO);
         // act - assert
-        BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_PRECIO_ES_OBLIGATORIO); }
+        BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_PRECIO_ES_OBLIGATORIO);
+    }
 
     @Test
     public void validarCampoCiudadVacioTest() {
         // arrange
-        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA,MODELO,PRECIO,null,VENDEDOR,FOTO);
+        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA, MODELO, PRECIO, null, VENDEDOR, FOTO);
         // act - assert
-        BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_CIUDAD_ES_OBLIGATORIO); }
+        BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_CIUDAD_ES_OBLIGATORIO);
+    }
+
     @Test
     public void validarCampoCiudadBlancoTest() {
         // arrange
-        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA,MODELO,PRECIO," ",VENDEDOR,FOTO);
+        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA, MODELO, PRECIO, " ", VENDEDOR, FOTO);
         // act - assert
-        BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_CIUDAD_ES_OBLIGATORIO); }
+        BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_CIUDAD_ES_OBLIGATORIO);
+    }
 
     @Test
     public void validarCampoVendedorVacioTest() {
         // arrange
-
-        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA,MODELO,PRECIO,CIUDAD,null,FOTO);
+        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA, MODELO, PRECIO, CIUDAD, null, FOTO);
         // act - assert
         BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_VENDEDOR_ES_OBLIGATORIO);
     }
@@ -107,34 +108,28 @@ public class ServicioCrearScotterTest {
     @Test
     public void validarCampoFotoVacioTest() {
         // arrange
-        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA,MODELO,PRECIO,CIUDAD,VENDEDOR,null);
+        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA, MODELO, PRECIO, CIUDAD, VENDEDOR, null);
         // act - assert
-        BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_FOTO_ES_OBLIGATORIO); }
+        BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_FOTO_ES_OBLIGATORIO);
+    }
 
     @Test
     public void validarCampoFotoBlancoTest() {
         // arrange
-        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA,MODELO,PRECIO,CIUDAD,VENDEDOR," ");
+        ScotterTestDataBuilder scotterTestDataBuilder = new ScotterTestDataBuilder(MARCA, MODELO, PRECIO, CIUDAD, VENDEDOR, " ");
         // act - assert
-        BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_FOTO_ES_OBLIGATORIO); }
-
-
+        BasePrueba.assertThrows(() -> scotterTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_FOTO_ES_OBLIGATORIO);
+    }
 
     @Test
     public void agregarScotterTest1() {
         //arrange
-        Long valorEsperado =1L;
+        Long valorEsperado = 1L;
         Scotter scotter = new ScotterTestDataBuilder().build();
-
         Mockito.when(repositorioScotter.crear(scotter)).thenReturn(scotter.getId());
-
         ServicioCrearScotter servicioCrearScotter = new ServicioCrearScotter(repositorioScotter);
-
-        Long valorActual =servicioCrearScotter.ejecutar(scotter);
+        Long valorActual = servicioCrearScotter.ejecutar(scotter);
         //act assert
         Assert.assertEquals(valorEsperado, valorActual);
-        ;
-    }
-
-
+     }
 }

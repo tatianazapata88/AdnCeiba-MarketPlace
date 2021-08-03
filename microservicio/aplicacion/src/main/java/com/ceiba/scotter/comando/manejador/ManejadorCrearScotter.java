@@ -1,7 +1,6 @@
 package com.ceiba.scotter.comando.manejador;
 
 import org.springframework.stereotype.Component;
-
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.scotter.comando.ComandoScotter;
@@ -10,7 +9,7 @@ import com.ceiba.scotter.modelo.entidad.Scotter;
 import com.ceiba.scotter.servicio.ServicioCrearScotter;
 
 @Component
-public class ManejadorCrearScotter  implements ManejadorComandoRespuesta<ComandoScotter, ComandoRespuesta<Long>> {
+public class ManejadorCrearScotter implements ManejadorComandoRespuesta<ComandoScotter, ComandoRespuesta<Long>> {
     private final FabricaScotter fabricaScotter;
     private final ServicioCrearScotter servicioCrearScotter;
 

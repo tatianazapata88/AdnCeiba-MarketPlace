@@ -1,9 +1,7 @@
 package com.ceiba.scotter.controlador;
 
 import com.ceiba.ApplicationMock;
-import com.ceiba.persona.ComandoPersona;
 import com.ceiba.persona.controlador.ComandoControladorPersona;
-import com.ceiba.persona.servicio.testdatabuilder.ComandoPersonaTestDataBuilder;
 import com.ceiba.scotter.comando.ComandoScotter;
 import com.ceiba.scotter.servicio.testdatabuilder.ComandoScotterTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -21,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes= ApplicationMock.class)
+@ContextConfiguration(classes = ApplicationMock.class)
 @WebMvcTest(ComandoControladorPersona.class)
 public class ComandoControladorScotterTest {
 
@@ -32,10 +30,9 @@ public class ComandoControladorScotterTest {
     private MockMvc mocMvc;
 
     @Test
-    public void crearScotterTest() throws Exception{
+    public void crearScotterTest() throws Exception {
         // arrange
         ComandoScotter scotter = new ComandoScotterTestDataBuilder().build();
-
         // act - assert
         mocMvc.perform(post("/scotters")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -45,13 +42,12 @@ public class ComandoControladorScotterTest {
     }
 
     @Test
-    public void actualizarScotterTest() throws Exception{
+    public void actualizarScotterTest() throws Exception {
         // arrange
         Long id = 2L;
         ComandoScotter scotter = new ComandoScotterTestDataBuilder().build();
-
         // act - assert
-        mocMvc.perform(put("/scotters/{id}",id)
+        mocMvc.perform(put("/scotters/{id}", id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(scotter)))
                 .andExpect(status().isOk());
@@ -61,9 +57,8 @@ public class ComandoControladorScotterTest {
     public void eliminarScotterTest() throws Exception {
         // arrange
         Long id = 3L;
-
         // act - assert
-        mocMvc.perform(delete("/scotters/{id}",id)
+        mocMvc.perform(delete("/scotters/{id}", id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());

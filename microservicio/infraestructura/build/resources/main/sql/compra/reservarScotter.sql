@@ -1,0 +1,1 @@
+update scotter set estado = "reservada" where id = :scotter_id;

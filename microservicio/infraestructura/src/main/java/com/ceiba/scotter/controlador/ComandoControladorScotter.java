@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/scotters")
-@Api(tags = { "Controlador comando scotter"})
+@Api(tags = {"Controlador comando scotter"})
 public class ComandoControladorScotter {
     private final ManejadorCrearScotter manejadorCrearScotter;
     private final ManejadorEliminarScotter manejadorEliminarScotter;
@@ -31,15 +31,15 @@ public class ComandoControladorScotter {
         return manejadorCrearScotter.ejecutar(comandoScotter);
     }
 
-    @DeleteMapping(value="/{id}")
+    @DeleteMapping(value = "/{id}")
     @ApiOperation("Eliminar Scotter")
     public void eliminar(@PathVariable Long id) {
         manejadorEliminarScotter.ejecutar(id);
     }
 
-    @PutMapping(value="/{id}")
+    @PutMapping(value = "/{id}")
     @ApiOperation("Actualizar Scotter")
-    public void actualizar(@RequestBody ComandoScotter comandoScotter,@PathVariable Long id) {
+    public void actualizar(@RequestBody ComandoScotter comandoScotter, @PathVariable Long id) {
         comandoScotter.setId(id);
         manejadorActualizarScotter.ejecutar(comandoScotter);
     }

@@ -19,11 +19,10 @@ public class ServicioActualizarPersona {
 <span class="fc" id="L19">    }</span>
 
     private void validarExistenciaUsername(Persona persona) {
-<span class="fc" id="L22">        boolean existeRegistroUsername = this.repositorioPersona.existePorActualizar(persona.getUsername(),persona.getId());</span>
+<span class="fc" id="L22">        boolean existeRegistroUsername = this.repositorioPersona.existePorActualizar(persona.getUsername(), persona.getId());</span>
 <span class="fc bfc" id="L23" title="All 2 branches covered.">        if (existeRegistroUsername) {</span>
 <span class="fc" id="L24">            throw new ExcepcionDuplicidad(USERNAME_YA_REGISTRADO_EN_EL_SISTEMA);</span>
         }
 <span class="fc" id="L26">    }</span>
-
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,6 +1,5 @@
 package com.ceiba.persona.servicio;
 
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionRelacionado;
 import com.ceiba.persona.puerto.repositorio.RepositorioPersona;
 

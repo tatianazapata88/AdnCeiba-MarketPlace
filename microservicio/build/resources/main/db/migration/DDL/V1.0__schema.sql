@@ -18,13 +18,13 @@ create table scotter (
   primary key (id),
   foreign key (vendedor) REFERENCES persona(id));
 
-create table pedido (
+create table compra (
  id int (4) not null auto_increment,
  fecha date not null,
- bici int(4) not null,
+ scotter_id int(4) not null,
  comprador int (4) not null,
- ciudad varchar (45) not null,
- destino varchar (45)  not null,
+ ciudadorigen varchar (45) not null,
+ ciudaddestino varchar (45)  not null,
  flete double not null,
  precio double not null,
  descuento double not null,

@@ -19,10 +19,9 @@ public class ServicioActualizarPersona {
     }
 
     private void validarExistenciaUsername(Persona persona) {
-        boolean existeRegistroUsername = this.repositorioPersona.existePorActualizar(persona.getUsername(),persona.getId());
+        boolean existeRegistroUsername = this.repositorioPersona.existePorActualizar(persona.getUsername(), persona.getId());
         if (existeRegistroUsername) {
             throw new ExcepcionDuplicidad(USERNAME_YA_REGISTRADO_EN_EL_SISTEMA);
         }
     }
-
 }

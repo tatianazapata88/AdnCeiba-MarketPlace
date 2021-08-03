@@ -36,7 +36,6 @@ public class DaoPersonaMysql implements DaoPersona {
     public DtoPersona listarId(Long id) {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
         parameterSource.addValue("id", id);
-
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarId, parameterSource, new MapeoPersona());
     }
 
@@ -46,5 +45,4 @@ public class DaoPersonaMysql implements DaoPersona {
         parameterSource.addValue("username", username);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarUsername, parameterSource, new MapeoPersona());
     }
-
 }

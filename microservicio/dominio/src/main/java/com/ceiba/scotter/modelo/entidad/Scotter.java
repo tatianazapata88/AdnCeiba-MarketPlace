@@ -3,8 +3,6 @@ package com.ceiba.scotter.modelo.entidad;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import lombok.Getter;
 
-import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
-
 @Getter
 public class Scotter {
     private static final String CAMPO_MARCA_ES_OBLIGATORIO = "El campo marca es obligatorio no puede ir vacio";
@@ -14,7 +12,6 @@ public class Scotter {
     private static final String CAMPO_VENDEDOR_ES_OBLIGATORIO = "El campo vendedor es obligatorio no puede ir vacio";
     private static final String CAMPO_FOTO_ES_OBLIGATORIO = "El campo foto es obligatorio no puede ir vacio";
 
-
     private Long id;
     private String marca;
     private String modelo;
@@ -23,7 +20,6 @@ public class Scotter {
     private Long vendedor;
     private String estado;
     private String foto;
-
 
     public Scotter(Long id, String marca, String modelo, double precio, String ciudad, Long vendedor, String foto) {
         validarCampoMarcaVacio(marca);
@@ -43,26 +39,26 @@ public class Scotter {
         this.foto = foto;
     }
 
-    private void validarCampoMarcaVacio(String marca){
-        if (marca == null || marca.trim().length()<=0) {
+    private void validarCampoMarcaVacio(String marca) {
+        if (marca == null || marca.trim().length() <= 0) {
             throw new ExcepcionValorObligatorio(CAMPO_MARCA_ES_OBLIGATORIO);
         }
     }
 
     private void validarCampoModeloVacio(String modelo) {
-        if (modelo == null || modelo.trim().length()<=0) {
+        if (modelo == null || modelo.trim().length() <= 0) {
             throw new ExcepcionValorObligatorio(CAMPO_MODELO_ES_OBLIGATORIO);
         }
     }
 
     private void validarCampoPrecioVacio(double precio) {
-         if (precio == 0 ){
+        if (precio == 0) {
             throw new ExcepcionValorObligatorio(CAMPO_PRECIO_ES_OBLIGATORIO);
         }
     }
 
     private void validarCampoCiudadVacio(String ciudad) {
-        if (ciudad == null || ciudad.trim().length()<=0) {
+        if (ciudad == null || ciudad.trim().length() <= 0) {
             throw new ExcepcionValorObligatorio(CAMPO_CIUDAD_ES_OBLIGATORIO);
         }
     }
@@ -74,7 +70,7 @@ public class Scotter {
     }
 
     private void validarCampoFotoVacio(String foto) {
-        if (foto == null || foto.trim().length()<=0) {
+        if (foto == null || foto.trim().length() <= 0) {
             throw new ExcepcionValorObligatorio(CAMPO_FOTO_ES_OBLIGATORIO);
         }
     }

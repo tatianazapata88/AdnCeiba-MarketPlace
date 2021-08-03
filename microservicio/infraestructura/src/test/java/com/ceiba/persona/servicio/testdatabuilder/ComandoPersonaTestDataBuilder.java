@@ -2,8 +2,6 @@ package com.ceiba.persona.servicio.testdatabuilder;
 
 import com.ceiba.persona.ComandoPersona;
 
-
-
 public class ComandoPersonaTestDataBuilder {
     private Long id;
     private String username;
@@ -32,7 +30,5 @@ public class ComandoPersonaTestDataBuilder {
     public ComandoPersona build() {
         return new ComandoPersona(id, username, nombre, celular, email);
     }
-
-
 }
 

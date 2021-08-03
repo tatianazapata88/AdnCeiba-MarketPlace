@@ -1,3 +1,3 @@
 SELECT count(1)
-FROM pedido
+FROM compra
 WHERE comprador = :id;

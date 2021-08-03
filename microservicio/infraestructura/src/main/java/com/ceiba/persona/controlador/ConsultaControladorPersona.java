@@ -29,19 +29,19 @@ public class ConsultaControladorPersona {
 
     @GetMapping
     @ApiOperation("Listar Personas")
-    public List<DtoPersona> listar(){
+    public List<DtoPersona> listar() {
         return this.manejadorListarPersona.ejecutar();
     }
 
     @GetMapping("/id/{id}")
     @ApiOperation("Listar Personas por id")
-    public DtoPersona listar(@PathVariable Long id){
+    public DtoPersona listar(@PathVariable Long id) {
         return this.manejadorListarIdPersona.ejecutar(id);
     }
 
     @GetMapping("/username/{username}")
     @ApiOperation("Listar Personas por username")
-    public DtoPersona listar(@PathVariable String username){
+    public DtoPersona listar(@PathVariable String username) {
         return this.manejadorListarUsernamePersona.ejecutar(username);
     }
 }

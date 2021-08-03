@@ -10,20 +10,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class ManejadorActualizarPersona implements ManejadorComando&lt;ComandoPersona&gt; {
 
-        private final FabricaPersona fabricaPersona;
-        private final ServicioActualizarPersona servicioActualizarPersona;
+    private final FabricaPersona fabricaPersona;
+    private final ServicioActualizarPersona servicioActualizarPersona;
 
-<span class="fc" id="L16">        public ManejadorActualizarPersona(FabricaPersona fabricaPersona, ServicioActualizarPersona servicioActualizarPersona) {</span>
-<span class="fc" id="L17">                this.fabricaPersona = fabricaPersona;</span>
-<span class="fc" id="L18">                this.servicioActualizarPersona = servicioActualizarPersona;</span>
-<span class="fc" id="L19">        }</span>
+<span class="fc" id="L16">    public ManejadorActualizarPersona(FabricaPersona fabricaPersona, ServicioActualizarPersona servicioActualizarPersona) {</span>
+<span class="fc" id="L17">        this.fabricaPersona = fabricaPersona;</span>
+<span class="fc" id="L18">        this.servicioActualizarPersona = servicioActualizarPersona;</span>
+<span class="fc" id="L19">    }</span>
 
-        public void ejecutar(ComandoPersona comandoPersona) {
-<span class="fc" id="L22">            Persona persona = this.fabricaPersona.crear(comandoPersona);</span>
+    public void ejecutar(ComandoPersona comandoPersona) {
+<span class="fc" id="L22">        Persona persona = this.fabricaPersona.crear(comandoPersona);</span>
 <span class="fc" id="L23">        this.servicioActualizarPersona.ejecutar(persona);</span>
-<span class="fc" id="L24">        }</span>
-
-
+<span class="fc" id="L24">    }</span>
 }
 
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

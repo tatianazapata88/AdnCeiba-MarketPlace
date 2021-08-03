@@ -13,5 +13,5 @@ public class DtoScotter {
     private String ciudad;
     private Long vendedor;
     private String estado;
-    private  String foto;
+    private String foto;
 }

@@ -29,30 +29,28 @@ public class Persona {
 <span class="fc" id="L29">        this.email = email;</span>
 <span class="fc" id="L30">    }</span>
 
-
-
-    private void validarCampoUsernameVacio(String username){
-<span class="fc bfc" id="L35" title="All 4 branches covered.">        if (username == null || username.trim().length()&lt;=0) {</span>
-<span class="fc" id="L36">            throw new ExcepcionValorObligatorio(CAMPO_USERNAME_ES_OBLIGATORIO);</span>
+    private void validarCampoUsernameVacio(String username) {
+<span class="fc bfc" id="L33" title="All 4 branches covered.">        if (username == null || username.trim().length() &lt;= 0) {</span>
+<span class="fc" id="L34">            throw new ExcepcionValorObligatorio(CAMPO_USERNAME_ES_OBLIGATORIO);</span>
         }
-<span class="fc" id="L38">    }</span>
+<span class="fc" id="L36">    }</span>
 
     private void validarCampoNombreVacio(String nombre) {
-<span class="fc bfc" id="L41" title="All 4 branches covered.">        if (nombre == null || nombre.trim().length()&lt;=0) {</span>
-<span class="fc" id="L42">            throw new ExcepcionValorObligatorio(CAMPO_NOMBRE_ES_OBLIGATORIO);</span>
+<span class="fc bfc" id="L39" title="All 4 branches covered.">        if (nombre == null || nombre.trim().length() &lt;= 0) {</span>
+<span class="fc" id="L40">            throw new ExcepcionValorObligatorio(CAMPO_NOMBRE_ES_OBLIGATORIO);</span>
         }
-<span class="fc" id="L44">    }</span>
+<span class="fc" id="L42">    }</span>
 
-   private void validarCampoCelularVacio(String celular) {
-<span class="fc bfc" id="L47" title="All 4 branches covered.">        if (celular == null|| celular.trim().length()&lt;=0) {</span>
-<span class="fc" id="L48">            throw new ExcepcionValorObligatorio(CAMPO_CELULAR_ES_OBLIGATORIO);</span>
+    private void validarCampoCelularVacio(String celular) {
+<span class="fc bfc" id="L45" title="All 4 branches covered.">        if (celular == null || celular.trim().length() &lt;= 0) {</span>
+<span class="fc" id="L46">            throw new ExcepcionValorObligatorio(CAMPO_CELULAR_ES_OBLIGATORIO);</span>
         }
-<span class="fc" id="L50">    }</span>
+<span class="fc" id="L48">    }</span>
 
     private void validarCampoEmailVacio(String email) {
-<span class="fc bfc" id="L53" title="All 4 branches covered.">        if (email == null || email.trim().length()&lt;=0) {</span>
-<span class="fc" id="L54">            throw new ExcepcionValorObligatorio(CAMPO_EMAIL_ES_OBLIGATORIO);</span>
+<span class="fc bfc" id="L51" title="All 4 branches covered.">        if (email == null || email.trim().length() &lt;= 0) {</span>
+<span class="fc" id="L52">            throw new ExcepcionValorObligatorio(CAMPO_EMAIL_ES_OBLIGATORIO);</span>
         }
-<span class="fc" id="L56">    }</span>
+<span class="fc" id="L54">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -6,7 +6,7 @@ public interface RepositorioScotter {
 
     Long crear(Scotter scotter);
 
-   void actualizar(Scotter scotter);
+    void actualizar(Scotter scotter);
 
     void eliminar(Long id);
 

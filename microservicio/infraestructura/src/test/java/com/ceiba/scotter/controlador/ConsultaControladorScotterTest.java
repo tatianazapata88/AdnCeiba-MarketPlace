@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -16,7 +17,7 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.core.Is.is;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes= ApplicationMock.class)
+@ContextConfiguration(classes = ApplicationMock.class)
 @WebMvcTest(ConsultaControladorScotter.class)
 public class ConsultaControladorScotterTest {
 
@@ -26,12 +27,11 @@ public class ConsultaControladorScotterTest {
     @Test
     public void listarTest() throws Exception {
         // arrange
-
         // act - assert
         mocMvc.perform(get("/scotters")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].marca", is("toyota")));
     }
 
@@ -39,9 +39,8 @@ public class ConsultaControladorScotterTest {
     public void buscarIdTest() throws Exception {
         // arrange
         Long id = 1L;
-
         // act - assert
-        mocMvc.perform(get("/scotters/id/{id}",id)
+        mocMvc.perform(get("/scotters/id/{id}", id)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("marca", is("toyota")));
@@ -51,9 +50,8 @@ public class ConsultaControladorScotterTest {
     public void buscarCiudadTest() throws Exception {
         // arrange
         String ciudad = "Medellin";
-
         // act - assert
-        mocMvc.perform(get("/scotters/ciudad/{ciudad}",ciudad)
+        mocMvc.perform(get("/scotters/ciudad/{ciudad}", ciudad)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
@@ -63,13 +61,12 @@ public class ConsultaControladorScotterTest {
     @Test
     public void buscarPrecioTest() throws Exception {
         // arrange
-        Integer precio = 4000000;
-
+        double precio = 4000000.0;
         // act - assert
-        mocMvc.perform(get("/scotters/precio/{precio}",precio)
+        mocMvc.perform(get("/scotters/precio/{precio}", precio)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].id", is(1)));
     }
 }

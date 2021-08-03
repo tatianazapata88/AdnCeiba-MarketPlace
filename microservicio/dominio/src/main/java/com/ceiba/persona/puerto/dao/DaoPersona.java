@@ -7,6 +7,8 @@ import java.util.List;
 public interface DaoPersona {
 
     List<DtoPersona> listar();
+
     DtoPersona listarId(Long id);
+
     DtoPersona listarUsername(String Username);
 }

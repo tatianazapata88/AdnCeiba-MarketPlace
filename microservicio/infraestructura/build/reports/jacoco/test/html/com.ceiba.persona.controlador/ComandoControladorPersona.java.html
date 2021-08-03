@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(&quot;/personas&quot;)
-@Api(tags = { &quot;Controlador comando persona&quot;})
+@Api(tags = {&quot;Controlador comando persona&quot;})
 public class ComandoControladorPersona {
     private final ManejadorCrearPersona manejadorCrearPersona;
     private final ManejadorEliminarPersona manejadorEliminarPersona;
@@ -42,6 +42,5 @@ public class ComandoControladorPersona {
 <span class="fc" id="L42">        comandoPersona.setId(id);</span>
 <span class="fc" id="L43">        manejadorActualizarPersona.ejecutar(comandoPersona);</span>
 <span class="fc" id="L44">    }</span>
-
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

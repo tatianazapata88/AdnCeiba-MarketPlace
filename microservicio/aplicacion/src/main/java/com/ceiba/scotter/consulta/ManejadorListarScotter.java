@@ -16,7 +16,7 @@ public class ManejadorListarScotter {
         this.daoScotter = daoScotter;
     }
 
-    public List<DtoScotter> ejecutar(){
-        return  this.daoScotter.listar();
+    public List<DtoScotter> ejecutar() {
+        return this.daoScotter.listar();
     }
 }

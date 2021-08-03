@@ -1,6 +1,5 @@
 package com.ceiba.persona.controlador;
 
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -21,52 +20,52 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes= ApplicationMock.class)
+@ContextConfiguration(classes = ApplicationMock.class)
 @WebMvcTest(ComandoControladorPersona.class)
 public class ComandoControladorPersonaTest {
 
     @Autowired
-        private ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 
-        @Autowired
-        private MockMvc mocMvc;
+    @Autowired
+    private MockMvc mocMvc;
 
-        @Test
-        public void crearPersonaTest() throws Exception{
-            // arrange
-            ComandoPersona persona = new ComandoPersonaTestDataBuilder().build();
+    @Test
+    public void crearPersonaTest() throws Exception {
+        // arrange
+        ComandoPersona persona = new ComandoPersonaTestDataBuilder().build();
 
-            // act - assert
-            mocMvc.perform(post("/personas")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(objectMapper.writeValueAsString(persona)))
-                    .andExpect(status().isOk())
-                    .andExpect(content().json("{'valor': 2}"));
-        }
+        // act - assert
+        mocMvc.perform(post("/personas")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(persona)))
+                .andExpect(status().isOk())
+                .andExpect(content().json("{'valor': 2}"));
+    }
 
-        @Test
-        public void actualizarPersonaTest() throws Exception{
-            // arrange
-            Long id = 2L;
-            ComandoPersona persona = new ComandoPersonaTestDataBuilder().build();
+    @Test
+    public void actualizarPersonaTest() throws Exception {
+        // arrange
+        Long id = 2L;
+        ComandoPersona persona = new ComandoPersonaTestDataBuilder().build();
 
-            // act - assert
-            mocMvc.perform(put("/personas/{id}",id)
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(objectMapper.writeValueAsString(persona)))
-                    .andExpect(status().isOk());
-        }
+        // act - assert
+        mocMvc.perform(put("/personas/{id}", id)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(persona)))
+                .andExpect(status().isOk());
+    }
 
-        @Test
-        public void eliminarPersonaTest() throws Exception {
-            // arrange
-            Long id = 4L;
+    @Test
+    public void eliminarPersonaTest() throws Exception {
+        // arrange
+        Long id = 4L;
 
-            // act - assert
-            mocMvc.perform(delete("/personas/{id}",id)
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .accept(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isOk());
-        }
+        // act - assert
+        mocMvc.perform(delete("/personas/{id}", id)
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
 
 }

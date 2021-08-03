@@ -4,14 +4,14 @@ import com.ceiba.scotter.modelo.entidad.Scotter;
 import com.ceiba.scotter.puerto.repositorio.RepositorioScotter;
 
 public class ServicioActualizarScotter {
+
     private final RepositorioScotter repositorioScotter;
 
-<span class="fc" id="L9">    public ServicioActualizarScotter(RepositorioScotter repositorioScotter){</span>
-<span class="fc" id="L10">        this.repositorioScotter=repositorioScotter;</span>
-<span class="fc" id="L11">    }</span>
+<span class="fc" id="L10">    public ServicioActualizarScotter(RepositorioScotter repositorioScotter) {</span>
+<span class="fc" id="L11">        this.repositorioScotter = repositorioScotter;</span>
+<span class="fc" id="L12">    }</span>
 
-
-    public void ejecutar(Scotter scotter){
+    public void ejecutar(Scotter scotter) {
 <span class="fc" id="L15">        this.repositorioScotter.actualizar(scotter);</span>
 <span class="fc" id="L16">    }</span>
 }

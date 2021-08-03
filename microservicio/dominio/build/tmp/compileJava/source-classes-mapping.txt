@@ -4,22 +4,20 @@ com/ceiba/persona/servicio/ServicioCrearPersona.java
  com.ceiba.persona.servicio.ServicioCrearPersona
 com/ceiba/persona/modelo/dto/DtoPersona.java
  com.ceiba.persona.modelo.dto.DtoPersona
+com/ceiba/compra/modelo/entidad/Compra.java
+ com.ceiba.compra.modelo.entidad.Compra
 com/ceiba/persona/puerto/repositorio/RepositorioPersona.java
  com.ceiba.persona.puerto.repositorio.RepositorioPersona
-com/ceiba/pedido/servicio/ServicioCrearPedido.java
- com.ceiba.pedido.servicio.ServicioCrearPedido
 com/ceiba/scotter/modelo/dto/DtoScotter.java
  com.ceiba.scotter.modelo.dto.DtoScotter
-com/ceiba/pedido/puerto/dao/DaoPedido.java
- com.ceiba.pedido.puerto.dao.DaoPedido
+com/ceiba/compra/servicio/ServicioCrearCompra.java
+ com.ceiba.compra.servicio.ServicioCrearCompra
 com/ceiba/scotter/puerto/repositorio/RepositorioScotter.java
  com.ceiba.scotter.puerto.repositorio.RepositorioScotter
+com/ceiba/compra/puerto/dao/DaoCompra.java
+ com.ceiba.compra.puerto.dao.DaoCompra
 com/ceiba/scotter/puerto/dao/DaoScotter.java
  com.ceiba.scotter.puerto.dao.DaoScotter
-com/ceiba/pedido/servicio/ServicioEliminarPedido.java
- com.ceiba.pedido.servicio.ServicioEliminarPedido
-com/ceiba/pedido/modelo/dto/DtoPedido.java
- com.ceiba.pedido.modelo.dto.DtoPedido
 com/ceiba/scotter/servicio/ServicioCrearScotter.java
  com.ceiba.scotter.servicio.ServicioCrearScotter
 com/ceiba/persona/puerto/dao/DaoPersona.java
@@ -30,13 +28,15 @@ com/ceiba/scotter/modelo/entidad/Scotter.java
  com.ceiba.scotter.modelo.entidad.Scotter
 com/ceiba/scotter/servicio/ServicioActualizarScotter.java
  com.ceiba.scotter.servicio.ServicioActualizarScotter
-com/ceiba/pedido/servicio/ServicioActualizarPedido.java
- com.ceiba.pedido.servicio.ServicioActualizarPedido
-com/ceiba/pedido/puerto/repositorio/RepositorioPedido.java
- com.ceiba.pedido.puerto.repositorio.RepositorioPedido
+com/ceiba/compra/modelo/dto/DtoCompra.java
+ com.ceiba.compra.modelo.dto.DtoCompra
 com/ceiba/persona/servicio/ServicioEliminarPersona.java
  com.ceiba.persona.servicio.ServicioEliminarPersona
 com/ceiba/persona/servicio/ServicioActualizarPersona.java
  com.ceiba.persona.servicio.ServicioActualizarPersona
-com/ceiba/pedido/modelo/entidad/Pedido.java
- com.ceiba.pedido.modelo.entidad.Pedido
+com/ceiba/compra/servicio/ServicioActualizarCompra.java
+ com.ceiba.compra.servicio.ServicioActualizarCompra
+com/ceiba/compra/servicio/ServicioEliminarCompra.java
+ com.ceiba.compra.servicio.ServicioEliminarCompra
+com/ceiba/compra/puerto/repositorio/RepositorioCompra.java
+ com.ceiba.compra.puerto.repositorio.RepositorioCompra

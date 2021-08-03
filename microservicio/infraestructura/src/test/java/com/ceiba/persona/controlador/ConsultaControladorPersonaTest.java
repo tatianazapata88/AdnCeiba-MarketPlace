@@ -14,11 +14,10 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-
 import com.ceiba.ApplicationMock;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes= ApplicationMock.class)
+@ContextConfiguration(classes = ApplicationMock.class)
 @WebMvcTest(ConsultaControladorPersona.class)
 public class ConsultaControladorPersonaTest {
 
@@ -28,7 +27,6 @@ public class ConsultaControladorPersonaTest {
     @Test
     public void listarTest() throws Exception {
         // arrange
-
         // act - assert
         mocMvc.perform(get("/personas")
                 .contentType(MediaType.APPLICATION_JSON))
@@ -41,9 +39,8 @@ public class ConsultaControladorPersonaTest {
     public void listarIdTest() throws Exception {
         // arrange
         Long id = 1L;
-
         // act - assert
-        mocMvc.perform(get("/personas/id/{id}",id)
+        mocMvc.perform(get("/personas/id/{id}", id)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("username", is("taty")));
@@ -53,13 +50,10 @@ public class ConsultaControladorPersonaTest {
     public void listarUsernameTest() throws Exception {
         // arrange
         String username = "taty";
-
         // act - assert
-        mocMvc.perform(get("/personas/username/{username}",username)
-                        .contentType(MediaType.APPLICATION_JSON))
-                        .andExpect(status().isOk())
-                        .andExpect(jsonPath("username", is("taty")));
+        mocMvc.perform(get("/personas/username/{username}", username)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("username", is("taty")));
     }
-
-
 }

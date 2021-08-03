@@ -9,21 +9,19 @@ import com.ceiba.persona.servicio.ServicioCrearPersona;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ManejadorCrearPersona implements ManejadorComandoRespuesta&lt;ComandoPersona, ComandoRespuesta&lt;Long&gt;&gt;
-
-    {
+public class ManejadorCrearPersona implements ManejadorComandoRespuesta&lt;ComandoPersona, ComandoRespuesta&lt;Long&gt;&gt; {
 
     private final FabricaPersona fabricaPersona;
     private final ServicioCrearPersona servicioCrearPersona;
 
-<span class="fc" id="L19">	public ManejadorCrearPersona(FabricaPersona fabricaPersona, ServicioCrearPersona servicioCrearPersona) {</span>
-<span class="fc" id="L20">        this.fabricaPersona = fabricaPersona;</span>
-<span class="fc" id="L21">        this.servicioCrearPersona = servicioCrearPersona;</span>
-<span class="fc" id="L22">    }</span>
+<span class="fc" id="L17">    public ManejadorCrearPersona(FabricaPersona fabricaPersona, ServicioCrearPersona servicioCrearPersona) {</span>
+<span class="fc" id="L18">        this.fabricaPersona = fabricaPersona;</span>
+<span class="fc" id="L19">        this.servicioCrearPersona = servicioCrearPersona;</span>
+<span class="fc" id="L20">    }</span>
 
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoPersona comandoPersona) {
-<span class="fc" id="L25">        Persona persona = this.fabricaPersona.crear(comandoPersona);</span>
-<span class="fc" id="L26">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearPersona.ejecutar(persona));</span>
+<span class="fc" id="L23">        Persona persona = this.fabricaPersona.crear(comandoPersona);</span>
+<span class="fc" id="L24">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearPersona.ejecutar(persona));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

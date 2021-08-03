@@ -10,19 +10,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class ManejadorActualizarPersona implements ManejadorComando<ComandoPersona> {
 
-        private final FabricaPersona fabricaPersona;
-        private final ServicioActualizarPersona servicioActualizarPersona;
+    private final FabricaPersona fabricaPersona;
+    private final ServicioActualizarPersona servicioActualizarPersona;
 
-        public ManejadorActualizarPersona(FabricaPersona fabricaPersona, ServicioActualizarPersona servicioActualizarPersona) {
-                this.fabricaPersona = fabricaPersona;
-                this.servicioActualizarPersona = servicioActualizarPersona;
-        }
+    public ManejadorActualizarPersona(FabricaPersona fabricaPersona, ServicioActualizarPersona servicioActualizarPersona) {
+        this.fabricaPersona = fabricaPersona;
+        this.servicioActualizarPersona = servicioActualizarPersona;
+    }
 
-        public void ejecutar(ComandoPersona comandoPersona) {
-            Persona persona = this.fabricaPersona.crear(comandoPersona);
+    public void ejecutar(ComandoPersona comandoPersona) {
+        Persona persona = this.fabricaPersona.crear(comandoPersona);
         this.servicioActualizarPersona.ejecutar(persona);
-        }
-
-
+    }
 }
 

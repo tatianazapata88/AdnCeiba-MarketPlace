@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class FabricaScotter {
-    public Scotter crear(ComandoScotter comandoScotter){
+    public Scotter crear(ComandoScotter comandoScotter) {
         return new Scotter(
                 comandoScotter.getId(),
                 comandoScotter.getMarca(),

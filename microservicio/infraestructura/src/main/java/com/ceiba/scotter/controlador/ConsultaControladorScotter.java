@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/scotters")
-@Api(tags={"Controlador consulta scotter"})
+@Api(tags = {"Controlador consulta scotter"})
 public class ConsultaControladorScotter {
 
     private final ManejadorBuscarIdScotter manejadorBuscarIdScotter;
@@ -36,25 +36,25 @@ public class ConsultaControladorScotter {
 
     @GetMapping
     @ApiOperation("Listar scotters")
-    public List<DtoScotter> listar(){
+    public List<DtoScotter> listar() {
         return this.manejadorListarScotter.ejecutar();
     }
 
     @GetMapping("/id/{id}")
     @ApiOperation("Listar scotters por id")
-    public DtoScotter listar(@PathVariable Long id){
+    public DtoScotter listar(@PathVariable Long id) {
         return this.manejadorBuscarIdScotter.ejecutar(id);
     }
 
     @GetMapping("/ciudad/{ciudad}")
     @ApiOperation("Listar scotters por ciudad")
-    public List<DtoScotter> listar(@PathVariable String ciudad){
+    public List<DtoScotter> listar(@PathVariable String ciudad) {
         return this.manejadorBuscarCiudadScotter.ejecutar(ciudad);
     }
 
     @GetMapping("/precio/{precio}")
     @ApiOperation("Listar scotters por precio")
-    public List<DtoScotter> listar(@PathVariable Integer precio){
+    public List<DtoScotter> listar(@PathVariable double precio) {
         return this.manejadorBuscarPrecioScotter.ejecutar(precio);
     }
 }

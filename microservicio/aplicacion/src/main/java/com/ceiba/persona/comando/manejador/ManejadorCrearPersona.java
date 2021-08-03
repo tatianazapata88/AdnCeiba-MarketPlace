@@ -9,14 +9,12 @@ import com.ceiba.persona.servicio.ServicioCrearPersona;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ManejadorCrearPersona implements ManejadorComandoRespuesta<ComandoPersona, ComandoRespuesta<Long>>
-
-    {
+public class ManejadorCrearPersona implements ManejadorComandoRespuesta<ComandoPersona, ComandoRespuesta<Long>> {
 
     private final FabricaPersona fabricaPersona;
     private final ServicioCrearPersona servicioCrearPersona;
 
-	public ManejadorCrearPersona(FabricaPersona fabricaPersona, ServicioCrearPersona servicioCrearPersona) {
+    public ManejadorCrearPersona(FabricaPersona fabricaPersona, ServicioCrearPersona servicioCrearPersona) {
         this.fabricaPersona = fabricaPersona;
         this.servicioCrearPersona = servicioCrearPersona;
     }

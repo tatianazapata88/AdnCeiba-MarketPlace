@@ -19,7 +19,7 @@ public class ServicioEliminarScotterTest {
         Scotter scotter = new ScotterTestDataBuilder().conId(id).build();
         RepositorioScotter repositorioScotter = Mockito.mock(RepositorioScotter.class);
         ServicioEliminarScotter servicioEliminarScotter = new ServicioEliminarScotter(repositorioScotter);
-       // Long id = 1L;
+        // Long id = 1L;
         servicioEliminarScotter.ejecutar(id);
         // act - assert
         Assert.assertEquals(scotter.getId(), id);
@@ -32,6 +32,6 @@ public class ServicioEliminarScotterTest {
         Mockito.when(repositorioScotter.existePorPedido(Mockito.any())).thenReturn(true);
         ServicioEliminarScotter servicioEliminarScotter = new ServicioEliminarScotter(repositorioScotter);
         // act - assert
-        BasePrueba.assertThrows(() -> servicioEliminarScotter.ejecutar(1l), ExcepcionRelacionado.class,SCOTTER_TIENE_REGISTRO_EN_UN_PEDIDO);
+        BasePrueba.assertThrows(() -> servicioEliminarScotter.ejecutar(1l), ExcepcionRelacionado.class, SCOTTER_TIENE_REGISTRO_EN_UN_PEDIDO);
     }
 }

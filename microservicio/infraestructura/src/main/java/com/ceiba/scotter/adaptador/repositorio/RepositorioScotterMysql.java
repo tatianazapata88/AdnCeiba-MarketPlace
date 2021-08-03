@@ -11,57 +11,43 @@ import org.springframework.stereotype.Repository;
 public class RepositorioScotterMysql implements RepositorioScotter {
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
-    @SqlStatement(namespace="scotter", value="crear")
+    @SqlStatement(namespace = "scotter", value = "crear")
     private static String sqlCrear;
 
-    @SqlStatement(namespace="scotter", value="actualizar")
+    @SqlStatement(namespace = "scotter", value = "actualizar")
     private static String sqlActualizar;
 
-
-    @SqlStatement(namespace="scotter", value="eliminar")
+    @SqlStatement(namespace = "scotter", value = "eliminar")
     private static String sqlEliminar;
 
     @SqlStatement(namespace = "persona", value = "existePorPedido")
     private static String sqlExistePorPedido;
 
-
-
     public RepositorioScotterMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
-
-
     }
 
     @Override
     public Long crear(Scotter scotter) {
-
         return this.customNamedParameterJdbcTemplate.crear(scotter, sqlCrear);
     }
 
     @Override
     public void actualizar(Scotter scotter) {
         this.customNamedParameterJdbcTemplate.actualizar(scotter, sqlActualizar);
-
     }
-
 
     @Override
     public void eliminar(Long id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
-
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
-
     }
 
     @Override
     public boolean existePorPedido(Long id) {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
         parameterSource.addValue("id", id);
-
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorPedido, parameterSource, Boolean.class);
     }
-
-
-
 }

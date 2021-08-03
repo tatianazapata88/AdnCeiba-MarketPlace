@@ -15,7 +15,6 @@ public class ServicioEliminarPersonaTest {
     @Test
     public void validarPersonaEliminarTest() {
         // arrange
-
         Persona persona = new PersonaTestDataBuilder().conId(3L).build();
         RepositorioPersona repositorioPersona = Mockito.mock(RepositorioPersona.class);
         ServicioEliminarPersona servicioEliminarPersona = new ServicioEliminarPersona(repositorioPersona);
@@ -32,6 +31,6 @@ public class ServicioEliminarPersonaTest {
         Mockito.when(repositorioPersona.existePorPedido(Mockito.any())).thenReturn(true);
         ServicioEliminarPersona servicioEliminarPersona = new ServicioEliminarPersona(repositorioPersona);
         // act - assert
-        BasePrueba.assertThrows(() -> servicioEliminarPersona.ejecutar(1l), ExcepcionRelacionado.class,PERSONA_TIENE_REGISTRO_EN_UN_PEDIDO);
+        BasePrueba.assertThrows(() -> servicioEliminarPersona.ejecutar(1l), ExcepcionRelacionado.class, PERSONA_TIENE_REGISTRO_EN_UN_PEDIDO);
     }
 }

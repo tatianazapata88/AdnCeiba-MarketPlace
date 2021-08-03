@@ -15,13 +15,11 @@ public class MapeoScotter implements RowMapper<DtoScotter>, MapperResult {
         Long id = resultSet.getLong("id");
         String marca = resultSet.getString("marca");
         String modelo = resultSet.getString("modelo");
-        Integer precio = resultSet.getInt("precio");
+        double precio = resultSet.getDouble("precio");
         String ciudad = resultSet.getString("ciudad");
         Long vendedor = resultSet.getLong("vendedor");
-        String estado =resultSet.getString("estado");
-        String foto =  resultSet.getString("foto");
-
-
+        String estado = resultSet.getString("estado");
+        String foto = resultSet.getString("foto");
         return new DtoScotter(id, marca, modelo, precio, ciudad, vendedor, estado, foto);
     }
 }

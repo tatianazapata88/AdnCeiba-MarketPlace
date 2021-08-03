@@ -7,14 +7,13 @@ public class ServicioEliminarScotter {
 
     private static final String SCOTTER_TIENE_REGISTRO_EN_UN_PEDIDO = "No se puede eliminar la scotter por que existe un registro con pedido";
 
-
     private final RepositorioScotter repositorioScotter;
 
-    public ServicioEliminarScotter(RepositorioScotter repositorioScotter){
-        this.repositorioScotter= repositorioScotter;
+    public ServicioEliminarScotter(RepositorioScotter repositorioScotter) {
+        this.repositorioScotter = repositorioScotter;
     }
 
-    public void ejecutar(Long id){
+    public void ejecutar(Long id) {
         validarExistenciaPedido(id);
         this.repositorioScotter.eliminar(id);
     }

@@ -7,23 +7,22 @@ public class ServicioEliminarScotter {
 
     private static final String SCOTTER_TIENE_REGISTRO_EN_UN_PEDIDO = &quot;No se puede eliminar la scotter por que existe un registro con pedido&quot;;
 
-
     private final RepositorioScotter repositorioScotter;
 
-<span class="fc" id="L13">    public ServicioEliminarScotter(RepositorioScotter repositorioScotter){</span>
-<span class="fc" id="L14">        this.repositorioScotter= repositorioScotter;</span>
-<span class="fc" id="L15">    }</span>
+<span class="fc" id="L12">    public ServicioEliminarScotter(RepositorioScotter repositorioScotter) {</span>
+<span class="fc" id="L13">        this.repositorioScotter = repositorioScotter;</span>
+<span class="fc" id="L14">    }</span>
 
-    public void ejecutar(Long id){
-<span class="fc" id="L18">        validarExistenciaPedido(id);</span>
-<span class="fc" id="L19">        this.repositorioScotter.eliminar(id);</span>
-<span class="fc" id="L20">    }</span>
+    public void ejecutar(Long id) {
+<span class="fc" id="L17">        validarExistenciaPedido(id);</span>
+<span class="fc" id="L18">        this.repositorioScotter.eliminar(id);</span>
+<span class="fc" id="L19">    }</span>
 
     private void validarExistenciaPedido(Long id) {
-<span class="fc" id="L23">        boolean existeRegistroPedido = this.repositorioScotter.existePorPedido(id);</span>
-<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (existeRegistroPedido) {</span>
-<span class="fc" id="L25">            throw new ExcepcionRelacionado(SCOTTER_TIENE_REGISTRO_EN_UN_PEDIDO);</span>
+<span class="fc" id="L22">        boolean existeRegistroPedido = this.repositorioScotter.existePorPedido(id);</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (existeRegistroPedido) {</span>
+<span class="fc" id="L24">            throw new ExcepcionRelacionado(SCOTTER_TIENE_REGISTRO_EN_UN_PEDIDO);</span>
         }
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L26">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

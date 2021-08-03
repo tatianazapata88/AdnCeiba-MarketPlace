@@ -12,7 +12,7 @@ public class ManejadorEliminarScotter implements ManejadorComando<Long> {
         this.servicioEliminarScotter = servicioEliminarScotter;
     }
 
-    public void ejecutar(Long id){
+    public void ejecutar(Long id) {
         this.servicioEliminarScotter.ejecutar(id);
     }
 }

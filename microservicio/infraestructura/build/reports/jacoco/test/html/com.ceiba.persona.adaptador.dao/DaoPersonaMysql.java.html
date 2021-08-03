@@ -36,16 +36,14 @@ public class DaoPersonaMysql implements DaoPersona {
     public DtoPersona listarId(Long id) {
 <span class="fc" id="L37">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
 <span class="fc" id="L38">        parameterSource.addValue(&quot;id&quot;, id);</span>
-
-<span class="fc" id="L40">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarId, parameterSource, new MapeoPersona());</span>
+<span class="fc" id="L39">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarId, parameterSource, new MapeoPersona());</span>
     }
 
     @Override
     public DtoPersona listarUsername(String username) {
-<span class="fc" id="L45">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L46">        parameterSource.addValue(&quot;username&quot;, username);</span>
-<span class="fc" id="L47">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarUsername, parameterSource, new MapeoPersona());</span>
+<span class="fc" id="L44">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L45">        parameterSource.addValue(&quot;username&quot;, username);</span>
+<span class="fc" id="L46">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarUsername, parameterSource, new MapeoPersona());</span>
     }
-
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

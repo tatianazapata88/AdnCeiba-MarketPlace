@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/personas")
-@Api(tags = { "Controlador comando persona"})
+@Api(tags = {"Controlador comando persona"})
 public class ComandoControladorPersona {
     private final ManejadorCrearPersona manejadorCrearPersona;
     private final ManejadorEliminarPersona manejadorEliminarPersona;
@@ -42,5 +42,4 @@ public class ComandoControladorPersona {
         comandoPersona.setId(id);
         manejadorActualizarPersona.ejecutar(comandoPersona);
     }
-
 }

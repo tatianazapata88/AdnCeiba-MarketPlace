@@ -43,8 +43,6 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
     public boolean existe(String username) {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
         parameterSource.addValue("username", username);
-
-
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, parameterSource, Boolean.class);
     }
 
@@ -58,7 +56,6 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
         parameterSource.addValue("username", username);
         parameterSource.addValue("id", id);
-
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorActualizacion, parameterSource, Boolean.class);
     }
 
@@ -66,7 +63,6 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
     public void eliminar(Long id) {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
         parameterSource.addValue("id", id);
-
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, parameterSource);
     }
 
@@ -74,7 +70,6 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
     public boolean existePorPedido(Long id) {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
         parameterSource.addValue("id", id);
-
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorPedido, parameterSource, Boolean.class);
     }
 }

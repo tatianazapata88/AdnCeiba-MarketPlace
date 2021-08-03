@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ServicioEliminarPersona.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.persona.servicio</a> &gt; <span class="el_source">ServicioEliminarPersona.java</span></div><h1>ServicioEliminarPersona.java</h1><pre class="source lang-java linenums">package com.ceiba.persona.servicio;
 
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionRelacionado;
 import com.ceiba.persona.puerto.repositorio.RepositorioPersona;
 
@@ -10,20 +9,20 @@ public class ServicioEliminarPersona {
 
     private final RepositorioPersona repositorioPersona;
 
-<span class="fc" id="L13">    public ServicioEliminarPersona(RepositorioPersona repositorioPersona) {</span>
-<span class="fc" id="L14">        this.repositorioPersona = repositorioPersona;</span>
-<span class="fc" id="L15">    }</span>
+<span class="fc" id="L12">    public ServicioEliminarPersona(RepositorioPersona repositorioPersona) {</span>
+<span class="fc" id="L13">        this.repositorioPersona = repositorioPersona;</span>
+<span class="fc" id="L14">    }</span>
 
     public void ejecutar(Long id) {
-<span class="fc" id="L18">        validarExistenciaPedido(id);</span>
-<span class="fc" id="L19">        this.repositorioPersona.eliminar(id);</span>
-<span class="fc" id="L20">    }</span>
+<span class="fc" id="L17">        validarExistenciaPedido(id);</span>
+<span class="fc" id="L18">        this.repositorioPersona.eliminar(id);</span>
+<span class="fc" id="L19">    }</span>
 
     private void validarExistenciaPedido(Long id) {
-<span class="fc" id="L23">        boolean existeRegistroPedido = this.repositorioPersona.existePorPedido(id);</span>
-<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (existeRegistroPedido) {</span>
-<span class="fc" id="L25">            throw new ExcepcionRelacionado(PERSONA_TIENE_REGISTRO_EN_UN_PEDIDO);</span>
+<span class="fc" id="L22">        boolean existeRegistroPedido = this.repositorioPersona.existePorPedido(id);</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (existeRegistroPedido) {</span>
+<span class="fc" id="L24">            throw new ExcepcionRelacionado(PERSONA_TIENE_REGISTRO_EN_UN_PEDIDO);</span>
         }
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L26">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,8 +1,5 @@
 package com.ceiba.scotter.servicio;
 
-
-import com.ceiba.persona.puerto.repositorio.RepositorioPersona;
-import com.ceiba.persona.servicio.ServicioActualizarPersona;
 import com.ceiba.scotter.modelo.entidad.Scotter;
 import com.ceiba.scotter.puerto.repositorio.RepositorioScotter;
 import com.ceiba.scotter.servicio.testdatabuilder.ScotterTestDataBuilder;
@@ -16,7 +13,7 @@ public class ServicioActualizarScotterTest {
     public void validarActualizarScotterTest() {
         // arrange
         Long id = 1L;
-        Scotter scotter= new ScotterTestDataBuilder().conId(id).build();
+        Scotter scotter = new ScotterTestDataBuilder().conId(id).build();
         RepositorioScotter repositorioScotter = Mockito.mock(RepositorioScotter.class);
         ServicioActualizarScotter servicioActualizarScotter = new ServicioActualizarScotter(repositorioScotter);
         servicioActualizarScotter.ejecutar(scotter);

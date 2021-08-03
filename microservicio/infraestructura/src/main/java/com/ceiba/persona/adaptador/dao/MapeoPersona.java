@@ -17,7 +17,6 @@ public class MapeoPersona implements RowMapper<DtoPersona>, MapperResult {
         String nombre = resultSet.getString("nombre");
         String celular = resultSet.getString("celular");
         String email = resultSet.getString("email");
-
         return new DtoPersona(id, username, nombre, celular, email);
     }
 }
