@@ -11,6 +11,7 @@ import com.ceiba.persona.modelo.entidad.Persona;
 import com.ceiba.scotter.adaptador.dao.MapeoScotterObjeto;
 import com.ceiba.scotter.adaptador.repositorio.RepositorioScotterMysql;
 import com.ceiba.scotter.modelo.entidad.Scotter;
+import org.springframework.cache.support.NullValue;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -61,18 +62,12 @@ public class RepositorioCompraMysql implements RepositorioCompra {
         paramSource.addValue("total", compra.getTotal());
         KeyHolder keyHolder = new GeneratedKeyHolder();
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{"id"});
-       /* if (keyHolder.getKey()!=null) {
+        if (keyHolder.getKey() != null) {
 
             return keyHolder.getKey().longValue();
-        }
-        else {
-             throw  new ExcepcionNula(EXCEPCION_NULO, );
-        }*/
-        try {
-            return keyHolder.getKey().longValue();
-        }
-        catch (Exception e){
-            throw  new ExcepcionNula(EXCEPCION_NULO, e);
+        } else {
+            throw new ExcepcionNula(EXCEPCION_NULO,null);
+
         }
     }
 
