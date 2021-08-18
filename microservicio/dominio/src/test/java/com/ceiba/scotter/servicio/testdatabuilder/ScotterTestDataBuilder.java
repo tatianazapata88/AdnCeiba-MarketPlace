@@ -20,7 +20,7 @@ public class ScotterTestDataBuilder {
         this.precio = precio;
         this.ciudad = ciudad;
         this.vendedor = vendedor;
-        this.estado =estado;
+        this.estado = estado;
         this.foto = foto;
     }
 
@@ -30,7 +30,7 @@ public class ScotterTestDataBuilder {
         modelo = "2022";
         precio = 6000000.0;
         ciudad = "Cali";
-        vendedor = new Persona(1l,"salo","salome agudelo","3003680128","salo@gmail.com");
+        vendedor = new Persona(1l, "salo", "salome agudelo", "3003680128", "salo@gmail.com");
         estado = Scotter.Estado.DISPONIBLE;
         foto = "https://www.google.com/search?q=foto+hd+scooter&rlz=1C1UUXU_esCO947CO947&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjcyNSkxPTxAhXkRjABHb2SBecQ_AUoAXoECAEQAw&biw=1600&bih=757";
     }
@@ -51,6 +51,6 @@ public class ScotterTestDataBuilder {
     }
 
     public Scotter build() {
-        return new Scotter(id,marca, modelo, precio, ciudad, vendedor, foto);
+        return new Scotter(id, marca, modelo, precio, ciudad, vendedor, foto);
     }
 }

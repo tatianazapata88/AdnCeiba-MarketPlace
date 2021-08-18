@@ -10,7 +10,7 @@ public class ComandoPersonaTestDataBuilder {
     private String email;
 
     public ComandoPersonaTestDataBuilder() {
-        username = "jose";
+        username = "joselito";
         nombre = "Jose Arturo Oswaldo";
         celular = "3142644081";
         email = "jose@gmail.com";

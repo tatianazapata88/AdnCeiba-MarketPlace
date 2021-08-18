@@ -40,13 +40,13 @@ public class ComandoControladorPersonaTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(persona)))
                 .andExpect(status().isOk())
-                .andExpect(content().json("{'valor': 2}"));
+                .andExpect(content().json("{'valor': 3}"));
     }
 
     @Test
     public void actualizarPersonaTest() throws Exception {
         // arrange
-        Long id = 2L;
+        Long id = 3L;
         ComandoPersona persona = new ComandoPersonaTestDataBuilder().build();
 
         // act - assert
@@ -67,5 +67,4 @@ public class ComandoControladorPersonaTest {
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
-
 }

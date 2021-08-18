@@ -45,6 +45,4 @@ public class DaoPersonaMysql implements DaoPersona {
         parameterSource.addValue("username", username);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarUsername, parameterSource, new MapeoPersona());
     }
-
-
 }

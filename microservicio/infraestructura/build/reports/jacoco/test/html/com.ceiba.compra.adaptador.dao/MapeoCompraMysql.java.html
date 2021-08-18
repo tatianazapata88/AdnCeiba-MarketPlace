@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MapeoCompraMysql.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.compra.adaptador.dao</a> &gt; <span class="el_source">MapeoCompraMysql.java</span></div><h1>MapeoCompraMysql.java</h1><pre class="source lang-java linenums">package com.ceiba.compra.adaptador.dao;
 
 import com.ceiba.compra.adaptador.repositorio.RepositorioCompraMysql;
-import com.ceiba.compra.modelo.dto.DtoCompra;
 import com.ceiba.compra.modelo.entidad.Compra;
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.persona.modelo.entidad.Persona;
-import com.ceiba.scotter.adaptador.repositorio.RepositorioScotterMysql;
 import com.ceiba.scotter.modelo.entidad.Scotter;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -17,29 +15,27 @@ public class MapeoCompraMysql implements RowMapper&lt;Compra&gt;, MapperResult {
 
     private final RepositorioCompraMysql repositorioCompraMysql;
 
-<span class="nc" id="L20">    public MapeoCompraMysql(RepositorioCompraMysql repositorioCompraMysql) {</span>
-<span class="nc" id="L21">        this.repositorioCompraMysql = repositorioCompraMysql;</span>
-<span class="nc" id="L22">    }</span>
+<span class="nc" id="L18">    public MapeoCompraMysql(RepositorioCompraMysql repositorioCompraMysql) {</span>
+<span class="nc" id="L19">        this.repositorioCompraMysql = repositorioCompraMysql;</span>
+<span class="nc" id="L20">    }</span>
 
     @Override
     public Compra mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-<span class="nc" id="L27">        Long id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="nc" id="L28">        LocalDate fecha = extraerLocalDate(resultSet, &quot;fecha&quot;);</span>
-<span class="nc" id="L29">        Long scotter_id = resultSet.getLong(&quot;scotter_id&quot;);</span>
-<span class="nc" id="L30">        Long comprador_id = resultSet.getLong(&quot;comprador_id&quot;);</span>
-<span class="nc" id="L31">        String ciudadDestinoEnvioScotter = resultSet.getString(&quot;ciudadDestinoEnvioScotter&quot;);</span>
-<span class="nc" id="L32">        double flete = resultSet.getDouble(&quot;flete&quot;);</span>
-<span class="nc" id="L33">        double precio = resultSet.getDouble(&quot;precio&quot;);</span>
-<span class="nc" id="L34">        double descuento = resultSet.getDouble(&quot;descuento&quot;);</span>
-<span class="nc" id="L35">        double total = resultSet.getDouble(&quot;total&quot;);</span>
+<span class="nc" id="L25">        Long id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="nc" id="L26">        LocalDate fecha = extraerLocalDate(resultSet, &quot;fecha&quot;);</span>
+<span class="nc" id="L27">        Long scotter_id = resultSet.getLong(&quot;scotter_id&quot;);</span>
+<span class="nc" id="L28">        Long comprador_id = resultSet.getLong(&quot;comprador_id&quot;);</span>
+<span class="nc" id="L29">        String ciudadDestinoEnvioScotter = resultSet.getString(&quot;ciudadDestinoEnvioScotter&quot;);</span>
+<span class="nc" id="L30">        double flete = resultSet.getDouble(&quot;flete&quot;);</span>
+<span class="nc" id="L31">        double precio = resultSet.getDouble(&quot;precio&quot;);</span>
+<span class="nc" id="L32">        double descuento = resultSet.getDouble(&quot;descuento&quot;);</span>
+<span class="nc" id="L33">        double total = resultSet.getDouble(&quot;total&quot;);</span>
 
-<span class="nc" id="L37">        Persona comprador= repositorioCompraMysql.obtenerId(comprador_id);</span>
-<span class="nc" id="L38">        Scotter scotter = repositorioCompraMysql.obtenerIdScotter(scotter_id);</span>
+<span class="nc" id="L35">        Persona comprador = repositorioCompraMysql.obtenerId(comprador_id);</span>
+<span class="nc" id="L36">        Scotter scotter = repositorioCompraMysql.obtenerIdScotter(scotter_id);</span>
 
-
-<span class="nc" id="L41">        return new Compra(id, fecha, scotter, comprador, ciudadDestinoEnvioScotter);</span>
+<span class="nc" id="L38">        return new Compra(id, fecha, scotter, comprador, ciudadDestinoEnvioScotter);</span>
     }
-
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

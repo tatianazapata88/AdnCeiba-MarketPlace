@@ -9,7 +9,6 @@ import org.mockito.Mockito;
 import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 
-
 public class ServicioActualizarPersonaTest {
 
     private static final String USERNAME_YA_REGISTRADO_EN_EL_SISTEMA = "No se puede registrar la persona por que ya existe el username";

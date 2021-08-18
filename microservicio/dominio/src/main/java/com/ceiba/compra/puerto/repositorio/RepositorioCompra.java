@@ -19,7 +19,4 @@ public interface RepositorioCompra {
 
     Scotter obtenerIdScotter(Long id);
 
-
-
-    //  void cambiarEstado(Long bici);
 }

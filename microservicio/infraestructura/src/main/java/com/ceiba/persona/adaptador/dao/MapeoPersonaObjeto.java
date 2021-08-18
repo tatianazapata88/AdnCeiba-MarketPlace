@@ -1,7 +1,6 @@
 package com.ceiba.persona.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
-import com.ceiba.persona.modelo.dto.DtoPersona;
 import com.ceiba.persona.modelo.entidad.Persona;
 import org.springframework.jdbc.core.RowMapper;
 

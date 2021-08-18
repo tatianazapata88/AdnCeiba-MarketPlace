@@ -35,10 +35,7 @@ public class ComandoControladorCompraTest {
     public void crearCompraTest() throws Exception {
         // arrange
         ComandoCompra compra = new ComandoCompraTestDataBuilder().build();
-       // Persona vendedor = new Persona(6L,"SALITO","SALOME AGUDELO","3003680128","SALITO@GMAIL.COM");
-        //Scotter scotter = new Scotter(5L,"BMW","2022",1000000.0,"Medellin",vendedor,"esta");
-       // Persona comprador = new Persona(4L, "JUANMI", "JUAN MIGUEL HENAO","3005123690","JUANMI@GMAIL.COM");
-        // act - assert
+       // act - assert
         mocMvc.perform(post("/compras")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(compra)))
@@ -46,29 +43,18 @@ public class ComandoControladorCompraTest {
                 .andExpect(content().json("{'valor': 2}"));
     }
 
-   /* @Test
-    public void crearCompraScotterReservadaTest() throws Exception {
-        // arrange
-        Long scotterId = 1L;
-        ComandoCompra compra = new ComandoCompraTestDataBuilder().conScotterId(scotterId).build();
-        // act - assert
-        mocMvc.perform(post("/compras")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(compra)))
-                .andExpect(status().isBadRequest());
-    }
 
-    @Test
+   /* @Test
     public void actualizarCompraTest() throws Exception {
         // arrange
-        Long id = 2L;
+        Long id = 1L;
         ComandoCompra compra = new ComandoCompraTestDataBuilder().build();
         // act - assert
         mocMvc.perform(put("/compras/{id}", id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(compra)))
                 .andExpect(status().isOk());
-    }
+    }*/
 
     @Test
     public void eliminarCompraTest() throws Exception {
@@ -79,5 +65,5 @@ public class ComandoControladorCompraTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
-    }*/
+    }
 }

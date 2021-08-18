@@ -18,7 +18,7 @@ import org.springframework.stereotype.Repository;
 public class RepositorioCompraMysql implements RepositorioCompra {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
-    private final   RepositorioScotterMysql repositorioScotterMysql;
+    private final RepositorioScotterMysql repositorioScotterMysql;
 
     @SqlStatement(namespace = "compra", value = "crear")
     private static String sqlCrear;
@@ -38,9 +38,6 @@ public class RepositorioCompraMysql implements RepositorioCompra {
     @SqlStatement(namespace = "scotter", value = "listar")
     private static String sqlListarScotter;
 
-    /*@SqlStatement(namespace = "pedido", value = "reservarScotter")
-    private static String sqlEstadoScotter;*/
-
     public RepositorioCompraMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, RepositorioScotterMysql repositorioScotterMysql) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
         this.repositorioScotterMysql = repositorioScotterMysql;
@@ -58,7 +55,7 @@ public class RepositorioCompraMysql implements RepositorioCompra {
         paramSource.addValue("descuento", compra.getDescuento());
         paramSource.addValue("total", compra.getTotal());
         KeyHolder keyHolder = new GeneratedKeyHolder();
-        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource,keyHolder,new String[] { "id" });
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{"id"});
         return keyHolder.getKey().longValue();
 
     }
@@ -73,6 +70,16 @@ public class RepositorioCompraMysql implements RepositorioCompra {
 
     @Override
     public void actualizar(Compra compra) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", compra.getId());
+        paramSource.addValue("fecha", compra.getFecha());
+        paramSource.addValue("scotter_id", compra.getScotter().getId());
+        paramSource.addValue("comprador_id", compra.getComprador().getId());
+        paramSource.addValue("ciudadDestinoEnvioScotter", compra.getCiudadDestinoEnvioScotter());
+        paramSource.addValue("flete", compra.getFlete());
+        paramSource.addValue("precio", compra.getScotter().getPrecio());
+        paramSource.addValue("descuento", compra.getDescuento());
+        paramSource.addValue("total", compra.getTotal());
         this.customNamedParameterJdbcTemplate.actualizar(compra, sqlActualizar);
     }
 
@@ -90,20 +97,9 @@ public class RepositorioCompraMysql implements RepositorioCompra {
 
     @Override
     public Scotter obtenerIdScotter(Long id) {
-         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarScotter, new MapeoScotterObjeto(repositorioScotterMysql)).get(0);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarScotter, new MapeoScotterObjeto(repositorioScotterMysql)).get(0);
     }
-
-
-
-
-
 }
-   /* @Override
-    public void cambiarEstado(Long bici) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id", bici);
 
-        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEstadoScotter, paramSource);
-    }*/
 
 

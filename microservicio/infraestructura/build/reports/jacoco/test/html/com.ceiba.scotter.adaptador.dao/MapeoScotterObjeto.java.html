@@ -3,7 +3,6 @@
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.persona.modelo.entidad.Persona;
 import com.ceiba.scotter.adaptador.repositorio.RepositorioScotterMysql;
-import com.ceiba.scotter.modelo.dto.DtoScotter;
 import com.ceiba.scotter.modelo.entidad.Scotter;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -14,30 +13,25 @@ public class MapeoScotterObjeto implements RowMapper&lt;Scotter&gt;, MapperResul
 
     private RepositorioScotterMysql repositorioScotterMysql;
 
-
-
-<span class="fc" id="L19">    public MapeoScotterObjeto(RepositorioScotterMysql repositorioScotterMysql) {</span>
-<span class="fc" id="L20">        this.repositorioScotterMysql = repositorioScotterMysql;</span>
-<span class="fc" id="L21">    }</span>
-
-
-
+<span class="fc" id="L16">    public MapeoScotterObjeto(RepositorioScotterMysql repositorioScotterMysql) {</span>
+<span class="fc" id="L17">        this.repositorioScotterMysql = repositorioScotterMysql;</span>
+<span class="fc" id="L18">    }</span>
 
     @Override
     public Scotter mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-<span class="fc" id="L29">        Long id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="fc" id="L30">        String marca = resultSet.getString(&quot;marca&quot;);</span>
-<span class="fc" id="L31">        String modelo = resultSet.getString(&quot;modelo&quot;);</span>
-<span class="fc" id="L32">        double precio = resultSet.getDouble(&quot;precio&quot;);</span>
-<span class="fc" id="L33">        String ciudad = resultSet.getString(&quot;ciudad&quot;);</span>
-<span class="fc" id="L34">        Long id_vendedor = resultSet.getLong(&quot;vendedor&quot;);</span>
-     //  String estadobd = resultSet.getString(&quot;estado&quot;);
-<span class="fc" id="L36">        String foto = resultSet.getString(&quot;foto&quot;);</span>
+<span class="fc" id="L23">        Long id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="fc" id="L24">        String marca = resultSet.getString(&quot;marca&quot;);</span>
+<span class="fc" id="L25">        String modelo = resultSet.getString(&quot;modelo&quot;);</span>
+<span class="fc" id="L26">        double precio = resultSet.getDouble(&quot;precio&quot;);</span>
+<span class="fc" id="L27">        String ciudad = resultSet.getString(&quot;ciudad&quot;);</span>
+<span class="fc" id="L28">        Long id_vendedor = resultSet.getLong(&quot;vendedor&quot;);</span>
+<span class="fc" id="L29">       String estadobd = resultSet.getString(&quot;estado&quot;);</span>
+<span class="fc" id="L30">        String foto = resultSet.getString(&quot;foto&quot;);</span>
 
-<span class="fc" id="L38">        Persona vendedor=  repositorioScotterMysql.obtenerPorId(id_vendedor);</span>
-       // Scotter.Estado estado = Scotter.Estado.valueOf(estadobd);
-<span class="fc" id="L40">        return new Scotter(id,marca, modelo, precio, ciudad, vendedor, foto);</span>
+<span class="fc" id="L32">        Persona vendedor=  repositorioScotterMysql.obtenerPorId(id_vendedor);</span>
+<span class="fc" id="L33">        Scotter.Estado estado = Scotter.Estado.valueOf(estadobd);</span>
+<span class="fc" id="L34">        return new Scotter(id,marca, modelo, precio, ciudad, vendedor, foto);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

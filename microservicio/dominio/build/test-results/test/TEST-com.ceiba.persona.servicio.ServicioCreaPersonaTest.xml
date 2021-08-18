@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.persona.servicio.ServicioCreaPersonaTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-08-18T13:32:19" hostname="LUZP-ZAPATA" time="0.012">
+<testsuite name="com.ceiba.persona.servicio.ServicioCreaPersonaTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-08-18T15:26:36" hostname="LUZP-ZAPATA" time="0.011">
   <properties/>
-  <testcase name="validarPersonaTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.001"/>
-  <testcase name="validarCampoCelularBlancoTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.002"/>
+  <testcase name="validarPersonaTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.002"/>
+  <testcase name="validarCampoCelularBlancoTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.001"/>
   <testcase name="validarCampoUsernameBlancoTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.001"/>
   <testcase name="validarCampoUsernameVacioTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.001"/>
-  <testcase name="validarCampoNombreVacioTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.0"/>
-  <testcase name="validarPersonaExistenciaPreviaTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.002"/>
-  <testcase name="validarCampoEmailBlancoTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.001"/>
+  <testcase name="validarCampoNombreVacioTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.001"/>
+  <testcase name="validarPersonaExistenciaPreviaTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.001"/>
+  <testcase name="validarCampoEmailBlancoTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.0"/>
   <testcase name="validarCampoEmailVacioTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.001"/>
   <testcase name="validarCampoCelularVacioTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.0"/>
   <testcase name="validarCampoNombreBlancoTest" classname="com.ceiba.persona.servicio.ServicioCreaPersonaTest" time="0.0"/>

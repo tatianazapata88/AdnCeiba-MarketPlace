@@ -1,10 +1,9 @@
 package com.ceiba.compra.servicio;
 
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.compra.modelo.entidad.Compra;
 import com.ceiba.compra.puerto.repositorio.RepositorioCompra;
-import com.ceiba.persona.modelo.entidad.Persona;
-import com.ceiba.persona.puerto.repositorio.RepositorioPersona;
+import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
+
 
 public class ServicioCrearCompra {
 
@@ -19,16 +18,14 @@ public class ServicioCrearCompra {
     }
 
     public Long ejecutar(Compra compra) {
-
-     //   validarExistenciaCompra(compra);
-        //this.repositorioPedido.cambiarEstado(pedido.getBici());
+        validarExistenciaCompra(compra);
         return this.repositorioCompra.crear(compra);
     }
 
- /*   private void validarExistenciaCompra(Compra compra) {
-        boolean existeCompra = this.repositorioCompra.existe(compra.scotter.getId());
+    private void validarExistenciaCompra(Compra compra) {
+        boolean existeCompra = this.repositorioCompra.existe(compra.getScotter().getId());
         if (existeCompra) {
             throw new ExcepcionDuplicidad(NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA);
         }
-    }*/
+    }
 }

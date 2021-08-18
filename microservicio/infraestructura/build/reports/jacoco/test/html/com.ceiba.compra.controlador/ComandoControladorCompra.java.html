@@ -37,8 +37,8 @@ public class ComandoControladorCompra {
     @DeleteMapping(value = &quot;/{id}&quot;)
     @ApiOperation(&quot;Eliminar Compra&quot;)
     public void eliminar(@PathVariable Long id) {
-<span class="nc" id="L40">        manejadorEliminarCompra.ejecutar(id);</span>
-<span class="nc" id="L41">    }</span>
+<span class="fc" id="L40">        manejadorEliminarCompra.ejecutar(id);</span>
+<span class="fc" id="L41">    }</span>
 
     @PutMapping(value = &quot;/{id}&quot;)
     @ApiOperation(&quot;Actualizar Compra&quot;)

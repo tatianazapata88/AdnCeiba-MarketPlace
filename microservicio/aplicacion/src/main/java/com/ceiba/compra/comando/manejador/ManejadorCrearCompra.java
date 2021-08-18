@@ -1,8 +1,6 @@
 package com.ceiba.compra.comando.manejador;
 
 import com.ceiba.ComandoRespuesta;
-import com.ceiba.compra.puerto.dao.DaoCompra;
-import com.ceiba.compra.puerto.repositorio.RepositorioCompra;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.compra.comando.ComandoCompra;
 import com.ceiba.compra.comando.fabrica.FabricaCompra;
@@ -15,12 +13,11 @@ public class ManejadorCrearCompra implements ManejadorComandoRespuesta<ComandoCo
 
     private final FabricaCompra fabricaPedido;
     private final ServicioCrearCompra servicioCrearCompra;
-    private final DaoCompra daoCompra;
 
-    public ManejadorCrearCompra(FabricaCompra fabricaPedido, ServicioCrearCompra servicioCrearCompra, DaoCompra daoCompra) {
+
+    public ManejadorCrearCompra(FabricaCompra fabricaPedido, ServicioCrearCompra servicioCrearCompra) {
         this.fabricaPedido = fabricaPedido;
         this.servicioCrearCompra = servicioCrearCompra;
-        this.daoCompra = daoCompra;
     }
 
 

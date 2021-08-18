@@ -1,6 +1,5 @@
 package com.ceiba.scotter.servicio.testdatabuilder;
 
-import com.ceiba.persona.modelo.entidad.Persona;
 import com.ceiba.scotter.comando.ComandoScotter;
 import com.ceiba.scotter.modelo.entidad.Scotter;
 
@@ -42,5 +41,4 @@ public class ComandoScotterTestDataBuilder {
     public ComandoScotter build() {
         return new ComandoScotter(id, marca, modelo, precio, ciudad, id_vendedor, foto);
     }
-
 }

@@ -11,16 +11,14 @@ public class CompraTestDataBuilder {
     private LocalDate fecha;
     public Scotter scotter;
     public Persona comprador;
-   // private String ciudadoOrigenUbicacionScotter;
     private String ciudadDestinoEnvioScotter;
-  // private double precio;
 
     public CompraTestDataBuilder() {
         fecha = LocalDate.now();
-        scotter = new Scotter(1L,"honda","2021",1000000,"medellin",new Persona(1l,"taty","Luz Tatiana","3135151617","taty@gmail.com"),"esta");
-        comprador = new Persona(2l,"salo","salome agudelo","3003680128","salo@gmail.com");
-       ciudadDestinoEnvioScotter = "bogota";
-      //  precio = 4000000.0;
+        scotter = new Scotter(1L, "honda", "2021", 1000000, "medellin", new Persona(1l, "taty", "Luz Tatiana", "3135151617", "taty@gmail.com"), "esta");
+        comprador = new Persona(2l, "salo", "salome agudelo", "3003680128", "salo@gmail.com");
+        ciudadDestinoEnvioScotter = "bogota";
+
     }
 
     public CompraTestDataBuilder(LocalDate fecha, Scotter scotter, Persona comprador,
@@ -28,20 +26,13 @@ public class CompraTestDataBuilder {
         this.fecha = fecha;
         this.scotter = scotter;
         this.comprador = comprador;
-      //  this.ciudadoOrigenUbicacionScotter = ciudadoOrigenUbicacionScotter;
         this.ciudadDestinoEnvioScotter = ciudadDestinoEnvioScotter;
-        //this.precio = precio;
     }
 
     public CompraTestDataBuilder conId(Long id) {
         this.id = id;
         return this;
     }
-
-    /*public CompraTestDataBuilder conScotterId(Long scotter_id) {
-        this.scotter_id = scotter_id;
-        return this;
-    }*/
 
     public CompraTestDataBuilder conFecha(LocalDate fecha) {
         this.fecha = fecha;

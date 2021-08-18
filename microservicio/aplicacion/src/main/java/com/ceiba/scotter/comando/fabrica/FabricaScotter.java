@@ -26,7 +26,6 @@ public class FabricaScotter {
                 comandoScotter.getPrecio(),
                 comandoScotter.getCiudad(),
                 vendedor,
-                //comandoScotter.getEstado(),
                 comandoScotter.getFoto()
         );
     }

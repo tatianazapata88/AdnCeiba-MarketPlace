@@ -25,7 +25,5 @@ public class FabricaCompra {
                 scotter,
                 comprador,
                 comandoCompra.getCiudadDestinoEnvioScotter());
-
     }
-
 }

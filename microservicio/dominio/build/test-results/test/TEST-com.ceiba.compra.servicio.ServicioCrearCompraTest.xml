@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.compra.servicio.ServicioCrearCompraTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-08-18T13:32:19" hostname="LUZP-ZAPATA" time="0.045">
+<testsuite name="com.ceiba.compra.servicio.ServicioCrearCompraTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-08-18T15:26:35" hostname="LUZP-ZAPATA" time="0.011">
   <properties/>
-  <testcase name="validarCalcularValorFleteCiudadOrigenDiferenteCiudadDestinoTest" classname="com.ceiba.compra.servicio.ServicioCrearCompraTest" time="0.04"/>
-  <testcase name="validarCalcularValorFleteCiudadoOrigenIgualCiudadDestinoTest" classname="com.ceiba.compra.servicio.ServicioCrearCompraTest" time="0.0"/>
+  <testcase name="validarCalcularValorFleteCiudadOrigenDiferenteCiudadDestinoTest" classname="com.ceiba.compra.servicio.ServicioCrearCompraTest" time="0.002"/>
+  <testcase name="validarCalcularValorFleteCiudadoOrigenIgualCiudadDestinoTest" classname="com.ceiba.compra.servicio.ServicioCrearCompraTest" time="0.001"/>
   <testcase name="crearCompraTest" classname="com.ceiba.compra.servicio.ServicioCrearCompraTest" time="0.001"/>
-  <testcase name="validarDescuentoPagoTestDiferenteFecha" classname="com.ceiba.compra.servicio.ServicioCrearCompraTest" time="0.0"/>
+  <testcase name="validarDescuentoPagoTestDiferenteFecha" classname="com.ceiba.compra.servicio.ServicioCrearCompraTest" time="0.002"/>
   <testcase name="validarCalcularValorTotalTest" classname="com.ceiba.compra.servicio.ServicioCrearCompraTest" time="0.001"/>
   <testcase name="validarDescuentoPagoTestMismaFecha" classname="com.ceiba.compra.servicio.ServicioCrearCompraTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

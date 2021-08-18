@@ -7,13 +7,12 @@ import lombok.Getter;
 @Getter
 public class Scotter {
 
-    public enum Estado {DISPONIBLE, RESERVADA}  ;
+    public enum Estado {DISPONIBLE, RESERVADA}
 
     private static final String CAMPO_MARCA_ES_OBLIGATORIO = "El campo marca es obligatorio no puede ir vacio";
     private static final String CAMPO_MODELO_ES_OBLIGATORIO = "El campo modelo es obligatorio no puede ir vacio";
     private static final String CAMPO_PRECIO_ES_OBLIGATORIO = "El campo precio es obligatorio no puede ir vacio";
     private static final String CAMPO_CIUDAD_ES_OBLIGATORIO = "El campo ciudad es obligatorio no puede ir vacio";
-   // private static final String CAMPO_VENDEDOR_ES_OBLIGATORIO = "El campo vendedor es obligatorio no puede ir vacio";
     private static final String CAMPO_FOTO_ES_OBLIGATORIO = "El campo foto es obligatorio no puede ir vacio";
 
     private Long id;
@@ -22,7 +21,6 @@ public class Scotter {
     private double precio;
     private String ciudad;
     public Persona vendedor;
-    //private String estado;
     private String foto;
     public Estado estado;
 
@@ -31,7 +29,6 @@ public class Scotter {
         validarCampoModeloVacio(modelo);
         validarCampoPrecioVacio(precio);
         validarCampoCiudadVacio(ciudad);
-        //validarCampoVendedorVacio(vendedor);
         validarCampoFotoVacio(foto);
 
         this.id = id;
@@ -44,37 +41,31 @@ public class Scotter {
         this.foto = foto;
     }
 
-     void validarCampoMarcaVacio(String marca) {
+    void validarCampoMarcaVacio(String marca) {
         if (marca == null || marca.trim().length() <= 0) {
             throw new ExcepcionValorObligatorio(CAMPO_MARCA_ES_OBLIGATORIO);
         }
     }
 
-     void validarCampoModeloVacio(String modelo) {
+    void validarCampoModeloVacio(String modelo) {
         if (modelo == null || modelo.trim().length() <= 0) {
             throw new ExcepcionValorObligatorio(CAMPO_MODELO_ES_OBLIGATORIO);
         }
     }
 
-     void validarCampoPrecioVacio(double precio) {
+    void validarCampoPrecioVacio(double precio) {
         if (precio == 0) {
             throw new ExcepcionValorObligatorio(CAMPO_PRECIO_ES_OBLIGATORIO);
         }
     }
 
-     void validarCampoCiudadVacio(String ciudad) {
+    void validarCampoCiudadVacio(String ciudad) {
         if (ciudad == null || ciudad.trim().length() <= 0) {
             throw new ExcepcionValorObligatorio(CAMPO_CIUDAD_ES_OBLIGATORIO);
         }
     }
 
-    /* void validarCampoVendedorVacio(Long vendedor) {
-        if (vendedor == null) {
-            throw new ExcepcionValorObligatorio(CAMPO_VENDEDOR_ES_OBLIGATORIO);
-        }
-    }*/
-
-     void validarCampoFotoVacio(String foto) {
+    void validarCampoFotoVacio(String foto) {
         if (foto == null || foto.trim().length() <= 0) {
             throw new ExcepcionValorObligatorio(CAMPO_FOTO_ES_OBLIGATORIO);
         }

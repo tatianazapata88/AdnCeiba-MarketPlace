@@ -11,9 +11,6 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-import java.util.Map;
-
 @Repository
 public class RepositorioScotterMysql implements RepositorioScotter {
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
@@ -49,9 +46,8 @@ public class RepositorioScotterMysql implements RepositorioScotter {
         paramSource.addValue("foto", scotter.getFoto());
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
-        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource,keyHolder,new String[] { "id" });
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{"id"});
         return keyHolder.getKey().longValue();
-
     }
 
     @Override
@@ -66,7 +62,6 @@ public class RepositorioScotterMysql implements RepositorioScotter {
         paramSource.addValue("estado", scotter.getEstado().toString());
         paramSource.addValue("foto", scotter.getFoto());
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizar, paramSource);
-
     }
 
     @Override
@@ -85,6 +80,6 @@ public class RepositorioScotterMysql implements RepositorioScotter {
 
     @Override
     public Persona obtenerPorId(Long id) {
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarPersona,new MapeoPersonaObjeto()).get(0);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarPersona, new MapeoPersonaObjeto()).get(0);
     }
 }

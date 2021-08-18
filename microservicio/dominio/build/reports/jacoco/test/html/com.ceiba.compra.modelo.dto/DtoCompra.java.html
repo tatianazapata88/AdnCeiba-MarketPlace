@@ -1,39 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DtoCompra.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.compra.modelo.dto</a> &gt; <span class="el_source">DtoCompra.java</span></div><h1>DtoCompra.java</h1><pre class="source lang-java linenums">package com.ceiba.compra.modelo.dto;
 
-import com.ceiba.persona.modelo.entidad.Persona;
-import com.ceiba.scotter.modelo.dto.DtoScotter;
-import com.ceiba.scotter.modelo.entidad.Scotter;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.time.LocalDate;
 
 @Getter
-<span class="nc" id="L12">@AllArgsConstructor</span>
+<span class="nc" id="L9">@AllArgsConstructor</span>
 public class DtoCompra {
-<span class="nc" id="L14">    private Long id;</span>
-<span class="nc" id="L15">    private LocalDate fecha;</span>
-<span class="nc" id="L16">    private Long scotter_id;</span>
-<span class="nc" id="L17">    private Long comprador_id;</span>
-<span class="nc" id="L18">    private String ciudadDestinoEnvioScotter;</span>
-<span class="nc" id="L19">    private double flete;</span>
-<span class="nc" id="L20">    private double precio;</span>
-<span class="nc" id="L21">    private double descuento;</span>
-<span class="nc" id="L22">    private double total;</span>
-
+<span class="nc" id="L11">    private Long id;</span>
+<span class="nc" id="L12">    private LocalDate fecha;</span>
+<span class="nc" id="L13">    private Long scotter_id;</span>
+<span class="nc" id="L14">    private Long comprador_id;</span>
+<span class="nc" id="L15">    private String ciudadDestinoEnvioScotter;</span>
+<span class="nc" id="L16">    private double flete;</span>
+<span class="nc" id="L17">    private double precio;</span>
+<span class="nc" id="L18">    private double descuento;</span>
+<span class="nc" id="L19">    private double total;</span>
 
 }
-
-/*public class DtoCompra {
-    private Long id;
-    private LocalDate fecha;
-    private Long scotter_id;
-    private Long comprador;
-    private String ciudadoOrigenUbicacionScotter;
-    private String ciudadDestinoEnvioScotter;
-    private double flete;
-    private double precio;
-    private double descuento;
-    private double total;
-}*/
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
