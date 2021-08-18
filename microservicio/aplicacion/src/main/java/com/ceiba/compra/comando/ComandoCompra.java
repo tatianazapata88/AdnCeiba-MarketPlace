@@ -1,5 +1,7 @@
 package com.ceiba.compra.comando;
 
+import com.ceiba.persona.modelo.entidad.Persona;
+import com.ceiba.scotter.modelo.entidad.Scotter;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,12 +13,33 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class ComandoCompra {
-    private Long id;
+ private Long id;
+ private LocalDate fecha;
+ private Long scotter_id;
+ private Long comprador_id;
+ private String ciudadDestinoEnvioScotter;
+ private double flete;
+ private double precio;
+ private double descuento;
+ private double total;
+
+   /* private Long id;
     private LocalDate fecha;
     private Long scotter_id;
     private Long comprador;
-    private String ciudadoOrigenUbicacionScotter;
     private String ciudadDestinoEnvioScotter;
     private double precio;
+
+    private Long id;
+    private LocalDate fecha;
+    private Long scotter_id;
+    private Long comprador_id;
+    private String ciudadDestinoEnvioScotter;
+    private double flete;
+    private double precio;
+    private double descuento;
+    private double total;
+*/
 }

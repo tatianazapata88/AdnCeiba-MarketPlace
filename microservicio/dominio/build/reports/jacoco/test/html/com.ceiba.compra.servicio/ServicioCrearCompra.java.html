@@ -3,28 +3,33 @@
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.compra.modelo.entidad.Compra;
 import com.ceiba.compra.puerto.repositorio.RepositorioCompra;
+import com.ceiba.persona.modelo.entidad.Persona;
+import com.ceiba.persona.puerto.repositorio.RepositorioPersona;
 
 public class ServicioCrearCompra {
 
     private final RepositorioCompra repositorioCompra;
 
+
     private static final String NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA = &quot;No se puede registrar el pedido, la scotter ya se encuentra reservada&quot;;
 
-<span class="fc" id="L13">    public ServicioCrearCompra(RepositorioCompra repositorioCompra) {</span>
-<span class="fc" id="L14">        this.repositorioCompra = repositorioCompra;</span>
-<span class="fc" id="L15">    }</span>
+<span class="fc" id="L16">    public ServicioCrearCompra(RepositorioCompra repositorioCompra) {</span>
+<span class="fc" id="L17">        this.repositorioCompra = repositorioCompra;</span>
+
+<span class="fc" id="L19">    }</span>
 
     public Long ejecutar(Compra compra) {
-<span class="fc" id="L18">        validarExistenciaCompra(compra);</span>
+
+     //   validarExistenciaCompra(compra);
         //this.repositorioPedido.cambiarEstado(pedido.getBici());
-<span class="fc" id="L20">        return this.repositorioCompra.crear(compra);</span>
+<span class="fc" id="L25">        return this.repositorioCompra.crear(compra);</span>
     }
 
-    private void validarExistenciaCompra(Compra compra) {
-<span class="fc" id="L24">        boolean existeCompra = this.repositorioCompra.existe(compra.getScotter_id());</span>
-<span class="fc bfc" id="L25" title="All 2 branches covered.">        if (existeCompra) {</span>
-<span class="fc" id="L26">            throw new ExcepcionDuplicidad(NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA);</span>
+ /*   private void validarExistenciaCompra(Compra compra) {
+        boolean existeCompra = this.repositorioCompra.existe(compra.scotter.getId());
+        if (existeCompra) {
+            throw new ExcepcionDuplicidad(NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA);
         }
-<span class="fc" id="L28">    }</span>
+    }*/
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,3 +1,3 @@
 SELECT count(1)
 FROM compra
-WHERE comprador = :id;
+WHERE comprador_id = :id;

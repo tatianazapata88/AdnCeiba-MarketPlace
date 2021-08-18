@@ -1,6 +1,9 @@
 package com.ceiba.scotter.puerto.repositorio;
 
+import com.ceiba.persona.modelo.entidad.Persona;
 import com.ceiba.scotter.modelo.entidad.Scotter;
+
+import java.util.List;
 
 public interface RepositorioScotter {
 
@@ -11,4 +14,6 @@ public interface RepositorioScotter {
     void eliminar(Long id);
 
     boolean existePorPedido(Long id);
+
+    Persona obtenerPorId(Long id);
 }

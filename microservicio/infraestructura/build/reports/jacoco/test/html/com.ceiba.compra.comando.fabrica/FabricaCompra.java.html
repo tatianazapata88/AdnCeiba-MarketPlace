@@ -2,20 +2,31 @@
 
 import com.ceiba.compra.comando.ComandoCompra;
 import com.ceiba.compra.modelo.entidad.Compra;
+import com.ceiba.compra.puerto.repositorio.RepositorioCompra;
+import com.ceiba.persona.modelo.entidad.Persona;
+import com.ceiba.scotter.modelo.entidad.Scotter;
 import org.springframework.stereotype.Component;
 
 @Component
-<span class="fc" id="L8">public class FabricaCompra {</span>
+public class FabricaCompra {
+
+    private final RepositorioCompra repositorioCompra;
+
+<span class="fc" id="L15">    public FabricaCompra(RepositorioCompra repositorioCompra) {</span>
+<span class="fc" id="L16">        this.repositorioCompra = repositorioCompra;</span>
+<span class="fc" id="L17">    }</span>
 
     public Compra crear(ComandoCompra comandoCompra) {
-<span class="fc" id="L11">        return new Compra(</span>
-<span class="fc" id="L12">                comandoCompra.getId(),</span>
-<span class="fc" id="L13">                comandoCompra.getFecha(),</span>
-<span class="fc" id="L14">                comandoCompra.getScotter_id(),</span>
-<span class="fc" id="L15">                comandoCompra.getComprador(),</span>
-<span class="fc" id="L16">                comandoCompra.getCiudadoOrigenUbicacionScotter(),</span>
-<span class="fc" id="L17">                comandoCompra.getCiudadDestinoEnvioScotter(),</span>
-<span class="fc" id="L18">                comandoCompra.getPrecio());</span>
+<span class="fc" id="L20">        Persona comprador = repositorioCompra.obtenerId(comandoCompra.getComprador_id());</span>
+<span class="fc" id="L21">        Scotter scotter = repositorioCompra.obtenerIdScotter(comandoCompra.getScotter_id());</span>
+<span class="fc" id="L22">        return new Compra(</span>
+<span class="fc" id="L23">                comandoCompra.getId(),</span>
+<span class="fc" id="L24">                comandoCompra.getFecha(),</span>
+                scotter,
+                comprador,
+<span class="fc" id="L27">                comandoCompra.getCiudadDestinoEnvioScotter());</span>
+
     }
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,2 +1,2 @@
-select id,fecha,scotter_id,comprador,ciudadorigen,ciudaddestino,flete,precio,descuento,total
+select id,fecha,scotter_id,comprador_id,ciudadDestinoEnvioScotter,flete,precio,descuento,total
 from compra

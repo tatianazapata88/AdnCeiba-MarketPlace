@@ -1,78 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Scotter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.scotter.modelo.entidad</a> &gt; <span class="el_source">Scotter.java</span></div><h1>Scotter.java</h1><pre class="source lang-java linenums">package com.ceiba.scotter.modelo.entidad;
 
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
+import com.ceiba.persona.modelo.entidad.Persona;
 import lombok.Getter;
 
 @Getter
 public class Scotter {
+
+<span class="fc" id="L10">    public enum Estado {DISPONIBLE, RESERVADA}  ;</span>
+
     private static final String CAMPO_MARCA_ES_OBLIGATORIO = &quot;El campo marca es obligatorio no puede ir vacio&quot;;
     private static final String CAMPO_MODELO_ES_OBLIGATORIO = &quot;El campo modelo es obligatorio no puede ir vacio&quot;;
     private static final String CAMPO_PRECIO_ES_OBLIGATORIO = &quot;El campo precio es obligatorio no puede ir vacio&quot;;
     private static final String CAMPO_CIUDAD_ES_OBLIGATORIO = &quot;El campo ciudad es obligatorio no puede ir vacio&quot;;
-    private static final String CAMPO_VENDEDOR_ES_OBLIGATORIO = &quot;El campo vendedor es obligatorio no puede ir vacio&quot;;
+   // private static final String CAMPO_VENDEDOR_ES_OBLIGATORIO = &quot;El campo vendedor es obligatorio no puede ir vacio&quot;;
     private static final String CAMPO_FOTO_ES_OBLIGATORIO = &quot;El campo foto es obligatorio no puede ir vacio&quot;;
 
-<span class="fc" id="L15">    private Long id;</span>
-<span class="nc" id="L16">    private String marca;</span>
-<span class="nc" id="L17">    private String modelo;</span>
-<span class="nc" id="L18">    private double precio;</span>
-<span class="fc" id="L19">    private String ciudad;</span>
-<span class="nc" id="L20">    private Long vendedor;</span>
-<span class="nc" id="L21">    private String estado;</span>
-<span class="nc" id="L22">    private String foto;</span>
+<span class="fc" id="L19">    private Long id;</span>
+<span class="nc" id="L20">    private String marca;</span>
+<span class="nc" id="L21">    private String modelo;</span>
+<span class="fc" id="L22">    private double precio;</span>
+<span class="fc" id="L23">    private String ciudad;</span>
+<span class="nc" id="L24">    public Persona vendedor;</span>
+    //private String estado;
+<span class="nc" id="L26">    private String foto;</span>
+<span class="nc" id="L27">    public Estado estado;</span>
 
-<span class="fc" id="L24">    public Scotter(Long id, String marca, String modelo, double precio, String ciudad, Long vendedor, String foto) {</span>
-<span class="fc" id="L25">        validarCampoMarcaVacio(marca);</span>
-<span class="fc" id="L26">        validarCampoModeloVacio(modelo);</span>
-<span class="fc" id="L27">        validarCampoPrecioVacio(precio);</span>
-<span class="fc" id="L28">        validarCampoCiudadVacio(ciudad);</span>
-<span class="fc" id="L29">        validarCampoVendedorVacio(vendedor);</span>
-<span class="fc" id="L30">        validarCampoFotoVacio(foto);</span>
+<span class="fc" id="L29">    public Scotter(Long id, String marca, String modelo, double precio, String ciudad, Persona vendedor, String foto) {</span>
+<span class="fc" id="L30">        validarCampoMarcaVacio(marca);</span>
+<span class="fc" id="L31">        validarCampoModeloVacio(modelo);</span>
+<span class="fc" id="L32">        validarCampoPrecioVacio(precio);</span>
+<span class="fc" id="L33">        validarCampoCiudadVacio(ciudad);</span>
+        //validarCampoVendedorVacio(vendedor);
+<span class="fc" id="L35">        validarCampoFotoVacio(foto);</span>
 
-<span class="fc" id="L32">        this.id = id;</span>
-<span class="fc" id="L33">        this.marca = marca;</span>
-<span class="fc" id="L34">        this.modelo = modelo;</span>
-<span class="fc" id="L35">        this.precio = precio;</span>
-<span class="fc" id="L36">        this.ciudad = ciudad;</span>
-<span class="fc" id="L37">        this.vendedor = vendedor;</span>
-<span class="fc" id="L38">        this.estado = &quot;disponible&quot;;</span>
-<span class="fc" id="L39">        this.foto = foto;</span>
-<span class="fc" id="L40">    }</span>
+<span class="fc" id="L37">        this.id = id;</span>
+<span class="fc" id="L38">        this.marca = marca;</span>
+<span class="fc" id="L39">        this.modelo = modelo;</span>
+<span class="fc" id="L40">        this.precio = precio;</span>
+<span class="fc" id="L41">        this.ciudad = ciudad;</span>
+<span class="fc" id="L42">        this.vendedor = vendedor;</span>
+<span class="fc" id="L43">        this.estado = Estado.DISPONIBLE;</span>
+<span class="fc" id="L44">        this.foto = foto;</span>
+<span class="fc" id="L45">    }</span>
 
-    private void validarCampoMarcaVacio(String marca) {
-<span class="fc bfc" id="L43" title="All 4 branches covered.">        if (marca == null || marca.trim().length() &lt;= 0) {</span>
-<span class="fc" id="L44">            throw new ExcepcionValorObligatorio(CAMPO_MARCA_ES_OBLIGATORIO);</span>
+     void validarCampoMarcaVacio(String marca) {
+<span class="pc bpc" id="L48" title="2 of 4 branches missed.">        if (marca == null || marca.trim().length() &lt;= 0) {</span>
+<span class="nc" id="L49">            throw new ExcepcionValorObligatorio(CAMPO_MARCA_ES_OBLIGATORIO);</span>
         }
-<span class="fc" id="L46">    }</span>
+<span class="fc" id="L51">    }</span>
 
-    private void validarCampoModeloVacio(String modelo) {
-<span class="fc bfc" id="L49" title="All 4 branches covered.">        if (modelo == null || modelo.trim().length() &lt;= 0) {</span>
-<span class="fc" id="L50">            throw new ExcepcionValorObligatorio(CAMPO_MODELO_ES_OBLIGATORIO);</span>
+     void validarCampoModeloVacio(String modelo) {
+<span class="pc bpc" id="L54" title="2 of 4 branches missed.">        if (modelo == null || modelo.trim().length() &lt;= 0) {</span>
+<span class="nc" id="L55">            throw new ExcepcionValorObligatorio(CAMPO_MODELO_ES_OBLIGATORIO);</span>
         }
-<span class="fc" id="L52">    }</span>
+<span class="fc" id="L57">    }</span>
 
-    private void validarCampoPrecioVacio(double precio) {
-<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (precio == 0) {</span>
-<span class="fc" id="L56">            throw new ExcepcionValorObligatorio(CAMPO_PRECIO_ES_OBLIGATORIO);</span>
+     void validarCampoPrecioVacio(double precio) {
+<span class="pc bpc" id="L60" title="1 of 2 branches missed.">        if (precio == 0) {</span>
+<span class="nc" id="L61">            throw new ExcepcionValorObligatorio(CAMPO_PRECIO_ES_OBLIGATORIO);</span>
         }
-<span class="fc" id="L58">    }</span>
+<span class="fc" id="L63">    }</span>
 
-    private void validarCampoCiudadVacio(String ciudad) {
-<span class="fc bfc" id="L61" title="All 4 branches covered.">        if (ciudad == null || ciudad.trim().length() &lt;= 0) {</span>
-<span class="fc" id="L62">            throw new ExcepcionValorObligatorio(CAMPO_CIUDAD_ES_OBLIGATORIO);</span>
+     void validarCampoCiudadVacio(String ciudad) {
+<span class="pc bpc" id="L66" title="2 of 4 branches missed.">        if (ciudad == null || ciudad.trim().length() &lt;= 0) {</span>
+<span class="nc" id="L67">            throw new ExcepcionValorObligatorio(CAMPO_CIUDAD_ES_OBLIGATORIO);</span>
         }
-<span class="fc" id="L64">    }</span>
+<span class="fc" id="L69">    }</span>
 
-    private void validarCampoVendedorVacio(Long vendedor) {
-<span class="fc bfc" id="L67" title="All 2 branches covered.">        if (vendedor == null) {</span>
-<span class="fc" id="L68">            throw new ExcepcionValorObligatorio(CAMPO_VENDEDOR_ES_OBLIGATORIO);</span>
+    /* void validarCampoVendedorVacio(Long vendedor) {
+        if (vendedor == null) {
+            throw new ExcepcionValorObligatorio(CAMPO_VENDEDOR_ES_OBLIGATORIO);
         }
-<span class="fc" id="L70">    }</span>
+    }*/
 
-    private void validarCampoFotoVacio(String foto) {
-<span class="fc bfc" id="L73" title="All 4 branches covered.">        if (foto == null || foto.trim().length() &lt;= 0) {</span>
-<span class="fc" id="L74">            throw new ExcepcionValorObligatorio(CAMPO_FOTO_ES_OBLIGATORIO);</span>
+     void validarCampoFotoVacio(String foto) {
+<span class="pc bpc" id="L78" title="2 of 4 branches missed.">        if (foto == null || foto.trim().length() &lt;= 0) {</span>
+<span class="nc" id="L79">            throw new ExcepcionValorObligatorio(CAMPO_FOTO_ES_OBLIGATORIO);</span>
         }
-<span class="fc" id="L76">    }</span>
+<span class="fc" id="L81">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

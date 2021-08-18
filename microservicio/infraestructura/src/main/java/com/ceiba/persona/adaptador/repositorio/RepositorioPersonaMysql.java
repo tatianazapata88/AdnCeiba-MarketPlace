@@ -30,6 +30,8 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
     @SqlStatement(namespace = "persona", value = "existePorPedido")
     private static String sqlExistePorPedido;
 
+
+
     public RepositorioPersonaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
@@ -72,4 +74,6 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
         parameterSource.addValue("id", id);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorPedido, parameterSource, Boolean.class);
     }
+
+
 }

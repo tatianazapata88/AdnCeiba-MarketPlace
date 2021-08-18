@@ -3,6 +3,7 @@ package com.ceiba.scotter.controlador;
 import com.ceiba.ApplicationMock;
 import com.ceiba.persona.controlador.ComandoControladorPersona;
 import com.ceiba.scotter.comando.ComandoScotter;
+import com.ceiba.scotter.modelo.entidad.Scotter;
 import com.ceiba.scotter.servicio.testdatabuilder.ComandoScotterTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
@@ -41,10 +42,10 @@ public class ComandoControladorScotterTest {
                 .andExpect(content().json("{'valor': 2}"));
     }
 
-    @Test
+     @Test
     public void actualizarScotterTest() throws Exception {
         // arrange
-        Long id = 2L;
+        Long id = 1L;
         ComandoScotter scotter = new ComandoScotterTestDataBuilder().build();
         // act - assert
         mocMvc.perform(put("/scotters/{id}", id)
@@ -56,7 +57,7 @@ public class ComandoControladorScotterTest {
     @Test
     public void eliminarScotterTest() throws Exception {
         // arrange
-        Long id = 3L;
+        Long id = 2L;
         // act - assert
         mocMvc.perform(delete("/scotters/{id}", id)
                 .contentType(MediaType.APPLICATION_JSON)

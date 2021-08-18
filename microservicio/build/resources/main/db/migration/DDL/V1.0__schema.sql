@@ -22,11 +22,12 @@ create table compra (
  id int (4) not null auto_increment,
  fecha date not null,
  scotter_id int(4) not null,
- comprador int (4) not null,
- ciudadorigen varchar (45) not null,
- ciudaddestino varchar (45)  not null,
+ comprador_id int (4) not null,
+ ciudadDestinoEnvioScotter varchar (45)  not null,
  flete double not null,
  precio double not null,
  descuento double not null,
  total double not null,
-   primary key (id));
+   primary key (id),
+   foreign key (scotter_id) REFERENCES scotter(id),
+   foreign key (comprador_id) REFERENCES persona(id));

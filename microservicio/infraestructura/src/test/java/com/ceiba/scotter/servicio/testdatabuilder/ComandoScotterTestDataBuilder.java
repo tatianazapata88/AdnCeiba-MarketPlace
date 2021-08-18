@@ -1,6 +1,8 @@
 package com.ceiba.scotter.servicio.testdatabuilder;
 
+import com.ceiba.persona.modelo.entidad.Persona;
 import com.ceiba.scotter.comando.ComandoScotter;
+import com.ceiba.scotter.modelo.entidad.Scotter;
 
 public class ComandoScotterTestDataBuilder {
     private Long id;
@@ -8,7 +10,8 @@ public class ComandoScotterTestDataBuilder {
     private String modelo;
     private double precio;
     private String ciudad;
-    private Long vendedor;
+    private Long id_vendedor;
+    private Scotter.Estado estado;
     private String foto;
 
     public ComandoScotterTestDataBuilder() {
@@ -16,7 +19,8 @@ public class ComandoScotterTestDataBuilder {
         modelo = "2019";
         precio = 3500000.0;
         ciudad = "Santa Marta";
-        vendedor = 1L;
+        id_vendedor = 1L;
+        estado = Scotter.Estado.DISPONIBLE;
         foto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1qy1IibO2Euuk15nA50EQhfTUg5JuUUSUag&usqp=CAU";
     }
 
@@ -36,7 +40,7 @@ public class ComandoScotterTestDataBuilder {
     }
 
     public ComandoScotter build() {
-        return new ComandoScotter(id, marca, modelo, precio, ciudad, vendedor, foto);
+        return new ComandoScotter(id, marca, modelo, precio, ciudad, id_vendedor, foto);
     }
 
 }

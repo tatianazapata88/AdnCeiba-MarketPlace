@@ -16,15 +16,31 @@ import java.time.LocalDate;
 <span class="fc" id="L16">        Long id = resultSet.getLong(&quot;id&quot;);</span>
 <span class="fc" id="L17">        LocalDate fecha = extraerLocalDate(resultSet, &quot;fecha&quot;);</span>
 <span class="fc" id="L18">        Long scotter_id = resultSet.getLong(&quot;scotter_id&quot;);</span>
-<span class="fc" id="L19">        Long comprador = resultSet.getLong(&quot;comprador&quot;);</span>
-<span class="fc" id="L20">        String ciudadoOrigenUbicacionScotter = resultSet.getString(&quot;ciudadorigen&quot;);</span>
-<span class="fc" id="L21">        String ciudadDestinoEnvioScotter = resultSet.getString(&quot;ciudaddestino&quot;);</span>
-<span class="fc" id="L22">        double flete = resultSet.getDouble(&quot;flete&quot;);</span>
-<span class="fc" id="L23">        double precio = resultSet.getDouble(&quot;precio&quot;);</span>
-<span class="fc" id="L24">        double descuento = resultSet.getDouble(&quot;descuento&quot;);</span>
-<span class="fc" id="L25">        double total = resultSet.getDouble(&quot;total&quot;);</span>
+<span class="fc" id="L19">        Long comprador_id = resultSet.getLong(&quot;comprador_id&quot;);</span>
+<span class="fc" id="L20">       String ciudadDestinoEnvioScotter = resultSet.getString(&quot;ciudadDestinoEnvioScotter&quot;);</span>
+<span class="fc" id="L21">        double flete = resultSet.getDouble(&quot;flete&quot;);</span>
+<span class="fc" id="L22">        double precio = resultSet.getDouble(&quot;precio&quot;);</span>
+<span class="fc" id="L23">        double descuento = resultSet.getDouble(&quot;descuento&quot;);</span>
+<span class="fc" id="L24">        double total = resultSet.getDouble(&quot;total&quot;);</span>
 
-<span class="fc" id="L27">        return new DtoCompra(id, fecha, scotter_id, comprador, ciudadoOrigenUbicacionScotter, ciudadDestinoEnvioScotter, flete, precio, descuento, total);</span>
+<span class="fc" id="L26">        return new DtoCompra(id, fecha, scotter_id, comprador_id, ciudadDestinoEnvioScotter, flete, precio, descuento, total);</span>
     }
 }
+
+   /* @Override
+    public DtoCompra mapRow(ResultSet resultSet, int rowNum) throws SQLException {
+
+        Long id = resultSet.getLong(&quot;id&quot;);
+        LocalDate fecha = extraerLocalDate(resultSet, &quot;fecha&quot;);
+        Long scotter_id = resultSet.getLong(&quot;scotter_id&quot;);
+        Long comprador = resultSet.getLong(&quot;comprador&quot;);
+        String ciudadoOrigenUbicacionScotter = resultSet.getString(&quot;ciudadorigen&quot;);
+        String ciudadDestinoEnvioScotter = resultSet.getString(&quot;ciudaddestino&quot;);
+        double flete = resultSet.getDouble(&quot;flete&quot;);
+        double precio = resultSet.getDouble(&quot;precio&quot;);
+        double descuento = resultSet.getDouble(&quot;descuento&quot;);
+        double total = resultSet.getDouble(&quot;total&quot;);
+
+        return new DtoCompra(id, fecha, scotter_id, comprador, ciudadoOrigenUbicacionScotter, ciudadDestinoEnvioScotter, flete, precio, descuento, total);
+    }*/
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

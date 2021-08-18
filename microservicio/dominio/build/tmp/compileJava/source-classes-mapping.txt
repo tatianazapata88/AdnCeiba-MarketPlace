@@ -26,6 +26,7 @@ com/ceiba/persona/modelo/entidad/Persona.java
  com.ceiba.persona.modelo.entidad.Persona
 com/ceiba/scotter/modelo/entidad/Scotter.java
  com.ceiba.scotter.modelo.entidad.Scotter
+ com.ceiba.scotter.modelo.entidad.Scotter$Estado
 com/ceiba/scotter/servicio/ServicioActualizarScotter.java
  com.ceiba.scotter.servicio.ServicioActualizarScotter
 com/ceiba/compra/modelo/dto/DtoCompra.java

@@ -9,6 +9,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.ceiba.ApplicationMock;
 import com.ceiba.compra.comando.ComandoCompra;
 import com.ceiba.compra.servicio.testdatabuilder.ComandoCompraTestDataBuilder;
+import com.ceiba.persona.modelo.entidad.Persona;
+import com.ceiba.scotter.modelo.entidad.Scotter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,6 +35,9 @@ public class ComandoControladorCompraTest {
     public void crearCompraTest() throws Exception {
         // arrange
         ComandoCompra compra = new ComandoCompraTestDataBuilder().build();
+       // Persona vendedor = new Persona(6L,"SALITO","SALOME AGUDELO","3003680128","SALITO@GMAIL.COM");
+        //Scotter scotter = new Scotter(5L,"BMW","2022",1000000.0,"Medellin",vendedor,"esta");
+       // Persona comprador = new Persona(4L, "JUANMI", "JUAN MIGUEL HENAO","3005123690","JUANMI@GMAIL.COM");
         // act - assert
         mocMvc.perform(post("/compras")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -41,7 +46,7 @@ public class ComandoControladorCompraTest {
                 .andExpect(content().json("{'valor': 2}"));
     }
 
-    @Test
+   /* @Test
     public void crearCompraScotterReservadaTest() throws Exception {
         // arrange
         Long scotterId = 1L;
@@ -74,5 +79,5 @@ public class ComandoControladorCompraTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
-    }
+    }*/
 }

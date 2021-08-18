@@ -16,8 +16,8 @@ public class ServicioActualizarCompraTest {
         RepositorioCompra repositorioCompra = Mockito.mock(RepositorioCompra.class);
         ServicioActualizarCompra servicioActualizarCompra = new ServicioActualizarCompra(repositorioCompra);
         servicioActualizarCompra.ejecutar(compra);
-        String ciudad = "medellin";
+        String ciudad = "bogota";
         // act - assert
-        Assert.assertEquals(compra.getCiudadoOrigenUbicacionScotter(), ciudad);
+        Assert.assertEquals(compra.getCiudadDestinoEnvioScotter(), ciudad);
     }
 }
