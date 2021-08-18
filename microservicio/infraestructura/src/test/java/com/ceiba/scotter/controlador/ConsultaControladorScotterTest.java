@@ -31,8 +31,8 @@ public class ConsultaControladorScotterTest {
         mocMvc.perform(get("/scotters")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].marca", is("toyota")));
+                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$[0].marca", is("enduro")));
     }
 
     @Test
@@ -43,18 +43,18 @@ public class ConsultaControladorScotterTest {
         mocMvc.perform(get("/scotters/id/{id}", id)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("marca", is("toyota")));
+                .andExpect(jsonPath("marca", is("enduro")));
     }
 
     @Test
     public void buscarCiudadTest() throws Exception {
         // arrange
-        String ciudad = "Medellin";
+        String ciudad = "Santa Marta";
         // act - assert
         mocMvc.perform(get("/scotters/ciudad/{ciudad}", ciudad)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-               // .andExpect(jsonPath("$.*", hasSize(1)))
+                .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].id", is(1)));
     }
 
@@ -66,7 +66,7 @@ public class ConsultaControladorScotterTest {
         mocMvc.perform(get("/scotters/precio/{precio}", precio)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-              //  .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].id", is(1)));
     }
 }
