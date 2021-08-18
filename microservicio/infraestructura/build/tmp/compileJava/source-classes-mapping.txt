@@ -16,23 +16,23 @@ com/ceiba/configuracion/BeanServicio.java
  com.ceiba.configuracion.BeanServicio
 com/ceiba/persona/controlador/ComandoControladorPersona.java
  com.ceiba.persona.controlador.ComandoControladorPersona
-com/ceiba/compra/adaptador/repositorio/RepositorioCompraMysql.java
- com.ceiba.compra.adaptador.repositorio.RepositorioCompraMysql
-com/ceiba/scotter/adaptador/repositorio/RepositorioScotterMysql.java
- com.ceiba.scotter.adaptador.repositorio.RepositorioScotterMysql
+com/ceiba/compra/adaptador/dao/MapeoCompra.java
+ com.ceiba.compra.adaptador.dao.MapeoCompra
 com/ceiba/persona/controlador/ConsultaControladorPersona.java
  com.ceiba.persona.controlador.ConsultaControladorPersona
-com/ceiba/compra/controlador/ConsultaControladorCompra.java
- com.ceiba.compra.controlador.ConsultaControladorCompra
+com/ceiba/scotter/adaptador/repositorio/RepositorioScotterMysql.java
+ com.ceiba.scotter.adaptador.repositorio.RepositorioScotterMysql
+com/ceiba/scotter/adaptador/dao/MapeoScotterObjeto.java
+ com.ceiba.scotter.adaptador.dao.MapeoScotterObjeto
 com/ceiba/scotter/controlador/ConsultaControladorScotter.java
  com.ceiba.scotter.controlador.ConsultaControladorScotter
 com/ceiba/persona/adaptador/dao/MapeoPersonaObjeto.java
  com.ceiba.persona.adaptador.dao.MapeoPersonaObjeto
 com/ceiba/scotter/controlador/ComandoControladorScotter.java
  com.ceiba.scotter.controlador.ComandoControladorScotter
-com/ceiba/scotter/adaptador/dao/MapeoScotterObjeto.java
- com.ceiba.scotter.adaptador.dao.MapeoScotterObjeto
-com/ceiba/compra/adaptador/dao/MapeoCompra.java
- com.ceiba.compra.adaptador.dao.MapeoCompra
+com/ceiba/compra/controlador/ConsultaControladorCompra.java
+ com.ceiba.compra.controlador.ConsultaControladorCompra
+com/ceiba/compra/adaptador/repositorio/RepositorioCompraMysql.java
+ com.ceiba.compra.adaptador.repositorio.RepositorioCompraMysql
 com/ceiba/compra/adaptador/dao/DaoCompraMysql.java
  com.ceiba.compra.adaptador.dao.DaoCompraMysql

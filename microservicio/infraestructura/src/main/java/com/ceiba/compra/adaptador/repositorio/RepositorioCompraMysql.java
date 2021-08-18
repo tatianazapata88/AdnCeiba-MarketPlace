@@ -1,5 +1,7 @@
 package com.ceiba.compra.adaptador.repositorio;
 
+import com.ceiba.infraestructura.excepcion.ExcepcionNula;
+import com.ceiba.infraestructura.excepcion.ExcepcionTecnica;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.compra.modelo.entidad.Compra;
@@ -14,11 +16,14 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
+
+
 @Repository
 public class RepositorioCompraMysql implements RepositorioCompra {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
     private final RepositorioScotterMysql repositorioScotterMysql;
+    private static String EXCEPCION_NULO = "Error por objeto vacio";
 
     @SqlStatement(namespace = "compra", value = "crear")
     private static String sqlCrear;
@@ -56,8 +61,19 @@ public class RepositorioCompraMysql implements RepositorioCompra {
         paramSource.addValue("total", compra.getTotal());
         KeyHolder keyHolder = new GeneratedKeyHolder();
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{"id"});
-        return keyHolder.getKey().longValue();
+       /* if (keyHolder.getKey()!=null) {
 
+            return keyHolder.getKey().longValue();
+        }
+        else {
+             throw  new ExcepcionNula(EXCEPCION_NULO, );
+        }*/
+        try {
+            return keyHolder.getKey().longValue();
+        }
+        catch (Exception e){
+            throw  new ExcepcionNula(EXCEPCION_NULO, e);
+        }
     }
 
     @Override
