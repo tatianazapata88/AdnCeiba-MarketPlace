@@ -58,51 +58,53 @@ public class RepositorioCompraMysql implements RepositorioCompra {
 <span class="fc" id="L58">        paramSource.addValue(&quot;total&quot;, compra.getTotal());</span>
 <span class="fc" id="L59">        KeyHolder keyHolder = new GeneratedKeyHolder();</span>
 <span class="fc" id="L60">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{&quot;id&quot;});</span>
-<span class="pc bpc" id="L61" title="1 of 2 branches missed.">        if (keyHolder != null) {</span>
-<span class="fc" id="L62">            return keyHolder.getKey().longValue();</span>
-        } else {
+
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        if (keyHolder.getKey() == null) {</span>
+
 <span class="nc" id="L64">            throw new NullPointerException();</span>
+        } else {
+<span class="fc" id="L66">         return keyHolder.getKey().longValue();</span>
         }
     }
 
     @Override
     public void eliminar(Long id) {
-<span class="fc" id="L70">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L71">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L72">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L73">        paramSource.addValue(&quot;id&quot;, id);</span>
 
-<span class="fc" id="L73">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
-<span class="fc" id="L74">    }</span>
+<span class="fc" id="L75">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
+<span class="fc" id="L76">    }</span>
 
     @Override
     public void actualizar(Compra compra) {
-<span class="nc" id="L78">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L79">        paramSource.addValue(&quot;id&quot;, compra.getId());</span>
-<span class="nc" id="L80">        paramSource.addValue(&quot;fecha&quot;, compra.getFecha());</span>
-<span class="nc" id="L81">        paramSource.addValue(&quot;scotter_id&quot;, compra.getScotter().getId());</span>
-<span class="nc" id="L82">        paramSource.addValue(&quot;comprador_id&quot;, compra.getComprador().getId());</span>
-<span class="nc" id="L83">        paramSource.addValue(&quot;ciudadDestinoEnvioScotter&quot;, compra.getCiudadDestinoEnvioScotter());</span>
-<span class="nc" id="L84">        paramSource.addValue(&quot;flete&quot;, compra.getFlete());</span>
-<span class="nc" id="L85">        paramSource.addValue(&quot;precio&quot;, compra.getScotter().getPrecio());</span>
-<span class="nc" id="L86">        paramSource.addValue(&quot;descuento&quot;, compra.getDescuento());</span>
-<span class="nc" id="L87">        paramSource.addValue(&quot;total&quot;, compra.getTotal());</span>
-<span class="nc" id="L88">        this.customNamedParameterJdbcTemplate.actualizar(compra, sqlActualizar);</span>
-<span class="nc" id="L89">    }</span>
+<span class="nc" id="L80">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L81">        paramSource.addValue(&quot;id&quot;, compra.getId());</span>
+<span class="nc" id="L82">        paramSource.addValue(&quot;fecha&quot;, compra.getFecha());</span>
+<span class="nc" id="L83">        paramSource.addValue(&quot;scotter_id&quot;, compra.getScotter().getId());</span>
+<span class="nc" id="L84">        paramSource.addValue(&quot;comprador_id&quot;, compra.getComprador().getId());</span>
+<span class="nc" id="L85">        paramSource.addValue(&quot;ciudadDestinoEnvioScotter&quot;, compra.getCiudadDestinoEnvioScotter());</span>
+<span class="nc" id="L86">        paramSource.addValue(&quot;flete&quot;, compra.getFlete());</span>
+<span class="nc" id="L87">        paramSource.addValue(&quot;precio&quot;, compra.getScotter().getPrecio());</span>
+<span class="nc" id="L88">        paramSource.addValue(&quot;descuento&quot;, compra.getDescuento());</span>
+<span class="nc" id="L89">        paramSource.addValue(&quot;total&quot;, compra.getTotal());</span>
+<span class="nc" id="L90">        this.customNamedParameterJdbcTemplate.actualizar(compra, sqlActualizar);</span>
+<span class="nc" id="L91">    }</span>
 
     @Override
     public boolean existe(Long scotter_id) {
-<span class="fc" id="L93">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L94">        parameterSource.addValue(&quot;scotter_id&quot;, scotter_id);</span>
-<span class="fc" id="L95">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, parameterSource, Boolean.class);</span>
+<span class="fc" id="L95">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L96">        parameterSource.addValue(&quot;scotter_id&quot;, scotter_id);</span>
+<span class="fc" id="L97">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, parameterSource, Boolean.class);</span>
     }
 
     @Override
     public Persona obtenerId(Long id) {
-<span class="fc" id="L100">        return (Persona) this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarPersona, new MapeoPersonaObjeto()).get(0);</span>
+<span class="fc" id="L102">        return (Persona) this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarPersona, new MapeoPersonaObjeto()).get(0);</span>
     }
 
     @Override
     public Scotter obtenerIdScotter(Long id) {
-<span class="fc" id="L105">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarScotter, new MapeoScotterObjeto(repositorioScotterMysql)).get(0);</span>
+<span class="fc" id="L107">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarScotter, new MapeoScotterObjeto(repositorioScotterMysql)).get(0);</span>
     }
 }
 
