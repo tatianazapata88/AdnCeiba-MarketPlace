@@ -52,8 +52,7 @@ public class RepositorioScotterMysql implements RepositorioScotter {
         if (Objects.isNull(objectKeyHolder)){
             throw new NullPointerException();
         } else {
-            Long longValue = objectKeyHolder.longValue();
-            return longValue;
+            return objectKeyHolder.longValue();
         }
 
     }
