@@ -60,11 +60,10 @@ public class RepositorioCompraMysql implements RepositorioCompra {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{"id"});
         Number objectKeyHolder = keyHolder.getKey();
-        if (Objects.isNull(objectKeyHolder)){
+        if (Objects.isNull(objectKeyHolder)) {
             throw new NullPointerException();
         } else {
-            Long longValue = objectKeyHolder.longValue();
-         return longValue;
+            return objectKeyHolder.longValue();
         }
     }
 
