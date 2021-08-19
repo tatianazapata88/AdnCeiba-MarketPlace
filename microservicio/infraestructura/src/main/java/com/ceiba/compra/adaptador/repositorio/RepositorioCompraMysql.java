@@ -15,6 +15,7 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.lang.NullPointerException;
+import java.util.Objects;
 
 @Repository
 public class RepositorioCompraMysql implements RepositorioCompra {
@@ -59,8 +60,7 @@ public class RepositorioCompraMysql implements RepositorioCompra {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{"id"});
 
-        if (keyHolder.getKey() == null) {
-
+        if (Objects.isNull(keyHolder.getKey())) {
             throw new NullPointerException();
         } else {
          return keyHolder.getKey().longValue();
