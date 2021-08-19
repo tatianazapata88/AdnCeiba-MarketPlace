@@ -11,6 +11,8 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
+import java.util.Objects;
+
 @Repository
 public class RepositorioScotterMysql implements RepositorioScotter {
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
@@ -44,10 +46,16 @@ public class RepositorioScotterMysql implements RepositorioScotter {
         paramSource.addValue("vendedor", scotter.getVendedor().getId());
         paramSource.addValue("estado", scotter.getEstado().toString());
         paramSource.addValue("foto", scotter.getFoto());
-
         KeyHolder keyHolder = new GeneratedKeyHolder();
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{"id"});
-        return keyHolder.getKey().longValue();
+        Number objectKeyHolder = keyHolder.getKey();
+        if (Objects.isNull(objectKeyHolder)){
+            throw new NullPointerException();
+        } else {
+            Long longValue = objectKeyHolder.longValue();
+            return longValue;
+        }
+
     }
 
     @Override
