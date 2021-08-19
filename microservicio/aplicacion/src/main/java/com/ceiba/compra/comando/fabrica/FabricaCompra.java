@@ -17,8 +17,8 @@ public class FabricaCompra {
     }
 
     public Compra crear(ComandoCompra comandoCompra) {
-        Persona comprador = repositorioCompra.obtenerId(comandoCompra.getComprador_id());
-        Scotter scotter = repositorioCompra.obtenerIdScotter(comandoCompra.getScotter_id());
+        Persona comprador = repositorioCompra.obtenerId(comandoCompra.getCompradorId());
+        Scotter scotter = repositorioCompra.obtenerIdScotter(comandoCompra.getScotterId());
         return new Compra(
                 comandoCompra.getId(),
                 comandoCompra.getFecha(),

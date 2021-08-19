@@ -7,8 +7,8 @@ import java.time.LocalDate;
 public class ComandoCompraTestDataBuilder {
     private Long id;
     private LocalDate fecha;
-    private Long scotter_id;
-    private Long comprador_id;
+    private Long scotterId;
+    private Long compradorId;
     private String ciudadDestinoEnvioScotter;
     private double flete;
     private double precio;
@@ -17,16 +17,16 @@ public class ComandoCompraTestDataBuilder {
 
     public ComandoCompraTestDataBuilder() {
         fecha = LocalDate.now();
-        scotter_id = 1L;
-        comprador_id = 2L;
+        scotterId = 1L;
+        compradorId = 2L;
         ciudadDestinoEnvioScotter = "bogota";
     }
 
-    public ComandoCompraTestDataBuilder(LocalDate fecha, Long scotter_id, Long comprador_id,
+    public ComandoCompraTestDataBuilder(LocalDate fecha, Long scotterId, Long compradorId,
                                         String ciudadDestinoEnvioScotter, double flete, double precio, double descuento, double total) {
         this.fecha = fecha;
-        this.scotter_id = scotter_id;
-        this.comprador_id = comprador_id;
+        this.scotterId = scotterId;
+        this.compradorId = compradorId;
         this.ciudadDestinoEnvioScotter = ciudadDestinoEnvioScotter;
         this.flete = flete;
         this.precio = precio;
@@ -40,6 +40,6 @@ public class ComandoCompraTestDataBuilder {
     }
 
     public ComandoCompra build() {
-        return new ComandoCompra(id, fecha, scotter_id, comprador_id, ciudadDestinoEnvioScotter, flete, precio, descuento, total);
+        return new ComandoCompra(id, fecha, scotterId, compradorId, ciudadDestinoEnvioScotter, flete, precio, descuento, total);
     }
 }

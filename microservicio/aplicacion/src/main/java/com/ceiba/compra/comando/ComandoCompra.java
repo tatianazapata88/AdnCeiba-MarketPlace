@@ -15,8 +15,8 @@ import java.time.LocalDate;
 public class ComandoCompra {
     private Long id;
     private LocalDate fecha;
-    private Long scotter_id;
-    private Long comprador_id;
+    private Long scotterId;
+    private Long compradorId;
     private String ciudadDestinoEnvioScotter;
     private double flete;
     private double precio;
