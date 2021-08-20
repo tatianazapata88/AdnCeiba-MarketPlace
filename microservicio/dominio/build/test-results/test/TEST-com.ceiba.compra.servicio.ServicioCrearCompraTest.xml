@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.compra.servicio.ServicioCrearCompraTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-08-19T19:34:30" hostname="LUZP-ZAPATA" time="0.048">
+<testsuite name="com.ceiba.compra.servicio.ServicioCrearCompraTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-08-20T12:52:39" hostname="LUZP-ZAPATA" time="0.051">
   <properties/>
-  <testcase name="validarCalcularValorFleteCiudadOrigenDiferenteCiudadDestinoTest" classname="com.ceiba.compra.servicio.ServicioCrearCompraTest" time="0.043"/>
+  <testcase name="validarCalcularValorFleteCiudadOrigenDiferenteCiudadDestinoTest" classname="com.ceiba.compra.servicio.ServicioCrearCompraTest" time="0.044"/>
   <testcase name="validarCalcularValorFleteCiudadoOrigenIgualCiudadDestinoTest" classname="com.ceiba.compra.servicio.ServicioCrearCompraTest" time="0.001"/>
   <testcase name="crearCompraTest" classname="com.ceiba.compra.servicio.ServicioCrearCompraTest" time="0.001"/>
   <testcase name="validarDescuentoPagoTestDiferenteFecha" classname="com.ceiba.compra.servicio.ServicioCrearCompraTest" time="0.001"/>

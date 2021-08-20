@@ -57,12 +57,12 @@ public class RepositorioCompraMysql implements RepositorioCompra {
         paramSource.addValue("total", compra.getTotal());
         KeyHolder keyHolder = new GeneratedKeyHolder();
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{"id"});
-        Number objectKeyHolder = keyHolder.getKey();
-        if (Objects.isNull(objectKeyHolder)) {
+       /* if (Objects.isNull(objectKeyHolder)) {
             throw new NullPointerException();
         } else {
             return objectKeyHolder.longValue();
-        }
+        }*/
+        return this.customNamedParameterJdbcTemplate.validarNull(keyHolder.getKey());
     }
 
     @Override
