@@ -13,7 +13,6 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
-import java.util.Objects;
 
 @Repository
 public class RepositorioCompraMysql implements RepositorioCompra {
@@ -54,11 +53,6 @@ public class RepositorioCompraMysql implements RepositorioCompra {
         paramSource.addValue("total", compra.getTotal());
         KeyHolder keyHolder = new GeneratedKeyHolder();
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{"id"});
-       /* if (Objects.isNull(objectKeyHolder)) {
-            throw new NullPointerException();
-        } else {
-            return objectKeyHolder.longValue();
-        }*/
         return this.customNamedParameterJdbcTemplate.validarNull(keyHolder.getKey());
     }
 
