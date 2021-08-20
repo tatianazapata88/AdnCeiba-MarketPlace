@@ -73,7 +73,7 @@ public class RepositorioCompraMysql implements RepositorioCompra {
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
     }
 
-    @Override
+  /*  @Override
     public void actualizar(Compra compra) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", compra.getId());
@@ -86,7 +86,7 @@ public class RepositorioCompraMysql implements RepositorioCompra {
         paramSource.addValue("descuento", compra.getDescuento());
         paramSource.addValue("total", compra.getTotal());
         this.customNamedParameterJdbcTemplate.actualizar(compra, sqlActualizar);
-    }
+    }*/
 
     @Override
     public boolean existe(Long scotter_id) {

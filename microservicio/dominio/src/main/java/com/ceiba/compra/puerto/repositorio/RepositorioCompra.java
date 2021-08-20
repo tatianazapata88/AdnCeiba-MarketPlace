@@ -8,7 +8,7 @@ public interface RepositorioCompra {
 
     Long crear(Compra compra);
 
-    void actualizar(Compra compra);
+  //  void actualizar(Compra compra);
 
     void eliminar(Long id);
 
