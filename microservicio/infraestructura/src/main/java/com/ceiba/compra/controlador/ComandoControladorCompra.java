@@ -18,8 +18,7 @@ public class ComandoControladorCompra {
     private final ManejadorEliminarCompra manejadorEliminarCompra;
 
     @Autowired
-    public ComandoControladorCompra(ManejadorCrearCompra manejadorCrearCompra,
-                                    ManejadorEliminarCompra manejadorEliminarCompra) {
+    public ComandoControladorCompra(ManejadorCrearCompra manejadorCrearCompra,ManejadorEliminarCompra manejadorEliminarCompra) {
         this.manejadorCrearCompra = manejadorCrearCompra;
         this.manejadorEliminarCompra = manejadorEliminarCompra;
     }
