@@ -11,7 +11,7 @@ public class ServicioActualizarCompra {
         this.repositorioCompra = repositorioCompra;
     }
 
-    public void ejecutar(Compra compra) {
+  /*  public void ejecutar(Compra compra) {
         this.repositorioCompra.actualizar(compra);
-    }
+    }*/
 }
