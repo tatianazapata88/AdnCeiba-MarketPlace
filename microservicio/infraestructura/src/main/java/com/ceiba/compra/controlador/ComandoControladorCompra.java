@@ -20,10 +20,8 @@ public class ComandoControladorCompra {
     @Autowired
     public ComandoControladorCompra(ManejadorCrearCompra manejadorCrearCompra,
                                     ManejadorEliminarCompra manejadorEliminarCompra) {
-
         this.manejadorCrearCompra = manejadorCrearCompra;
         this.manejadorEliminarCompra = manejadorEliminarCompra;
-
     }
 
     @PostMapping
