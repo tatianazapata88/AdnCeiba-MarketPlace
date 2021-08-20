@@ -48,12 +48,12 @@ import org.springframework.context.annotation.Configuration;
     }
 
     @Bean
-    public ServicioCrearCompra servicioCrearPedido(RepositorioCompra repositorioCompra) {
+    public ServicioCrearCompra servicioCrearCompra(RepositorioCompra repositorioCompra) {
 <span class="fc" id="L52">        return new ServicioCrearCompra(repositorioCompra);</span>
     }
 
     @Bean
-    public ServicioEliminarCompra servicioEliminarPedido(RepositorioCompra repositorioCompra) {
+    public ServicioEliminarCompra servicioEliminarCompra(RepositorioCompra repositorioCompra) {
 <span class="fc" id="L57">        return new ServicioEliminarCompra(repositorioCompra);</span>
     }
 }

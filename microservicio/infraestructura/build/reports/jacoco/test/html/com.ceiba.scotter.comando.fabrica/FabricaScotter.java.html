@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FabricaScotter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.scotter.comando.fabrica</a> &gt; <span class="el_source">FabricaScotter.java</span></div><h1>FabricaScotter.java</h1><pre class="source lang-java linenums">package com.ceiba.scotter.comando.fabrica;
 
 import com.ceiba.persona.modelo.entidad.Persona;
+import com.ceiba.persona.puerto.repositorio.RepositorioPersona;
 import com.ceiba.scotter.comando.ComandoScotter;
 import com.ceiba.scotter.modelo.entidad.Scotter;
-import com.ceiba.scotter.puerto.repositorio.RepositorioScotter;
 import org.springframework.stereotype.Component;
 
 @Component
 public class FabricaScotter {
 
-    private final RepositorioScotter repositorioScotter;
+    private final RepositorioPersona repositorioPersona;
 
-<span class="fc" id="L14">    public FabricaScotter(RepositorioScotter repositorioScotter) {</span>
-<span class="fc" id="L15">        this.repositorioScotter = repositorioScotter;</span>
+<span class="fc" id="L14">    public FabricaScotter(RepositorioPersona repositorioPersona) {</span>
+<span class="fc" id="L15">        this.repositorioPersona = repositorioPersona;</span>
 <span class="fc" id="L16">    }</span>
 
-
     public Scotter crear(ComandoScotter comandoScotter) {
-<span class="fc" id="L20">        Persona vendedor = repositorioScotter.obtenerPorId(comandoScotter.getId_vendedor());</span>
+<span class="fc" id="L19">        Persona vendedor = repositorioPersona.obtenerPersonaPorId(comandoScotter.getId_vendedor());</span>
 
-<span class="fc" id="L22">        return new Scotter(</span>
-<span class="fc" id="L23">                comandoScotter.getId(),</span>
-<span class="fc" id="L24">                comandoScotter.getMarca(),</span>
-<span class="fc" id="L25">                comandoScotter.getModelo(),</span>
-<span class="fc" id="L26">                comandoScotter.getPrecio(),</span>
-<span class="fc" id="L27">                comandoScotter.getCiudad(),</span>
+<span class="fc" id="L21">        return new Scotter(</span>
+<span class="fc" id="L22">                comandoScotter.getId(),</span>
+<span class="fc" id="L23">                comandoScotter.getMarca(),</span>
+<span class="fc" id="L24">                comandoScotter.getModelo(),</span>
+<span class="fc" id="L25">                comandoScotter.getPrecio(),</span>
+<span class="fc" id="L26">                comandoScotter.getCiudad(),</span>
                 vendedor,
-<span class="fc" id="L29">                comandoScotter.getFoto()</span>
+<span class="fc" id="L28">                comandoScotter.getFoto()</span>
         );
     }
 }

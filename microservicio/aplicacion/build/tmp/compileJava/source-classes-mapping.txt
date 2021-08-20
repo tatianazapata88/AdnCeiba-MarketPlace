@@ -4,8 +4,6 @@ com/ceiba/persona/consulta/ManejadorListarUsernamePersona.java
  com.ceiba.persona.consulta.ManejadorListarUsernamePersona
 com/ceiba/scotter/comando/manejador/ManejadorEliminarScotter.java
  com.ceiba.scotter.comando.manejador.ManejadorEliminarScotter
-com/ceiba/compra/comando/manejador/ManejadorActualizarCompra.java
- com.ceiba.compra.comando.manejador.ManejadorActualizarCompra
 com/ceiba/compra/comando/fabrica/FabricaCompra.java
  com.ceiba.compra.comando.fabrica.FabricaCompra
 com/ceiba/compra/comando/manejador/ManejadorEliminarCompra.java
@@ -38,9 +36,9 @@ com/ceiba/persona/ComandoPersona.java
  com.ceiba.persona.ComandoPersona
 com/ceiba/scotter/comando/manejador/ManejadorActualizarScotter.java
  com.ceiba.scotter.comando.manejador.ManejadorActualizarScotter
-com/ceiba/compra/comando/manejador/ManejadorCrearCompra.java
- com.ceiba.compra.comando.manejador.ManejadorCrearCompra
-com/ceiba/compra/comando/ComandoCompra.java
- com.ceiba.compra.comando.ComandoCompra
 com/ceiba/persona/consulta/ManejadorListarIdPersona.java
  com.ceiba.persona.consulta.ManejadorListarIdPersona
+com/ceiba/compra/comando/ComandoCompra.java
+ com.ceiba.compra.comando.ComandoCompra
+com/ceiba/compra/comando/manejador/ManejadorCrearCompra.java
+ com.ceiba.compra.comando.manejador.ManejadorCrearCompra

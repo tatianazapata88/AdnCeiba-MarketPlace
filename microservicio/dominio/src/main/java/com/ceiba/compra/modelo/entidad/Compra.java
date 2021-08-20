@@ -17,11 +17,9 @@ public class Compra {
     private static final double VALOR_FLETE_DIFERENTE_CIUDAD = 30000.0;
 
     private static final String CAMPO_FECHA_ES_OBLIGATORIO = "El campo fecha obligatorio no puede ir vacio";
-    private static final String CAMPO_SCOTTER_ID_ES_OBLIGATORIO = "El campo scotter ID obligatorio no puede ir vacio";
-    private static final String CAMPO_COMPRADOR_ES_OBLIGATORIO = "El campo id Comprador es obligatorio no puede ir vacio";
-    private static final String CAMPO_CIUDAD_ORIGEN_SCOTTER_ES_OBLIGATORIO = "El campo ciudad scotter  es obligatorio no puede ir vacio";
+    private static final String CAMPO_SCOTTER_ES_OBLIGATORIO = "El campo scotter obligatorio no puede ir vacio";
+    private static final String CAMPO_COMPRADOR_ES_OBLIGATORIO = "El campo Comprador es obligatorio no puede ir vacio";
     private static final String CAMPO_CIUDAD_DESTINO_SCOTTER_ES_OBLIGATORIO = "El campo ciudad destino  es obligatorio no puede ir vacio";
-    private static final String CAMPO_PRECIO_ES_OBLIGATORIO = "El campo precio  es obligatorio no puede ir vacio";
 
     private Long id;
     private LocalDate fecha;
@@ -35,6 +33,8 @@ public class Compra {
     public Compra(Long id, LocalDate fecha, Scotter scotter, Persona comprador, String ciudadDestinoEnvioScotter) {
         validarCampoFecha(fecha);
         validarCampoCiudadDestino(ciudadDestinoEnvioScotter);
+        validarCampoScotter(scotter);
+        validarCampoComprador(comprador);
 
         this.id = id;
         this.fecha = fecha;
@@ -52,6 +52,18 @@ public class Compra {
         }
     }
 
+    private void validarCampoScotter(Scotter scotter){
+        if (scotter == null){
+            throw new ExcepcionValorObligatorio(CAMPO_SCOTTER_ES_OBLIGATORIO);
+        }
+    }
+
+    private void validarCampoComprador(Persona comprador){
+        if (comprador == null){
+            throw new ExcepcionValorObligatorio(CAMPO_COMPRADOR_ES_OBLIGATORIO);
+        }
+    }
+
     private void validarCampoCiudadDestino(String ciudadDestinoEnvioScotter) {
         if (ciudadDestinoEnvioScotter == null || ciudadDestinoEnvioScotter.trim().length() <= 0) {
             throw new ExcepcionValorObligatorio(CAMPO_CIUDAD_DESTINO_SCOTTER_ES_OBLIGATORIO);
@@ -66,7 +78,7 @@ public class Compra {
     private double valorDescuento(LocalDate fecha, double precio) {
         int diferenciaFechas = fecha.compareTo(LocalDate.now());
         if (diferenciaFechas == 0) {
-            double calcularDescuento = Math.round(precio * VALOR_DE_DESCUENTO);
+           double calcularDescuento = Math.round(precio * VALOR_DE_DESCUENTO);
             return this.descuento = calcularDescuento;
         } else {
             return this.descuento = SIN_DESCUENTO;
@@ -80,6 +92,8 @@ public class Compra {
             return this.flete = VALOR_FLETE_DIFERENTE_CIUDAD;
         }
     }
+
+
 }
 
 

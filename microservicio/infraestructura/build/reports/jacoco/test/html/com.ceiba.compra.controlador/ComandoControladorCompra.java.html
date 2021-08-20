@@ -18,24 +18,21 @@ public class ComandoControladorCompra {
     private final ManejadorEliminarCompra manejadorEliminarCompra;
 
     @Autowired
-    public ComandoControladorCompra(ManejadorCrearCompra manejadorCrearCompra,
-<span class="fc" id="L22">                                    ManejadorEliminarCompra manejadorEliminarCompra) {</span>
-
-<span class="fc" id="L24">        this.manejadorCrearCompra = manejadorCrearCompra;</span>
-<span class="fc" id="L25">        this.manejadorEliminarCompra = manejadorEliminarCompra;</span>
-
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L21">    public ComandoControladorCompra(ManejadorCrearCompra manejadorCrearCompra,ManejadorEliminarCompra manejadorEliminarCompra) {</span>
+<span class="fc" id="L22">        this.manejadorCrearCompra = manejadorCrearCompra;</span>
+<span class="fc" id="L23">        this.manejadorEliminarCompra = manejadorEliminarCompra;</span>
+<span class="fc" id="L24">    }</span>
 
     @PostMapping
     @ApiOperation(&quot;Crear Compra&quot;)
     public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoCompra comandoCompra) {
-<span class="fc" id="L32">        return manejadorCrearCompra.ejecutar(comandoCompra);</span>
+<span class="fc" id="L29">        return manejadorCrearCompra.ejecutar(comandoCompra);</span>
     }
 
     @DeleteMapping(value = &quot;/{id}&quot;)
     @ApiOperation(&quot;Eliminar Compra&quot;)
     public void eliminar(@PathVariable Long id) {
-<span class="fc" id="L38">        manejadorEliminarCompra.ejecutar(id);</span>
-<span class="fc" id="L39">    }</span>
+<span class="fc" id="L35">        manejadorEliminarCompra.ejecutar(id);</span>
+<span class="fc" id="L36">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

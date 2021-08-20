@@ -24,8 +24,8 @@ public class ServicioCrearCompra {
 
     private void validarExistenciaCompra(Compra compra) {
 <span class="fc" id="L26">        boolean existeCompra = this.repositorioCompra.existe(compra.getScotter().getId());</span>
-<span class="pc bpc" id="L27" title="1 of 2 branches missed.">        if (existeCompra) {</span>
-<span class="nc" id="L28">            throw new ExcepcionDuplicidad(NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA);</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (existeCompra) {</span>
+<span class="fc" id="L28">            throw new ExcepcionDuplicidad(NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA);</span>
         }
 <span class="fc" id="L30">    }</span>
 }

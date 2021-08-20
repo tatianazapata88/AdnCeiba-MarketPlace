@@ -2,6 +2,7 @@ package com.ceiba.persona.adaptador.repositorio;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import com.ceiba.persona.adaptador.dao.MapeoPersonaObjeto;
 import com.ceiba.persona.modelo.entidad.Persona;
 import com.ceiba.persona.puerto.repositorio.RepositorioPersona;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -29,6 +30,9 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
 
     @SqlStatement(namespace = "persona", value = "existePorPedido")
     private static String sqlExistePorPedido;
+
+    @SqlStatement(namespace = "persona", value = "listar")
+    private static String sqlListarPersona;
 
     public RepositorioPersonaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -71,5 +75,10 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
         parameterSource.addValue("id", id);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorPedido, parameterSource, Boolean.class);
+    }
+
+    @Override
+    public Persona obtenerPersonaPorId(Long id) {
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarPersona, new MapeoPersonaObjeto()).get(0);
     }
 }

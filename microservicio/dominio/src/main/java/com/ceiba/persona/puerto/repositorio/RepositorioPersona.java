@@ -16,5 +16,5 @@ public interface RepositorioPersona {
 
     boolean existePorPedido(Long id);
 
-
+    Persona obtenerPersonaPorId(Long id);
 }

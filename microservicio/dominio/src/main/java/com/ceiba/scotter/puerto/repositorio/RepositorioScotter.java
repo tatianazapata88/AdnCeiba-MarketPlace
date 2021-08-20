@@ -15,5 +15,5 @@ public interface RepositorioScotter {
 
     boolean existePorPedido(Long id);
 
-    Persona obtenerPorId(Long id);
-}
+    Scotter obtenerScotterPorId(Long id);
+   }

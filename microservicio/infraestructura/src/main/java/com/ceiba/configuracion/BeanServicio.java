@@ -48,12 +48,12 @@ public class BeanServicio {
     }
 
     @Bean
-    public ServicioCrearCompra servicioCrearPedido(RepositorioCompra repositorioCompra) {
+    public ServicioCrearCompra servicioCrearCompra(RepositorioCompra repositorioCompra) {
         return new ServicioCrearCompra(repositorioCompra);
     }
 
     @Bean
-    public ServicioEliminarCompra servicioEliminarPedido(RepositorioCompra repositorioCompra) {
+    public ServicioEliminarCompra servicioEliminarCompra(RepositorioCompra repositorioCompra) {
         return new ServicioEliminarCompra(repositorioCompra);
     }
 }

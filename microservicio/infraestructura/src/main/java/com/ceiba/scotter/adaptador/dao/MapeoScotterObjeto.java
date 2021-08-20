@@ -1,8 +1,8 @@
 package com.ceiba.scotter.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
+import com.ceiba.persona.adaptador.repositorio.RepositorioPersonaMysql;
 import com.ceiba.persona.modelo.entidad.Persona;
-import com.ceiba.scotter.adaptador.repositorio.RepositorioScotterMysql;
 import com.ceiba.scotter.modelo.entidad.Scotter;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -11,10 +11,10 @@ import java.sql.SQLException;
 
 public class MapeoScotterObjeto implements RowMapper<Scotter>, MapperResult {
 
-    private RepositorioScotterMysql repositorioScotterMysql;
+    private RepositorioPersonaMysql repositorioPersonaMysql;
 
-    public MapeoScotterObjeto(RepositorioScotterMysql repositorioScotterMysql) {
-        this.repositorioScotterMysql = repositorioScotterMysql;
+    public MapeoScotterObjeto(RepositorioPersonaMysql repositorioPersonaMysql) {
+        this.repositorioPersonaMysql = repositorioPersonaMysql;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class MapeoScotterObjeto implements RowMapper<Scotter>, MapperResult {
        String estadobd = resultSet.getString("estado");
         String foto = resultSet.getString("foto");
 
-        Persona vendedor=  repositorioScotterMysql.obtenerPorId(id_vendedor);
+        Persona vendedor=  repositorioPersonaMysql.obtenerPersonaPorId(id_vendedor);
         Scotter.Estado estado = Scotter.Estado.valueOf(estadobd);
         return new Scotter(id,marca, modelo, precio, ciudad, vendedor, foto);
     }

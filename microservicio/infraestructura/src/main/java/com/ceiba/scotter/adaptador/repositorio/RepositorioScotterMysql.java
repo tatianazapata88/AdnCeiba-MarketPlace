@@ -2,19 +2,19 @@ package com.ceiba.scotter.adaptador.repositorio;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.persona.adaptador.dao.MapeoPersonaObjeto;
-import com.ceiba.persona.modelo.entidad.Persona;
+import com.ceiba.persona.adaptador.repositorio.RepositorioPersonaMysql;
+import com.ceiba.scotter.adaptador.dao.MapeoScotterObjeto;
 import com.ceiba.scotter.modelo.entidad.Scotter;
 import com.ceiba.scotter.puerto.repositorio.RepositorioScotter;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
-import java.util.Objects;
 
 @Repository
 public class RepositorioScotterMysql implements RepositorioScotter {
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
+    private final RepositorioPersonaMysql repositorioPersonaMysql;
 
     @SqlStatement(namespace = "scotter", value = "crear")
     private static String sqlCrear;
@@ -28,12 +28,13 @@ public class RepositorioScotterMysql implements RepositorioScotter {
     @SqlStatement(namespace = "persona", value = "existePorPedido")
     private static String sqlExistePorPedido;
 
-    @SqlStatement(namespace = "persona", value = "listar")
-    private static String sqlListarPersona;
+    @SqlStatement(namespace = "scotter", value = "listar")
+    private static String sqlListarScotter;
 
-    public RepositorioScotterMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
+   public RepositorioScotterMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, RepositorioPersonaMysql repositorioPersonaMysql) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
-    }
+       this.repositorioPersonaMysql = repositorioPersonaMysql;
+   }
 
     @Override
     public Long crear(Scotter scotter) {
@@ -47,7 +48,7 @@ public class RepositorioScotterMysql implements RepositorioScotter {
         paramSource.addValue("foto", scotter.getFoto());
         KeyHolder keyHolder = new GeneratedKeyHolder();
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{"id"});
-        return this.customNamedParameterJdbcTemplate.validarNull(keyHolder.getKey());
+        return keyHolder.getKey()!=null? keyHolder.getKey().longValue() : 0;
     }
 
     @Override
@@ -77,9 +78,8 @@ public class RepositorioScotterMysql implements RepositorioScotter {
         parameterSource.addValue("id", id);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorPedido, parameterSource, Boolean.class);
     }
-
     @Override
-    public Persona obtenerPorId(Long id) {
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarPersona, new MapeoPersonaObjeto()).get(0);
+    public Scotter obtenerScotterPorId(Long id) {
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarScotter, new MapeoScotterObjeto(repositorioPersonaMysql)).get(0);
     }
 }

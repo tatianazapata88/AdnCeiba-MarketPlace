@@ -11,10 +11,4 @@ public interface RepositorioCompra {
     void eliminar(Long id);
 
     boolean existe(Long id);
-
-
-    Persona obtenerId(Long id);
-
-    Scotter obtenerIdScotter(Long id);
-
-}
+   }
