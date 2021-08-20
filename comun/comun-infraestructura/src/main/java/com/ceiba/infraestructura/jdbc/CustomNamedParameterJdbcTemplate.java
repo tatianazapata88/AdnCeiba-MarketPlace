@@ -22,6 +22,14 @@ public class CustomNamedParameterJdbcTemplate {
 		this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
 	}
 
+	public Long obtenerValueKey(Number objectKeyHolder){
+		if (Objects.isNull(objectKeyHolder)) {
+			throw new NullPointerException();
+		} else {
+			return objectKeyHolder.longValue();
+		}
+	}
+
 	public Long crear(Object object,String sql) {
 		MapSqlParameterSource paramSource = crearParametros(object);
 		KeyHolder keyHolder = new GeneratedKeyHolder();

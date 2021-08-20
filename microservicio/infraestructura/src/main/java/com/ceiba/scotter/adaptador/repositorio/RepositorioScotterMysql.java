@@ -48,7 +48,7 @@ public class RepositorioScotterMysql implements RepositorioScotter {
         paramSource.addValue("foto", scotter.getFoto());
         KeyHolder keyHolder = new GeneratedKeyHolder();
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{"id"});
-        return keyHolder.getKey()!=null? keyHolder.getKey().longValue() : 0;
+        return this.customNamedParameterJdbcTemplate.obtenerValueKey(keyHolder.getKey());
     }
 
     @Override
