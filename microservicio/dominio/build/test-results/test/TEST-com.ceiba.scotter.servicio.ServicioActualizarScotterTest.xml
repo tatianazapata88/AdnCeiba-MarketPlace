@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.scotter.servicio.ServicioActualizarScotterTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-20T12:52:39" hostname="LUZP-ZAPATA" time="0.016">
+<testsuite name="com.ceiba.scotter.servicio.ServicioActualizarScotterTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-20T14:22:54" hostname="LUZP-ZAPATA" time="0.012">
   <properties/>
-  <testcase name="validarActualizarScotterTest" classname="com.ceiba.scotter.servicio.ServicioActualizarScotterTest" time="0.016"/>
+  <testcase name="validarActualizarScotterTest" classname="com.ceiba.scotter.servicio.ServicioActualizarScotterTest" time="0.012"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -15,15 +15,15 @@ import java.time.LocalDate;
 
 <span class="fc" id="L16">        Long id = resultSet.getLong(&quot;id&quot;);</span>
 <span class="fc" id="L17">        LocalDate fecha = extraerLocalDate(resultSet, &quot;fecha&quot;);</span>
-<span class="fc" id="L18">        Long scotter_id = resultSet.getLong(&quot;scotter_id&quot;);</span>
-<span class="fc" id="L19">        Long comprador_id = resultSet.getLong(&quot;comprador_id&quot;);</span>
+<span class="fc" id="L18">        Long scotterId = resultSet.getLong(&quot;scotterId&quot;);</span>
+<span class="fc" id="L19">        Long compradorId = resultSet.getLong(&quot;compradorId&quot;);</span>
 <span class="fc" id="L20">        String ciudadDestinoEnvioScotter = resultSet.getString(&quot;ciudadDestinoEnvioScotter&quot;);</span>
 <span class="fc" id="L21">        double flete = resultSet.getDouble(&quot;flete&quot;);</span>
 <span class="fc" id="L22">        double precio = resultSet.getDouble(&quot;precio&quot;);</span>
 <span class="fc" id="L23">        double descuento = resultSet.getDouble(&quot;descuento&quot;);</span>
 <span class="fc" id="L24">        double total = resultSet.getDouble(&quot;total&quot;);</span>
 
-<span class="fc" id="L26">        return new DtoCompra(id, fecha, scotter_id, comprador_id, ciudadDestinoEnvioScotter, flete, precio, descuento, total);</span>
+<span class="fc" id="L26">        return new DtoCompra(id, fecha, scotterId, compradorId, ciudadDestinoEnvioScotter, flete, precio, descuento, total);</span>
     }
 }
 

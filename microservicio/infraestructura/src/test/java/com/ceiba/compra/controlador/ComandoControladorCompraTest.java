@@ -44,17 +44,6 @@ public class ComandoControladorCompraTest {
     }
 
 
-   /* @Test
-    public void actualizarCompraTest() throws Exception {
-        // arrange
-        Long id = 1L;
-        ComandoCompra compra = new ComandoCompraTestDataBuilder().build();
-        // act - assert
-        mocMvc.perform(put("/compras/{id}", id)
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(compra)))
-                .andExpect(status().isOk());
-    }*/
 
     @Test
     public void eliminarCompraTest() throws Exception {

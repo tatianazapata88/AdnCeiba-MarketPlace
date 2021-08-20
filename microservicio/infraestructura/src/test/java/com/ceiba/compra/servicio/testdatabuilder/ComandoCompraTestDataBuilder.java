@@ -39,6 +39,17 @@ public class ComandoCompraTestDataBuilder {
         return this;
     }
 
+    public ComandoCompraTestDataBuilder conIdScotter(Long scotterId){
+        this.scotterId = scotterId;
+        return  this;
+    }
+
+    public ComandoCompraTestDataBuilder conIdScotterIdCompradorCiudadDestino(Long scotterId, Long compradorId, String ciudadDestinoEnvioScotter){
+        this.scotterId = scotterId;
+        this.compradorId= compradorId;
+        this.ciudadDestinoEnvioScotter=ciudadDestinoEnvioScotter;
+        return this;
+    }
     public ComandoCompra build() {
         return new ComandoCompra(id, fecha, scotterId, compradorId, ciudadDestinoEnvioScotter, flete, precio, descuento, total);
     }

@@ -24,10 +24,7 @@ public class RepositorioCompraMysql implements RepositorioCompra {
     @SqlStatement(namespace = "compra", value = "crear")
     private static String sqlCrear;
 
-    @SqlStatement(namespace = "compra", value = "actualizar")
-    private static String sqlActualizar;
-
-    @SqlStatement(namespace = "compra", value = "eliminar")
+     @SqlStatement(namespace = "compra", value = "eliminar")
     private static String sqlEliminar;
 
     @SqlStatement(namespace = "compra", value = "existe")
@@ -48,8 +45,8 @@ public class RepositorioCompraMysql implements RepositorioCompra {
     public Long crear(Compra compra) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("fecha", compra.getFecha());
-        paramSource.addValue("scotter_id", compra.getScotter().getId());
-        paramSource.addValue("comprador_id", compra.getComprador().getId());
+        paramSource.addValue("scotterId", compra.getScotter().getId());
+        paramSource.addValue("compradorId", compra.getComprador().getId());
         paramSource.addValue("ciudadDestinoEnvioScotter", compra.getCiudadDestinoEnvioScotter());
         paramSource.addValue("flete", compra.getFlete());
         paramSource.addValue("precio", compra.getScotter().getPrecio());
@@ -73,27 +70,13 @@ public class RepositorioCompraMysql implements RepositorioCompra {
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
     }
 
-  /*  @Override
-    public void actualizar(Compra compra) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id", compra.getId());
-        paramSource.addValue("fecha", compra.getFecha());
-        paramSource.addValue("scotter_id", compra.getScotter().getId());
-        paramSource.addValue("comprador_id", compra.getComprador().getId());
-        paramSource.addValue("ciudadDestinoEnvioScotter", compra.getCiudadDestinoEnvioScotter());
-        paramSource.addValue("flete", compra.getFlete());
-        paramSource.addValue("precio", compra.getScotter().getPrecio());
-        paramSource.addValue("descuento", compra.getDescuento());
-        paramSource.addValue("total", compra.getTotal());
-        this.customNamedParameterJdbcTemplate.actualizar(compra, sqlActualizar);
-    }*/
-
     @Override
-    public boolean existe(Long scotter_id) {
+    public boolean existe(Long scotterId) {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
-        parameterSource.addValue("scotter_id", scotter_id);
+        parameterSource.addValue("scotterId", scotterId);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, parameterSource, Boolean.class);
     }
+
 
     @Override
     public Persona obtenerId(Long id) {

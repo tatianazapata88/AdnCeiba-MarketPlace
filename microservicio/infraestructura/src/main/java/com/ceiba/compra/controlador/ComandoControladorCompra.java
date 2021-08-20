@@ -2,7 +2,6 @@ package com.ceiba.compra.controlador;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.compra.comando.ComandoCompra;
-import com.ceiba.compra.comando.manejador.ManejadorActualizarCompra;
 import com.ceiba.compra.comando.manejador.ManejadorCrearCompra;
 import com.ceiba.compra.comando.manejador.ManejadorEliminarCompra;
 import io.swagger.annotations.Api;
@@ -17,15 +16,14 @@ public class ComandoControladorCompra {
 
     private final ManejadorCrearCompra manejadorCrearCompra;
     private final ManejadorEliminarCompra manejadorEliminarCompra;
-    private final ManejadorActualizarCompra manejadorActualizarCompra;
 
     @Autowired
     public ComandoControladorCompra(ManejadorCrearCompra manejadorCrearCompra,
-                                    ManejadorEliminarCompra manejadorEliminarCompra,
-                                    ManejadorActualizarCompra manejadorActualizarCompra) {
+                                    ManejadorEliminarCompra manejadorEliminarCompra) {
+
         this.manejadorCrearCompra = manejadorCrearCompra;
         this.manejadorEliminarCompra = manejadorEliminarCompra;
-        this.manejadorActualizarCompra = manejadorActualizarCompra;
+
     }
 
     @PostMapping
@@ -38,12 +36,5 @@ public class ComandoControladorCompra {
     @ApiOperation("Eliminar Compra")
     public void eliminar(@PathVariable Long id) {
         manejadorEliminarCompra.ejecutar(id);
-    }
-
-    @PutMapping(value = "/{id}")
-    @ApiOperation("Actualizar Compra")
-    public void actualizar(@RequestBody ComandoCompra comandoCompra, @PathVariable Long id) {
-        comandoCompra.setId(id);
-        manejadorActualizarCompra.ejecutar(comandoCompra);
     }
 }

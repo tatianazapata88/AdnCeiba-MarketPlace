@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.persona.servicio.ServicioActualizarPersonaTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-20T12:52:39" hostname="LUZP-ZAPATA" time="0.046">
+<testsuite name="com.ceiba.persona.servicio.ServicioActualizarPersonaTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-20T14:22:54" hostname="LUZP-ZAPATA" time="0.05">
   <properties/>
-  <testcase name="validarPersonaTest" classname="com.ceiba.persona.servicio.ServicioActualizarPersonaTest" time="0.01"/>
+  <testcase name="validarPersonaTest" classname="com.ceiba.persona.servicio.ServicioActualizarPersonaTest" time="0.015"/>
   <testcase name="validarPersonaExistenciaPreviaTest" classname="com.ceiba.persona.servicio.ServicioActualizarPersonaTest" time="0.035"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

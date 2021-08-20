@@ -15,15 +15,15 @@ public class MapeoCompra implements RowMapper<DtoCompra>, MapperResult {
 
         Long id = resultSet.getLong("id");
         LocalDate fecha = extraerLocalDate(resultSet, "fecha");
-        Long scotter_id = resultSet.getLong("scotter_id");
-        Long comprador_id = resultSet.getLong("comprador_id");
+        Long scotterId = resultSet.getLong("scotterId");
+        Long compradorId = resultSet.getLong("compradorId");
         String ciudadDestinoEnvioScotter = resultSet.getString("ciudadDestinoEnvioScotter");
         double flete = resultSet.getDouble("flete");
         double precio = resultSet.getDouble("precio");
         double descuento = resultSet.getDouble("descuento");
         double total = resultSet.getDouble("total");
 
-        return new DtoCompra(id, fecha, scotter_id, comprador_id, ciudadDestinoEnvioScotter, flete, precio, descuento, total);
+        return new DtoCompra(id, fecha, scotterId, compradorId, ciudadDestinoEnvioScotter, flete, precio, descuento, total);
     }
 }
 

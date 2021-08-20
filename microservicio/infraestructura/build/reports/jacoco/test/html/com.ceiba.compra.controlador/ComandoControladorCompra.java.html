@@ -2,7 +2,6 @@
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.compra.comando.ComandoCompra;
-import com.ceiba.compra.comando.manejador.ManejadorActualizarCompra;
 import com.ceiba.compra.comando.manejador.ManejadorCrearCompra;
 import com.ceiba.compra.comando.manejador.ManejadorEliminarCompra;
 import io.swagger.annotations.Api;
@@ -17,34 +16,26 @@ public class ComandoControladorCompra {
 
     private final ManejadorCrearCompra manejadorCrearCompra;
     private final ManejadorEliminarCompra manejadorEliminarCompra;
-    private final ManejadorActualizarCompra manejadorActualizarCompra;
 
     @Autowired
     public ComandoControladorCompra(ManejadorCrearCompra manejadorCrearCompra,
-                                    ManejadorEliminarCompra manejadorEliminarCompra,
-<span class="fc" id="L25">                                    ManejadorActualizarCompra manejadorActualizarCompra) {</span>
-<span class="fc" id="L26">        this.manejadorCrearCompra = manejadorCrearCompra;</span>
-<span class="fc" id="L27">        this.manejadorEliminarCompra = manejadorEliminarCompra;</span>
-<span class="fc" id="L28">        this.manejadorActualizarCompra = manejadorActualizarCompra;</span>
-<span class="fc" id="L29">    }</span>
+<span class="fc" id="L22">                                    ManejadorEliminarCompra manejadorEliminarCompra) {</span>
+
+<span class="fc" id="L24">        this.manejadorCrearCompra = manejadorCrearCompra;</span>
+<span class="fc" id="L25">        this.manejadorEliminarCompra = manejadorEliminarCompra;</span>
+
+<span class="fc" id="L27">    }</span>
 
     @PostMapping
     @ApiOperation(&quot;Crear Compra&quot;)
     public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoCompra comandoCompra) {
-<span class="fc" id="L34">        return manejadorCrearCompra.ejecutar(comandoCompra);</span>
+<span class="fc" id="L32">        return manejadorCrearCompra.ejecutar(comandoCompra);</span>
     }
 
     @DeleteMapping(value = &quot;/{id}&quot;)
     @ApiOperation(&quot;Eliminar Compra&quot;)
     public void eliminar(@PathVariable Long id) {
-<span class="fc" id="L40">        manejadorEliminarCompra.ejecutar(id);</span>
-<span class="fc" id="L41">    }</span>
-
-    @PutMapping(value = &quot;/{id}&quot;)
-    @ApiOperation(&quot;Actualizar Compra&quot;)
-    public void actualizar(@RequestBody ComandoCompra comandoCompra, @PathVariable Long id) {
-<span class="nc" id="L46">        comandoCompra.setId(id);</span>
-<span class="nc" id="L47">        manejadorActualizarCompra.ejecutar(comandoCompra);</span>
-<span class="nc" id="L48">    }</span>
+<span class="fc" id="L38">        manejadorEliminarCompra.ejecutar(id);</span>
+<span class="fc" id="L39">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

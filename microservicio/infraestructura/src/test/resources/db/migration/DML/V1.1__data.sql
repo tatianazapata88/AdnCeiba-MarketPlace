@@ -5,4 +5,4 @@ insert into scotter(marca,modelo,precio,ciudad,vendedor,estado,foto) values( 'to
 insert into scotter(marca,modelo,precio,ciudad,vendedor,estado,foto) values( 'bmw','2022',5000000.0, 'Medellin',2,'DISPONIBLE','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTxO8c_NQBofFx4kxZ2qTd6CKrCbkRtnqbLA&usqp=CAU');
 insert into scotter(marca,modelo,precio,ciudad,vendedor,estado,foto) values( 'honda','2022',1000000.0, 'Medellin',2,'DISPONIBLE','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTxO8c_NQBofFx4kxZ2qTd6CKrCbkRtnqbLA&usqp=CAU');
 
-insert into compra (fecha,scotter_id,comprador_id,ciudadDestinoEnvioScotter,flete,precio,descuento,total) values ('2021-07-28',2,1,'Medellin',0.0,5000000.0,0.0,5000000.0)
+insert into compra (fecha,scotterId,compradorId,ciudadDestinoEnvioScotter,flete,precio,descuento,total) values ('2021-07-28',2,1,'Medellin',0.0,5000000.0,0.0,5000000.0)

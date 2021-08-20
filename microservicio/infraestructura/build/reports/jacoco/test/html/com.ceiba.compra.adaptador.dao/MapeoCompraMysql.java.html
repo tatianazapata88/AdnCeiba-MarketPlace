@@ -24,16 +24,16 @@ public class MapeoCompraMysql implements RowMapper&lt;Compra&gt;, MapperResult {
 
 <span class="nc" id="L25">        Long id = resultSet.getLong(&quot;id&quot;);</span>
 <span class="nc" id="L26">        LocalDate fecha = extraerLocalDate(resultSet, &quot;fecha&quot;);</span>
-<span class="nc" id="L27">        Long scotter_id = resultSet.getLong(&quot;scotter_id&quot;);</span>
-<span class="nc" id="L28">        Long comprador_id = resultSet.getLong(&quot;comprador_id&quot;);</span>
+<span class="nc" id="L27">        Long scotterId = resultSet.getLong(&quot;scotterId&quot;);</span>
+<span class="nc" id="L28">        Long compradorId = resultSet.getLong(&quot;compradorId&quot;);</span>
 <span class="nc" id="L29">        String ciudadDestinoEnvioScotter = resultSet.getString(&quot;ciudadDestinoEnvioScotter&quot;);</span>
 <span class="nc" id="L30">        double flete = resultSet.getDouble(&quot;flete&quot;);</span>
 <span class="nc" id="L31">        double precio = resultSet.getDouble(&quot;precio&quot;);</span>
 <span class="nc" id="L32">        double descuento = resultSet.getDouble(&quot;descuento&quot;);</span>
 <span class="nc" id="L33">        double total = resultSet.getDouble(&quot;total&quot;);</span>
 
-<span class="nc" id="L35">        Persona comprador = repositorioCompraMysql.obtenerId(comprador_id);</span>
-<span class="nc" id="L36">        Scotter scotter = repositorioCompraMysql.obtenerIdScotter(scotter_id);</span>
+<span class="nc" id="L35">        Persona comprador = repositorioCompraMysql.obtenerId(compradorId);</span>
+<span class="nc" id="L36">        Scotter scotter = repositorioCompraMysql.obtenerIdScotter(scotterId);</span>
 
 <span class="nc" id="L38">        return new Compra(id, fecha, scotter, comprador, ciudadDestinoEnvioScotter);</span>
     }
