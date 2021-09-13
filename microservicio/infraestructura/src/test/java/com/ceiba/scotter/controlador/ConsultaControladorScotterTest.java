@@ -76,6 +76,6 @@ public class ConsultaControladorScotterTest {
         mocMvc.perform(get("/scotters/vendedor/{vendedor}", vendedor)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("marca", is("enduro")));
+                .andExpect(jsonPath("marca", is("toyota")));
     }
 }
