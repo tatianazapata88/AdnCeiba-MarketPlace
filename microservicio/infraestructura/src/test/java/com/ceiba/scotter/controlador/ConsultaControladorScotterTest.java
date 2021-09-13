@@ -32,7 +32,7 @@ public class ConsultaControladorScotterTest {
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(3)))
-                .andExpect(jsonPath("$[0].marca", is("toyota")));
+                .andExpect(jsonPath("$[0].marca", is("enduro")));
     }
 
     @Test
@@ -54,7 +54,7 @@ public class ConsultaControladorScotterTest {
         mocMvc.perform(get("/scotters/ciudad/{ciudad}", ciudad)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(0)));
+                .andExpect(jsonPath("$", hasSize(2)));
     }
 
     @Test
@@ -65,7 +65,7 @@ public class ConsultaControladorScotterTest {
         mocMvc.perform(get("/scotters/precio/{precio}", precio)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(0)));
+                .andExpect(jsonPath("$", hasSize(2)));
     }
 
     @Test
