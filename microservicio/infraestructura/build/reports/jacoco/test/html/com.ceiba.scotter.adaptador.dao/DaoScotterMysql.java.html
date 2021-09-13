@@ -49,7 +49,7 @@ public class DaoScotterMysql implements DaoScotter {
     public DtoScotter buscarIdVendedor(Long vendedor) {
 <span class="fc" id="L50">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
 <span class="fc" id="L51">        paramSource.addValue(&quot;vendedor&quot;, vendedor);</span>
-<span class="fc" id="L52">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlBuscarIdVendedor, paramSource, new MapeoScotter());</span>
+<span class="nc" id="L52">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlBuscarIdVendedor, paramSource, new MapeoScotter());</span>
     }
     @Override
     public List&lt;DtoScotter&gt; buscarCiudad(String ciudad) {

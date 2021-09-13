@@ -1,15 +1,17 @@
-com/ceiba/compra/comando/ComandoCompra.java
- com.ceiba.compra.comando.ComandoCompra
+com/ceiba/scotter/consulta/ManejadorBuscarCiudadScotter.java
+ com.ceiba.scotter.consulta.ManejadorBuscarCiudadScotter
 com/ceiba/persona/consulta/ManejadorListarUsernamePersona.java
  com.ceiba.persona.consulta.ManejadorListarUsernamePersona
 com/ceiba/scotter/comando/manejador/ManejadorEliminarScotter.java
  com.ceiba.scotter.comando.manejador.ManejadorEliminarScotter
-com/ceiba/scotter/comando/ComandoScotter.java
- com.ceiba.scotter.comando.ComandoScotter
-com/ceiba/persona/ComandoPersona.java
- com.ceiba.persona.ComandoPersona
-com/ceiba/persona/consulta/ManejadorListarPersona.java
- com.ceiba.persona.consulta.ManejadorListarPersona
+com/ceiba/compra/comando/fabrica/FabricaCompra.java
+ com.ceiba.compra.comando.fabrica.FabricaCompra
+com/ceiba/compra/comando/manejador/ManejadorEliminarCompra.java
+ com.ceiba.compra.comando.manejador.ManejadorEliminarCompra
+com/ceiba/scotter/consulta/ManejadorBuscarIdVendedor.java
+ com.ceiba.scotter.consulta.ManejadorBuscarIdVendedor
+com/ceiba/scotter/consulta/ManejadorBuscarPrecioScotter.java
+ com.ceiba.scotter.consulta.ManejadorBuscarPrecioScotter
 com/ceiba/scotter/comando/manejador/ManejadorCrearScotter.java
  com.ceiba.scotter.comando.manejador.ManejadorCrearScotter
 com/ceiba/persona/comando/manejador/ManejadorEliminarPersona.java
@@ -18,29 +20,27 @@ com/ceiba/persona/comando/fabrica/FabricaPersona.java
  com.ceiba.persona.comando.fabrica.FabricaPersona
 com/ceiba/persona/comando/manejador/ManejadorCrearPersona.java
  com.ceiba.persona.comando.manejador.ManejadorCrearPersona
-com/ceiba/persona/consulta/ManejadorListarIdPersona.java
- com.ceiba.persona.consulta.ManejadorListarIdPersona
+com/ceiba/scotter/consulta/ManejadorBuscarIdScotter.java
+ com.ceiba.scotter.consulta.ManejadorBuscarIdScotter
 com/ceiba/scotter/comando/fabrica/FabricaScotter.java
  com.ceiba.scotter.comando.fabrica.FabricaScotter
 com/ceiba/persona/comando/manejador/ManejadorActualizarPersona.java
  com.ceiba.persona.comando.manejador.ManejadorActualizarPersona
 com/ceiba/compra/consulta/ManejadorListarCompra.java
  com.ceiba.compra.consulta.ManejadorListarCompra
-com/ceiba/scotter/comando/manejador/ManejadorActualizarScotter.java
- com.ceiba.scotter.comando.manejador.ManejadorActualizarScotter
-com/ceiba/scotter/consulta/ManejadorBuscarIdScotter.java
- com.ceiba.scotter.consulta.ManejadorBuscarIdScotter
-com/ceiba/scotter/consulta/ManejadorBuscarCiudadScotter.java
- com.ceiba.scotter.consulta.ManejadorBuscarCiudadScotter
-com/ceiba/compra/comando/fabrica/FabricaCompra.java
- com.ceiba.compra.comando.fabrica.FabricaCompra
 com/ceiba/scotter/consulta/ManejadorListarScotter.java
  com.ceiba.scotter.consulta.ManejadorListarScotter
-com/ceiba/compra/comando/manejador/ManejadorEliminarCompra.java
- com.ceiba.compra.comando.manejador.ManejadorEliminarCompra
+com/ceiba/scotter/comando/ComandoScotter.java
+ com.ceiba.scotter.comando.ComandoScotter
+com/ceiba/persona/consulta/ManejadorListarPersona.java
+ com.ceiba.persona.consulta.ManejadorListarPersona
+com/ceiba/persona/ComandoPersona.java
+ com.ceiba.persona.ComandoPersona
+com/ceiba/scotter/comando/manejador/ManejadorActualizarScotter.java
+ com.ceiba.scotter.comando.manejador.ManejadorActualizarScotter
 com/ceiba/compra/comando/manejador/ManejadorCrearCompra.java
  com.ceiba.compra.comando.manejador.ManejadorCrearCompra
-com/ceiba/scotter/consulta/ManejadorBuscarPrecioScotter.java
- com.ceiba.scotter.consulta.ManejadorBuscarPrecioScotter
-com/ceiba/scotter/consulta/ManejadorBuscarIdVendedor.java
- com.ceiba.scotter.consulta.ManejadorBuscarIdVendedor
+com/ceiba/compra/comando/ComandoCompra.java
+ com.ceiba.compra.comando.ComandoCompra
+com/ceiba/persona/consulta/ManejadorListarIdPersona.java
+ com.ceiba.persona.consulta.ManejadorListarIdPersona

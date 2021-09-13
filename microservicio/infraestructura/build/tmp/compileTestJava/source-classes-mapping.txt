@@ -1,7 +1,7 @@
 com/ceiba/scotter/controlador/ComandoControladorScotterTest.java
  com.ceiba.scotter.controlador.ComandoControladorScotterTest
-com/ceiba/scotter/controlador/ConsultaControladorScotterTest.java
- com.ceiba.scotter.controlador.ConsultaControladorScotterTest
+com/ceiba/compra/controlador/ComandoControladorCompraTest.java
+ com.ceiba.compra.controlador.ComandoControladorCompraTest
 com/ceiba/ApplicationMock.java
  com.ceiba.ApplicationMock
 com/ceiba/persona/servicio/testdatabuilder/ComandoPersonaTestDataBuilder.java
@@ -16,5 +16,5 @@ com/ceiba/scotter/servicio/testdatabuilder/ComandoScotterTestDataBuilder.java
  com.ceiba.scotter.servicio.testdatabuilder.ComandoScotterTestDataBuilder
 com/ceiba/compra/servicio/testdatabuilder/ComandoCompraTestDataBuilder.java
  com.ceiba.compra.servicio.testdatabuilder.ComandoCompraTestDataBuilder
-com/ceiba/compra/controlador/ComandoControladorCompraTest.java
- com.ceiba.compra.controlador.ComandoControladorCompraTest
+com/ceiba/scotter/controlador/ConsultaControladorScotterTest.java
+ com.ceiba.scotter.controlador.ConsultaControladorScotterTest
