@@ -114,7 +114,7 @@ public class ServicioCrearCompraTest {
     @Test
     public void validarDescuentoPagoTestDiferenteFecha() {
         // arrange
-        Compra compra = new CompraTestDataBuilder().conFecha(LocalDate.of(2021, 9, 11)).build();
+        Compra compra = new CompraTestDataBuilder().conFecha(LocalDate.of(2021, 9, 17)).build();
         //assert
         Assert.assertEquals(SIN_DESCUENTO, compra.getDescuento(), 0);
     }
