@@ -1,10 +1,10 @@
 package com.ceiba.compra.controlador;
 
+import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.compra.comando.ComandoCompra;
@@ -41,6 +41,8 @@ public class ComandoControladorCompraTest {
                 .content(objectMapper.writeValueAsString(compra)))
                 .andExpect(status().isOk())
                 .andExpect(content().json("{'valor': 2}"));
+
+
     }
 
 

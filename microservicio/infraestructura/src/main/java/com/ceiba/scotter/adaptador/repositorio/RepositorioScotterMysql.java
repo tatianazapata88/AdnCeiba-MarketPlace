@@ -31,6 +31,8 @@ public class RepositorioScotterMysql implements RepositorioScotter {
     @SqlStatement(namespace = "scotter", value = "listar")
     private static String sqlListarScotter;
 
+
+
    public RepositorioScotterMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, RepositorioPersonaMysql repositorioPersonaMysql) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
        this.repositorioPersonaMysql = repositorioPersonaMysql;

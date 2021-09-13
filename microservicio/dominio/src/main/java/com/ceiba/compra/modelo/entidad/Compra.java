@@ -1,5 +1,6 @@
 package com.ceiba.compra.modelo.entidad;
 
+import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 
 import com.ceiba.persona.modelo.entidad.Persona;
@@ -20,6 +21,9 @@ public class Compra {
     private static final String CAMPO_SCOTTER_ES_OBLIGATORIO = "El campo scotter obligatorio no puede ir vacio";
     private static final String CAMPO_COMPRADOR_ES_OBLIGATORIO = "El campo Comprador es obligatorio no puede ir vacio";
     private static final String CAMPO_CIUDAD_DESTINO_SCOTTER_ES_OBLIGATORIO = "El campo ciudad destino  es obligatorio no puede ir vacio";
+    private static final String CAMPO_FECHA_NO_PUEDE_SER_MENOR_A_LA_FECHA_ACTUAL = "La fecha no puede ser inferior a la fecha actual";
+    private static final String CAMPO_FECHA_NO_PUEDE_SER_MAYOR_A_5_DIAS_DE_LA_FECHA_ACTUAL = "La fecha no puede ser mayor a 5 dias despues a la fecha actual";
+
 
     private Long id;
     private LocalDate fecha;
@@ -78,9 +82,15 @@ public class Compra {
     private double valorDescuento(LocalDate fecha, double precio) {
         int diferenciaFechas = fecha.compareTo(LocalDate.now());
         if (diferenciaFechas == 0) {
-           double calcularDescuento = Math.round(precio * VALOR_DE_DESCUENTO);
+            double calcularDescuento = Math.round(precio * VALOR_DE_DESCUENTO);
             return this.descuento = calcularDescuento;
-        } else {
+        } else if (diferenciaFechas < 0) {
+            throw new ExcepcionValorInvalido(CAMPO_FECHA_NO_PUEDE_SER_MENOR_A_LA_FECHA_ACTUAL);
+        } else if (diferenciaFechas > 0 && diferenciaFechas <= 5) {
+            return this.descuento = SIN_DESCUENTO;
+        } else if (diferenciaFechas > 5) {
+            throw new ExcepcionValorInvalido(CAMPO_FECHA_NO_PUEDE_SER_MAYOR_A_5_DIAS_DE_LA_FECHA_ACTUAL);
+        }else{
             return this.descuento = SIN_DESCUENTO;
         }
     }

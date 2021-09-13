@@ -5,7 +5,7 @@ import com.ceiba.persona.modelo.entidad.Persona;
 import lombok.Getter;
 
 @Getter
-public class Scotter {
+public class    Scotter {
 
     public enum Estado {DISPONIBLE, RESERVADA}
 

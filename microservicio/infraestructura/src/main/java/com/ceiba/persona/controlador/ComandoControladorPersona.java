@@ -36,10 +36,10 @@ public class ComandoControladorPersona {
         manejadorEliminarPersona.ejecutar(id);
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/{username}")
     @ApiOperation("Actualizar Persona")
-    public void actualizar(@RequestBody ComandoPersona comandoPersona, @PathVariable Long id) {
-        comandoPersona.setId(id);
+    public void actualizar(@RequestBody ComandoPersona comandoPersona, @PathVariable String username) {
+        comandoPersona.setUsername(username);
         manejadorActualizarPersona.ejecutar(comandoPersona);
     }
 }

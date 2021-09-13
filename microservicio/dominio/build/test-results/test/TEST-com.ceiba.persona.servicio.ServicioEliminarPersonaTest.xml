@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.persona.servicio.ServicioEliminarPersonaTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-20T21:00:46" hostname="LUZP-ZAPATA" time="0.006">
-  <properties/>
-  <testcase name="validarPersonaEliminarTest" classname="com.ceiba.persona.servicio.ServicioEliminarPersonaTest" time="0.003"/>
-  <testcase name="validarPersonaRelacionadaPreviaTest" classname="com.ceiba.persona.servicio.ServicioEliminarPersonaTest" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

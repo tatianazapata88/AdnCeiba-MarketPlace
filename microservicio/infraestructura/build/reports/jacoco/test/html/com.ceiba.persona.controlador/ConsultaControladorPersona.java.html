@@ -30,19 +30,19 @@ public class ConsultaControladorPersona {
     @GetMapping
     @ApiOperation(&quot;Listar Personas&quot;)
     public List&lt;DtoPersona&gt; listar() {
-<span class="fc" id="L33">        return this.manejadorListarPersona.ejecutar();</span>
+<span class="nc" id="L33">        return this.manejadorListarPersona.ejecutar();</span>
     }
 
     @GetMapping(&quot;/id/{id}&quot;)
     @ApiOperation(&quot;Listar Personas por id&quot;)
     public DtoPersona listar(@PathVariable Long id) {
-<span class="fc" id="L39">        return this.manejadorListarIdPersona.ejecutar(id);</span>
+<span class="nc" id="L39">        return this.manejadorListarIdPersona.ejecutar(id);</span>
     }
 
     @GetMapping(&quot;/username/{username}&quot;)
     @ApiOperation(&quot;Listar Personas por username&quot;)
     public DtoPersona listar(@PathVariable String username) {
-<span class="fc" id="L45">        return this.manejadorListarUsernamePersona.ejecutar(username);</span>
+<span class="nc" id="L45">        return this.manejadorListarUsernamePersona.ejecutar(username);</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

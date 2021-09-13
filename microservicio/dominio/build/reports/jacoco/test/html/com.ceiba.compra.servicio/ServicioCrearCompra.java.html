@@ -2,31 +2,20 @@
 
 import com.ceiba.compra.modelo.entidad.Compra;
 import com.ceiba.compra.puerto.repositorio.RepositorioCompra;
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
-
 
 public class ServicioCrearCompra {
 
     private final RepositorioCompra repositorioCompra;
 
+<span class="fc" id="L10">       public ServicioCrearCompra(RepositorioCompra repositorioCompra) {</span>
+<span class="fc" id="L11">        this.repositorioCompra = repositorioCompra;</span>
 
-    private static final String NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA = &quot;No se puede registrar el pedido, la scotter ya se encuentra reservada&quot;;
-
-<span class="fc" id="L15">    public ServicioCrearCompra(RepositorioCompra repositorioCompra) {</span>
-<span class="fc" id="L16">        this.repositorioCompra = repositorioCompra;</span>
-
-<span class="fc" id="L18">    }</span>
+<span class="fc" id="L13">    }</span>
 
     public Long ejecutar(Compra compra) {
-<span class="fc" id="L21">        validarExistenciaCompra(compra);</span>
-<span class="fc" id="L22">        return this.repositorioCompra.crear(compra);</span>
+<span class="fc" id="L16">          return this.repositorioCompra.crear(compra);</span>
     }
 
-    private void validarExistenciaCompra(Compra compra) {
-<span class="fc" id="L26">        boolean existeCompra = this.repositorioCompra.existe(compra.getScotter().getId());</span>
-<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (existeCompra) {</span>
-<span class="fc" id="L28">            throw new ExcepcionDuplicidad(NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA);</span>
-        }
-<span class="fc" id="L30">    }</span>
+
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

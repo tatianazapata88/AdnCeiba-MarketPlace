@@ -23,42 +23,46 @@ public class RepositorioCompraMysql implements RepositorioCompra {
     @SqlStatement(namespace = &quot;compra&quot;, value = &quot;existe&quot;)
     private static String sqlExiste;
 
-<span class="fc" id="L26">    public RepositorioCompraMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
-<span class="fc" id="L27">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L28">    }</span>
+    @SqlStatement(namespace = &quot;compra&quot;, value = &quot;reservarScotter&quot;)
+    private static String sqlReservar;
+
+<span class="fc" id="L29">    public RepositorioCompraMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="fc" id="L30">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L31">    }</span>
 
     @Override
     public Long crear(Compra compra) {
-<span class="fc" id="L32">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L33">        paramSource.addValue(&quot;fecha&quot;, compra.getFecha());</span>
-<span class="fc" id="L34">        paramSource.addValue(&quot;scotterId&quot;, compra.getScotter().getId());</span>
-<span class="fc" id="L35">        paramSource.addValue(&quot;compradorId&quot;, compra.getComprador().getId());</span>
-<span class="fc" id="L36">        paramSource.addValue(&quot;ciudadDestinoEnvioScotter&quot;, compra.getCiudadDestinoEnvioScotter());</span>
-<span class="fc" id="L37">        paramSource.addValue(&quot;flete&quot;, compra.getFlete());</span>
-<span class="fc" id="L38">        paramSource.addValue(&quot;precio&quot;, compra.getScotter().getPrecio());</span>
-<span class="fc" id="L39">        paramSource.addValue(&quot;descuento&quot;, compra.getDescuento());</span>
-<span class="fc" id="L40">        paramSource.addValue(&quot;total&quot;, compra.getTotal());</span>
-<span class="fc" id="L41">        KeyHolder keyHolder = new GeneratedKeyHolder();</span>
-<span class="fc" id="L42">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{&quot;id&quot;});</span>
-<span class="fc" id="L43">        return this.customNamedParameterJdbcTemplate.obtenerValueKey(keyHolder.getKey());</span>
+<span class="fc" id="L35">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L36">        paramSource.addValue(&quot;fecha&quot;, compra.getFecha());</span>
+<span class="fc" id="L37">        paramSource.addValue(&quot;scotterId&quot;, compra.getScotter().getId());</span>
+<span class="fc" id="L38">        paramSource.addValue(&quot;compradorId&quot;, compra.getComprador().getId());</span>
+<span class="fc" id="L39">        paramSource.addValue(&quot;ciudadDestinoEnvioScotter&quot;, compra.getCiudadDestinoEnvioScotter());</span>
+<span class="fc" id="L40">        paramSource.addValue(&quot;flete&quot;, compra.getFlete());</span>
+<span class="fc" id="L41">        paramSource.addValue(&quot;precio&quot;, compra.getScotter().getPrecio());</span>
+<span class="fc" id="L42">        paramSource.addValue(&quot;descuento&quot;, compra.getDescuento());</span>
+<span class="fc" id="L43">        paramSource.addValue(&quot;total&quot;, compra.getTotal());</span>
+<span class="fc" id="L44">        KeyHolder keyHolder = new GeneratedKeyHolder();</span>
+<span class="fc" id="L45">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{&quot;id&quot;});</span>
+<span class="fc" id="L46">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlReservar, paramSource);</span>
+<span class="fc" id="L47">        return this.customNamedParameterJdbcTemplate.obtenerValueKey(keyHolder.getKey());</span>
     }
 
     @Override
     public void eliminar(Long id) {
-<span class="fc" id="L48">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L49">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L52">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L53">        paramSource.addValue(&quot;id&quot;, id);</span>
 
-<span class="fc" id="L51">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
-<span class="fc" id="L52">    }</span>
+<span class="fc" id="L55">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
+<span class="fc" id="L56">    }</span>
 
     @Override
     public boolean existe(Long scotterId) {
-<span class="fc" id="L56">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L57">        parameterSource.addValue(&quot;scotterId&quot;, scotterId);</span>
-<span class="fc" id="L58">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, parameterSource, Boolean.class);</span>
+<span class="nc" id="L60">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L61">        parameterSource.addValue(&quot;scotterId&quot;, scotterId);</span>
+<span class="nc" id="L62">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, parameterSource, Boolean.class);</span>
     }
 }
 
 
 
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

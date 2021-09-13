@@ -10,22 +10,22 @@ public class ServicioCrearPersona {
 
     private static final String USERNAME_YA_REGISTRADO_EN_EL_SISTEMA = &quot;No se puede registrar la persona por que ya existe el username&quot;;
 
-<span class="fc" id="L13">    public ServicioCrearPersona(RepositorioPersona repositorioPersona) {</span>
+<span class="nc" id="L13">    public ServicioCrearPersona(RepositorioPersona repositorioPersona) {</span>
 
-<span class="fc" id="L15">        this.repositorioPersona = repositorioPersona;</span>
-<span class="fc" id="L16">    }</span>
+<span class="nc" id="L15">        this.repositorioPersona = repositorioPersona;</span>
+<span class="nc" id="L16">    }</span>
 
     public Long ejecutar(Persona persona) {
-<span class="fc" id="L19">        validarExistenciaUsername(persona);</span>
-<span class="fc" id="L20">        return this.repositorioPersona.crear(persona);</span>
+<span class="nc" id="L19">        validarExistenciaUsername(persona);</span>
+<span class="nc" id="L20">        return this.repositorioPersona.crear(persona);</span>
     }
 
     private void validarExistenciaUsername(Persona persona) {
-<span class="fc" id="L24">        boolean existeUsername = this.repositorioPersona.existe(persona.getUsername());</span>
-<span class="fc bfc" id="L25" title="All 2 branches covered.">        if (existeUsername) {</span>
-<span class="fc" id="L26">            throw new ExcepcionDuplicidad(USERNAME_YA_REGISTRADO_EN_EL_SISTEMA);</span>
+<span class="nc" id="L24">        boolean existeUsername = this.repositorioPersona.existe(persona.getUsername());</span>
+<span class="nc bnc" id="L25" title="All 2 branches missed.">        if (existeUsername) {</span>
+<span class="nc" id="L26">            throw new ExcepcionDuplicidad(USERNAME_YA_REGISTRADO_EN_EL_SISTEMA);</span>
         }
-<span class="fc" id="L28">    }</span>
+<span class="nc" id="L28">    }</span>
 }
 
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

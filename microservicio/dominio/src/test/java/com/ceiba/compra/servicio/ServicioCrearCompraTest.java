@@ -4,11 +4,10 @@ import com.ceiba.BasePrueba;
 import com.ceiba.compra.modelo.entidad.Compra;
 import com.ceiba.compra.puerto.repositorio.RepositorioCompra;
 import com.ceiba.compra.servicio.testdatabuilder.CompraTestDataBuilder;
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
+import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.persona.modelo.entidad.Persona;
 import com.ceiba.scotter.modelo.entidad.Scotter;
-import com.ceiba.scotter.servicio.testdatabuilder.ScotterTestDataBuilder;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,8 +31,8 @@ public class ServicioCrearCompraTest {
     private static final String CAMPO_SCOTTER_ES_OBLIGATORIO = "El campo scotter obligatorio no puede ir vacio";
     private static final String CAMPO_COMPRADOR_ES_OBLIGATORIO = "El campo Comprador es obligatorio no puede ir vacio";
     private static final String CAMPO_CIUDAD_DESTINO_SCOTTER_ES_OBLIGATORIO = "El campo ciudad destino  es obligatorio no puede ir vacio";
-    private static final String NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA = "No se puede registrar el pedido, la scotter ya se encuentra reservada";
-
+    private static final String CAMPO_FECHA_NO_PUEDE_SER_MENOR_A_LA_FECHA_ACTUAL = "La fecha no puede ser inferior a la fecha actual";
+    private static final String CAMPO_FECHA_NO_PUEDE_SER_MAYOR_A_5_DIAS_DE_LA_FECHA_ACTUAL = "La fecha no puede ser mayor a 5 dias despues a la fecha actual";
 
     @Mock
     private RepositorioCompra repositorioCompra;
@@ -49,33 +48,33 @@ public class ServicioCrearCompraTest {
     @Test
     public void validarCampoFechaNullTest() {
         // arrange
-        CompraTestDataBuilder compraTestDataBuilder = new CompraTestDataBuilder(null,SCOTTER,COMPRADOR,CIUDAD_DESTINO_ENVIO);
+        CompraTestDataBuilder compraTestDataBuilder = new CompraTestDataBuilder(null, SCOTTER, COMPRADOR, CIUDAD_DESTINO_ENVIO);
         // act - assert
-        BasePrueba.assertThrows(() ->compraTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_FECHA_ES_OBLIGATORIO);
+        BasePrueba.assertThrows(() -> compraTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_FECHA_ES_OBLIGATORIO);
     }
 
     @Test
     public void validarCampoScotterNullTest() {
         // arrange
-        CompraTestDataBuilder compraTestDataBuilder = new CompraTestDataBuilder(FECHA,null,COMPRADOR,CIUDAD_DESTINO_ENVIO);
+        CompraTestDataBuilder compraTestDataBuilder = new CompraTestDataBuilder(FECHA, null, COMPRADOR, CIUDAD_DESTINO_ENVIO);
         // act - assert
-        BasePrueba.assertThrows(() ->compraTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_SCOTTER_ES_OBLIGATORIO);
+        BasePrueba.assertThrows(() -> compraTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_SCOTTER_ES_OBLIGATORIO);
     }
 
     @Test
     public void validarCampoCompradorNullTest() {
         // arrange
-        CompraTestDataBuilder compraTestDataBuilder = new CompraTestDataBuilder(FECHA,SCOTTER,null,CIUDAD_DESTINO_ENVIO);
+        CompraTestDataBuilder compraTestDataBuilder = new CompraTestDataBuilder(FECHA, SCOTTER, null, CIUDAD_DESTINO_ENVIO);
         // act - assert
-        BasePrueba.assertThrows(() ->compraTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_COMPRADOR_ES_OBLIGATORIO);
+        BasePrueba.assertThrows(() -> compraTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_COMPRADOR_ES_OBLIGATORIO);
     }
 
     @Test
     public void validarCampoCiudadDestinoNullTest() {
         // arrange
-        CompraTestDataBuilder compraTestDataBuilder = new CompraTestDataBuilder(FECHA,SCOTTER,COMPRADOR,null);
+        CompraTestDataBuilder compraTestDataBuilder = new CompraTestDataBuilder(FECHA, SCOTTER, COMPRADOR, null);
         // act - assert
-        BasePrueba.assertThrows(() ->compraTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_CIUDAD_DESTINO_SCOTTER_ES_OBLIGATORIO);
+        BasePrueba.assertThrows(() -> compraTestDataBuilder.build(), ExcepcionValorObligatorio.class, CAMPO_CIUDAD_DESTINO_SCOTTER_ES_OBLIGATORIO);
     }
 
     @Test
@@ -115,22 +114,17 @@ public class ServicioCrearCompraTest {
     @Test
     public void validarDescuentoPagoTestDiferenteFecha() {
         // arrange
-        Compra compra = new CompraTestDataBuilder().conFecha(LocalDate.of(2021, 8, 2)).build();
+        Compra compra = new CompraTestDataBuilder().conFecha(LocalDate.of(2021, 9, 11)).build();
         //assert
         Assert.assertEquals(SIN_DESCUENTO, compra.getDescuento(), 0);
     }
 
     @Test
-    public void crearCompraValidarExistenciaTest() {
-        //arrange
-        Compra compra = new CompraTestDataBuilder().build();
-        RepositorioCompra repositorioCompra = Mockito.mock(RepositorioCompra.class);
-        Mockito.when(repositorioCompra.existe(Mockito.any())).thenReturn(true);
-        ServicioCrearCompra servicioCrearCompra = new ServicioCrearCompra(repositorioCompra);
-       // act - assert
-        BasePrueba.assertThrows(() -> servicioCrearCompra.ejecutar(compra), ExcepcionDuplicidad.class, NO_SE_PUEDE_REGISTRAR_PEDIDO_SCOTTER_YA_ESTA_RESERVADA);
-
-
+    public void validarTestFechaInferior() {
+        // arrange
+        CompraTestDataBuilder compraTestDataBuilder = new CompraTestDataBuilder(LocalDate.of(2021,9,01), SCOTTER, COMPRADOR, CIUDAD_DESTINO_ENVIO);
+        //assert
+        BasePrueba.assertThrows(() -> compraTestDataBuilder.build(), ExcepcionValorInvalido.class, CAMPO_FECHA_NO_PUEDE_SER_MENOR_A_LA_FECHA_ACTUAL);
 
     }
 
@@ -144,5 +138,5 @@ public class ServicioCrearCompraTest {
         String ciudadDestino = "bogota";
         // act - assert
         Assert.assertEquals(compra.getCiudadDestinoEnvioScotter(), ciudadDestino);
-        }
+    }
 }

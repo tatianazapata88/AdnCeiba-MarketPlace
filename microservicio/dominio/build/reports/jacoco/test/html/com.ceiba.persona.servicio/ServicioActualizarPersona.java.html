@@ -9,20 +9,20 @@ public class ServicioActualizarPersona {
 
     private final RepositorioPersona repositorioPersona;
 
-<span class="fc" id="L12">    public ServicioActualizarPersona(RepositorioPersona repositorioPersona) {</span>
-<span class="fc" id="L13">        this.repositorioPersona = repositorioPersona;</span>
-<span class="fc" id="L14">    }</span>
+<span class="nc" id="L12">    public ServicioActualizarPersona(RepositorioPersona repositorioPersona) {</span>
+<span class="nc" id="L13">        this.repositorioPersona = repositorioPersona;</span>
+<span class="nc" id="L14">    }</span>
 
     public void ejecutar(Persona persona) {
-<span class="fc" id="L17">        validarExistenciaUsername(persona);</span>
-<span class="fc" id="L18">        this.repositorioPersona.actualizar(persona);</span>
-<span class="fc" id="L19">    }</span>
+<span class="nc" id="L17">        validarExistenciaUsername(persona);</span>
+<span class="nc" id="L18">        this.repositorioPersona.actualizar(persona);</span>
+<span class="nc" id="L19">    }</span>
 
     private void validarExistenciaUsername(Persona persona) {
-<span class="fc" id="L22">        boolean existeRegistroUsername = this.repositorioPersona.existePorActualizar(persona.getUsername(), persona.getId());</span>
-<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (existeRegistroUsername) {</span>
-<span class="fc" id="L24">            throw new ExcepcionDuplicidad(USERNAME_YA_REGISTRADO_EN_EL_SISTEMA);</span>
+<span class="nc" id="L22">        boolean existeRegistroUsername = this.repositorioPersona.existePorActualizar(persona.getUsername(), persona.getId());</span>
+<span class="nc bnc" id="L23" title="All 2 branches missed.">        if (existeRegistroUsername) {</span>
+<span class="nc" id="L24">            throw new ExcepcionDuplicidad(USERNAME_YA_REGISTRADO_EN_EL_SISTEMA);</span>
         }
-<span class="fc" id="L26">    }</span>
+<span class="nc" id="L26">    }</span>
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

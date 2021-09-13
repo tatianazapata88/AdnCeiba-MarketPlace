@@ -1,9 +1,6 @@
 package com.ceiba.scotter.controlador;
 
-import com.ceiba.scotter.consulta.ManejadorBuscarCiudadScotter;
-import com.ceiba.scotter.consulta.ManejadorBuscarIdScotter;
-import com.ceiba.scotter.consulta.ManejadorBuscarPrecioScotter;
-import com.ceiba.scotter.consulta.ManejadorListarScotter;
+import com.ceiba.scotter.consulta.*;
 import com.ceiba.scotter.modelo.dto.DtoScotter;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -23,15 +20,18 @@ public class ConsultaControladorScotter {
     private final ManejadorListarScotter manejadorListarScotter;
     private final ManejadorBuscarCiudadScotter manejadorBuscarCiudadScotter;
     private final ManejadorBuscarPrecioScotter manejadorBuscarPrecioScotter;
+    private final ManejadorBuscarIdVendedor manejadorBuscarIdVendedor;
 
     public ConsultaControladorScotter(ManejadorBuscarIdScotter manejadorBuscarIdScotter,
                                       ManejadorListarScotter manejadorListarScotter,
                                       ManejadorBuscarCiudadScotter manejadorBuscarCiudadScotter,
-                                      ManejadorBuscarPrecioScotter manejadorBuscarPrecioScotter) {
+                                      ManejadorBuscarPrecioScotter manejadorBuscarPrecioScotter,
+                                      ManejadorBuscarIdVendedor manejadorBuscarIdVendedor) {
         this.manejadorBuscarIdScotter = manejadorBuscarIdScotter;
         this.manejadorListarScotter = manejadorListarScotter;
         this.manejadorBuscarCiudadScotter = manejadorBuscarCiudadScotter;
         this.manejadorBuscarPrecioScotter = manejadorBuscarPrecioScotter;
+        this.manejadorBuscarIdVendedor = manejadorBuscarIdVendedor;
     }
 
     @GetMapping
@@ -57,4 +57,12 @@ public class ConsultaControladorScotter {
     public List<DtoScotter> listar(@PathVariable double precio) {
         return this.manejadorBuscarPrecioScotter.ejecutar(precio);
     }
+
+    @GetMapping("/vendedor/{vendedor}")
+    @ApiOperation("Listar scotters por Id Vendedor")
+    public DtoScotter listarScotter(@PathVariable Long vendedor) {
+        return this.manejadorBuscarIdVendedor.ejecutar(vendedor);
+    }
+
 }
+

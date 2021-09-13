@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.scotter.servicio.ServicioEliminarScotterTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-20T21:00:46" hostname="LUZP-ZAPATA" time="0.002">
-  <properties/>
-  <testcase name="validarScotterRelacionadaPreviaTest" classname="com.ceiba.scotter.servicio.ServicioEliminarScotterTest" time="0.001"/>
-  <testcase name="validarScotterEliminarTest" classname="com.ceiba.scotter.servicio.ServicioEliminarScotterTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

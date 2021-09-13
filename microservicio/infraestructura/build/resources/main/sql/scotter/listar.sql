@@ -1,2 +1,2 @@
 select id,marca,modelo,precio,ciudad,vendedor,estado,foto
-from scotter
+from scotter where estado = 'DISPONIBLE';

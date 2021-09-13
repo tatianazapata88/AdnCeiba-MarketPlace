@@ -1,12 +1,3 @@
-com/ceiba/compra/servicio/testdatabuilder/CompraTestDataBuilder.java
- com.ceiba.compra.servicio.testdatabuilder.CompraTestDataBuilder
-com/ceiba/scotter/servicio/testdatabuilder/ScotterTestDataBuilder.java
- com.ceiba.scotter.servicio.testdatabuilder.ScotterTestDataBuilder
-com/ceiba/persona/servicio/testdatabuilder/PersonaTestDataBuilder.java
- com.ceiba.persona.servicio.testdatabuilder.PersonaTestDataBuilder
-com/ceiba/BasePrueba.java
- com.ceiba.BasePrueba
- com.ceiba.BasePrueba$Thunk
 com/ceiba/persona/servicio/ServicioActualizarPersonaTest.java
  com.ceiba.persona.servicio.ServicioActualizarPersonaTest
 com/ceiba/scotter/servicio/ServicioEliminarScotterTest.java
@@ -19,7 +10,16 @@ com/ceiba/persona/servicio/ServicioCreaPersonaTest.java
  com.ceiba.persona.servicio.ServicioCreaPersonaTest
 com/ceiba/compra/servicio/ServicioEliminarCompraTest.java
  com.ceiba.compra.servicio.ServicioEliminarCompraTest
+com/ceiba/persona/servicio/testdatabuilder/PersonaTestDataBuilder.java
+ com.ceiba.persona.servicio.testdatabuilder.PersonaTestDataBuilder
+com/ceiba/BasePrueba.java
+ com.ceiba.BasePrueba
+ com.ceiba.BasePrueba$Thunk
 com/ceiba/compra/servicio/ServicioCrearCompraTest.java
  com.ceiba.compra.servicio.ServicioCrearCompraTest
 com/ceiba/persona/servicio/ServicioEliminarPersonaTest.java
  com.ceiba.persona.servicio.ServicioEliminarPersonaTest
+com/ceiba/compra/servicio/testdatabuilder/CompraTestDataBuilder.java
+ com.ceiba.compra.servicio.testdatabuilder.CompraTestDataBuilder
+com/ceiba/scotter/servicio/testdatabuilder/ScotterTestDataBuilder.java
+ com.ceiba.scotter.servicio.testdatabuilder.ScotterTestDataBuilder

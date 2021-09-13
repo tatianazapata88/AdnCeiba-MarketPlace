@@ -32,7 +32,7 @@ public class ConsultaControladorScotterTest {
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(3)))
-                .andExpect(jsonPath("$[0].marca", is("enduro")));
+                .andExpect(jsonPath("$[0].marca", is("toyota")));
     }
 
     @Test
@@ -43,7 +43,7 @@ public class ConsultaControladorScotterTest {
         mocMvc.perform(get("/scotters/id/{id}", id)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("marca", is("enduro")));
+                .andExpect(jsonPath("marca", is("toyota")));
     }
 
     @Test
@@ -54,7 +54,7 @@ public class ConsultaControladorScotterTest {
         mocMvc.perform(get("/scotters/ciudad/{ciudad}", ciudad)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)));
+                .andExpect(jsonPath("$", hasSize(0)));
     }
 
     @Test
@@ -65,6 +65,17 @@ public class ConsultaControladorScotterTest {
         mocMvc.perform(get("/scotters/precio/{precio}", precio)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)));
+                .andExpect(jsonPath("$", hasSize(0)));
+    }
+
+    @Test
+    public void buscarIdVendedorTest() throws Exception {
+        // arrange
+        Long vendedor = 1L;
+        // act - assert
+        mocMvc.perform(get("/scotters/vendedor/{vendedor}", vendedor)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("marca", is("toyota")));
     }
 }

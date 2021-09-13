@@ -23,6 +23,9 @@ public class RepositorioCompraMysql implements RepositorioCompra {
     @SqlStatement(namespace = "compra", value = "existe")
     private static String sqlExiste;
 
+    @SqlStatement(namespace = "compra", value = "reservarScotter")
+    private static String sqlReservar;
+
     public RepositorioCompraMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
@@ -40,6 +43,7 @@ public class RepositorioCompraMysql implements RepositorioCompra {
         paramSource.addValue("total", compra.getTotal());
         KeyHolder keyHolder = new GeneratedKeyHolder();
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource, keyHolder, new String[]{"id"});
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlReservar, paramSource);
         return this.customNamedParameterJdbcTemplate.obtenerValueKey(keyHolder.getKey());
     }
 

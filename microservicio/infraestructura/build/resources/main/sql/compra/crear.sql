@@ -2,3 +2,5 @@ insert into compra (fecha,scotterId,compradorId,ciudadDestinoEnvioScotter,flete,
 values (:fecha, :scotterId, :compradorId,:ciudadDestinoEnvioScotter, :flete, :precio, :descuento, :total);
 
 
+
+
