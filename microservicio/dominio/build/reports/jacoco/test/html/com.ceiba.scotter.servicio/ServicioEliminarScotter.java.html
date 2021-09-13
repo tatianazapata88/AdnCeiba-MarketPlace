@@ -9,20 +9,20 @@ public class ServicioEliminarScotter {
 
     private final RepositorioScotter repositorioScotter;
 
-<span class="nc" id="L12">    public ServicioEliminarScotter(RepositorioScotter repositorioScotter) {</span>
-<span class="nc" id="L13">        this.repositorioScotter = repositorioScotter;</span>
-<span class="nc" id="L14">    }</span>
+<span class="fc" id="L12">    public ServicioEliminarScotter(RepositorioScotter repositorioScotter) {</span>
+<span class="fc" id="L13">        this.repositorioScotter = repositorioScotter;</span>
+<span class="fc" id="L14">    }</span>
 
     public void ejecutar(Long id) {
-<span class="nc" id="L17">        validarExistenciaPedido(id);</span>
-<span class="nc" id="L18">        this.repositorioScotter.eliminar(id);</span>
-<span class="nc" id="L19">    }</span>
+<span class="fc" id="L17">        validarExistenciaPedido(id);</span>
+<span class="fc" id="L18">        this.repositorioScotter.eliminar(id);</span>
+<span class="fc" id="L19">    }</span>
 
     private void validarExistenciaPedido(Long id) {
-<span class="nc" id="L22">        boolean existeRegistroPedido = this.repositorioScotter.existePorPedido(id);</span>
-<span class="nc bnc" id="L23" title="All 2 branches missed.">        if (existeRegistroPedido) {</span>
-<span class="nc" id="L24">            throw new ExcepcionRelacionado(SCOTTER_TIENE_REGISTRO_EN_UN_PEDIDO);</span>
+<span class="fc" id="L22">        boolean existeRegistroPedido = this.repositorioScotter.existePorPedido(id);</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (existeRegistroPedido) {</span>
+<span class="fc" id="L24">            throw new ExcepcionRelacionado(SCOTTER_TIENE_REGISTRO_EN_UN_PEDIDO);</span>
         }
-<span class="nc" id="L26">    }</span>
+<span class="fc" id="L26">    }</span>
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

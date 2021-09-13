@@ -25,7 +25,7 @@ public class Compra {
     private static final String CAMPO_FECHA_NO_PUEDE_SER_MAYOR_A_5_DIAS_DE_LA_FECHA_ACTUAL = &quot;La fecha no puede ser mayor a 5 dias despues a la fecha actual&quot;;
 
 
-<span class="nc" id="L28">    private Long id;</span>
+<span class="fc" id="L28">    private Long id;</span>
 <span class="nc" id="L29">    private LocalDate fecha;</span>
 <span class="nc" id="L30">    private Scotter scotter;</span>
 <span class="nc" id="L31">    private Persona comprador;</span>
@@ -89,7 +89,7 @@ public class Compra {
 <span class="pc bpc" id="L89" title="2 of 4 branches missed.">        } else if (diferenciaFechas &gt; 0 &amp;&amp; diferenciaFechas &lt;= 5) {</span>
 <span class="fc" id="L90">            return this.descuento = SIN_DESCUENTO;</span>
 <span class="nc bnc" id="L91" title="All 2 branches missed.">        } else if (diferenciaFechas &gt; 5) {</span>
-<span class="nc" id="L92">            throw new ExcepcionValorInvalido(CAMPO_FECHA_NO_PUEDE_SER_MENOR_A_LA_FECHA_ACTUAL);</span>
+<span class="nc" id="L92">            throw new ExcepcionValorInvalido(CAMPO_FECHA_NO_PUEDE_SER_MAYOR_A_5_DIAS_DE_LA_FECHA_ACTUAL);</span>
         }else{
 <span class="nc" id="L94">            return this.descuento = SIN_DESCUENTO;</span>
         }
@@ -107,4 +107,4 @@ public class Compra {
 }
 
 
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

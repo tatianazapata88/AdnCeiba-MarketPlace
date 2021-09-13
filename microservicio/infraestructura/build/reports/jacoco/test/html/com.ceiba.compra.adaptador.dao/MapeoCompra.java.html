@@ -8,23 +8,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-<span class="nc" id="L11">public class MapeoCompra implements RowMapper&lt;DtoCompra&gt;, MapperResult {</span>
+<span class="fc" id="L11">public class MapeoCompra implements RowMapper&lt;DtoCompra&gt;, MapperResult {</span>
 
     @Override
     public DtoCompra mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-<span class="nc" id="L16">        Long id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="nc" id="L17">        LocalDate fecha = extraerLocalDate(resultSet, &quot;fecha&quot;);</span>
-<span class="nc" id="L18">        Long scotterId = resultSet.getLong(&quot;scotterId&quot;);</span>
-<span class="nc" id="L19">        Long compradorId = resultSet.getLong(&quot;compradorId&quot;);</span>
-<span class="nc" id="L20">        String ciudadDestinoEnvioScotter = resultSet.getString(&quot;ciudadDestinoEnvioScotter&quot;);</span>
-<span class="nc" id="L21">        double flete = resultSet.getDouble(&quot;flete&quot;);</span>
-<span class="nc" id="L22">        double precio = resultSet.getDouble(&quot;precio&quot;);</span>
-<span class="nc" id="L23">        double descuento = resultSet.getDouble(&quot;descuento&quot;);</span>
-<span class="nc" id="L24">        double total = resultSet.getDouble(&quot;total&quot;);</span>
+<span class="fc" id="L16">        Long id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="fc" id="L17">        LocalDate fecha = extraerLocalDate(resultSet, &quot;fecha&quot;);</span>
+<span class="fc" id="L18">        Long scotterId = resultSet.getLong(&quot;scotterId&quot;);</span>
+<span class="fc" id="L19">        Long compradorId = resultSet.getLong(&quot;compradorId&quot;);</span>
+<span class="fc" id="L20">        String ciudadDestinoEnvioScotter = resultSet.getString(&quot;ciudadDestinoEnvioScotter&quot;);</span>
+<span class="fc" id="L21">        double flete = resultSet.getDouble(&quot;flete&quot;);</span>
+<span class="fc" id="L22">        double precio = resultSet.getDouble(&quot;precio&quot;);</span>
+<span class="fc" id="L23">        double descuento = resultSet.getDouble(&quot;descuento&quot;);</span>
+<span class="fc" id="L24">        double total = resultSet.getDouble(&quot;total&quot;);</span>
 
-<span class="nc" id="L26">        return new DtoCompra(id, fecha, scotterId, compradorId, ciudadDestinoEnvioScotter, flete, precio, descuento, total);</span>
+<span class="fc" id="L26">        return new DtoCompra(id, fecha, scotterId, compradorId, ciudadDestinoEnvioScotter, flete, precio, descuento, total);</span>
     }
 }
 
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

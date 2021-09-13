@@ -16,17 +16,17 @@ public class FabricaScotter {
 <span class="fc" id="L16">    }</span>
 
     public Scotter crear(ComandoScotter comandoScotter) {
-<span class="nc" id="L19">        Persona vendedor = repositorioPersona.obtenerPersonaPorId(comandoScotter.getId_vendedor());</span>
+<span class="fc" id="L19">        Persona vendedor = repositorioPersona.obtenerPersonaPorId(comandoScotter.getId_vendedor());</span>
 
-<span class="nc" id="L21">        return new Scotter(</span>
-<span class="nc" id="L22">                comandoScotter.getId(),</span>
-<span class="nc" id="L23">                comandoScotter.getMarca(),</span>
-<span class="nc" id="L24">                comandoScotter.getModelo(),</span>
-<span class="nc" id="L25">                comandoScotter.getPrecio(),</span>
-<span class="nc" id="L26">                comandoScotter.getCiudad(),</span>
+<span class="fc" id="L21">        return new Scotter(</span>
+<span class="fc" id="L22">                comandoScotter.getId(),</span>
+<span class="fc" id="L23">                comandoScotter.getMarca(),</span>
+<span class="fc" id="L24">                comandoScotter.getModelo(),</span>
+<span class="fc" id="L25">                comandoScotter.getPrecio(),</span>
+<span class="fc" id="L26">                comandoScotter.getCiudad(),</span>
                 vendedor,
-<span class="nc" id="L28">                comandoScotter.getFoto()</span>
+<span class="fc" id="L28">                comandoScotter.getFoto()</span>
         );
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
