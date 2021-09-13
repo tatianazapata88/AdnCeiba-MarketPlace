@@ -1,0 +1,35 @@
+<div class="container mt-2">
+  <div class="row center">
+    <div class="col-6">
+      <h3>Scooter</h3>
+      <form>
+          <label>Marca:</label>
+          <input validar type="text" id="imarca" name="marca" placeholder="Marca" class="form-control" [ngModel]="scooter.marca">
+          <br>
+          <label>Modelo:</label>
+          <input validar type="number" id="modelo" name="modelo" placeholder="Modelo" class="form-control"
+          [ngModel]="scooter.modelo">
+          <br>
+          <label>Precio:</label>
+          <input validar type="number" id="precio" name="precio" placeholder="Precio" class="form-control"
+          [ngModel]="scooter.precio">
+          <br>
+          <label>Ciudad de Ubicacion:</label>
+          <input validar type="text" id="ciudad" name="ciudad" placeholder="Ciudad" class="form-control" [ngModel]="scooter.ciudad">
+          <br>
+          <label>Foto:</label>
+          <input validar type="texto" id="foto" name="foto" placeholder="Url de la foto" class="form-control"
+          [ngModel]="scooter.foto">
+          <br><br>
+          <button class="btn btn-primary btn-fill" role="button" (click)="cerar()">Publicar Scooter</button>
+          <br>
+          <a class="btn btn-default btn-fill" role="button" [routerLink]="['/home']">Cancelar</a>
+
+
+      </form>
+    </div>
+    <div class="col-6  mt-5">
+      <img src="assets/img/scooter1.jpg" class="img-fluid w-100" alt="">
+    </div>
+  </div>
+</div>

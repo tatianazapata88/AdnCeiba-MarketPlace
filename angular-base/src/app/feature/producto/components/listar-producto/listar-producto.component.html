@@ -1,0 +1,35 @@
+<br>
+<div class="container align-center">
+    <div class="titulo">
+        <h3>Encuentra tu proxima Scooter</h3>
+    </div>
+   <div class="row"> 
+        <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Buscar por precio"  id="precio" name="precio" [(ngModel)]="precio">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Buscar por ciudad"  id="ciudad" name="ciudad" [(ngModel)]="ciudad">
+        </div>
+        <div>
+            <button class="btn btn-outline-secondary" type="button" id="buscarhost" (click)="searchdis()">Buscar</button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="card mb-3" style="max-width: 540px;" *ngFor="let item of listaProductos | async">
+        <div class="row no-gutters">
+          <div class="col-md-8" >
+            <img src="{{item.foto}}" alt="..." class="photo">
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <h5 class="card-title">{{item.precio}}</h5>
+              <p class="card-text">{{item.ciudad}}</p>
+              <input type="text" class="form-control invisible"  id="idScooter" name="idScooter" value={{item.id}}>
+            
+              <button type="button" class="btn btn-info btn-fill pull-right" [routerLink]="['/compra' , item.id]">Generar Orden de Compra</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container mt-5">
+  <div class="row center">
+    <div class="col-6">
+      <h3>Registrar Usuario</h3>
+      <form [formGroup]="UsuarioForm" (ngSubmit)="cerar()">
+        <label>Username</label>
+        <input validar type="text" id="username" name="username" placeholder="username" class="form-control"
+          formControlName="username">
+        <br>
+        <label>Nombre Completos y apellidos</label>
+        <input validar type="text" id="nombre" name="nombre" placeholder="Nombre completo y apellidos" class="form-control"
+          formControlName="nombre">
+        <br>
+        <label>Celular</label>
+        <input validar type="number" id="celular" name="celular" placeholder="Celular" class="form-control"
+              formControlName="celular">
+        <br>
+        <label>Email</label>
+        <input validar type="mail" id="email" name="email" placeholder="Email" class="form-control"
+              formControlName="email">
+        <br><br>        
+        <button class="btn btn-primary btn-fill" role="button">Crear Usuario</button>
+        <br>
+        <a  class="btn btn-default btn-fill" role="button" [routerLink]="['/home']">Cancelar</a>
+        
+
+
+      </form>
+    </div>
+    <div class="col-6  mt-5">
+      <img src="assets/img/scooter1.jpg" class="img-fluid w-100" alt="">
+    </div>
+  </div>
+</div>
