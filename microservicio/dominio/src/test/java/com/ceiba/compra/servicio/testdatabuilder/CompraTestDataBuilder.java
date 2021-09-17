@@ -13,6 +13,7 @@ public class CompraTestDataBuilder {
     public Persona comprador;
     private String ciudadDestinoEnvioScotter;
 
+
     public CompraTestDataBuilder() {
         fecha = LocalDate.now();
         scotter = new Scotter(1L, "honda", "2021", 1000000, "medellin", new Persona(1l, "taty", "Luz Tatiana", "3135151617", "taty@gmail.com"), "esta");
@@ -38,6 +39,7 @@ public class CompraTestDataBuilder {
         this.fecha = fecha;
         return this;
     }
+
 
     public CompraTestDataBuilder conCiudadDestino(String ciudadDestinoEnvioScotter) {
         this.ciudadDestinoEnvioScotter = ciudadDestinoEnvioScotter;
