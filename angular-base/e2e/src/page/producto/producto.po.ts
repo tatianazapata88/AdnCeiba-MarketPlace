@@ -2,10 +2,11 @@ import { by, element } from 'protractor';
 
 export class ProductoPage {
     private linkCrearProducto = element(by.id('linkCrearProducto'));
-    private linkListarProductos = element(by.id('linkListarProducto'));
-    private inputIdProducto = element(by.id('idProducto'));
-    private inputDescripcionProducto = element(by.id('descripcionProducto'));
-    private listaProductos = element.all(by.css('ul.productos li'));
+    private linkListarProductos = element(by.id('buscar'));
+    private inputPrecioScooter = element(by.id('precio'));
+    private inputCiudadScooter = element(by.id('ciudad'));
+    private listaProductos = element.all(by.id('idScooter'));
+    
 
     async clickBotonCrearProductos() {
         await this.linkCrearProducto.click();
@@ -15,15 +16,15 @@ export class ProductoPage {
         await this.linkListarProductos.click();
     }
 
-    async ingresarId(idProducto) {
-        await this.inputIdProducto.sendKeys(idProducto);
+    async ingresaPrecio(precio) {
+        await this.inputPrecioScooter.sendKeys(precio);
     }
 
-    async ingresarDescripcion(descripcionProducto) {
-        await this.inputDescripcionProducto.sendKeys(descripcionProducto);
+    async ingresarCiudad(ciudad) {
+        await this.inputCiudadScooter.sendKeys(ciudad);
     }
 
-    async contarProductos() {
+    async contarScooters() {
         return this.listaProductos.count();
     }
 }

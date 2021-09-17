@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('Angular Seed');
+  it('Deberia mostrar mensaje de bienvenida a la app', () => {
+    page.navigateTo('/');
+    expect(page.getTitleTextbyCss('app-root h1')).toEqual('Scooter Planet');
   });
 
   afterEach(async () => {
