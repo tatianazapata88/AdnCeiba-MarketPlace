@@ -12,4 +12,6 @@ export class AppPage {
   getTitleTextbyCss(s: string) {
     return element(by.css(s)).getText() as Promise<string>;
   }
+
+
 }

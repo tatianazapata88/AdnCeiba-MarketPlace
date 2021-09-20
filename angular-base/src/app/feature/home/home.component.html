@@ -4,10 +4,10 @@
       <h3 id="h3">Bienvenido a Scooter Planet</h3>
       <form class="mt-5">
         <input type="text" class="form-control" placeholder="username" id="username" name="username" [(ngModel)]="username" required><br>
-        <a class="btn btn-primary btn-md btn-fill" role="button" aria-pressed="true"
+        <a class="btn btn-primary btn-md btn-fill" role="button" aria-pressed="true" id="btnIngresar"
          (click)="login()">Ingresar</a>
         <br><br>
-        <button class="btn btn-primary btn-fill btn-rounded" type="button" [routerLink]="['/usuario/crear']">Crear Usuario</button>
+        <button class="btn btn-primary btn-fill btn-rounded" type="button" [routerLink]="['/usuario/crear']" id="btnCrear">Crear Usuario</button>
       </form>
     </div>
     <div class="col-6">

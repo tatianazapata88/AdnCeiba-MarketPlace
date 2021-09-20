@@ -2,18 +2,19 @@ import { by, element } from 'protractor';
 
 export class ProductoPage {
     private linkCrearProducto = element(by.id('linkCrearProducto'));
-    private linkListarProductos = element(by.id('buscar'));
+    private linkBuscarScooters = element(by.id('buscar'));
     private inputPrecioScooter = element(by.id('precio'));
     private inputCiudadScooter = element(by.id('ciudad'));
     private listaProductos = element.all(by.id('idScooter'));
-    
+
+    ;
 
     async clickBotonCrearProductos() {
         await this.linkCrearProducto.click();
     }
 
-    async clickBotonListarProductos() {
-        await this.linkListarProductos.click();
+    async clickBotonBuscarScooters() {
+        await this.linkBuscarScooters.click();
     }
 
     async ingresaPrecio(precio) {

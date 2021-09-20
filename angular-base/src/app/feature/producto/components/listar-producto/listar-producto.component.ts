@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductoService } from '@producto/shared/service/producto.service';
 import { Producto } from '@producto/shared/model/producto';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-listar-producto',
@@ -27,9 +28,10 @@ export class ListarProductoComponent implements OnInit {
      this.listaProductos=this.productoService.consultarPorCiudad(this.ciudad);
     }
     else{
+      Swal.fire('Por favor buscar por precio o ciudad, intentalo de nuevo')
       location.reload();
     }
-    this.precio = "";
+    this.precio = ""; 
     this.ciudad = "";
    }
 

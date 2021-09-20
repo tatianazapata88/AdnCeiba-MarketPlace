@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="row center">
     <div class="col-6">
-      <h3>Registrar Usuario</h3>
+      <h3 id="h3">Registrar Usuario</h3>
       <form [formGroup]="UsuarioForm" (ngSubmit)="cerar()">
         <label>Username</label>
         <input validar type="text" id="username" name="username" placeholder="username" class="form-control"
@@ -19,9 +19,9 @@
         <input validar type="mail" id="email" name="email" placeholder="Email" class="form-control"
               formControlName="email">
         <br><br>        
-        <button class="btn btn-primary btn-fill" role="button">Crear Usuario</button>
+        <button class="btn btn-primary btn-fill" role="button" id="btnCrear">Crear Usuario</button>
         <br>
-        <a  class="btn btn-default btn-fill" role="button" [routerLink]="['/home']">Cancelar</a>
+        <a  class="btn btn-default btn-fill" role="button" [routerLink]="['/home']" id="btnCancelar">Cancelar</a>
         
 
 
