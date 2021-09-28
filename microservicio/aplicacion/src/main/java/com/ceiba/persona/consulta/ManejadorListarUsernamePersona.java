@@ -13,6 +13,8 @@ public class ManejadorListarUsernamePersona {
     }
 
     public DtoPersona ejecutar(String username) {
+
+
         return this.daoPersona.listarUsername(username);
     }
 }

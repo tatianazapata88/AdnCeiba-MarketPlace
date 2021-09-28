@@ -60,7 +60,8 @@ public class ConsultaControladorScotter {
 
     @GetMapping("/vendedor/{vendedor}")
     @ApiOperation("Listar scotters por Id Vendedor")
-    public DtoScotter listarScotter(@PathVariable Long vendedor) {
+    public List<DtoScotter> listarScotter(@PathVariable Long vendedor) {
+
         return this.manejadorBuscarIdVendedor.ejecutar(vendedor);
     }
 

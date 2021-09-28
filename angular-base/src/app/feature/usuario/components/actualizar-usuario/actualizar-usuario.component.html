@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row center">
       <div class="col-6">
-        <h3>Actualizar Datos</h3>
+        <h3 id="h3">Actualizar Datos</h3>
         <form>
           <label>Username</label>
           <input validar type="text" disabled id="username" name="username" placeholder="username" class="form-control"
@@ -21,12 +21,10 @@
           <input validar type="text"  id="id" name="id" class="form-control invisible"
           [(ngModel)]="user.id">
           <br>        
-          <button class="btn btn-primary btn-fill" role="button" (click)="cerar()">Actualizar Usuario</button>
+          <button class="btn btn-primary btn-fill" role="button" (click)="cerar()" id="btnActUser">Actualizar Usuario</button>
           <br>
-          <a  class="btn btn-default btn-fill" role="button" [routerLink]="['/producto/listar']">Cancelar</a>
-          
-  
-  
+          <a  class="btn btn-default btn-fill" role="button" [routerLink]="['producto/listar']" id="btnCancelar">Cancelar</a>
+      
         </form>
       </div>
       <div class="col-6  mt-5">

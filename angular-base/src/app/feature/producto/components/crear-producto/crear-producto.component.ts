@@ -23,12 +23,12 @@ export class CrearProductoComponent implements OnInit {
  ngOnInit() {
   let recuperarStorage = JSON.parse( localStorage.getItem("datosSesion"));
   this.vendedor=recuperarStorage;
-  this.productoServices.consultarPorIdVendedor(this.vendedor.id).subscribe()
-  console.log(this.datosScooter)
+  /*this.productoServices.consultarPorIdVendedor(this.vendedor.id).subscribe()
+  console.log(this.datosScooter)*/
  
   }
 
-  cerar() {
+  cerar(){
     this.scooter.vendedor=this.vendedor;
     this.productoServices.guardar(this.scooter).subscribe(() => {
       Swal.fire({
@@ -38,6 +38,7 @@ export class CrearProductoComponent implements OnInit {
         showConfirmButton: false,
         timer: 4000
       })
+      console.log(this.scooter)
      },
     (error) =>{
       Swal.fire({

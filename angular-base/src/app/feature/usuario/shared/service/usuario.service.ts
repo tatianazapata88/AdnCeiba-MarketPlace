@@ -22,6 +22,7 @@ export class UsuarioService {
     return this.http.doGet<Usuario>(`${environment.endpoint}/personas/username/${username}`, this.http.optsName('Listar Personas por username'));
   }
 
+  
   public actualizar(usuario: Usuario) {
     return this.http.doPut<Usuario, boolean>(`${environment.endpoint}/personas/${usuario.username}`, usuario,
                                                 this.http.optsName('Actualizar Persona'));

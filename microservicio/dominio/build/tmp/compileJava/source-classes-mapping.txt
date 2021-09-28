@@ -16,8 +16,8 @@ com/ceiba/scotter/puerto/repositorio/RepositorioScotter.java
  com.ceiba.scotter.puerto.repositorio.RepositorioScotter
 com/ceiba/compra/puerto/dao/DaoCompra.java
  com.ceiba.compra.puerto.dao.DaoCompra
-com/ceiba/scotter/puerto/dao/DaoScotter.java
- com.ceiba.scotter.puerto.dao.DaoScotter
+com/ceiba/compra/puerto/repositorio/RepositorioCompra.java
+ com.ceiba.compra.puerto.repositorio.RepositorioCompra
 com/ceiba/scotter/servicio/ServicioCrearScotter.java
  com.ceiba.scotter.servicio.ServicioCrearScotter
 com/ceiba/persona/puerto/dao/DaoPersona.java
@@ -37,5 +37,5 @@ com/ceiba/persona/servicio/ServicioActualizarPersona.java
  com.ceiba.persona.servicio.ServicioActualizarPersona
 com/ceiba/compra/servicio/ServicioEliminarCompra.java
  com.ceiba.compra.servicio.ServicioEliminarCompra
-com/ceiba/compra/puerto/repositorio/RepositorioCompra.java
- com.ceiba.compra.puerto.repositorio.RepositorioCompra
+com/ceiba/scotter/puerto/dao/DaoScotter.java
+ com.ceiba.scotter.puerto.dao.DaoScotter

@@ -1,37 +1,31 @@
 import { by, element } from 'protractor';
 
-export class CrearUsuarioPage {
-    private linkCrearUsuario = element(by.id('btnCrear'));
+export class ActualizarUsuarioPage {
+    private linkActualizarUsuario = element(by.id('btnActUser'));
     private linkCancelar = element(by.id('btnCancelar'));
-    private inputUsername = element(by.id('username'));
     private inputNombre = element(by.id('nombre'));
     private inputCelular = element(by.id('celular'));
     private inputEmail = element(by.id('email'));
-     
+    
+   ;
 
-    ;
-
-    async clickBotonCrearUsuario() {
-        await this.linkCrearUsuario.click();
+    async clickBotonActualizarUsuario() {
+        await this.linkActualizarUsuario.click();
     }
 
     async clickBotonCancelar() {
         await this.linkCancelar.click();
     }
 
-    async ingresarUsername(username) {
-        await this.inputUsername.sendKeys(username);
-    }
-
-    async ingresarNombres(nombre) {
+    async actualizarNombres(nombre) {
         await this.inputNombre.sendKeys(nombre);
     }
 
-    async ingresarCelular(celular) {
+    async actualizarCelular(celular) {
         await this.inputCelular.sendKeys(celular);
     }
 
-    async ingresarEmail(email) {
+    async actualizarEmail(email) {
         await this.inputEmail.sendKeys(email);
     }
 

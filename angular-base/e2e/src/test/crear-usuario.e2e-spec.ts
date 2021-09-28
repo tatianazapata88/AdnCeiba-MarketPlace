@@ -1,8 +1,6 @@
-import { browser, logging } from 'protractor';
+import { browser} from 'protractor';
 import { AppPage } from '../app.po';
 import { CrearUsuarioPage } from '../page/crearUsuario/crear-usuario.po';
-
-
 
 describe('workspace-project Crear Usuario', () => {
     let page: AppPage;
@@ -15,44 +13,70 @@ describe('workspace-project Crear Usuario', () => {
     });
 
   
-    it('Deberia crear usuario y direccionar al ingreso', async () => {
-        await crearUsuario.ingresarUsername(Math.random().toString(10).slice(-5));
-        await crearUsuario.ingresarNombres(Math.random().toString(10).slice(-5));
-        await crearUsuario.ingresarCelular(Math.random().toString(10).slice(-5));
-        await crearUsuario.ingresarEmail(Math.random().toString(15).slice(-5));
-        await crearUsuario.clickBotonCrearUsuario();
+    it('Deberia crear usuario y direccionar al ingreso',  () => {
+         crearUsuario.ingresarUsername(Math.random().toString(10).slice(-5));
+         crearUsuario.ingresarNombres(Math.random().toString(10).slice(-5));
+         crearUsuario.ingresarCelular(Math.random().toString(10).slice(-5));
+         crearUsuario.ingresarEmail(Math.random().toString(15).slice(-5));
+         crearUsuario.clickBotonCrearUsuario();
 
         expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'home');
         
     });
-/*
-    it('Deberia ingresar a crear usuario', async () => {
-        await home.ingresaUsername('');
-        await home.clickBotonCrearUsuario();
 
-        expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'usuario/crear');
+    it('Deberia direccionar al usuario al ingreso despues de dar click cancelar', () => {
+       crearUsuario.clickBotonCancelar();
+       
+            expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'home');
         
     });
 
-    it('No Deberia ingresar si el username no existe', async () => {
-        await home.ingresaUsername('otro');
-        await home.clickBotonIngresar();
+    it('Deberia salir mensaje de validacion error campo vacio username', async () => {
+       try {
+        await crearUsuario.ingresarUsername('');
+        await crearUsuario.ingresarNombres(Math.random().toString(10).slice(-5));
+        await crearUsuario.ingresarCelular(Math.random().toString(10).slice(-5));
+        await crearUsuario.ingresarEmail(Math.random().toString(15).slice(-5));
+        await crearUsuario.clickBotonCrearUsuario();
+        expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'usuario/crear');
+       } catch (error) {
+        expect(browser.console.error().error.mensaje).toEqual(error.error.mensaje);
+       }
        
     });
-*/
+    it('Deberia salir mensaje de validacion error campo vacionombre', async () => {
+      try {
+       await crearUsuario.ingresarUsername(Math.random().toString(10).slice(-5));
+       await crearUsuario.ingresarNombres('');
+       await crearUsuario.ingresarCelular(Math.random().toString(10).slice(-5));
+       await crearUsuario.ingresarEmail(Math.random().toString(15).slice(-5));
+       await crearUsuario.clickBotonCrearUsuario();
+       expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'usuario/crear');
+      } catch (error) {
+       expect(browser.console.error().error.mensaje).toEqual(error.error.mensaje);
+      }
+      
+   });
 
-    it('Deberia mostrar mensaje de bienvenida a creacion Usuario', async () => {
-       await expect(page.getTitleTextbyId('h3')).toEqual('Registrar Usuario');
+    it('Deberia salir mensaje de validacion error todos los campos vacios ', async () => {
+      try {
+       await crearUsuario.ingresarUsername('');
+       await crearUsuario.ingresarNombres('');
+       await crearUsuario.ingresarCelular('');
+       await crearUsuario.ingresarEmail('');
+       await crearUsuario.clickBotonCrearUsuario();
+       expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'usuario/crear');
+      } catch (error) {
+       expect(browser.console.error().error.mensaje).toEqual(error.error.mensaje);
+      }
+      
+   });
+
+    it('Deberia mostrar mensaje de bienvenida a creacion Usuario',  () => {
+       expect(page.getTitleTextbyId('h3')).toEqual('Registrar Usuario');
       });
     
-     
-      afterEach(async () => {
-        // Assert that there are no errors emitted from the browser
-        const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-        expect(logs).not.toContain(jasmine.objectContaining({
-          level: logging.Level.SEVERE,
-        } as logging.Entry));
-      });
+  
    
      
 });

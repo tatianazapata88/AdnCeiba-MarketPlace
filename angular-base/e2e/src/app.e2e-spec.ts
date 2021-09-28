@@ -1,11 +1,16 @@
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { browser} from 'protractor';
+import { NavbarPage } from './page/navbar/navbar.po';
+
 
 describe('workspace-project App', () => {
   let page: AppPage;
+  let navBar: NavbarPage;
 
   beforeEach(() => {
     page = new AppPage();
+    navBar = new NavbarPage();
+ 
   });
 
   it('Deberia mostrar mensaje de bienvenida a la app', () => {
@@ -13,11 +18,37 @@ describe('workspace-project App', () => {
     expect(page.getTitleTextbyCss('app-root h1')).toEqual('Scooter Planet');
   });
 
-  afterEach(async () => {
-    // Assert that there are no errors emitted from the browser
-    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-    expect(logs).not.toContain(jasmine.objectContaining({
-      level: logging.Level.SEVERE,
-    } as logging.Entry));
+  it('Deberia enviar al ingreso de la app al dar click navbar salir' , async () => {
+    await page.navigateTo('/');
+    await navBar.clickLinkSalir();
+
+    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'home');
+
   });
+
+  it('Deberia enviar al ingreso de la app al dar click navbar comprar' , async () => {
+    await page.navigateTo('/');
+    await navBar.clickLinkComprar();
+
+    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'producto/listar');
+
+  });
+
+  it('Deberia enviar al ingreso de la app al dar click navbar vender' , async () => {
+    await page.navigateTo('/');
+    await navBar.clickLinkVender();
+
+    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'producto/crear');
+
+  });
+
+  it('Deberia enviar al ingreso de la app al dar click navbar perfil' , async () => {
+    await page.navigateTo('/');
+    await navBar.clickLinkPerfil();
+
+    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'usuario/actualizar');
+
+  });
+
+ 
 });

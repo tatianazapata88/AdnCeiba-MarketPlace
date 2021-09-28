@@ -25,14 +25,17 @@ public user: Usuario= new Usuario();
   login(){
    this.usuarioServices.consultarUsername(this.username).subscribe(data => {
     this.user=data;
+    console.log(data)
+    
     localStorage.setItem("datosSesion", JSON.stringify(data));
     this.router.navigate(['/producto/listar']);
 
   }, () => 
+      
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Username no valido, favor crear cuenta',
+          text: 'Usuario no existe, crear cuenta',
        }));
   
     

@@ -1,4 +1,4 @@
-import { browser, logging } from 'protractor';
+import { browser } from 'protractor';
 import { AppPage } from '../app.po';
 import { HomePage } from '../page/home/home.po';
 
@@ -15,11 +15,27 @@ describe('workspace-project Ingreso', () => {
 
   
     it('Deberia ingresar si el username existe', async () => {
+      
+        try {
         await home.ingresaUsername('taty');
         await home.clickBotonIngresar();
+        expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'producto/listar');  
+        } catch (error) {
+            expect(browser.console.error().error.mensaje).toEqual(error.error.mensaje)
+        }
+                
+    });
 
-        expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'producto/listar');
-        
+    it('Deberia quedarse en home si el username no existe', async () => {
+      
+        try {
+        await home.ingresaUsername('otro');
+        await home.clickBotonIngresar();
+        expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'home');  
+        } catch (error) {
+            expect(browser.console.error().error.mensaje).toEqual(error.error.mensaje)
+        }
+                
     });
 
     it('Deberia ingresar a crear usuario', async () => {
@@ -29,26 +45,10 @@ describe('workspace-project Ingreso', () => {
         expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'usuario/crear');
         
     });
-/*
-    it('No Deberia ingresar si el username no existe', async () => {
-        await home.ingresaUsername('otro');
-        await home.clickBotonIngresar();
-       
-    });
-*/
 
-    it('Deberia mostrar mensaje de bienvenida al ingreso', async () => {
-       await expect(page.getTitleTextbyId('h3')).toEqual('Bienvenido a Scooter Planet');
+    it('Deberia mostrar mensaje de bienvenida al ingreso',  () => {
+         expect(page.getTitleTextbyId('h3')).toEqual('Bienvenido a Scooter Planet');
       });
+          
     
-     
-      afterEach(async () => {
-        // Assert that there are no errors emitted from the browser
-        const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-        expect(logs).not.toContain(jasmine.objectContaining({
-          level: logging.Level.SEVERE,
-        } as logging.Entry));
-      });
-   
-     
 });
