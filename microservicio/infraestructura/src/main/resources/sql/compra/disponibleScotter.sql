@@ -1,0 +1,1 @@
+update scotter set estado = 'DISPONIBLE' where id = :scotterId;

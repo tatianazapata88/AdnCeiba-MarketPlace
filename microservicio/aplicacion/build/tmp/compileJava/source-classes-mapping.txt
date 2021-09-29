@@ -26,8 +26,8 @@ com/ceiba/scotter/comando/fabrica/FabricaScotter.java
  com.ceiba.scotter.comando.fabrica.FabricaScotter
 com/ceiba/persona/comando/manejador/ManejadorActualizarPersona.java
  com.ceiba.persona.comando.manejador.ManejadorActualizarPersona
-com/ceiba/compra/consulta/ManejadorListarCompra.java
- com.ceiba.compra.consulta.ManejadorListarCompra
+com/ceiba/scotter/consulta/ManejadorBuscarPrecioScotter.java
+ com.ceiba.scotter.consulta.ManejadorBuscarPrecioScotter
 com/ceiba/compra/comando/manejador/ManejadorCrearCompra.java
  com.ceiba.compra.comando.manejador.ManejadorCrearCompra
 com/ceiba/scotter/comando/ComandoScotter.java
@@ -42,5 +42,7 @@ com/ceiba/scotter/consulta/ManejadorListarScotter.java
  com.ceiba.scotter.consulta.ManejadorListarScotter
 com/ceiba/scotter/consulta/ManejadorBuscarIdVendedor.java
  com.ceiba.scotter.consulta.ManejadorBuscarIdVendedor
-com/ceiba/scotter/consulta/ManejadorBuscarPrecioScotter.java
- com.ceiba.scotter.consulta.ManejadorBuscarPrecioScotter
+com/ceiba/compra/consulta/ManejadorListarCompra.java
+ com.ceiba.compra.consulta.ManejadorListarCompra
+com/ceiba/compra/consulta/ManejadorListarIdCompra.java
+ com.ceiba.compra.consulta.ManejadorListarIdCompra

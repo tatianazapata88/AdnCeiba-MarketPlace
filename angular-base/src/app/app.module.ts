@@ -10,6 +10,7 @@ import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CompraComponent } from './feature/compra/compra.component';
+import { BoletoCompraComponent } from './feature/boleto-compra/boleto-compra.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { CompraComponent } from './feature/compra/compra.component';
     AppComponent,
     HomeComponent,
     CompraComponent,
+    BoletoCompraComponent,
    
   ],
   imports: [

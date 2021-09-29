@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div class="row center">
+      <div class="col-6">
+        <h3 id="h3">Boleto Compra</h3>
+        <form>
+          <label>Fecha Compra</label>
+          <input validar type="date" disabled id="fecha" name="fecha" placeholder="fecha" class="form-control"
+          [(ngModel)]="compra.fecha">
+          <label>Scooter Id</label>
+          <input validar type="number" disabled id="scooterId" name="scooterId"  class="form-control"
+          [(ngModel)]="compra.scotterId">
+          <label>Ciudad de Destino</label>
+          <input validar type="text" disabled id="ciudadDestinoEnvioScotter" name="ciudadDestinoEnvioScotter" class="form-control"
+          [(ngModel)]="compra.ciudadDestinoEnvioScotter">
+          <label>Valor Flete</label>
+          <input validar type="number" disabled id="flete" name="flete" placeholder="flete" class="form-control"
+          [(ngModel)]="compra.flete">
+          <label>Precio Scooter</label>
+          <input validar type="number" disabled id="precio" name="precio"  class="form-control"
+          [(ngModel)]="compra.precio">
+          <label>Descuento pronto Pago</label>
+          <input validar type="number" disabled id="descuento" name="descuento"  class="form-control"
+          [(ngModel)]="compra.descuento">
+          <label>Total a Pagar</label>
+          <input validar type="number" disabled id="total" name="total"  class="form-control"
+          [(ngModel)]="compra.total">
+          <input validar type="text"  id="id" name="id" class="form-control invisible"
+          [(ngModel)]="compra.id">
+                 
+          <button class="btn btn-primary btn-fill" role="button" (click)="pagar()" id="btnPagar">Ir a Pagar</button>
+          <br>
+          <a  class="btn btn-warning btn-fill" role="button" (click)="eliminar(this.compra)" id="btnEliminar">Eliminar orden de Compra</a>
+      
+        </form>
+      </div>
+      <div class="col-6  mt-5">
+        <img src="assets/img/scooter3.jpg" class="img-fluid w-100" alt="">
+      </div>
+    </div>
+  </div>

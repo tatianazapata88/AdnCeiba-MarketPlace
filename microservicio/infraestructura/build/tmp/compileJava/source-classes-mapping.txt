@@ -32,7 +32,7 @@ com/ceiba/scotter/controlador/ComandoControladorScotter.java
  com.ceiba.scotter.controlador.ComandoControladorScotter
 com/ceiba/compra/controlador/ConsultaControladorCompra.java
  com.ceiba.compra.controlador.ConsultaControladorCompra
-com/ceiba/compra/adaptador/repositorio/RepositorioCompraMysql.java
- com.ceiba.compra.adaptador.repositorio.RepositorioCompraMysql
 com/ceiba/compra/adaptador/dao/DaoCompraMysql.java
  com.ceiba.compra.adaptador.dao.DaoCompraMysql
+com/ceiba/compra/adaptador/repositorio/RepositorioCompraMysql.java
+ com.ceiba.compra.adaptador.repositorio.RepositorioCompraMysql

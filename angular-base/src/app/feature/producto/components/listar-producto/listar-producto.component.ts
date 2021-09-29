@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { ProductoService } from '@producto/shared/service/producto.service';
 import { Producto } from '@producto/shared/model/producto';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-producto',
@@ -13,8 +14,9 @@ export class ListarProductoComponent implements OnInit {
   public listaProductos: Observable<Producto[]>;
   precio: any;
   ciudad: any;
+  idCompra: any;
 
-  constructor(protected productoService: ProductoService) { }
+  constructor(protected productoService: ProductoService, protected router: Router) { }
 
   ngOnInit() {
     this.listaProductos = this.productoService.consultar();
@@ -33,6 +35,10 @@ export class ListarProductoComponent implements OnInit {
     }
     this.precio = ""; 
     this.ciudad = "";
+   }
+
+   boleto(){
+    this.router.navigate([`/boleto/${this.idCompra}`]);
    }
 
 }

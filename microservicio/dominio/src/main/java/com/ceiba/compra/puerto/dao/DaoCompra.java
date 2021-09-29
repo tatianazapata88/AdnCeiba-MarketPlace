@@ -8,4 +8,5 @@ public interface DaoCompra {
 
     List<DtoCompra> listar();
 
+    DtoCompra listarId(Long id);
 }

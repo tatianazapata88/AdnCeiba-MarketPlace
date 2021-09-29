@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Producto } from '@producto/shared/model/producto';
 import { ProductoService } from '@producto/shared/service/producto.service';
 import { Usuario } from '@usuario/shared/model/usuario';
@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { Compra } from './shared/model/compra';
 import { CompraService } from './shared/service/compra.service';
+
+
 
 @Component({
   selector: 'app-compra',
@@ -21,11 +23,11 @@ export class CompraComponent implements OnInit {
   ciudadDestinoEnvioScotter: any;
   fecha1 = Date.now;
   fecha: Date =new Date();
-  router: any;
+  
   
 
   //constructor(private productoService: ProductoService,  private activatedRoute: ActivatedRoute) { }
-  constructor(private productoService: ProductoService,private compraService: CompraService, private activatedRoute: ActivatedRoute){}
+  constructor(protected router: Router,private productoService: ProductoService,private compraService: CompraService, private activatedRoute: ActivatedRoute){}
   ngOnInit(): void {
     let recuperarStorage = JSON.parse( localStorage.getItem("datosSesion"));
     this.comprador=recuperarStorage;
@@ -56,7 +58,8 @@ export class CompraComponent implements OnInit {
       showConfirmButton: false,
       timer: 4000
     })
-   // this.router.navigate(['/home']);
+    this.router.navigate([`/producto/listar`]);
+    
   },
   (error) =>{
     Swal.fire({

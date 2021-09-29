@@ -4,17 +4,23 @@ import com.ceiba.scotter.modelo.dto.DtoScotter;
 import com.ceiba.scotter.puerto.dao.DaoScotter;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class ManejadorBuscarIdVendedor {
     private final DaoScotter daoScotter;
 
-<span class="fc" id="L11">    public ManejadorBuscarIdVendedor(DaoScotter daoScotter) {</span>
-<span class="fc" id="L12">        this.daoScotter = daoScotter;</span>
-<span class="fc" id="L13">    }</span>
+<span class="fc" id="L13">    public ManejadorBuscarIdVendedor(DaoScotter daoScotter) {</span>
+<span class="fc" id="L14">        this.daoScotter = daoScotter;</span>
+<span class="fc" id="L15">    }</span>
 
-    public DtoScotter ejecutar(Long vendedor) {
-<span class="nc" id="L16">        return this.daoScotter.buscarIdVendedor(vendedor);</span>
+   /* public DtoScotter ejecutar(Long vendedor) {
+        return this.daoScotter.buscarIdVendedor(vendedor);
+            }*/
+
+    public List&lt;DtoScotter&gt; ejecutar(Long vendedor) {
+<span class="nc" id="L22">        return this.daoScotter.buscarIdVendedor(vendedor);</span>
     }
 
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

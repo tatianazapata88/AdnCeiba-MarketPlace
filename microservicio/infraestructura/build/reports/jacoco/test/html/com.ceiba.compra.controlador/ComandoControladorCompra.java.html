@@ -26,13 +26,13 @@ public class ComandoControladorCompra {
     @PostMapping
     @ApiOperation(&quot;Crear Compra&quot;)
     public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoCompra comandoCompra) {
-<span class="fc" id="L29">        return manejadorCrearCompra.ejecutar(comandoCompra);</span>
+<span class="nc" id="L29">        return manejadorCrearCompra.ejecutar(comandoCompra);</span>
     }
 
     @DeleteMapping(value = &quot;/{id}&quot;)
     @ApiOperation(&quot;Eliminar Compra&quot;)
     public void eliminar(@PathVariable Long id) {
-<span class="fc" id="L35">        manejadorEliminarCompra.ejecutar(id);</span>
-<span class="fc" id="L36">    }</span>
+<span class="nc" id="L35">        manejadorEliminarCompra.ejecutar(id);</span>
+<span class="nc" id="L36">    }</span>
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

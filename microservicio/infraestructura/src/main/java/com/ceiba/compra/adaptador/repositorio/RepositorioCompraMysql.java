@@ -26,6 +26,9 @@ public class RepositorioCompraMysql implements RepositorioCompra {
     @SqlStatement(namespace = "compra", value = "reservarScotter")
     private static String sqlReservar;
 
+    @SqlStatement(namespace = "compra", value = "disponibleScotter")
+    private static String sqlDisponible;
+
     public RepositorioCompraMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
@@ -51,8 +54,8 @@ public class RepositorioCompraMysql implements RepositorioCompra {
     public void eliminar(Long id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
-
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
+
     }
 
     @Override

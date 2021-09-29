@@ -4,6 +4,8 @@ import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.compra.modelo.dto.DtoCompra;
 import com.ceiba.compra.puerto.dao.DaoCompra;
+import com.ceiba.scotter.adaptador.dao.MapeoScotter;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -16,13 +18,24 @@ public class DaoCompraMysql implements DaoCompra {
     @SqlStatement(namespace = &quot;compra&quot;, value = &quot;listar&quot;)
     private static String sqlListar;
 
-<span class="fc" id="L19">    public DaoCompraMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
-<span class="fc" id="L20">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L21">    }</span>
+    @SqlStatement(namespace = &quot;compra&quot;, value = &quot;listarId&quot;)
+    private static String sqlListarId;
+
+<span class="fc" id="L24">    public DaoCompraMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="fc" id="L25">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L26">    }</span>
 
     @Override
     public List&lt;DtoCompra&gt; listar() {
-<span class="fc" id="L25">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoCompra());</span>
+<span class="fc" id="L30">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoCompra());</span>
+    }
+
+    @Override
+    public DtoCompra listarId(Long id) {
+<span class="fc" id="L35">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L36">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L37">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlListarId, paramSource, new MapeoCompra());</span>
+
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
