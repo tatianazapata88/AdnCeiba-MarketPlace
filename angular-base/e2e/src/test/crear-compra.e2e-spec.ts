@@ -18,9 +18,9 @@ describe('workspace-project Crear Scooter', () => {
       expect(page.getTitleTextbyId('h4')).toEqual('Gestionar Compra Scooter');
       });
 
-      it('Deberia publicar scooter y direccionar al ingreso', async() => {
+      it('Deberia generar compra y direccionar al ingreso', async() => {
        await crearCompra.ingresarCiudadDEstino('Medellin');
-       await crearCompra.ingresarFecha();
+       await crearCompra.ingresarFecha('2021-09-29');
        crearCompra.clickBotonComprarScooter();
 
         expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'compra/1');

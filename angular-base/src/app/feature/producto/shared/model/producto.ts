@@ -12,14 +12,14 @@ export class Producto {
 
     constructor(){}
 
-    guardar(marca: string,modelo: number, precio: number, ciudad: string, vendedor: Usuario, foto: string, estado: string) {
+    guardar(marca: string,modelo: number, precio: number, ciudad: string, vendedor: Usuario, foto: string) {
         this.marca = marca;
         this.modelo = modelo;
         this.precio =precio;
         this.ciudad = ciudad;
         this.vendedor = vendedor;
         this.foto = foto;
-        this.estado = estado;
+      
 
     }
 }

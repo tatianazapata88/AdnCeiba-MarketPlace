@@ -20,8 +20,8 @@ export class CrearCompraPage {
         await this.inputCiudadDestino.sendKeys(ciudad);
     }
 
-     async ingresarFecha() {
-        await this.inputFecha.getText();
+     async ingresarFecha(fecha) {
+        await this.inputFecha.sendKeys(fecha);
     }
 
  }

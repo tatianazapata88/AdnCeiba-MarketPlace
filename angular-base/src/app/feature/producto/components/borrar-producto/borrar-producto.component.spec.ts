@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('BorrarProductoComponent', () => {
-  let component: BorrarProductoComponent;
+ // let component: BorrarProductoComponent;
   let fixture: ComponentFixture<BorrarProductoComponent>;
 
   beforeEach(waitForAsync(() => {
@@ -24,11 +24,11 @@ describe('BorrarProductoComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(BorrarProductoComponent);
-    component = fixture.componentInstance;
+   // component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
+/*
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  });*/
 });
